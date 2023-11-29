@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Simbio
+
+Simbio is a Next.js project for [brief description or purpose].
+
+## Table of Contents
+
+-   [Getting Started](#getting-started)
+    -   [Prerequisites](#prerequisites)
+    -   [Installation](#installation)
+-   [Usage](#usage)
+-   [Scripts](#scripts)
+-   [Linting and Formatting](#linting-and-formatting)
+-   [Deployment](#deployment)
+-   [Built With](#built-with)
+-   [Contributing](#contributing)
+-   [License](#license)
 
 ## Getting Started
 
-First, run the development server:
+These instructions will get you a copy of the project up and running on your local machine.
+
+### Prerequisites
+
+Before you start, ensure you have the following dependencies installed:
+
+-   [Node.js](https://nodejs.org/) (v20.3.1 or higher)
+-   [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/yourusername/simbio.git
+    cd simbio
+    ```
+
+2. Install the project dependencies using npm:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+## Usage
+
+Explain how to run the development server and access your project locally.
 
 ```bash
 npm run dev
-# or
+# Or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Your Next.js project should be accessible at `http://localhost:3000/` in your web browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The project comes with a set of useful scripts:
 
-## Learn More
+-   `commit`: Commit your changes using conventional commit messages.
+-   `dev`: Start the development server.
+-   `build`: Build the project for production.
+-   `start`: Start the production server.
+-   `lint:check`: Check for linting errors.
+-   `lint:full`: Run a full linting check and type checking.
+-   `lint:fix`: Automatically fix linting issues.
+-   `format`: Check for code formatting issues.
+-   `format:fix`: Automatically fix code formatting issues.
+-   `commitlint`: Use commitlint to check and format your commit messages.
 
-To learn more about Next.js, take a look at the following resources:
+For more details, refer to the `package.json` file.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Linting and Formatting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project includes linting and formatting tools to maintain code quality. You can check and fix code using the following scripts:
 
-## Deploy on Vercel
+-   `lint:check`: Checks for linting errors and type issues.
+-   `lint:full`: Performs a comprehensive linting and type checking.
+-   `lint:fix`: Automatically fixes linting issues.
+-   `format`: Checks code formatting issues.
+-   `format:fix`: Automatically fixes code formatting issues.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Explain how to deploy your project to a production environment. This section might include instructions for different hosting platforms.
+
+## Built With
+
+List the main technologies or frameworks used in your project.
+
+-   [Next.js](https://nextjs.org/)
+-   [React](https://reactjs.org/)
+-   [Redux](https://redux.js.org/)
+-   [Tailwind CSS](https://tailwindcss.com/)
+-   [Echarts](https://echarts.apache.org/)
+-   [Formik](https://formik.org/)
+-   And more...
+
+## Contributing
+
+Explain how others can contribute to your project, including guidelines and best practices for pull requests.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

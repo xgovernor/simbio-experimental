@@ -1,0 +1,38 @@
+# Ignore generated files and directories
+node_modules/
+.pnp/
+.pnp.js
+.cache/
+.next/
+out/
+
+# Ignore testing files
+coverage/
+
+# Ignore Next.js specific files
+build/
+.vercel/
+dist/
+
+# Ignore log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore local environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Ignore TypeScript build info and Next.js specific files
+*.tsbuildinfo
+next-env.d.ts
+
+# Ignore package.json (you generally don't need to format it with Prettier)
+package.json
+
+# Miscellaneous files
+.DS_Store
+*.pem
