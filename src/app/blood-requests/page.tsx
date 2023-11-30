@@ -1,9 +1,47 @@
-function PageBloodRequests() {
-    return (
-        <div>
-            <h1>PageBloodRequests</h1>
-        </div>
-    )
+import PageRootComponent from "./PageRootComponent";
+import { memo } from "react";
+
+export type RequestItemType = {
+    _id: string;
+    avatar: string;
+    name: string;
+    blood_group: string;
+    blood_type: string;
+    quantity: string;
+    delivery_date: string;
+    health_issue: string;
+    location: string;
+    status: string;
+    phone: string;
+};
+
+export type RequestResponseType = {
+    data: RequestItemType[];
+    offset: number;
+    total: number;
+    limit: number;
+};
+
+/**
+ * Retrieves data from the specified URL.
+ *
+ * @return {Promise<RequestResponseType>} The retrieved data.
+ */
+async function getData(): Promise<RequestResponseType> {
+    const res = await fetch("http://localhost:3000/data/requests.json");
+    const data = await res.json();
+
+    return data;
 }
 
-export default PageBloodRequests;
+const PageBloodRequest = async () => {
+    const data = await getData();
+
+
+    return (
+        <PageRootComponent data={data} />
+    );
+};
+
+
+export default memo(PageBloodRequest);
