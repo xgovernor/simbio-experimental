@@ -14,7 +14,7 @@ const DashboardLayout: FC<DashboardLayoutProps> = ({ children }: DashboardLayout
             <DashboardHeader />
             <DashboardMenuBar />
 
-            <div className="w-full p-22px">{children}</div>
+            <div className="w-full">{children}</div>
         </Layout>
     );
 };
