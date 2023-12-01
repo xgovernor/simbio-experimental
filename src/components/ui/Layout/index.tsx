@@ -29,7 +29,7 @@ const MENU_LIST: SidebarMenuItemType[] = [
         name: "Requests",
         description: "Special blood requests",
         icon: <People24Regular />,
-        url: "/requests",
+        url: "/blood-requests",
     },
     {
         name: "Events",

@@ -125,7 +125,7 @@ const BloodRequestTable: FC<BloodRequestTablePropsType> = ({
                                     icon={<Add24Regular />}
                                     // size="small"
                                     style={{ width: "110px" }}
-                                    onClick={() => router.push("/requests/new")}
+                                    onClick={() => router.push("/blood-requests/new")}
                                 >
                                     Add new
                                 </ToolbarButton>
