@@ -25,8 +25,8 @@ const Footer = ({ className }: { className: string }) => {
         <footer className={className}>
             <div className="mx-auto my-0 flex w-full items-center justify-between gap-4 px-5 py-2">
                 <div className="flex w-1/3 items-center justify-start text-sm">
-                    <p className="text-xs leading-4 text-neutral-900">
-                        © Symbio 2023. Powered by <Link href="https://dot9.dev">Dot9</Link>
+                    <p className="text-xs leading-4 text-neutral-900 font-medium">
+                        © Symbio 2023. Powered by <Link className="hover:text-primary hover:underline" href="https://dot9.dev">Dot9</Link>
                     </p>
                 </div>
 
@@ -38,7 +38,7 @@ const Footer = ({ className }: { className: string }) => {
                     <ul className="flex items-center justify-center gap-4">
                         {MENU?.map(({ id, title, url }) => (
                             <li key={id}>
-                                <Link className="text-xs leading-4" href={url}>
+                                <Link className="text-xs leading-4 hover:underline hover:text-primary" href={url}>
                                     {title}
                                 </Link>
                             </li>

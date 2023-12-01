@@ -1,9 +1,13 @@
-function PageUpdates() {
-    return (
-        <div>
-            <h1>PageUpdates</h1>
-        </div>
-    )
-}
+import PageRootComponent from "./PageRootComponent";
+import { memo } from "react";
 
-export default PageUpdates;
+
+const PageUpdates = async () => {
+
+    return (
+        <PageRootComponent />
+    );
+};
+
+
+export default memo(PageUpdates);

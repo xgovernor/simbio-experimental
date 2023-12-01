@@ -59,7 +59,7 @@ const MENU_LIST: SidebarMenuItemType[] = [
         name: "Logout",
         description: "Logout from account",
         icon: <SignOut24Regular />,
-        url: "/logout",
+        url: "/auth/logout",
     },
 ];
 

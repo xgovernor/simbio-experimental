@@ -14,7 +14,7 @@ import { memo } from "react";
 //     return data;
 // }
 
-const PageMembers = async () => {
+const PageCenters = async () => {
     // const data = await getData();
 
     return (
@@ -23,4 +23,4 @@ const PageMembers = async () => {
 };
 
 
-export default memo(PageMembers);
+export default memo(PageCenters);

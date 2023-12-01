@@ -10,6 +10,7 @@ import {
     ToolbarButton,
 } from "@fluentui/react-components";
 import { Alert24Regular, Alert20Regular, Settings20Regular } from "@fluentui/react-icons";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FC, memo } from "react";
 
@@ -110,12 +111,7 @@ const AppUpdates: FC = () => {
                     </p>
 
                     <Toolbar className="p-0">
-                        <ToolbarButton
-                            aria-label="Settings"
-                            appearance="subtle"
-                            onClick={handleSettings}
-                            icon={<Settings20Regular />}
-                        />
+                        <Link className="font-medium font-sm" href="/updates">View all</Link>
                     </Toolbar>
                 </div>
 

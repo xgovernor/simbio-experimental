@@ -37,6 +37,11 @@ const profileMenu: MenuItemType[] = [
         icon: <People24Regular />,
     },
     {
+        title: "Users",
+        url: "/users",
+        icon: <People24Regular />,
+    },
+    {
         title: "Clubs",
         url: "/clubs",
         icon: <HomeMore24Filled />,

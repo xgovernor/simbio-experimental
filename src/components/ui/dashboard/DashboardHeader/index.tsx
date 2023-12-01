@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FC, memo } from "react";
 import DashboardHeaderStats from "../DashboardHeaderStats";
+import Link from "next/link";
 
 const DashboadHeader: FC = () => {
     return (
@@ -9,16 +10,18 @@ const DashboadHeader: FC = () => {
                 <div className="w-2/5">
                     <div className="flex w-full flex-row flex-nowrap items-center justify-start gap-6">
                         <div className="flex h-24 w-24 rounded-full">
-                            <Image
-                                className="border-rounded min-w-24 min-h-24"
-                                src="/image/logo/bss.jpg"
-                                alt="Blood Soldier Society (BSS)"
-                                width={96}
-                                height={96}
-                                style={{
-                                    minWidth: "96px",
-                                }}
-                            />
+                            <Link href="/profile">
+                                <Image
+                                    className="border-rounded min-w-24 min-h-24"
+                                    src="/image/logo/bss.jpg"
+                                    alt="Blood Soldier Society (BSS)"
+                                    width={96}
+                                    height={96}
+                                    style={{
+                                        minWidth: "96px",
+                                    }}
+                                />
+                            </Link>
                         </div>
 
                         <div className="relative block">

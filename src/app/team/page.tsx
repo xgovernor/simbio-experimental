@@ -1,9 +1,14 @@
-function Team() {
-    return (
-        <div>
-            <h1>Team</h1>
-        </div>
-    )
-}
+import PageRootComponent from "./PageRootComponent";
+import { memo } from "react";
 
-export default Team;
+
+const PageTeams = async () => {
+    // const data = await getData();
+
+    return (
+        <PageRootComponent />
+    );
+};
+
+
+export default memo(PageTeams);

@@ -1,7 +1,8 @@
 import PageRootComponent from "./PageRootComponent";
 import { memo } from "react";
 
-const PageUsers = async () => {
+
+const PageUserProfile = async () => {
 
     return (
         <PageRootComponent />
@@ -9,4 +10,4 @@ const PageUsers = async () => {
 };
 
 
-export default memo(PageUsers);
+export default memo(PageUserProfile);
