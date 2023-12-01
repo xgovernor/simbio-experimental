@@ -8,7 +8,6 @@
     "build": "next build",
     "start": "next start",
     "lint:check": "next lint",
-    "lint:full": "next lint . --no-ignore && tsc",
     "lint:fix": "eslint . --fix",
     "//format": "yarn prettier . --write",
     "format": "prettier --check",
@@ -54,7 +53,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
     "postcss-prefixer": "^3.0.0",
-    "prettier": "^3.0.3",
+    "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.5.6",
     "redux-logger": "3.0.6"
   },
