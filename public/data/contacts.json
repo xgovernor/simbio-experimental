@@ -1,0 +1,232 @@
+{
+    "data": [
+        {
+            "_id": "1",
+            "avatar": "https://example.com/avatar1.jpg",
+            "name": "John Doe",
+            "phone": "(123) 456-7890",
+            "email": "john.doe@example.com",
+            "location": "New York, NY",
+            "status": "available"
+        },
+        {
+            "_id": "2",
+            "avatar": "https://example.com/avatar2.jpg",
+            "name": "Jane Smith",
+            "phone": "(456) 789-0123",
+            "email": "jane.smith@example.com",
+            "location": "Los Angeles, CA",
+            "status": "offline"
+        },
+        {
+            "_id": "3",
+            "avatar": "https://example.com/avatar3.jpg",
+            "name": "Alice Johnson",
+            "phone": "(789) 012-3456",
+            "email": "alice.johnson@example.com",
+            "location": "Chicago, IL",
+            "status": "busy"
+        },
+        {
+            "_id": "4",
+            "avatar": "https://example.com/avatar4.jpg",
+            "name": "Bob Williams",
+            "phone": "(012) 345-6789",
+            "email": "bob.williams@example.com",
+            "location": "Houston, TX",
+            "status": "available"
+        },
+        {
+            "_id": "5",
+            "avatar": "https://example.com/avatar5.jpg",
+            "name": "Eve Brown",
+            "phone": "(234) 567-8901",
+            "email": "eve.brown@example.com",
+            "location": "Miami, FL",
+            "status": "offline"
+        },
+        {
+            "_id": "6",
+            "avatar": "https://example.com/avatar6.jpg",
+            "name": "Michael Wilson",
+            "phone": "(567) 890-1234",
+            "email": "michael.wilson@example.com",
+            "location": "Dallas, TX",
+            "status": "busy"
+        },
+        {
+            "_id": "7",
+            "avatar": "https://example.com/avatar7.jpg",
+            "name": "Olivia Garcia",
+            "phone": "(890) 123-4567",
+            "email": "olivia.garcia@example.com",
+            "location": "Miami, FL",
+            "status": "available"
+        },
+        {
+            "_id": "8",
+            "avatar": "https://example.com/avatar8.jpg",
+            "name": "William Davis",
+            "phone": "(234) 567-8901",
+            "email": "william.davis@example.com",
+            "location": "Los Angeles, CA",
+            "status": "offline"
+        },
+        {
+            "_id": "9",
+            "avatar": "https://example.com/avatar9.jpg",
+            "name": "Sophia Martinez",
+            "phone": "(789) 012-3456",
+            "email": "sophia.martinez@example.com",
+            "location": "Chicago, IL",
+            "status": "busy"
+        },
+        {
+            "_id": "10",
+            "avatar": "https://example.com/avatar10.jpg",
+            "name": "James Johnson",
+            "phone": "(012) 345-6789",
+            "email": "james.johnson@example.com",
+            "location": "Houston, TX",
+            "status": "available"
+        },
+        {
+            "_id": "11",
+            "avatar": "https://example.com/avatar11.jpg",
+            "name": "Sophia Wilson",
+            "phone": "(567) 890-1234",
+            "email": "sophia.wilson@example.com",
+            "location": "Dallas, TX",
+            "status": "busy"
+        },
+        {
+            "_id": "12",
+            "avatar": "https://example.com/avatar12.jpg",
+            "name": "Logan Smith",
+            "phone": "(890) 123-4567",
+            "email": "logan.smith@example.com",
+            "location": "Los Angeles, CA",
+            "status": "available"
+        },
+        {
+            "_id": "13",
+            "avatar": "https://example.com/avatar13.jpg",
+            "name": "Ava Johnson",
+            "phone": "(234) 567-8901",
+            "email": "ava.johnson@example.com",
+            "location": "Chicago, IL",
+            "status": "offline"
+        },
+        {
+            "_id": "14",
+            "avatar": "https://example.com/avatar14.jpg",
+            "name": "Liam Davis",
+            "phone": "(789) 012-3456",
+            "email": "liam.davis@example.com",
+            "location": "Houston, TX",
+            "status": "busy"
+        },
+        {
+            "_id": "15",
+            "avatar": "https://example.com/avatar15.jpg",
+            "name": "Emma Martinez",
+            "phone": "(012) 345-6789",
+            "email": "emma.martinez@example.com",
+            "location": "Miami, FL",
+            "status": "available"
+        },
+        {
+            "_id": "16",
+            "avatar": "https://example.com/avatar16.jpg",
+            "name": "Noah Wilson",
+            "phone": "(567) 890-1234",
+            "email": "noah.wilson@example.com",
+            "location": "Dallas, TX",
+            "status": "offline"
+        },
+        {
+            "_id": "17",
+            "avatar": "https://example.com/avatar17.jpg",
+            "name": "Olivia Smith",
+            "phone": "(890) 123-4567",
+            "email": "olivia.smith@example.com",
+            "location": "Los Angeles, CA",
+            "status": "busy"
+        },
+        {
+            "_id": "18",
+            "avatar": "https://example.com/avatar18.jpg",
+            "name": "Liam Johnson",
+            "phone": "(234) 567-8901",
+            "email": "liam.johnson@example.com",
+            "location": "Chicago, IL",
+            "status": "available"
+        },
+        {
+            "_id": "19",
+            "avatar": "https://example.com/avatar19.jpg",
+            "name": "Ava Davis",
+            "phone": "(789) 012-3456",
+            "email": "ava.davis@example.com",
+            "location": "Houston, TX",
+            "status": "offline"
+        },
+        {
+            "_id": "20",
+            "avatar": "https://example.com/avatar20.jpg",
+            "name": "Logan Martinez",
+            "phone": "(012) 345-6789",
+            "email": "logan.martinez@example.com",
+            "location": "Miami, FL",
+            "status": "busy"
+        },
+        {
+            "_id": "21",
+            "avatar": "https://example.com/avatar21.jpg",
+            "name": "Emma Wilson",
+            "phone": "(567) 890-1234",
+            "email": "emma.wilson@example.com",
+            "location": "Dallas, TX",
+            "status": "available"
+        },
+        {
+            "_id": "22",
+            "avatar": "https://example.com/avatar22.jpg",
+            "name": "Noah Smith",
+            "phone": "(890) 123-4567",
+            "email": "noah.smith@example.com",
+            "location": "Los Angeles, CA",
+            "status": "offline"
+        },
+        {
+            "_id": "23",
+            "avatar": "https://example.com/avatar23.jpg",
+            "name": "Olivia Johnson",
+            "phone": "(234) 567-8901",
+            "email": "olivia.johnson@example.com",
+            "location": "Chicago, IL",
+            "status": "busy"
+        },
+        {
+            "_id": "24",
+            "avatar": "https://example.com/avatar24.jpg",
+            "name": "Liam Martinez",
+            "phone": "(789) 012-3456",
+            "email": "liam.martinez@example.com",
+            "location": "Houston, TX",
+            "status": "available"
+        },
+        {
+            "_id": "25",
+            "avatar": "https://example.com/avatar25.jpg",
+            "name": "Ava Wilson",
+            "phone": "(012) 345-6789",
+            "email": "ava.wilson@example.com",
+            "location": "Miami, FL",
+            "status": "offline"
+        }
+    ],
+    "offset": 0,
+    "total": 25,
+    "limit": 25
+}
