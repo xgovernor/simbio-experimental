@@ -1,11 +1,57 @@
+"use client";
+import { FC, memo } from "react";
+import ChartMatrix from "@/components/charts/ChartMatrix";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
-import { memo } from "react";
+import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
+import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";
+import DonationTable from "@/components/donations/DonationTable";
 
+export type DonationItemType = {
+    _id: string;
+    avatar: string;
+    name: string;
+    amount: string;
+    date: string;
+    location: string;
+    phone: string;
+    email: string;
+    reference: string;
+};
 
-const PageRootComponent = () => {
+export type DonationResponseType = {
+    data: DonationItemType[];
+    offset: number;
+    total: number;
+    limit: number;
+};
+
+export type PageConfig = {
+    analytics?: boolean;
+    settings?: boolean;
+    table?: boolean;
+};
+
+interface PageRootComponentPropsType {
+    data: DonationResponseType;
+    config: PageConfig;
+}
+
+const PageRootComponent: FC<PageRootComponentPropsType> = ({ config, data }: PageRootComponentPropsType) => {
     return (
         <DashboardLayout>
-            <h1>Donations</h1>
+            <div className="grid grid-cols-1 gap-22px">
+                {config.analytics && (
+                    <ChartMatrix>
+                        <ChartMemberActivity />
+                        <ChartMemberAgeDemographic />
+                    </ChartMatrix>
+                )}
+
+                <DonationTable
+                    title="Donor's list"
+                    description={`Showing ${data?.limit} of ${data?.total} donations`}
+                    data={data?.data}
+                /></div>
         </DashboardLayout>
     );
 };
