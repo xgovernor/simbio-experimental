@@ -13,7 +13,7 @@ async function getData(): Promise<TeamResponseType> {
     return data;
 }
 
-const PageTeams = async () => {
+const PageTeam = async () => {
     const data = await getData();
     const config: PageConfig = {
         analytics: false,
@@ -27,4 +27,4 @@ const PageTeams = async () => {
 };
 
 
-export default memo(PageTeams);
+export default memo(PageTeam);
