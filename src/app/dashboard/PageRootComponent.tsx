@@ -1,5 +1,8 @@
 "use client";
 import ChartMatrix from "@/components/charts/ChartMatrix";
+import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
+import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";
+import ChartMemberStats from "@/components/charts/ChartMemberStats";
 import ChartTeamStats from "@/components/charts/ChartTeamStats";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import { memo } from "react";
@@ -10,14 +13,18 @@ const PageRootComponent = () => {
         <DashboardLayout>
             <ChartMatrix>
                 <ChartTeamStats />
+                <ChartMemberAgeDemographic />
+                <ChartMemberActivity />
+                <ChartMemberStats />
+                <ChartTeamStats />
+                <ChartMemberActivity />
                 <ChartTeamStats />
                 <ChartTeamStats />
+                <ChartMemberActivity />
                 <ChartTeamStats />
+                <ChartMemberAgeDemographic />
                 <ChartTeamStats />
-                <ChartTeamStats />
-                <ChartTeamStats />
-                <ChartTeamStats />
-                <ChartTeamStats />
+                <ChartMemberStats />
                 <ChartTeamStats />
             </ChartMatrix>
         </DashboardLayout>
