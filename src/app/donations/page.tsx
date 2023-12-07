@@ -8,7 +8,7 @@ import { memo } from "react";
  * @return {Promise<RequestResponseType>} The retrieved data.
  */
 async function getData(): Promise<DonationResponseType> {
-    const res = await fetch("http://localhost:3000/data/requests.json");
+    const res = await fetch("http://localhost:3000/data/donations.json");
     const data = await res.json();
 
     return data;

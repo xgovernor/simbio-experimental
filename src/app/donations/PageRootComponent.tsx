@@ -1,5 +1,5 @@
 "use client";
-import { FC, memo } from "react";
+import { FC, Suspense, memo } from "react";
 import ChartMatrix from "@/components/charts/ChartMatrix";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
@@ -39,7 +39,7 @@ interface PageRootComponentPropsType {
 const PageRootComponent: FC<PageRootComponentPropsType> = ({ config, data }: PageRootComponentPropsType) => {
     return (
         <DashboardLayout>
-            <div className="grid grid-cols-1 gap-22px">
+            <div className="grid grid-cols-1">
                 {config.analytics && (
                     <ChartMatrix>
                         <ChartMemberActivity />
@@ -47,11 +47,16 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({ config, data }: Pag
                     </ChartMatrix>
                 )}
 
-                <DonationTable
-                    title="Donor's list"
-                    description={`Showing ${data?.limit} of ${data?.total} donations`}
-                    data={data?.data}
-                /></div>
+                <Suspense>
+                    <div className="px-[22px] pb-[22px]">
+                        <DonationTable
+                            title="Donor's list"
+                            description={`Showing ${data?.limit} of ${data?.total} donations`}
+                            data={data?.data}
+                        />
+                    </div>
+                </Suspense>
+            </div>
         </DashboardLayout>
     );
 };

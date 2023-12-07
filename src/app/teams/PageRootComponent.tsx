@@ -1,5 +1,5 @@
 "use client";
-import { FC, memo } from "react";
+import { FC, Suspense, memo } from "react";
 import { TeamStatus } from "@/types";
 import ChartMatrix from "@/components/charts/ChartMatrix";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
@@ -38,6 +38,11 @@ interface PageRootComponentPropsType {
     config: PageConfig;
 }
 
+interface PageRootComponentPropsType {
+    data: TeamsResponseType;
+    config: PageConfig;
+}
+
 const PageRootComponent: FC<PageRootComponentPropsType> = ({ data, config }: PageRootComponentPropsType) => {
     return (
         <DashboardLayout>
@@ -50,11 +55,15 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({ data, config }: Pag
                     </ChartMatrix>
                 )}
 
-                <TeamsTable
-                    title="Teams list"
-                    description={`Showing ${data?.limit} of ${data?.total} teams`}
-                    data={data?.data}
-                />
+                <Suspense>
+                    <div className="p-[22px]">
+                        <TeamsTable
+                            title="Teams list"
+                            description={`Showing ${data?.limit} of ${data?.total} teams`}
+                            data={data?.data}
+                        />
+                    </div>
+                </Suspense>
             </div>
         </DashboardLayout>
     );
