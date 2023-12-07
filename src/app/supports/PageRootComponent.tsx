@@ -29,10 +29,11 @@ const SupportPage: React.FC<SupportOrganizationsPropsType> = ({ organizations, c
     return (
         <Layout title="Support messages" icon={<PeopleAdd24Regular />} className="">
             <div
-            className=" grid gap-5 overflow-hidden p-[22px]"
-            style={{
+            className="h-full grid gap-5 overflow-hidden p-[22px]"
+                style={{
+                maxHeight: "calc(100vh - 136px)",
                 gridTemplateColumns: "22rem 1fr",
-                height: "calc(100vh - 184px)",
+                // height: "calc(100vh - 184px)",
             }}
         >
             {/* Support Card List */}

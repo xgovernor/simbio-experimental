@@ -12,7 +12,7 @@ type SupportOrganizationPropsType = {
 const SupportOrganizationCard: React.FC<SupportOrganizationPropsType> = ({ key, avatar, title, location }: SupportOrganizationPropsType) => {
     return (
         <Card
-            className="mb-3 max-h-fit w-full max-w-full border border-transparent p-4 hover:border-gray-500"
+            className="mb-3 max-h-fit w-full max-w-full rounded-md border border-transparent p-4 hover:border-gray-500"
             size="medium"
             key={key}
         >

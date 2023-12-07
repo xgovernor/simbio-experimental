@@ -6,11 +6,11 @@ import { memo } from "react";
 
 
 const COLUMNS = [
-    {
-        id: "SMB0",
-        className: "",
-        title: "ID",
-    },
+    // {
+    //     id: "SMB0",
+    //     className: "",
+    //     title: "ID",
+    // },
     {
         id: "SMB1",
         className: "w-full min-w-xs",
@@ -162,7 +162,7 @@ const MESSAGES: SupportMessageItemType[] = [
 const MessagesTable = () => {
     return (
         <Card
-            className="w-full p-0"
+            className="w-full p-0 rounded-md"
             style={{
                 height: "calc(100vh - 187px)",
             }}
@@ -208,7 +208,6 @@ const MessagesTable = () => {
 };
 
 const TableRow: React.FC<SupportMessageItemType> = ({
-    id,
     incident_id,
     title,
     priority,
@@ -226,7 +225,6 @@ const TableRow: React.FC<SupportMessageItemType> = ({
                 gridTemplateColumns: "100px auto 160px 160px 160px",
             }}
         >
-            <td className=" px-4 py-3">#{incident_id}</td>
 
             <td className="min-w-xs w-full px-4 py-3">
                 <div className="group relative w-full">
@@ -238,10 +236,7 @@ const TableRow: React.FC<SupportMessageItemType> = ({
                             className={`relative ms-2 rounded-full text-xs ${getColorWithKey(
                                 status,
                                 "bg",
-                            )} px-1.5 pb-0.5 text-white opacity-80`}
-                            style={{
-                                textTransform: "capitalize",
-                            }}
+                            )} px-1.5 pb-0.5 text-white opacity-80 capitalize`}
                         >
                             {status}
                         </span>
