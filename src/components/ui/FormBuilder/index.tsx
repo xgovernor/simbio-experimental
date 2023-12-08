@@ -15,6 +15,8 @@ type FormBuilderFieldType = {
     label: string;
     name: string;
     placeholder?: string;
+    defaultValue?: string;
+    validation: any;
     type?: "text" | "select" | "number" | "email" | "password" | "url" | "tel" | "search" | "date" | "time" | "datetime-local" | "month" | "week" | "textarea";
     options?: Array<FormBuilderFieldSelectOptionType>;
     autoComplete?: "on" | "off";
@@ -73,7 +75,11 @@ const FormBuilder: React.FC<FormBuilderPropsType> = ({ form, onChange, onBlur, v
                                     {field?.label}
                                 </Label>
 
-                                <Field className={field.inputClassName || section.inputClassName || form.inputClassName} validationMessage={field.name && touched && touched[field.name] && errors[field.name]}>
+                                <Field
+                                    className={field.inputClassName || section.inputClassName || form.inputClassName}
+                                    validationMessage={ touched[field.name] && errors[field.name] && errors[field.name]}
+                                    required={field?.required || section?.required || form?.required || true}
+                                >
                                     {/* Text Field */}
                                     {(!field.type || field?.type === "text" || field?.type === "number" || field?.type === "email" || field?.type === "password" || field?.type === "url" || field?.type === "tel" || field?.type === "search" || field?.type === "date" || field?.type === "time" || field?.type === "datetime-local" || field?.type === "month" || field?.type === "week") && (
                                         <Input
@@ -86,7 +92,7 @@ const FormBuilder: React.FC<FormBuilderPropsType> = ({ form, onChange, onBlur, v
                                             onBlur={onBlur}
                                             value={values[field?.name]}
                                             autoComplete={field?.autoComplete || section.autoComplete || form.autoComplete || "on"}
-                                            required={field?.required || section.required || form.required || true}
+                                            required={field?.required || section?.required || form?.required || true}
                                         />
                                     )}
 
@@ -100,7 +106,7 @@ const FormBuilder: React.FC<FormBuilderPropsType> = ({ form, onChange, onBlur, v
                                             onBlur={onBlur}
                                             value={values[field?.name]}
                                             autoComplete={field?.autoComplete || section.autoComplete || form.autoComplete || "on"}
-                                            required={field.required || section.required || form.required || true}
+                                            required={field?.required || section?.required || form?.required || true}
                                         >
                                             {field?.options?.map((option: any, index: number) => (
                                                 <option value={option.value} key={index}>{option.label}</option>
@@ -119,7 +125,7 @@ const FormBuilder: React.FC<FormBuilderPropsType> = ({ form, onChange, onBlur, v
                                             onBlur={onBlur}
                                             value={values[field?.name]}
                                             autoComplete={field?.autoComplete || section.autoComplete || form.autoComplete || "on"}
-                                            required={field?.required || section.required || form.required || true}
+                                            required={field?.required || section?.required || form?.required || true}
                                         />
                                     )}
 
