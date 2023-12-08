@@ -14,11 +14,8 @@ async function getData() {
     return data;
 }
 
-type PageProps = {
-    page?: string;
-};
 
-const PageSettings: React.FC<PageProps> = async ({ page }: PageProps) => {
+const PageSettings = async (props: any) => {
     const data = await getData();
     const config: PageConfig = {
         analytics: true,
@@ -27,7 +24,7 @@ const PageSettings: React.FC<PageProps> = async ({ page }: PageProps) => {
     };
 
     return (
-        <PageRootComponent page={page || "account"} data={data} config={config} />
+        <PageRootComponent page={props.page || "account"} data={data} config={config} />
     );
 };
 

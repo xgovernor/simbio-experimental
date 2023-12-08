@@ -3,33 +3,35 @@ import SettingsTemplate from "../SettingsTemplate";
 import { Form, Formik } from "formik";
 import FormBuilder, { FormBuilderFormType } from "@/components/ui/FormBuilder";
 import { Button } from "@fluentui/react-components";
+import * as yup from "yup"
+import { createFormikInitialValue, createFormikYupSchema } from "@/utils/formBuilder.util";
 
 interface SettingsAccountPropsType {
     className?: string;
 }
-const initialValues = {
-    firstName: "",
-    middleName: "",
-    lastName: "",
-    gender: "",
-    dateOfBirth: "",
-    avatar: "",
-    address: "",
-    country: "",
-    state: "",
-    city: "",
-    zipCode: "",
-    username: "",
-    email: "",
-    phone: "",
-    bloodGroup: "",
-    lastDonation: "",
-    currentAddress: "",
-    permanentAddress: "",
-    currentPassword: "",
-    newPassword: "",
-    confirmNewPassword: "",
-}
+// const initialValues = {
+//     firstName: "",
+//     middleName: "",
+//     lastName: "",
+//     gender: "",
+//     dateOfBirth: "",
+//     avatar: "",
+//     address: "",
+//     country: "",
+//     state: "",
+//     city: "",
+//     zipCode: "",
+//     username: "",
+//     email: "",
+//     phone: "",
+//     bloodGroup: "",
+//     lastDonation: "",
+//     currentAddress: "",
+//     permanentAddress: "",
+//     currentPassword: "",
+//     newPassword: "",
+//     confirmNewPassword: "",
+// }
 
 const FORM: FormBuilderFormType = {
     sectionClassName: "w-full grid grid-cols-3 gap-x-5 gap-y-3",
@@ -39,22 +41,18 @@ const FORM: FormBuilderFormType = {
     // inputClassName?: string,
     sections: [
         {
-            className: "w-full grid grid-cols-3 gap-x-5 gap-y-3",
             fields: [
                 {
                     label: "First name",
                     name: "firstName",
                     placeholder: "E.G. John",
-                },
-                {
-                    label: "Middle name",
-                    name: "middleName",
-                    placeholder: "E.G. Smith",
+                    validation: yup.string()
                 },
                 {
                     label: "Last name",
                     name: "lastName",
                     placeholder: "E.G. Doe",
+                    validation: yup.string()
                 },
             ],
         },
@@ -68,18 +66,21 @@ const FORM: FormBuilderFormType = {
                     name: "currentPassword",
                     placeholder: "********",
                     type: "password",
+                    validation: yup.string()
                 },
                 {
                     label: "New password",
                     name: "newPassword",
                     placeholder: "********",
                     type: "password",
+                    validation: yup.string()
                 },
                 {
                     label: "Confirm new password",
                     name: "confirmNewPassword",
                     placeholder: "********",
                     type: "password",
+                    validation: yup.string()
                 },
             ],
         },
@@ -87,6 +88,9 @@ const FORM: FormBuilderFormType = {
 }
 
 const SettingsAccount: FC<SettingsAccountPropsType> = ({ className }: SettingsAccountPropsType) => {
+    const initialValues = createFormikInitialValue(FORM);
+    const validationSchema = createFormikYupSchema(FORM);
+
     const onDiscardHandler = () => {
         alert("Discard");
     };
@@ -98,7 +102,7 @@ const SettingsAccount: FC<SettingsAccountPropsType> = ({ className }: SettingsAc
     return (
         <SettingsTemplate className={className} title="Account" onDiscard={onDiscardHandler} onSubmit={onSubmitHandler}>
             <div>
-                <Formik initialValues={{}} onSubmit={onSubmitHandler}>
+                <Formik initialValues={initialValues} validate={validationSchema as any} onSubmit={onSubmitHandler}>
                     {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
                         <Form>
                             {/* General Information */}
