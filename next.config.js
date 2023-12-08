@@ -17,6 +17,15 @@ const nextConfig = {
     // experimental: {
     //     instrumentationHook: true
     // },
+    async redirects() {
+        return [
+            {
+                source: "/",
+                destination: "/dashboard",
+                permanent: true,
+            },
+        ];
+    },
     headers: async () => {
         return [
             {
@@ -67,5 +76,5 @@ const nextConfig = {
         ];
     },
 };
-    
+
 module.exports = nextConfig

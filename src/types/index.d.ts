@@ -51,6 +51,18 @@ export type TimeZoonItemType = {
     value: string;
 };
 
+export type TimeFormatType = {
+    key?: string;
+    label: string;
+    value: string;
+};
+
+export type DateFormatType = {
+    key?: string;
+    label: string;
+    value: string;
+};
+
 /* ***************************************************************** */
 /* Support                                                           */
 /* ***************************************************************** */

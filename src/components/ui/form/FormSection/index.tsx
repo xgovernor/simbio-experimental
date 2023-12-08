@@ -11,13 +11,13 @@ const FormSection: React.FC<FormSectionPropsType> = ({ className, title, childre
 
     return (
         <div className="w-full mb-5">
-            <div className="mb-[15px] py-2 px-0 border-b border-b-[#E0E0E0]">
-                {title && (
-                    <p className="text-[#424242] text-[13px] leading-[18px] font-bold">
-                        {title}
-                    </p>
-                )}
-            </div>
+            {title && (
+                <div className="mb-[15px] py-2 px-0 border-b border-b-[#E0E0E0]">
+                        <p className="text-[#424242] text-[13px] leading-[18px] font-bold">
+                            {title}
+                        </p>
+                </div>
+            )}
 
             <div className="flex flex-row flex-wrap items-center justify-between gap-4">{children}</div>
         </div>

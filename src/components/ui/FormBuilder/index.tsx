@@ -22,8 +22,8 @@ type FormBuilderFieldType = {
 }
 
 type FormBuilderFormSectionType = {
-    id: string;
-    title: string;
+    id?: string;
+    title?: string;
     className?: string;
     fieldClassName?: string;
     labelClassName?: string;
@@ -54,11 +54,12 @@ export type FormBuilderPropsType = {
     form: FormBuilderFormType;
     onChange: any;
     onBlur: any;
+    touched?: any;
     values: any;
     errors: any;
 };
 
-const FormBuilder: React.FC<FormBuilderPropsType> = ({ form, onChange, onBlur, values, errors }: FormBuilderPropsType) => {
+const FormBuilder: React.FC<FormBuilderPropsType> = ({ form, onChange, onBlur, values, errors, touched }: FormBuilderPropsType) => {
     return (
         <>
             {form.sections.map((section: any, index: number) => (
@@ -67,11 +68,11 @@ const FormBuilder: React.FC<FormBuilderPropsType> = ({ form, onChange, onBlur, v
                         {section?.fields?.map((field: any, index: number) => (
                             <div className={field?.className || section.fieldClassName || form.fieldClassName} key={field?.id || index}>
 
-                                <Label className={field?.labelClassName || section.labelClassName || form.labelClassName} htmlFor={field?.name}>
+                                <Label className={field?.labelClassName || section.labelClassName || form.labelClassName} htmlFor={field?.name} required={field?.required || form.required}>
                                     {field?.label}
                                 </Label>
 
-                                <Field className={field.inputClassName || section.inputClassName || form.inputClassName} validationMessage={errors[field?.name]}>
+                                <Field className={field.inputClassName || section.inputClassName || form.inputClassName} validationMessage={touched[field?.name] && errors[field?.name]}>
                                     {/* Text Field */}
                                     {(!field.type || field?.type === "text" || field?.type === "number" || field?.type === "email" || field?.type === "password" || field?.type === "url" || field?.type === "tel" || field?.type === "search" || field?.type === "date" || field?.type === "time" || field?.type === "datetime-local" || field?.type === "month" || field?.type === "week") && (
                                         <Input
