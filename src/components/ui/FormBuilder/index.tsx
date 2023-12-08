@@ -1,5 +1,5 @@
 import FormSection from "@/components/ui/form/FormSection";
-import { Field, Input, Label, Select } from "@fluentui/react-components";
+import { Field, Input, Label, Select, Textarea } from "@fluentui/react-components";
 import { memo } from "react";
 
 type FormBuilderFieldSelectOptionType = {
@@ -15,7 +15,7 @@ type FormBuilderFieldType = {
     label: string;
     name: string;
     placeholder?: string;
-    type?: "text" | "select" | "number" | "email" | "password" | "url" | "tel" | "search" | "date" | "time" | "datetime-local" | "month" | "week";
+    type?: "text" | "select" | "number" | "email" | "password" | "url" | "tel" | "search" | "date" | "time" | "datetime-local" | "month" | "week" | "textarea";
     options?: Array<FormBuilderFieldSelectOptionType>;
     autoComplete?: "on" | "off";
     required?: boolean;
@@ -60,6 +60,7 @@ export type FormBuilderPropsType = {
 };
 
 const FormBuilder: React.FC<FormBuilderPropsType> = ({ form, onChange, onBlur, values, errors, touched }: FormBuilderPropsType) => {
+    console.log("Form Builder", touched)
     return (
         <>
             {form.sections.map((section: any, index: number) => (
@@ -72,7 +73,7 @@ const FormBuilder: React.FC<FormBuilderPropsType> = ({ form, onChange, onBlur, v
                                     {field?.label}
                                 </Label>
 
-                                <Field className={field.inputClassName || section.inputClassName || form.inputClassName} validationMessage={touched[field?.name] && errors[field?.name]}>
+                                <Field className={field.inputClassName || section.inputClassName || form.inputClassName} validationMessage={field.name && touched && touched[field.name] && errors[field.name]}>
                                     {/* Text Field */}
                                     {(!field.type || field?.type === "text" || field?.type === "number" || field?.type === "email" || field?.type === "password" || field?.type === "url" || field?.type === "tel" || field?.type === "search" || field?.type === "date" || field?.type === "time" || field?.type === "datetime-local" || field?.type === "month" || field?.type === "week") && (
                                         <Input
@@ -105,6 +106,21 @@ const FormBuilder: React.FC<FormBuilderPropsType> = ({ form, onChange, onBlur, v
                                                 <option value={option.value} key={index}>{option.label}</option>
                                             ))}
                                         </Select>
+                                    )}
+
+                                    {/* Textarea Field */}
+                                    {(field?.type === "textarea") && (
+                                        <Textarea
+                                            name={field?.name}
+                                            id={field?.name}
+                                            appearance="filled-lighter"
+                                            placeholder={field?.placeholder}
+                                            onChange={onChange}
+                                            onBlur={onBlur}
+                                            value={values[field?.name]}
+                                            autoComplete={field?.autoComplete || section.autoComplete || form.autoComplete || "on"}
+                                            required={field?.required || section.required || form.required || true}
+                                        />
                                     )}
 
                                 </Field>
