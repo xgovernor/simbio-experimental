@@ -7,6 +7,7 @@ import { Form, Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { memo } from "react";
 import FormBuilder, { FormBuilderFormType } from "@/components/ui/FormBuilder";
+import { createFormikInitialValue, createFormikYupSchema } from "@/utils/formBuilder.util";
 
 interface RequestFormPropsType {
     className?: string;
@@ -94,46 +95,43 @@ const useStyles = makeStyles({
 });
 
 const FORM: FormBuilderFormType = {
-    // id?: string,
-    // className?: string,
     sectionClassName: "w-full grid grid-cols-2 gap-x-13 gap-y-3",
     fieldClassName: "flex flex-row items-start justify-between gap-4 w-full",
     labelClassName: "w-full max-w-[150px] min-w-[125px] text-[13px] leading-[32px] font-medium",
     inputClassName: "w-full",
-    // inputClassName?: string,
     sections: [
         {
-            id: "section1",
-            title: "Refference Info",
-            // onBlur: () => {},
-            // onChange: () => { },
+            title: "Referral Info",
             fields: [
                 {
-                    label: "Refference ID",
+                    label: "Referral's ID",
                     name: "refId",
                     placeholder: "E.G. SMBL-1234",
+                    validation: Yup.string().required("Required"),
                 },
                 {
                     label: "Member Phone",
                     name: "refPhone",
                     type: "tel",
                     placeholder: "E.G. +91 1234567890",
+                    validation: Yup.string().required("Required"),
                 },
             ],
         },
         {
-            id: "section2",
             title: "Donation Info",
             fields: [
                 {
                     label: "Health Issue",
                     name: "healthIssue",
                     placeholder: "E.G. Cancer",
+                    validation: Yup.string().required("Required")
                 },
                 {
                     label: "Blood Group",
                     name: "bloodGroup",
                     placeholder: "E.G. SMBL-1234",
+                    defaultValue: "A+",
                     type: "select",
                     options: [
                         {
@@ -168,11 +166,13 @@ const FORM: FormBuilderFormType = {
                             label: "O-",
                             value: "O-"
                         },
-                    ]
+                    ],
+                    validation: Yup.string().required("Required").oneOf(["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"], "We only accept A+, A-, B+, B-, O+, O-, AB+, AB-")
                 },
                 {
                     label: "Quantity",
                     name: "quantity",
+                    defaultValue: "1",
                     type: "select",
                     options: [
                         {
@@ -199,7 +199,8 @@ const FORM: FormBuilderFormType = {
                             label: "5 unit",
                             value: "5"
                         },
-                    ]
+                    ],
+                    validation: Yup.number().required("Required").min(1, "Must be greater than 0").max(5, "Must be less than 5")
                 },
                 {
                     label: "Donation Type",
@@ -222,55 +223,63 @@ const FORM: FormBuilderFormType = {
                             label: "Double red cell",
                             value: "double red cell"
                         }
-                    ]
+                    ],
+                    validation: Yup.string().required("Required").oneOf(["whole blood", "plasma", "platelet", "double red cell"], "We only accept whole blood, plasma platelet and double red cell")
                 },
                 {
                     label: "Date & Time",
                     name: "donationDateTime",
                     type: "datetime-local",
+                    validation: Yup.string().required("Required")
                 },
                 {
                     label: "Hospital Name",
                     name: "hospitalName",
                     placeholder: "E.G. Square Medical Lab",
+                    validation: Yup.string().required("Required")
                 },
                 {
                     label: "Hospital Address",
                     name: "hospitalAddress",
                     placeholder: "E.G. 123 Main St, Anytown, USA 12345",
+                    validation: Yup.string().required("Required")
                 },
                 {
                     label: "Hospital Phone",
                     name: "hospitalPhone",
                     type: "tel",
                     placeholder: "E.G. (123) 456-7890",
+                    validation: Yup.string().required("Required")
                 },
                 {
                     label: "Hospital Email",
                     name: "hospitalEmail",
                     type: "email",
                     placeholder: "E.G. JbF7H@example.com",
+                    validation:Yup.string().email().required("Required")
                 },
             ],
         },
         {
-            id: "section3",
             title: "Patient Info",
             fields: [
                 {
                     label: "First name",
                     name: "patientFirstName",
-                    placeholder: "E.G. John"
+                    placeholder: "E.G. John",
+                    validation:Yup.string().required("Required")
                 },
                 {
                     label: "Last name",
                     name: "patientLastName",
-                    placeholder: "E.G. Doe"
+                    placeholder: "E.G. Doe",
+                    validation:Yup.string()
                 },
                 {
                     label: "Date of birth",
                     name: "patientDob",
                     type: "date",
+                    validation: Yup.string().required("Required")
                 },
                 {
                     label: "Gender",
@@ -289,23 +298,27 @@ const FORM: FormBuilderFormType = {
                             label: "Trans",
                             value: "transgender"
                         },
-                    ]
+                    ],
+                    validation: Yup.string().required("Required").oneOf(["male", "female", "transgender"], "We only accept male, female and transgender")
                 },
                 {
                     label: "Profession",
                     name: "patientProfession",
                     placeholder: "E.G. Doctor",
+                    validation: Yup.string().required("Required")
                 },
                 {
                     label: "Address",
                     name: "patientAddress",
                     placeholder: "E.G. 123, Banani, Dhaka",
+                    validation: Yup.string().required("Required")
                 },
                 {
                     label: "Phone",
                     name: "patientPhone",
                     placeholder: "E.g: 01xxx-xxxxxx",
                     type: "tel",
+                    validation: Yup.string().required("Required")
                 },
                 {
                     label: "ID Type",
@@ -336,12 +349,14 @@ const FORM: FormBuilderFormType = {
                             label: "Ration Card",
                             value: "ration card"
                         },
-                    ]
+                    ],
+                    validation: Yup.string().required("Required").oneOf(["passport", "nid", "driving license", "birth certificate", "ration card"], "We only accept none, passport, nid, driving license, birth certificate and ration card")
                 },
                 {
                     label: "ID",
                     name: "patientId",
                     placeholder: "",
+                    validation: Yup.string()
                 },
             ],
         },
@@ -351,67 +366,8 @@ const FORM: FormBuilderFormType = {
 
 const RequestForm: React.FC<RequestFormPropsType> = ({ className, children, ...rest }: RequestFormPropsType) => {
     const classes = useStyles();
-    const initialValues: RequestFormType = {
-        // Patient Info
-        patientFirstName: "",
-        patientLastName: "",
-        patientDob: "",
-        patientGender: "male",
-        patientProfession: "",
-        patientAddress: "",
-        patientPhone: "",
-        patientIdType: "",
-        patientId: "",
-
-        // Donation Info
-        healthIssue: "",
-        bloodGroup: "A+",
-        quantity: 0,
-        donationType: "",
-        donationDateTime: "",
-        hospitalName: "",
-        hospitalAddress: "",
-        hospitalPhone: "",
-        hospitalEmail: "",
-
-        // Refferance & Contact
-        refId: "",
-        refPhone: "",
-
-        // Extra Info
-        note: "",
-    };
-
-    const validationScema = Yup.object().shape({
-        // Patient Info
-        patientFirstName: Yup.string().required("Required"),
-        patientLastName: Yup.string(),
-        patientDob: Yup.string().required("Required"),
-        patientGender: Yup.string().required("Required").oneOf(["male", "female", "transgender"], "We only accept male, female and transgender"),
-        patientProfession: Yup.string().required("Required"),
-        patientAddress: Yup.string().required("Required"),
-        patientPhone: Yup.string().required("Required"),
-        patientIdType: Yup.string().required("Required").oneOf(["passport", "nid", "driving license", "birth certificate", "ration card"], "We only accept none, passport, nid, driving license, birth certificate and ration card"),
-        patientId: Yup.string().required("Required"),
-
-        // Donation Info
-        healthIssue: Yup.string().required("Required"),
-        bloodGroup: Yup.string().required("Required").oneOf(["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"], "We only accept A+, A-, B+, B-, O+, O-, AB+, AB-"),
-        quantity: Yup.number().required("Required").min(1, "Must be greater than 0").max(5, "Must be less than 5"),
-        donationType: Yup.string().required("Required").oneOf(["whole blood", "plasma", "platelet", "double red cell"], "We only accept whole blood, plasma platelet and double red cell"),
-        donationDateTime: Yup.string().required("Required"),
-        hospitalName: Yup.string().required("Required"),
-        hospitalAddress: Yup.string().required("Required"),
-        hospitalPhone: Yup.string().required("Required"),
-        hospitalEmail: Yup.string().email().required("Required"),
-
-        // Refferance & Contact
-        refId: Yup.string().required("Required"),
-        refPhone: Yup.string().required("Required"),
-
-        // Extra Info
-        note: Yup.string(),
-    });
+    const initialValues = createFormikInitialValue(FORM);
+    const validationSchema = createFormikYupSchema(FORM);
 
     const onSubmitHandler = (values: RequestFormType, { setSubmitting }: FormikHelpers<RequestFormType>): void => {
         setSubmitting(true);
@@ -423,14 +379,14 @@ const RequestForm: React.FC<RequestFormPropsType> = ({ className, children, ...r
     };
 
     return (
-        <Formik initialValues={initialValues} validationSchema={validationScema} onSubmit={onSubmitHandler} {...rest}>
+        <Formik initialValues={initialValues as RequestFormType} validationSchema={validationSchema} onSubmit={onSubmitHandler} {...rest}>
             {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
                 <Form>
                     {/* General Information */}
                     <div>
 
                         {/* Creates form fields based on a object */}
-                        <FormBuilder form={FORM} onChange={handleChange} onBlur={handleBlur} values={values} errors={errors} />
+                        <FormBuilder form={FORM} onChange={handleChange} onBlur={handleBlur} values={values} touched={touched} errors={errors} />
 
                         {/* Submit Button */}
                         <div className={classes.form_footer}>
