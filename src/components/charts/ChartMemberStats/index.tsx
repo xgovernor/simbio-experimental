@@ -8,7 +8,6 @@
 import {
     Button,
     Card,
-    CardFooter,
     CardHeader,
     CardPreview,
     Menu,
@@ -16,23 +15,13 @@ import {
     MenuList,
     MenuPopover,
     MenuTrigger,
-    Text,
-    Toolbar,
-    ToolbarButton,
-    makeStyles,
-    tokens,
-    mergeClasses,
-    shorthands,
-    typographyStyles,
 } from "@fluentui/react-components";
 import {
     MoreHorizontal20Filled,
     Bug24Regular,
     BookQuestionMark24Regular,
-    ArrowSortDown24Filled,
     DocumentTableArrowRight24Regular,
 } from "@fluentui/react-icons";
-import Link from "next/link";
 import ReactECharts from "echarts-for-react";
 // import * as echarts from 'echarts/core';
 // import { BarChart } from 'echarts/charts';
@@ -40,21 +29,6 @@ import ReactECharts from "echarts-for-react";
 // import { CanvasRenderer } from 'echarts/renderers';
 import { FC, memo } from "react";
 
-const useStyles = makeStyles({
-    stats_header_title: {
-        ...shorthands.margin("0"),
-        ...typographyStyles.subtitle2Stronger,
-    },
-    stats_view_link: {
-        color: tokens.colorBrandForeground1,
-        ...typographyStyles.caption1Stronger,
-    },
-    stats_toolbar_button: {
-        minWidth: "calc(100% / 3)",
-        maxWidth: "calc(100% / 3)",
-        ...typographyStyles.caption1,
-    },
-});
 
 const options = {
     tooltip: {
@@ -112,7 +86,6 @@ const Chart: FC = () => (
 );
 
 const ChartMemberStats = () => {
-    const classes = useStyles();
 
     return (
         <Card className="w-full p-4">

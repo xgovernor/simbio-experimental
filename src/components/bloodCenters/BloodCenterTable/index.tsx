@@ -12,12 +12,7 @@ import {
     TableHeader,
     TableRow,
     Text,
-    Toolbar,
-    makeStyles,
-    mergeClasses,
-    shorthands,
-    tokens,
-    typographyStyles,
+    Toolbar
 } from "@fluentui/react-components";
 import { Map24Regular } from "@fluentui/react-icons";
 import Link from "next/link";
@@ -31,71 +26,7 @@ interface CentersTablePropsType {
     data: CentersItemType[];
 }
 
-const useStyles = makeStyles({
-    header: {
-        // backgroundColor: tokens.colorNeutralBackground4Pressed
-    },
-
-    header_title: {
-        ...typographyStyles.subtitle2Stronger,
-    },
-    table_description: {
-        ...typographyStyles.caption1,
-        color: tokens.colorNeutralForeground3,
-    },
-
-    table_head_row: {
-        ...shorthands.padding("", "22px"),
-        // MozBorderBottomColors: ...tokens.
-        borderBottomColor: "rgb(240, 240, 240)",
-    },
-    thc_label: {
-        width: "inherit",
-        position: "relative",
-        display: "inline-block",
-        ...typographyStyles.body1Strong,
-    },
-    tc_title: {
-        minWidth: "250px",
-        maxWidth: "250px",
-    },
-
-    table_body_row: {
-        ...shorthands.padding("", "22px"),
-        borderBottomColor: "rgb(240, 240, 240)",
-    },
-    // Table Body Cell
-    tbc_root: {
-        ...typographyStyles.caption1,
-        width: "100%",
-        maxWidth: "100px",
-    },
-    tbc_text: {
-        width: "inherit",
-        position: "relative",
-        ...typographyStyles.caption1,
-        color: tokens.colorNeutralForeground3,
-    },
-    tbc_name_label: {
-        ...typographyStyles.body1Strong,
-        color: tokens.colorNeutralForeground1,
-    },
-    stats_view_link: {
-        height: "12px",
-        color: tokens.colorBrandForeground1,
-        ...typographyStyles.caption1Stronger,
-        ...shorthands.margin("0"),
-        ...shorthands.padding("0"),
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "nowrap",
-        alignItems: "center",
-        justifyContent: "start",
-    },
-});
-
 const CentersTable: FC<CentersTablePropsType> = ({ title, description, data }: CentersTablePropsType) => {
-    const classes = useStyles();
 
     return (
         <section className="h-full w-full">
@@ -103,12 +34,12 @@ const CentersTable: FC<CentersTablePropsType> = ({ title, description, data }: C
                 <CardHeader
                     className="pe-0 ps-2.5"
                     header={
-                        <Text className={mergeClasses(classes.header_title, "m-0")} block as="h4">
+                        <h4 className={ "m-0 subtitle2Stronger"}>
                             {title}
-                        </Text>
+                        </h4>
                     }
                     description={
-                        <Text className={classes.table_description} block>
+                        <Text className={"caption1 text-[#adadad]"} block>
                             {description}
                         </Text>
                     }
@@ -123,12 +54,12 @@ const CentersTable: FC<CentersTablePropsType> = ({ title, description, data }: C
                 <CardPreview>
                     <Table className="w-full table-auto" sortable noNativeElements={true}>
                         <TableHeader className="sticky top-0 w-full">
-                            <TableHeaderRow classes={classes} />
+                            <TableHeaderRow />
                         </TableHeader>
 
                         <TableBody className="w-full">
                             {data.map((item, i) => (
-                                <TableBodyRow key={i} classes={classes} item={item} />
+                                <TableBodyRow key={i} item={item} />
                             ))}
                         </TableBody>
                     </Table>
@@ -138,14 +69,14 @@ const CentersTable: FC<CentersTablePropsType> = ({ title, description, data }: C
     );
 };
 
-const TableHeaderRow: FC<{ classes: any }> = ({ classes }) => (
-    <TableRow className={classes.table_head_row}>
-        <TableHeaderCell className={mergeClasses(classes.tc_title)} labelClass={classes.thc_label} label="Title" />
-        <TableHeaderCell className="max-w-32 w-full min-w-25" labelClass={classes.thc_label} label="Facility" />
-        <TableHeaderCell className="max-w-28 w-full min-w-25" labelClass={classes.thc_label} label="Phone" />
-        <TableHeaderCell className="max-w-40 w-full min-w-25" labelClass={classes.thc_label} label="Email" />
-        <TableHeaderCell className="w-full min-w-25 max-w-45" labelClass={classes.thc_label} label="Location" />
-        <TableHeaderCell className="w-full min-w-25 max-w-25" labelClass={classes.thc_label} label="" />
+const TableHeaderRow = () => (
+    <TableRow className="px-[22px] border-b-[rgb(240, 240, 240)]">
+        <TableHeaderCell className="min-w-[250px] w-full max-w-[300px]" labelClass="w-[inherit] relative inline-block body1Strong" label="Title" />
+        <TableHeaderCell className="max-w-[250px] w-full min-w-25" labelClass="w-[inherit] relative inline-block body1Strong" label="Facility" />
+        <TableHeaderCell className="max-w-28 w-full min-w-25" labelClass="w-[inherit] relative inline-block body1Strong" label="Phone" />
+        <TableHeaderCell className="max-w-40 w-full min-w-25" labelClass="w-[inherit] relative inline-block body1Strong" label="Email" />
+        <TableHeaderCell className="w-full min-w-25 max-w-45" labelClass="w-[inherit] relative inline-block body1Strong" label="Location" />
+        <TableHeaderCell className="w-full min-w-25 max-w-25" labelClass="w-[inherit] relative inline-block body1Strong" label="" />
     </TableRow>
 );
 
@@ -159,46 +90,44 @@ const TableHeaderCell: FC<{
     </TableCell>
 );
 
-const TableBodyRow: FC<{ classes: any; item: CentersItemType }> = ({ classes, item }) => {
+const TableBodyRow: FC<{item: CentersItemType }> = ({ item }) => {
     return useMemo(
         () => (
-            <TableRow key={item._id} className={classes.table_body_row}>
-                <TableCell className={mergeClasses(classes.tbc_root, classes.tc_title)}>
+            <TableRow key={item._id} className="px-[22px] border-b-[rgb(240, 240, 240)]">
+                <TableCell className="min-w-[250px] max-w-[300px] w-full">
                     <TableCellLayout
                         media={
                             <Avatar aria-label={item.name} name={item.name} image={{ src: item.avatar }} size={28} />
                         }
                     >
                         <Link href={`/members/${item._id}`}>
-                            <Text className={classes.tbc_name_label}>{item.name}</Text>
+                            <Text className="ms-1 font-medium text-sm">{item.name}</Text>
                         </Link>
                     </TableCellLayout>
                 </TableCell>
 
                 <TableBodyCell
-                    className={mergeClasses(classes.tbc_text, "max-w-32 w-full min-w-25")}
+                    className={"max-w-[250px] min-w-25 w-[inherit] relative caption1 text-[#575757] text-xs"}
                     valueClass=""
                     value={item.facility || ""}
                 />
                 <TableBodyCell
-                    className={mergeClasses(classes.tbc_text, "max-w-28 w-full min-w-25")}
+                    className="max-w-28 min-w-25  w-[inherit] relative caption1 text-[#575757]"
                     valueClass=""
                     value={item.phone}
                 />
                 <TableBodyCell
-                    className={mergeClasses(classes.tbc_text, "max-w-40 w-full min-w-25")}
+                    className="max-w-40 min-w-25 w-[inherit] relative caption1 text-[#575757]"
                     valueClass=""
                     value={item.email}
                 />
                 <TableBodyCell
-                    className={mergeClasses(classes.tbc_text, "w-full min-w-25 max-w-45")}
+                    className="min-w-25 max-w-45 w-[inherit] relative caption1 text-[#575757]"
                     valueClass=""
                     value={item.location}
                 />
 
-                <TableCell
-                    className={mergeClasses(classes.memberTable_body_preferedLocation, "w-full min-w-25 max-w-25")}
-                >
+                <TableCell className="w-full min-w-25 max-w-25" >
                     <TableCellLayout style={{ display: "flex", justifyContent: "center" }}>
                         <Link href={item.mapUrl} target="_blank">
                             <Button appearance="subtle" icon={<Map24Regular />} title="View in map" />
@@ -207,7 +136,7 @@ const TableBodyRow: FC<{ classes: any; item: CentersItemType }> = ({ classes, it
                 </TableCell>
             </TableRow>
         ),
-        [classes, item],
+        [item],
     );
 };
 

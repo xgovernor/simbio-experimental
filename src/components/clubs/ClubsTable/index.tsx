@@ -10,12 +10,7 @@ import {
     TableHeader,
     TableRow,
     Text,
-    Toolbar,
-    makeStyles,
-    mergeClasses,
-    shorthands,
-    tokens,
-    typographyStyles,
+    Toolbar
 } from "@fluentui/react-components";
 import Link from "next/link";
 import { FC, memo, useMemo } from "react";
@@ -30,161 +25,82 @@ interface ClubsTablePropsType {
     data: ClubItemType[];
 }
 
-const useStyles = makeStyles({
-    header_title: {
-        ...typographyStyles.subtitle2Stronger,
-    },
-    table_description: {
-        ...typographyStyles.caption1,
-        color: tokens.colorNeutralForeground3,
-    },
-
-    table_head_row: {
-        ...shorthands.padding("", "22px"),
-        // MozBorderBottomColors: ...tokens.
-        borderBottomColor: "rgb(240, 240, 240)",
-    },
-    thc_title: {
-        width: "100%",
-        minWidth: "100px",
-    },
-    thc_label: {
-        width: "inherit",
-        position: "relative",
-        display: "inline-block",
-        ...typographyStyles.body1Strong,
-    },
-    tc_name: {
-        minWidth: "250px",
-        width: "100%",
-        // maxWidth: "250px",
-    },
-    thc_member: {
-        minWidth: "100px",
-        maxWidth: "130px",
-        ...typographyStyles.caption1Strong,
-    },
-    thc_donation: {
-        minWidth: "100px",
-        maxWidth: "130px",
-    },
-    thc_phone: {
-        minWidth: "100px",
-        maxWidth: "170px",
-    },
-    tc_action: {
-        minWidth: "40px",
-        maxWidth: "40px",
-    },
-
-    table_body_row: {
-        ...shorthands.padding("", "22px"),
-        borderBottomColor: "rgb(240, 240, 240)",
-    },
-    // Table Body Cell
-    tbc_root: {
-        ...typographyStyles.caption1,
-        width: "100%",
-        maxWidth: "100px",
-    },
-    tbc_text: {
-        width: "inherit",
-        position: "relative",
-        ...typographyStyles.caption1,
-        color: tokens.colorNeutralForeground3,
-    },
-    tbc_name_label: {
-        ...typographyStyles.body1Strong,
-        color: tokens.colorNeutralForeground1,
-    },
-    tbc_member: {
-        maxWidth: "130px",
-        ...typographyStyles.caption1Strong,
-    },
-    tbc_donation: {
-        minWidth: "100px",
-        maxWidth: "130px",
-    },
-    tbc_phone: {
-        minWidth: "100px",
-        maxWidth: "170px",
-    },
-    tbc_location: {
-        minWidth: "250px",
-        // maxWidth: "250px",
-    },
-});
-
 const ClubsTable: FC<ClubsTablePropsType> = ({ title, description, data }: ClubsTablePropsType) => {
-    const classes = useStyles();
 
     return (
         <section className="h-full w-full">
-            <Card className="h-full w-full px-0 py-4">
-                <CardHeader
-                    className="pe-1 ps-5"
-                    header={<h4 className="subtitle2Stronger m-0">{title}</h4>}
-                    description={
-                        <Text className={classes.table_description} block>
+            <div className="py-4 shadow-md bg-white">
+                <div
+                    className="pe-1 ps-5 grid grid-cols-2 grid-rows-1 gap-y-2"
+                    style={{ gridTemplateColumns: "auto 1fr", gridTemplateRows: "auto" }}
+                >
+                    <div className="grid grid-cols-1 grid-rows-2 gap-y-1">
+                        <h4 className="subtitle2Stronger m-0">{title}</h4>
+                        <p className="caption1 text-[#adadad]">
                             {description}
-                        </Text>
-                    }
-                    action={
+                        </p>
+                    </div>
+
+                    <div className="flex justify-end">
                         <Toolbar>
                             <ClubsTableFilter />
                             <ClubsTableMenu />
                         </Toolbar>
-                    }
-                />
+                    </div>
+                </div>
 
-                <CardPreview>
+                <div className="pe-1 px-0 w-full relative">
                     <Table className="w-full" sortable noNativeElements={true}>
-                        <TableHeader className="sticky top-0 w-full">
-                            <TableHeaderRow classes={classes} />
+                        <TableHeader className="sticky top-0 w-full min-w-full">
+                            <TableHeaderRow />
                         </TableHeader>
 
-                        <TableBody className="w-full">
-                            {data?.map((item, i) => <TableBodyRow key={i} classes={classes} item={item} />)}
+                        <TableBody className="w-full min-w-full">
+                            {data?.map((item, i) => <TableBodyRow key={i} item={item} />)}
                         </TableBody>
                     </Table>
-                </CardPreview>
-            </Card>
+                </div>
+            </div>
         </section>
     );
 };
 
-const TableHeaderRow: FC<{ classes: any }> = ({ classes }) => (
-    <TableRow className={classes.table_head_row}>
-        <TableHeaderCell className={classes.tc_name} labelClass={classes.thc_label} label="Title" />
+const TableHeaderRow = () => (
+    <TableRow className="px-[22px] border-b-[rgb(240, 240, 240)] w-full">
         <TableHeaderCell
-            className={mergeClasses(classes.thc_title, classes.thc_member)}
-            labelClass={classes.thc_label}
+            className="min-w-[250px] w-full"
+            labelClass="w-[inherit] relative inline-block body1Strong"
+            label="Title"
+        />
+        <TableHeaderCell
+            className="w-full min-w-[100px] max-w-[130px] caption1Strong"
+            labelClass="w-[inherit] relative inline-block body1Strong"
             label="Members"
         />
         <TableHeaderCell
-            className={mergeClasses(classes.thc_title, classes.thc_donation)}
-            labelClass={classes.thc_label}
+            className="w-full min-w-[100px] max-w-[130px]"
+            labelClass="w-[inherit] relative inline-block body1Strong"
             label="Donations"
         />
         <TableHeaderCell
-            className={mergeClasses(classes.thc_title, classes.thc_phone)}
-            labelClass={classes.thc_label}
+            className="w-full min-w-[100px] max-w-[170px]"
+            labelClass="w-[inherit] relative inline-block body1Strong"
             label="Phone"
         />
         <TableHeaderCell
-            className={mergeClasses(classes.thc_title, classes.thc_email)}
-            labelClass={classes.thc_label}
+            className="w-full min-w-[100px] max-w-[250px]"
+            labelClass="w-[inherit] relative inline-block body1Strong"
             label="Email"
         />
         <TableHeaderCell
-            className={mergeClasses(classes.thc_title, classes.tbc_location)}
-            labelClass={classes.thc_label}
+            className="w-full min-w-[250px]"
+            labelClass="w-[inherit] relative inline-block body1Strong"
             label="Location"
         />
 
         <TableHeaderCell
-            className={mergeClasses(classes.thc_title, classes.tc_action)}
-            labelClass={classes.thc_label}
+            className="w-full min-w-10 max-w-10"
+            labelClass="w-[inherit] relative inline-block body1Strong"
             label=""
         />
     </TableRow>
@@ -200,55 +116,63 @@ const TableHeaderCell: FC<{
     </TableCell>
 );
 
-const TableBodyRow: FC<{ classes: any; item: ClubItemType }> = ({ classes, item }) => {
+const TableBodyRow: FC<{ item: ClubItemType }> = ({  item }) => {
     return useMemo(
         () => (
-            <TableRow key={item._id} className={classes.table_body_row}>
+            <TableRow key={item._id} className="border-b-[rgb(240, 240, 240)] active:bg-transparent min-w-full w-full max-w-full">
                 {/* Title */}
-                <TableCell className={mergeClasses(classes.tbc_root, classes.tc_name)}>
+                <TableCell className="caption1 w-full min-w-[250px] max-w-[250px]">
                     <TableCellLayout
+                        className="w-[inherit] min-w-[inherit] max-w-[inherit]"
                         media={
                             <Avatar aria-label={item.name} name={item.name} image={{ src: item.avatar }} size={28} />
                         }
                     >
                         <Link href={`/clubs/${item._id}`}>
-                            <Text className={classes.tbc_name_label}>{item.name}</Text>
+                            <Text className="body1Strong bg-white">{item.name}</Text>
                         </Link>
                     </TableCellLayout>
                 </TableCell>
 
                 {/* Total Member */}
                 <TableBodyCell
-                    className={mergeClasses(classes.tbc_text, classes.tbc_member)}
+                    className="inherit relative caption1 text-[#858585] caption1Strong max-w-[80px]"
                     valueClass=""
                     value={item.total_member || ""}
                 />
 
                 {/* Total Donation */}
                 <TableBodyCell
-                    className={mergeClasses(classes.tbc_text, classes.tbc_donation)}
+                    className="inherit relative caption1 text-[#adadad] min-w-[100px] max-w-[80px]"
                     valueClass=""
                     value={item.total_donation}
                 />
+
                 <TableBodyCell
-                    className={mergeClasses(classes.tbc_text, classes.tbc_phone)}
+                    className="inherit relative caption1 text-[#adadad] min-w-[150px] max-w-[170px]"
                     valueClass=""
                     value={item.phone}
                 />
+
                 <TableBodyCell
-                    className={mergeClasses(classes.tbc_text, classes.tbc_email)}
+                    className="inherit relative caption1 text-[#adadad] w-full min-w-[250px] max-w-[300px]"
                     valueClass=""
                     value={item.email}
                 />
                 <TableBodyCell
-                    className={mergeClasses(classes.tbc_text, classes.tbc_location)}
+                    className="inherit relative caption1 text-[#adadad] min-w-[250px] w-full justify-end"
                     valueClass=""
                     value={item.location}
                 />
-                <TableBodyCell className={mergeClasses(classes.tbc_text, classes.tc_action)} value={<ClubRowMenu />} />
+
+                <TableCell className="max-w-10 w-full min-w-10 m-0 ">
+                    <TableCellLayout className="max-w-10 w-full min-w-10">
+                        <ClubRowMenu />
+                    </TableCellLayout>
+                </TableCell>
             </TableRow>
         ),
-        [classes, item],
+        [item],
     );
 };
 
@@ -258,7 +182,7 @@ const TableBodyCell: FC<{
     value: any;
 }> = ({ className, value, valueClass }) => (
     <TableCell className={className}>
-        <TableCellLayout>
+        <TableCellLayout className="w-[inherit] min-w-[inherit] max-w-[inherit]">
             <Text className={valueClass}>{value}</Text>
         </TableCellLayout>
     </TableCell>

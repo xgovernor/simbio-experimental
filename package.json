@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "commit": "commit",
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint:check": "next lint",

@@ -62,7 +62,6 @@ export type FormBuilderPropsType = {
 };
 
 const FormBuilder: React.FC<FormBuilderPropsType> = ({ form, onChange, onBlur, values, errors, touched }: FormBuilderPropsType) => {
-    console.log("Form Builder", touched)
     return (
         <>
             {form.sections.map((section: any, index: number) => (

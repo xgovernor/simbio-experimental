@@ -17,7 +17,7 @@ export type TeamsItemType = {
     president: string;
     vice_president?: string;
     management: string;
-    status: TeamStatus;
+    status: string;  // TeamStatus;
 };
 
 export type TeamsResponseType = {
@@ -32,11 +32,6 @@ export type PageConfig = {
     settings?: boolean;
     table?: boolean;
 };
-
-interface PageRootComponentPropsType {
-    data: TeamsResponseType;
-    config: PageConfig;
-}
 
 interface PageRootComponentPropsType {
     data: TeamsResponseType;

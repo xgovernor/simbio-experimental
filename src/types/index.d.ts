@@ -2,7 +2,7 @@ import { SelectProps } from "@fluentui/react-components";
 
 export type BloodType = "A+" | "A-" | "B+" | "B-" | "AB+" | "AB-" | "O+" | "O-" | undefined;
 
-export type TeamStatus = "active" | "inactive" | "pending";
+export type TeamStatus = "Active" | "Inactive" | "Pending";
 
 type AddressType = {
     address: string;

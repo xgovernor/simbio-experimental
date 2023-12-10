@@ -1,5 +1,6 @@
 import PageRootComponent, {  ContactResponseType, PageConfig } from "./PageRootComponent";
 import { memo } from "react";
+import data from "@/assets/data/contacts.json";
 
 
 /**
@@ -7,15 +8,15 @@ import { memo } from "react";
  *
  * @return {Promise<RequestResponseType>} The retrieved data.
  */
-async function getData(): Promise<ContactResponseType> {
-    const res = await fetch("http://localhost:3000/data/contacts.json");
-    const data = await res.json();
+// async function getData(): Promise<ContactResponseType> {
+//     const res = await fetch("http://localhost:3000/data/contacts.json");
+//     const data = await res.json();
 
-    return data;
-}
+//     return data;
+// }
 
 const PageContacts = async () => {
-    const data = await getData();
+    // const data = await getData();
     const config: PageConfig = {
         analytics: true,
         settings: true,

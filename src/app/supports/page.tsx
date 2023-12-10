@@ -3,7 +3,6 @@ import PageRootComponent, { OrganizationsResponseType, PageConfig } from "./Page
 import { memo } from "react";
 
 
-
 const ORGANIZATIONS: OrganizationsItemType[] = [
     {
         id: "SMBSO001",
@@ -78,15 +77,15 @@ const ORGANIZATIONS_DATA: OrganizationsResponseType = {
  *
  * @return {Promise<RequestResponseType>} The retrieved data.
  */
-async function getData() {
-    const res = await fetch("http://localhost:3000/data/contacts.json");
-    const data = await res.json();
+// async function getData() {
+//     const res = await fetch("http://localhost:3000/data/contacts.json");
+//     const data = await res.json();
 
-    return data;
-}
+//     return data;
+// }
 
 const PageSupports = async () => {
-    const data = await getData();
+    // const data = await getData();
     const config: PageConfig = {
         analytics: true,
         settings: true,

@@ -1,5 +1,6 @@
 import PageRootComponent from "./PageRootComponent";
 import { memo } from "react";
+import data from "@/assets/data/requests.json";
 
 export type RequestItemType = {
     _id: string;
@@ -27,15 +28,15 @@ export type RequestResponseType = {
  *
  * @return {Promise<RequestResponseType>} The retrieved data.
  */
-async function getData(): Promise<RequestResponseType> {
-    const res = await fetch("http://localhost:3000/data/requests.json");
-    const data = await res.json();
+// async function getData() {
+//     const res = await fetch("/data/requests.json");
+//     const data = await res.json();
 
-    return data;
-}
+//     return data;
+// }
 
 const PageBloodRequest = async () => {
-    const data = await getData();
+    // const data = await getData();
 
 
     return (

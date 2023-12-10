@@ -1,8 +1,4 @@
-import {
-    Button,
-    makeStyles,
-    shorthands,
-} from "@fluentui/react-components";
+import {    Button} from "@fluentui/react-components";
 import { Form, Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { memo } from "react";
@@ -38,61 +34,13 @@ interface RequestFormType {
     hospitalPhone: string;
     hospitalEmail: string;
 
-    // Refferance & Contact
+    // Reference & Contact
     refId: string;
     refPhone: string;
 
     // Extra Info
     note: string;
 }
-
-const useStyles = makeStyles({
-
-    input_label: {
-        width: "100%",
-        maxWidth: "150px",
-        minWidth: "125px",
-        fontSize: "13px",
-        lineHeight: "32px",
-        fontWeight: "500",
-    },
-    input_filed_wrapper: {
-        width: "100%",
-    },
-    input_field: {
-        width: "100%",
-    },
-    input_message: {
-        color: "red",
-        fontSize: "12px",
-        marginTop: "2px",
-        marginBottom: "2px",
-    },
-    field_address: {
-        width: "100%",
-
-        "& input": {
-            width: "calc(100%)",
-        },
-    },
-    form_footer: {
-        width: "100%",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "flex-end",
-        ...shorthands.gap("16px"),
-    },
-
-    w100: {
-        width: "100%",
-        maxWidth: "100%",
-    },
-    w50: {
-        width: "calc(50% - 22px)",
-        maxWidth: "calc(50% - 22px)",
-    },
-});
 
 const FORM: FormBuilderFormType = {
     sectionClassName: "w-full grid grid-cols-2 gap-x-13 gap-y-3",
@@ -365,7 +313,6 @@ const FORM: FormBuilderFormType = {
 }
 
 const RequestForm: React.FC<RequestFormPropsType> = ({ className, children, ...rest }: RequestFormPropsType) => {
-    const classes = useStyles();
     const initialValues = createFormikInitialValue(FORM);
     const validationSchema = createFormikYupSchema(FORM);
 
@@ -389,7 +336,7 @@ const RequestForm: React.FC<RequestFormPropsType> = ({ className, children, ...r
                         <FormBuilder form={FORM} onChange={handleChange} onBlur={handleBlur} values={values} touched={touched} errors={errors} />
 
                         {/* Submit Button */}
-                        <div className={classes.form_footer}>
+                        <div className="w-full flex flex-row items-center justify-end gap-4">
                             <Button
                                 type="submit"
                                 appearance="primary"
@@ -400,8 +347,7 @@ const RequestForm: React.FC<RequestFormPropsType> = ({ className, children, ...r
                         </div>
                     </div>
                 </Form>
-            )
-            }
+            )}
         </Formik >
     );
 };
