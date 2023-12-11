@@ -1,4 +1,7 @@
-import PageRootComponent, { PageConfig, TeamsResponseType } from "./PageRootComponent";
+import PageRootComponent, {
+  PageConfig,
+  TeamsResponseType,
+} from "./PageRootComponent";
 import { memo } from "react";
 import data from "@/assets/data/teams.json";
 
@@ -8,24 +11,21 @@ import data from "@/assets/data/teams.json";
  * @return {Promise<RequestResponseType>} The retrieved data.
  */
 // async function getData(): Promise<TeamsResponseType> {
-//     const res = await fetch("http://localhost:3000/data/teams.json");
+//     const res = await fetch("/data/teams.json");
 //     const data = await res.json();
 
 //     return data;
 // }
 
 const PageTeams = async () => {
-    // const data = await getData();
-    const config: PageConfig = {
-        analytics: false,
-        settings: false,
-        table: true,
-    };
+  // const data = await getData();
+  const config: PageConfig = {
+    analytics: false,
+    settings: false,
+    table: true,
+  };
 
-    return (
-        <PageRootComponent data={data} config={config} />
-    );
+  return <PageRootComponent data={data} config={config} />;
 };
-
 
 export default memo(PageTeams);

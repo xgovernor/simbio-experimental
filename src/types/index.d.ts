@@ -1,66 +1,75 @@
 import { SelectProps } from "@fluentui/react-components";
 
-export type BloodType = "A+" | "A-" | "B+" | "B-" | "AB+" | "AB-" | "O+" | "O-" | undefined;
+export type BloodType =
+  | "A+"
+  | "A-"
+  | "B+"
+  | "B-"
+  | "AB+"
+  | "AB-"
+  | "O+"
+  | "O-"
+  | undefined;
 
 export type TeamStatus = "Active" | "Inactive" | "Pending";
 
 type AddressType = {
-    address: string;
-    city: string;
-    district: string;
-    zip: string;
-    country: string;
+  address: string;
+  city: string;
+  district: string;
+  zip: string;
+  country: string;
 };
 
 // DynamicSelect
 export interface OptionType {
-    key?: string;
-    value?: string;
-    label: string;
+  key?: string;
+  value?: string;
+  label: string;
 }
 export type DynamicSelectPropsType = SelectProps & {
-    options: OptionType[];
-    name: string;
+  options: OptionType[];
+  name: string;
 };
 
 export interface SettingsMenuTabType {
-    id: string;
-    name: string;
-    icon: React.ReactElement;
-    component?: React.ReactElement;
+  id: string;
+  name: string;
+  icon: React.ReactElement;
+  component?: React.ReactElement;
 }
 
 // Menu Item
 export interface MenuItemType {
-    id?: string;
-    title: string;
-    url: string;
-    icon?: React.ReactElement;
+  id?: string;
+  title: string;
+  url: string;
+  icon?: React.ReactElement;
 }
 
 // Settings
 export type LanguageItemType = {
-    key?: string;
-    label: string;
-    value?: string;
+  key?: string;
+  label: string;
+  value?: string;
 };
 
 export type TimeZoonItemType = {
-    key?: string;
-    label: string;
-    value: string;
+  key?: string;
+  label: string;
+  value: string;
 };
 
 export type TimeFormatType = {
-    key?: string;
-    label: string;
-    value: string;
+  key?: string;
+  label: string;
+  value: string;
 };
 
 export type DateFormatType = {
-    key?: string;
-    label: string;
-    value: string;
+  key?: string;
+  label: string;
+  value: string;
 };
 
 /* ***************************************************************** */

@@ -1,4 +1,7 @@
-import PageRootComponent, { PageConfig, ClubsResponseType } from "./PageRootComponent";
+import PageRootComponent, {
+  PageConfig,
+  ClubsResponseType,
+} from "./PageRootComponent";
 import { memo } from "react";
 import data from "@/assets/data/clubs.json";
 
@@ -15,17 +18,14 @@ import data from "@/assets/data/clubs.json";
 // }
 
 const PageClubs = async () => {
-    // const data = await getData();
-    const config: PageConfig = {
-        analytics: false,
-        settings: false,
-        table: true,
-    };
+  // const data = await getData();
+  const config: PageConfig = {
+    analytics: false,
+    settings: false,
+    table: true,
+  };
 
-    return (
-        <PageRootComponent data={data} config={config} />
-    );
+  return <PageRootComponent data={data} config={config} />;
 };
-
 
 export default memo(PageClubs);

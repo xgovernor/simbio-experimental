@@ -7,4 +7,4 @@ npx lint-staged
 # Add other checks, e.g., type checking and tests
 # Example with TypeScript and Jest:
 # npx tsc --noEmit
-# npx jest
+# npx jestyarn next lint

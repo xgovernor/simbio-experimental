@@ -1,20 +1,19 @@
 import { memo } from "react";
 
 interface CanvasHeaderPropsType {
-    title?: string;
-    icon?: React.ReactNode;
+  title?: string;
+  icon?: React.ReactNode;
 }
 
-const CanvasHeader: React.FC<CanvasHeaderPropsType> = ({ title, icon }: CanvasHeaderPropsType) => {
+const CanvasHeader: React.FC<CanvasHeaderPropsType> = ({
+  title,
+  icon,
+}: CanvasHeaderPropsType) => {
   return (
-    <header className="w-full h-12 sticky top-0 flex flex-row flex-nowrap items-center justify-start bg-white z-1">
-      <div className="w-full h-full py-[14px] px-5 flex flex-row flex-nowrap items-center justify-start gap-3 text-primary">
-        {icon && (<>{icon}</>)}
-        {title && (
-          <p className="font-bold text-sm text-primary">
-            {title}
-          </p>
-        )}
+    <header className="sticky top-0 z-1 flex h-12 w-full flex-row flex-nowrap items-center justify-start bg-white">
+      <div className="flex h-full w-full flex-row flex-nowrap items-center justify-start gap-3 px-5 py-[14px] text-primary">
+        {icon && <>{icon}</>}
+        {title && <p className="text-sm font-bold text-primary">{title}</p>}
       </div>
     </header>
   );

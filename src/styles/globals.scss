@@ -5,31 +5,33 @@
 
 html,
 body {
-    padding: 0;
-    margin: 0;
-    font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi,
-        "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha,
-        Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa",
-        "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti",
-        "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", Roboto, Ebrima,
+    "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI",
+    "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee,
+    "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic",
+    "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue",
+    "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti",
+    "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 img {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  display: block;
 }
 
 // Scrollbar
 /* width */
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }

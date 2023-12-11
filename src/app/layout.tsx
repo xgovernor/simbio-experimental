@@ -1,15 +1,15 @@
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 import "@/styles/globals.scss";
 
 export const metadata: Metadata = {
-  title: 'Simbio',
-  description: 'A centralized blood donation platform',
-}
+  title: "Simbio",
+  description: "A centralized blood donation platform",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -23,7 +23,10 @@ export default function RootLayout({
         <meta name="application-name" content={metadata.title as string} />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content={metadata.title as string} />
+        <meta
+          name="apple-mobile-web-app-title"
+          content={metadata.title as string}
+        />
         <meta name="description" content={metadata.description as string} />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -72,7 +75,10 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://yourdomain.com" />
         <meta name="twitter:title" content={metadata.title as string} />
-        <meta name="twitter:description" content={metadata.description as string} />
+        <meta
+          name="twitter:description"
+          content={metadata.description as string}
+        />
         <meta
           name="twitter:image"
           content="https://yourdomain.com/icons/android-chrome-192x192.png"
@@ -80,7 +86,10 @@ export default function RootLayout({
         <meta name="twitter:creator" content="@abutahermuhammad" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={metadata.title as string} />
-        <meta property="og:description" content={metadata.description as string} />
+        <meta
+          property="og:description"
+          content={metadata.description as string}
+        />
         <meta property="og:site_name" content={metadata.title as string} />
         <meta property="og:url" content="https://yourdomain.com" />
         <meta
@@ -101,5 +110,5 @@ export default function RootLayout({
       </head>
       <body>{children}</body>
     </html>
-  )
+  );
 }

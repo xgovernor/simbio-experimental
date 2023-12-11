@@ -8,38 +8,50 @@ import SearchForm from "./SearchForm";
 import AppUpdates from "./AppUpdates";
 import Toolbar from "../components/Toolbar";
 
-const Navbar = ({ className, ...rest }: { className?: string; rest?: object }) => {
-    return (
-        <header className={className}>
-            <nav className="flex h-12 w-full items-center justify-center bg-primary text-white">
-                <div className="mx-auto my-0 flex w-full items-center justify-between px-5 py-2">
-                    <div className="flex w-1/4 items-center justify-start">
-                        <div className="flex items-center justify-center text-base font-medium">
-                            <Link href="/">
-                                <Image src={LOGO} priority height={24} width={101} alt="Simbio" />
-                            </Link>
-                        </div>
-                    </div>
+const Navbar = ({
+  className,
+  ...rest
+}: {
+  className?: string;
+  rest?: object;
+}) => {
+  return (
+    <header className={className}>
+      <nav className="flex h-12 w-full items-center justify-center bg-primary text-white">
+        <div className="mx-auto my-0 flex w-full items-center justify-between px-5 py-2">
+          <div className="flex w-1/4 items-center justify-start">
+            <div className="flex items-center justify-center text-base font-medium">
+              <Link href="/">
+                <Image
+                  src={LOGO}
+                  priority
+                  height={24}
+                  width={101}
+                  alt="Simbio"
+                />
+              </Link>
+            </div>
+          </div>
 
-                    <div className="flex w-1/2 items-center justify-center gap-4">
-                        {/* Routing Acions */}
-                        <RouteNav />
-                        <SearchForm />
-                    </div>
+          <div className="flex w-1/2 items-center justify-center gap-4">
+            {/* Routing Acions */}
+            <RouteNav />
+            <SearchForm />
+          </div>
 
-                    <div className="flex w-1/4 items-center justify-end gap-4">
-                        <Toolbar>
-                            {/* Theme */}
-                            <AppUpdates />
-                        </Toolbar>
+          <div className="flex w-1/4 items-center justify-end gap-4">
+            <Toolbar>
+              {/* Theme */}
+              <AppUpdates />
+            </Toolbar>
 
-                        {/* Action */}
-                        <UserMenu />
-                    </div>
-                </div>
-            </nav>
-        </header>
-    );
+            {/* Action */}
+            <UserMenu />
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
 };
 
 export default memo(Navbar);

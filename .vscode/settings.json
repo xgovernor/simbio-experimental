@@ -1,5 +1,12 @@
 {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "cSpell.words": ["echarts", "fluentui", "formik", "reduxjs", "simbio"]
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "cSpell.words": [
+    "echarts",
+    "fluentui",
+    "formik",
+    "reduxjs",
+    "simbio",
+    "tailwindcss"
+  ]
 }

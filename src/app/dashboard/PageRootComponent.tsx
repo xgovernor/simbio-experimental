@@ -7,29 +7,27 @@ import ChartTeamStats from "@/components/charts/ChartTeamStats";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import { memo } from "react";
 
-
 const PageRootComponent = () => {
-    return (
-        <DashboardLayout>
-            <ChartMatrix>
-                <ChartTeamStats />
-                <ChartMemberAgeDemographic />
-                <ChartMemberActivity />
-                <ChartMemberStats />
-                <ChartTeamStats />
-                <ChartMemberActivity />
-                <ChartTeamStats />
-                <ChartTeamStats />
-                <ChartMemberActivity />
-                <ChartTeamStats />
-                <ChartMemberAgeDemographic />
-                <ChartTeamStats />
-                <ChartMemberStats />
-                <ChartTeamStats />
-            </ChartMatrix>
-        </DashboardLayout>
-    );
+  return (
+    <DashboardLayout>
+      <ChartMatrix>
+        <ChartTeamStats />
+        <ChartMemberAgeDemographic />
+        <ChartMemberActivity />
+        <ChartMemberStats />
+        <ChartTeamStats />
+        <ChartMemberActivity />
+        <ChartTeamStats />
+        <ChartTeamStats />
+        <ChartMemberActivity />
+        <ChartTeamStats />
+        <ChartMemberAgeDemographic />
+        <ChartTeamStats />
+        <ChartMemberStats />
+        <ChartTeamStats />
+      </ChartMatrix>
+    </DashboardLayout>
+  );
 };
-
 
 export default memo(PageRootComponent);

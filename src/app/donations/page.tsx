@@ -1,7 +1,9 @@
-import PageRootComponent, { DonationResponseType, PageConfig } from "./PageRootComponent";
+import PageRootComponent, {
+  DonationResponseType,
+  PageConfig,
+} from "./PageRootComponent";
 import { memo } from "react";
 import data from "@/assets/data/donations.json";
-
 
 /**
  * Retrieves data from the specified URL.
@@ -9,24 +11,21 @@ import data from "@/assets/data/donations.json";
  * @return {Promise<RequestResponseType>} The retrieved data.
  */
 // async function getData(): Promise<DonationResponseType> {
-//     const res = await fetch("http://localhost:3000/data/donations.json");
+//     const res = await fetch("/data/donations.json");
 //     const data = await res.json();
 
 //     return data;
 // }
 
 const PageDonations = async () => {
-    // const data = await getData();
-    const config: PageConfig = {
-        analytics: true,
-        settings: true,
-        table: true,
-    };
+  // const data = await getData();
+  const config: PageConfig = {
+    analytics: true,
+    settings: true,
+    table: true,
+  };
 
-    return (
-        <PageRootComponent data={data} config={config} />
-    );
+  return <PageRootComponent data={data} config={config} />;
 };
-
 
 export default memo(PageDonations);

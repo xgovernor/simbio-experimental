@@ -5,18 +5,20 @@ import DashboardMenuBar from "../DashboardMenuBar";
 import Layout from "../../Layout";
 
 interface DashboardLayoutProps {
-    children: ReactNode;
+  children: ReactNode;
 }
 
-const DashboardLayout: FC<DashboardLayoutProps> = ({ children }: DashboardLayoutProps) => {
-    return (
-        <Layout>
-            <DashboardHeader />
-            <DashboardMenuBar />
+const DashboardLayout: FC<DashboardLayoutProps> = ({
+  children,
+}: DashboardLayoutProps) => {
+  return (
+    <Layout>
+      <DashboardHeader />
+      <DashboardMenuBar />
 
-            <div className="w-full">{children}</div>
-        </Layout>
-    );
+      <div className="w-full">{children}</div>
+    </Layout>
+  );
 };
 
 export default memo(DashboardLayout);

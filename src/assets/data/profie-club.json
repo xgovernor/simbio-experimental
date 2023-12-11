@@ -1,12 +1,12 @@
 {
-    "id": "SMB5545",
-    "avatar": "/iimage/bss.jpg",
-    "name": "Blood Solider Society",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
-    "total_blood_rised": 500,
-    "total_donor": 900,
-    "total_collaboration": 150,
-    "total_fund_raised": 58950,
-    "total_members": 100,
-    "total_volunteers": 50
+  "id": "SMB5545",
+  "avatar": "/iimage/bss.jpg",
+  "name": "Blood Solider Society",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
+  "total_blood_rised": 500,
+  "total_donor": 900,
+  "total_collaboration": 150,
+  "total_fund_raised": 58950,
+  "total_members": 100,
+  "total_volunteers": 50
 }

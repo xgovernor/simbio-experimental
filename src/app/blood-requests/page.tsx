@@ -3,24 +3,24 @@ import { memo } from "react";
 import data from "@/assets/data/requests.json";
 
 export type RequestItemType = {
-    _id: string;
-    avatar: string;
-    name: string;
-    blood_group: string;
-    blood_type: string;
-    quantity: string;
-    delivery_date: string;
-    health_issue: string;
-    location: string;
-    status: string;
-    phone: string;
+  _id: string;
+  avatar: string;
+  name: string;
+  blood_group: string;
+  blood_type: string;
+  quantity: string;
+  delivery_date: string;
+  health_issue: string;
+  location: string;
+  status: string;
+  phone: string;
 };
 
 export type RequestResponseType = {
-    data: RequestItemType[];
-    offset: number;
-    total: number;
-    limit: number;
+  data: RequestItemType[];
+  offset: number;
+  total: number;
+  limit: number;
 };
 
 /**
@@ -36,13 +36,9 @@ export type RequestResponseType = {
 // }
 
 const PageBloodRequest = async () => {
-    // const data = await getData();
+  // const data = await getData();
 
-
-    return (
-        <PageRootComponent data={data} />
-    );
+  return <PageRootComponent data={data} />;
 };
-
 
 export default memo(PageBloodRequest);

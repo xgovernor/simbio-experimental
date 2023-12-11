@@ -1,11 +1,11 @@
 {
-    "recommendations": [
-        "esbenp.prettier-vscode",
-        "dbaeumer.vscode-eslint",
-        "editorconfig.editorconfig",
-        "ms-azuretools.vscode-docker",
-        "visualstudioexptteam.vscodeintellicode",
-        "eamodio.gitlens",
-        "streetsidesoftware.code-spell-checker"
-    ]
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "ms-azuretools.vscode-docker",
+    "visualstudioexptteam.vscodeintellicode",
+    "eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker"
+  ]
 }

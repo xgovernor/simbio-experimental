@@ -1,31 +1,31 @@
-import PageRootComponent, {  CentersResponseType, PageConfig } from "./PageRootComponent";
+import PageRootComponent, {
+  CentersResponseType,
+  PageConfig,
+} from "./PageRootComponent";
 import { memo } from "react";
-
+import data from "@/assets/data/blood-centers.json";
 
 /**
  * Retrieves data from the specified URL.
  *
  * @return {Promise<RequestResponseType>} The retrieved data.
  */
-async function getData(): Promise<CentersResponseType> {
-    const res = await fetch("http://localhost:3000/data/blood-centers.json");
-    const data = await res.json();
+// async function getData(): Promise<CentersResponseType> {
+//     const res = await fetch("/data/blood-centers.json");
+//     const data = await res.json();
 
-    return data;
-}
+//     return data;
+// }
 
 const PageCenters = async () => {
-    const data = await getData();
-    const config: PageConfig = {
-        analytics: true,
-        settings: true,
-        table: true,
-    };
+  // const data = await getData();
+  const config: PageConfig = {
+    analytics: true,
+    settings: true,
+    table: true,
+  };
 
-    return (
-        <PageRootComponent data={data} config={config} />
-    );
+  return <PageRootComponent data={data} config={config} />;
 };
-
 
 export default memo(PageCenters);
