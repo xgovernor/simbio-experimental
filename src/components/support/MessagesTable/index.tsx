@@ -221,7 +221,7 @@ const TableRow: React.FC<SupportMessageItemType> = ({
   message,
   status,
   isViewed,
-}: SupportMessageItemType) => {
+}) => {
   return (
     <tr
       role="row"
@@ -311,9 +311,7 @@ const PriorityBadge = ({
 }) => {
   return (
     <span
-      className={`${
-        className && className
-      } relative me-2 flex max-w-fit items-center justify-center gap-1 rounded-full border border-gray-500 ${getColorWithKey(
+      className={`${className} relative me-2 flex max-w-fit items-center justify-center gap-1 rounded-full border border-gray-500 ${getColorWithKey(
         priority,
         "border",
       )} px-2 font-mono leading-none text-gray-800`}
