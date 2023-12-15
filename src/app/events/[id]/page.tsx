@@ -1,8 +1,8 @@
 import PageRootComponent from "./PageRootComponent";
 import { memo } from "react";
 
-const PageSystemStatus = async () => {
+const PageSingleEvent = async () => {
   return <PageRootComponent />;
 };
 
-export default memo(PageSystemStatus);
+export default memo(PageSingleEvent);

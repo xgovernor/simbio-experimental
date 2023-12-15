@@ -1,11 +1,10 @@
-"use client";
-import { memo } from "react";
 import Layout from "@/components/ui/Layout";
+import { memo } from "react";
 
 const PageRootComponent = () => {
   return (
     <Layout>
-      <h1>Users</h1>
+      <h1>Collection Center Form</h1>
     </Layout>
   );
 };

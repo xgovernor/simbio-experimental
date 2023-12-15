@@ -1,4 +1,4 @@
-import { CentersItemType } from "@/app/collection-center/PageRootComponent";
+import { CentersItemType } from "@/app/collection-centers/PageRootComponent";
 import {
   Avatar,
   Button,
