@@ -1,9 +1,5 @@
-import PageRootComponent, {
-  PageConfig,
-  UsersResponseType,
-} from "./PageRootComponent";
 import { memo } from "react";
-import data from "@/assets/data/members.json";
+import PageRootComponent from "./PageRootComponent";
 
 /**
  * Retrieves data from the specified URL.
@@ -19,13 +15,8 @@ import data from "@/assets/data/members.json";
 
 const PageUsers = async () => {
   // const data = await getData();
-  const config: PageConfig = {
-    analytics: true,
-    settings: true,
-    members: true,
-  };
 
-  return <PageRootComponent data={data} config={config} />;
+  return <PageRootComponent />;
 };
 
 export default memo(PageUsers);
