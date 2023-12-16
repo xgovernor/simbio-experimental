@@ -2,6 +2,7 @@ import Date from "@/components/ui/Date";
 import { SupportMessagePriorityType, SupportMessageStatusType } from "@/types";
 import { getColorWithKey } from "@/utils/color-factory";
 import { Card, CardPreview } from "@fluentui/react-components";
+import Image from "next/image";
 import { memo } from "react";
 
 const COLUMNS = [
@@ -161,7 +162,13 @@ const MESSAGES: SupportMessageItemType[] = [
   },
 ];
 
-const MessagesTable = () => {
+export type MessagesTablePropsType = {
+  title: string;
+  address: string;
+  logo: string;
+}
+
+const MessagesTable: React.FC<MessagesTablePropsType> = ({ title, address, logo }) => {
   return (
     <Card
       className="w-full rounded-md p-0"
@@ -170,7 +177,7 @@ const MessagesTable = () => {
       }}
     >
       <CardPreview className="m-0 min-w-full p-0">
-        <SupportHeader />
+        <SupportHeader title={title} address={address} logo={logo} />
 
         {/* content overflow section remove table and thead but keep tbody and change tbody to section, in order to have scrollable overflow section */}
         <table className="max-h-content grid h-fit w-full grid-cols-1">
@@ -334,13 +341,18 @@ const PriorityBadge = ({
   );
 };
 
-const SupportHeader = () => {
+const SupportHeader = ({ logo, title, address }: any) => {
   return (
     <>
       <header className="h-fit max-h-fit">
-        <div className="px-5 py-5">
-          <h1 className="text-xl font-bold">Blood Donor Club New York</h1>
-          <p className="text-sm">Downtown, NY, USA</p>
+        <div className="px-5 py-5 flex justify-start items-center gap-3">
+          <div className="img">
+            <Image src={logo} width={48} height={48} alt="blood-donor" />
+          </div>
+          <div>
+            <h1 className="text-xl font-bold">{title}</h1>
+            <p className="text-sm">{address}</p>
+          </div>
         </div>
 
         {/* <div className="flex gap-3 bg-gray-100 px-5 py-3"> */}

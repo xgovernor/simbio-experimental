@@ -34,5 +34,5 @@ export const store = configureStore({
     }),
 });
 
-export type StoreState = ReturnType<typeof store.getState>;
+export type StoreStateType = ReturnType<typeof store.getState>;
 export type StoreDispatch = typeof store.dispatch;

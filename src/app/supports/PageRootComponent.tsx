@@ -4,8 +4,10 @@ import SupportOrganizations, {
   OrganizationsItemType,
 } from "@/components/support/SupportOrganizations";
 import Layout from "@/components/ui/Layout";
+import { selectSupport, updateOrganizations } from "@/store/actions/support.action";
 import { PeopleAdd24Regular } from "@fluentui/react-icons";
-import { memo } from "react";
+import { memo, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 export type PageConfig = {
   analytics?: boolean;
@@ -30,6 +32,13 @@ const SupportPage: React.FC<SupportOrganizationsPropsType> = ({
   organizations,
   config,
 }: SupportOrganizationsPropsType) => {
+  const dispatch = useDispatch();
+  const supportState = useSelector(selectSupport);
+
+  useEffect(() => {
+    dispatch(updateOrganizations(organizations));
+  }, [])
+
   return (
     <Layout title="Support messages" icon={<PeopleAdd24Regular />} className="">
       <div
@@ -44,7 +53,7 @@ const SupportPage: React.FC<SupportOrganizationsPropsType> = ({
         <SupportOrganizations organizations={organizations.data} />
 
         {/* section content  */}
-        <MessagesTable />
+        <MessagesTable title={supportState.data.organization.name} address={supportState.data.organization.address} logo={supportState.data.organization.avatar} />
       </div>
     </Layout>
   );
