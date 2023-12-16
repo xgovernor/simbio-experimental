@@ -1,5 +1,5 @@
 "use client";
-import { updateTheme } from "@/store/actions/settingsReducer";
+import { updateTheme } from "@/store/actions/settings.action";
 import {
   Avatar,
   Menu,
