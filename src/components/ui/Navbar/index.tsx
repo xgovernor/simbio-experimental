@@ -10,11 +10,10 @@ import Toolbar from "../components/Toolbar";
 
 const Navbar = ({
   className,
-  ...rest
 }: {
   className?: string;
-  rest?: object;
 }) => {
+
   return (
     <header className={className}>
       <nav className="flex h-12 w-full items-center justify-center bg-primary text-white">

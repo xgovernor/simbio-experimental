@@ -1,14 +1,14 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import settingsReducer from "./reducers/settingsReducer";
-import userReducer from "./reducers/userReducer";
+import settingsReducer from "./actions/settingsReducer";
+import userReducer from "./actions/userReducer";
 
-const rootReducer = combineReducers({
+const reducers = combineReducers({
   settings: settingsReducer,
   user: userReducer,
 });
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: reducers,
   devTools: process.env.NODE_ENV !== "production",
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
