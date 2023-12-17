@@ -23,7 +23,7 @@ interface LayoutPropsType {
   rest?: object;
 }
 
-const MENU_LIST: SidebarMenuItemType[] = [
+const SIDEBAR_MENU_ITEMS: SidebarMenuItemType[] = [
   {
     name: "Home",
     description: "Home page",
@@ -93,7 +93,7 @@ const Layout: React.FC<LayoutPropsType> = ({
 
           <Sidebar
             className="col-span-1 col-start-1 col-end-2 row-span-2 row-start-2 row-end-4 flex w-17 flex-col flex-nowrap items-center justify-start overflow-y-auto overflow-x-hidden pt-3"
-            menu={MENU_LIST}
+            menu={SIDEBAR_MENU_ITEMS}
           />
 
           <Canvas
