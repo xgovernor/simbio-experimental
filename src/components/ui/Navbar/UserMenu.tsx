@@ -30,7 +30,6 @@ const UserMenu: FC<UserMenuPropsType> = ({ className }: UserMenuPropsType) => {
   const router = useRouter();
   const settings = useSelector((state: any) => state.settings);
 
-
   const changeTheme = (): void => {
     dispatch(updateTheme());
     console.log("Theme Changed");
@@ -49,18 +48,26 @@ const UserMenu: FC<UserMenuPropsType> = ({ className }: UserMenuPropsType) => {
             aria-label="Avatar"
             icon={
               <Image
-                className="rounded-full w-[32px] h-[32px]"
+                className="h-[32px] w-[32px] rounded-full"
                 src={settings.data.user?.avatar}
                 width={32}
                 height={32}
-                alt={settings.data.user?.name} />}
+                alt={settings.data.user?.name}
+                loading="lazy"
+                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjExOSIgdmlld0JveD0iMCAwIDEyMCAxMTkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik05Ny44NTA4IDc0LjIzNTFDOTYuMDE5NiA3MC42MjE2IDk0LjA1NyA2Ny4xNDMzIDkxLjk3MTcgNjMuODExQzgyLjAzMjQgNzkuMjM4IDY1LjM5MiA5My4wNDE0IDQ0LjMwODUgMTAxLjYyNUw1MS4zNjE4IDExOC45NUM3My4xNjgxIDExMC4wNzMgODkuMzgyOCA5My41NzE1IDk3Ljg1MDggNzQuMjM1MVoiIGZpbGw9IiNGQkJDMDUiLz4KPHBhdGggZD0iTTU0LjcwNzUgOTUuMzYwNEM1Ny41OTE5IDkzLjc1NzIgNjAuMzgxMiA5Mi4wNjc5IDYzLjA2OTIgOTAuMjk5NEM0NC41MjA1IDgxLjQwODggMjcuMzU0OCA2Mi44NDEgMTcuMzIzMyAzOC4yMDE1TDAgNDUuMjU0NEMxMC4zNjk3IDcwLjczMTYgMzEuMTQ5NCA4OC41OTY4IDU0LjcwNzUgOTUuMzYwNFoiIGZpbGw9IiMzNEE4NTMiLz4KPHBhdGggZD0iTTgyLjUwMzggMTcuMzI0NUw3NS40NTA0IDBDNTAuNjM2MiAxMC4xMDI3IDMzLjA1MzIgMzAuMDgxOCAyNS45MDU1IDUyLjg3OTdDMjcuNjM5NiA1NS43MzY3IDI5LjQ2OTcgNTguNDc3MiAzMS4zNzExIDYxLjExODNDNDAuNjAxNCA0My4zMTkyIDU4LjczMTggMjcuMDAyOSA4Mi41MDM4IDE3LjMyNDVaIiBmaWxsPSIjNDI4NUY0Ii8+CjxwYXRoIGQ9Ik0xMTkuNDQxIDczLjI2NjdDMTA5LjgwOSA0OS42MDc5IDkxLjIwNTMgMzIuNTE3OCA2OS43MzYgMjQuNzc4OUM2Ni42MzY1IDI2LjU5NzQgNjMuNjU0MSAyOC41MTMxIDYwLjc5NzUgMzAuNTE5NUM3Ny42MjM0IDQwLjEwNzIgOTIuODg2OCA1Ny42NDkzIDEwMi4xMTcgODAuMzIwMUwxMTkuNDQxIDczLjI2NjdaIiBmaWxsPSIjRUE0MzM1Ii8+CjxwYXRoIGQ9Ik02Mi4yNTgzIDcxLjg3NTlDNjguMjA5NiA3MS44NzU5IDczLjAzNDEgNjcuMDUxNCA3My4wMzQxIDYxLjEwMDFDNzMuMDM0MSA1NS4xNDg3IDY4LjIwOTYgNTAuMzI0MiA2Mi4yNTgzIDUwLjMyNDJDNTYuMzA2OSA1MC4zMjQyIDUxLjQ4MjQgNTUuMTQ4NyA1MS40ODI0IDYxLjEwMDFDNTEuNDgyNCA2Ny4wNTE0IDU2LjMwNjkgNzEuODc1OSA2Mi4yNTgzIDcxLjg3NTlaIiBmaWxsPSIjMTk0QjY3Ii8+Cjwvc3ZnPgo="
+              />
+            }
           />
         </MenuTrigger>
 
         <MenuPopover className="h-[280px] min-h-[270px] w-full min-w-[320px] max-w-[320px] rounded border-0 bg-white p-0 shadow-lg">
           <div className="inherit flex h-[268px] min-h-[220px] flex-col items-center justify-center p-[14px]">
             {/* <Link href={"/user/profile"}> */}
-            <Link href={"/user"} title={settings.data.user?.name} className="mb-3">
+            <Link
+              href={"/user"}
+              title={settings.data.user?.name}
+              className="mb-3"
+            >
               <Avatar
                 className="mx-[10] my-[15]"
                 name={settings.data.user?.name}
@@ -76,7 +83,9 @@ const UserMenu: FC<UserMenuPropsType> = ({ className }: UserMenuPropsType) => {
                 </p>
               </Link>
 
-              <p className="body1 text-center">{settings.data.user?.designation}</p>
+              <p className="body1 text-center">
+                {settings.data.user?.designation}
+              </p>
 
               <Link href={"/profile"}>
                 <p className="body1Strong text-center hover:text-primary hover:underline">

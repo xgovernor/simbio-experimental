@@ -1,7 +1,6 @@
 "use client";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import { FC, Suspense, memo } from "react";
-import { BloodType } from "@/types";
 import ChartMatrix from "@/components/charts/ChartMatrix";
 import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
 import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";

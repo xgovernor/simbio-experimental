@@ -68,7 +68,7 @@ const profileMenu: MenuItemType[] = [
   },
   {
     title: "Centers",
-    url: "/collection-center",
+    url: "/collection-centers",
     icon: <HomeMore24Regular />,
   },
 ];

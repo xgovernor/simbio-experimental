@@ -27,7 +27,7 @@ import ReactECharts from "echarts-for-react";
 // import { BarChart } from 'echarts/charts';
 // import { TitleComponent, TooltipComponent } from 'echarts/components';
 // import { CanvasRenderer } from 'echarts/renderers';
-import { FC, memo } from "react";
+import { memo } from "react";
 
 const options = {
   tooltip: {
@@ -76,7 +76,7 @@ const options = {
   ],
 };
 
-const Chart: FC = () => (
+const Chart = () => (
   <ReactECharts
     className="h-55 max-h-55 w-full"
     option={options}

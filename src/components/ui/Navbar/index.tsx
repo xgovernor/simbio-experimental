@@ -8,12 +8,7 @@ import SearchForm from "./SearchForm";
 import AppUpdates from "./AppUpdates";
 import Toolbar from "../components/Toolbar";
 
-const Navbar = ({
-  className,
-}: {
-  className?: string;
-}) => {
-
+const Navbar = ({ className }: { className?: string }) => {
   return (
     <header className={className}>
       <nav className="flex h-12 w-full items-center justify-center bg-primary text-white">
