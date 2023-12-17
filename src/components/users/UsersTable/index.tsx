@@ -6,6 +6,7 @@ import {
   Table,
   TableBody,
   TableCell,
+  TableCellActions,
   TableCellLayout,
   TableHeader,
   TableRow,
@@ -17,35 +18,29 @@ import { FC, memo, useMemo } from "react";
 import UsersTableFilter from "./UsersTableFilter";
 import UsersTableMenu from "./UsersTableMenu";
 
-export type TeamItemType = {
-  _id: string;
+export type UsersItemType = {
+  id: string;
   avatar: string;
   name: string;
-  designation: string;
-  period_from: string;
-  period_to: string;
-  phone: string;
+  role: string;
   email: string;
-  location: string;
+  organization: string;
+  org_id: string;
   status: string;
 };
 
 interface UsersTablePropsType {
   title: string;
   description?: string;
-  data: TeamItemType[];
+  data: UsersItemType[];
 }
 
-const UsersTable: FC<UsersTablePropsType> = ({
-  title,
-  description,
-  data,
-}: UsersTablePropsType) => {
+const UsersTable: FC<UsersTablePropsType> = ({ title, description, data }) => {
   return (
     <section className="h-full w-full">
       <Card className="h-full w-full pe-0 ps-0">
         <CardHeader
-          className="pe-0 ps-2.5"
+          className="pe-0 ps-4"
           header={<h4 className="subtitle2Stronger m-0">{title}</h4>}
           description={<p className="caption1 text-[#adadad]">{description}</p>}
           action={
@@ -56,7 +51,7 @@ const UsersTable: FC<UsersTablePropsType> = ({
           }
         />
 
-        <CardPreview>
+        <CardPreview className="mx-0 pe-0">
           <Table className="w-full" sortable noNativeElements={true}>
             <TableHeader className="sticky top-0 w-full">
               <TableHeaderRow />
@@ -75,36 +70,31 @@ const UsersTable: FC<UsersTablePropsType> = ({
 };
 
 const TableHeaderRow = () => (
-  <TableRow className="border-b-[rgb(240, 240, 240)] px-[22px]">
+  <TableRow className="border-b-[rgb(240, 240, 240)]">
     <TableHeaderCell
-      className="w-full min-w-[250px] max-w-[250px]"
-      labelClass="w-full relative inline-block body1Strong"
-      label="Name"
+      className="w-full min-w-[250px] max-w-[300px] ps-4"
+      labelClass="w-full relative inline-block body1Strong font-semibold"
+      label="User"
     />
     <TableHeaderCell
       className="w-full min-w-[100px] max-w-[130px]"
-      labelClass="w-full relative inline-block body1Strong"
-      label="Designation"
+      labelClass="w-full relative inline-block body1Strong font-semibold"
+      label="Role"
     />
     <TableHeaderCell
       className="w-full min-w-[100px] max-w-[230px]"
-      labelClass="w-full relative inline-block body1Strong"
-      label="Timeline"
-    />
-    <TableHeaderCell
-      className="w-full min-w-[100px] max-w-[150px]"
-      labelClass="w-full relative inline-block body1Strong"
-      label="Phone"
-    />
-    <TableHeaderCell
-      className="w-full min-w-[100px] max-w-[200px]"
-      labelClass="w-full relative inline-block body1Strong"
+      labelClass="w-full relative inline-block body1Strong font-semibold"
       label="Email"
     />
     <TableHeaderCell
-      className="w-full min-w-[40px]"
-      labelClass="w-full relative inline-block body1Strong"
-      label="Location"
+      className="w-full min-w-[100px] max-w-[230px]"
+      labelClass="w-full relative inline-block body1Strong font-semibold"
+      label="Organization"
+    />
+    <TableHeaderCell
+      className="w-full min-w-[100px] max-w-[150px]"
+      labelClass="w-full relative inline-block body1Strong font-semibold"
+      label="Actions"
     />
   </TableRow>
 );
@@ -119,12 +109,13 @@ const TableHeaderCell: FC<{
   </TableCell>
 );
 
-const TableBodyRow: FC<{ item: TeamItemType }> = ({ item }) => {
+const TableBodyRow: FC<{ item: UsersItemType }> = ({ item }) => {
   return useMemo(
     () => (
-      <TableRow key={item._id} className="border-b-rgb(240, 240, 240) px-[22]">
-        <TableCell className="caption1 w-full min-w-[100px] max-w-[100px]">
+      <TableRow key={item.id} className="border-b-rgb(240, 240, 240) px-[22]">
+        <TableCell className="caption1 w-full min-w-[250px] max-w-[300px] ps-4">
           <TableCellLayout
+            className="gap-3"
             media={
               <Avatar
                 aria-label={item.name}
@@ -134,37 +125,42 @@ const TableBodyRow: FC<{ item: TeamItemType }> = ({ item }) => {
               />
             }
           >
-            <Link href={`/members/${item._id}`}>
-              <p className="body1Strong">{item.name}</p>
-            </Link>
+            <h3 className="text-sm font-bold text-[#212524]">
+              <Link href={`/members/${item.id}`}>{item.name}</Link>
+            </h3>
           </TableCellLayout>
         </TableCell>
 
         <TableBodyCell
           className="caption1 caption1Strong relative w-full max-w-[130px] text-[#adadad]"
           valueClass=""
-          value={item.designation || ""}
+          value={item.role || ""}
         />
         <TableBodyCell
           className="caption1 relative w-full min-w-[100px] max-w-[230px] text-[#adadad]"
-          valueClass=""
-          value={` ${item.period_from} - ${item.period_to}`}
-        />
-        <TableBodyCell
-          className="caption1 relative w-full min-w-[100px] max-w-[150px] text-[#adadad]"
-          valueClass=""
-          value={item.phone}
-        />
-        <TableBodyCell
-          className="caption1 relative w-full min-w-[100px] max-w-[200px] text-[#adadad]"
           valueClass=""
           value={item.email}
         />
         <TableBodyCell
           className="caption1 min-w-10 relative w-full text-[#adadad]"
           valueClass=""
-          value={item.location}
+          value={"(+880) 123 456 7894"}
         />
+        <TableBodyCell
+          className="caption1 caption1Strong relative w-full max-w-[130px] text-[#adadad]"
+          valueClass=""
+          value={
+            <p className="text-xs text-[#616161]">
+              <Link href={`/organizations/${item.org_id}`}>
+                {item.organization}
+              </Link>
+            </p>
+          }
+        />
+
+        <TableCell>
+          <TableCellActions />
+        </TableCell>
       </TableRow>
     ),
     [item],

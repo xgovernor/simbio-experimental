@@ -366,7 +366,7 @@ const SupportHeader = ({ logo, title, address }: any) => {
           </div>
         </div>
 
-        {/* <div className="flex gap-3 bg-gray-100 px-5 py-3"> */}
+        {/* <div className="flex gap-3 bg-gray-[100px] px-5 py-3"> */}
         {/* <form> */}
         {/* <Field> */}
         {/* <Select className="body1Strong" appearance="filled-lighter"> */}

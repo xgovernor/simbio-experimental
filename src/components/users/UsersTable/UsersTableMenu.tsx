@@ -14,7 +14,7 @@ import {
 import Link from "next/link";
 import { FC, memo } from "react";
 
-const TeamTableMenu: FC = () => {
+const UsersTableMenu: FC = () => {
   return (
     <Menu>
       <MenuTrigger disableButtonEnhancement>
@@ -44,4 +44,4 @@ const TeamTableMenu: FC = () => {
   );
 };
 
-export default memo(TeamTableMenu);
+export default memo(UsersTableMenu);

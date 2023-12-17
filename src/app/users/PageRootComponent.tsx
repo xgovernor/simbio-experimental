@@ -5,22 +5,12 @@ import ChartMatrix from "@/components/charts/ChartMatrix";
 import ChartMemberStats from "@/components/charts/ChartMemberStats";
 import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
 import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";
-import ClubsTable from "@/components/clubs/ClubsTable";
+import UsersTable, { UsersItemType } from "@/components/users/UsersTable";
+import { DataTable } from "./data-table";
+import { columns } from "./columns";
 
-export type ClubItemType = {
-  _id: string;
-  avatar: string;
-  name: string;
-  location: string;
-  total_member: number;
-  total_donation: number;
-  phone: string;
-  email: string;
-  status: string;
-};
-
-export type ClubsResponseType = {
-  data: ClubItemType[];
+export type UsersResponseType = {
+  data: UsersItemType[];
   offset: number;
   total: number;
   limit: number;
@@ -32,25 +22,17 @@ export type PageConfig = {
 };
 
 interface PageRootComponentPropsType {
-  data: ClubsResponseType;
+  data: UsersResponseType;
   config: PageConfig;
 }
 
-/**
- * Renders the Clubs Page component.
- *
- * @param isSettings - Boolean indicating whether it is in settings mode.
- * @param isAnalytics - Boolean indicating whether it is in analytics mode.
- * @param data - Data containing club information.
- * @returns The Clubs Page component.
- */
 const PageRootComponent: FC<PageRootComponentPropsType> = ({
   data,
   config,
-}: PageRootComponentPropsType) => {
+}) => {
   return (
     <DashboardLayout>
-      <div className="grid grid-cols-1 gap-22px p-[22px]">
+      <div className="grid grid-cols-1 gap-[22px] p-[22px]">
         {/* Render the admin analytics section if in analytics mode */}
         {config.analytics && (
           <ChartMatrix>
@@ -61,11 +43,13 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
         )}
 
         {/* Render the clubs table */}
-        <ClubsTable
+        {/* <UsersTable
           title="Clubs Table"
           description={`Showing ${data?.limit} of ${data?.total} clubs`}
           data={data?.data}
-        />
+        /> */}
+
+        <DataTable columns={columns} data={data?.data} />
       </div>
     </DashboardLayout>
   );

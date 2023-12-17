@@ -23,7 +23,7 @@ import { FC, memo, useMemo, useState } from "react";
 import DonationTableFilter from "./DonationTableFilter";
 import DonationTableMenu from "./DonationTableMenu";
 
-interface DontaionsTablePropsType {
+interface DonationsTablePropsType {
   className?: string;
   title: string;
   description?: string;
@@ -118,13 +118,13 @@ const useStyles = makeStyles({
   tbc_prefLocation: {},
 });
 
-const DontaionsTable: FC<DontaionsTablePropsType> = ({
+const DonationsTable: FC<DonationsTablePropsType> = ({
   className,
   title,
   description,
   data,
   ...rest
-}: DontaionsTablePropsType) => {
+}: DonationsTablePropsType) => {
   const classes = useStyles();
   const [showSearch, setShowSearch] = useState(false);
 
@@ -285,4 +285,4 @@ const TableBodyCell: FC<{
   </TableCell>
 );
 
-export default memo(DontaionsTable);
+export default memo(DonationsTable);

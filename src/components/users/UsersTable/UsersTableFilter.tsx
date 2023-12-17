@@ -18,7 +18,7 @@ import { Form, Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { BloodType } from "@/types";
 
-type TeamTableFilterFormType = {
+type UsersTableFilterFormType = {
   firstName: string;
   lastName: string;
   email: string;
@@ -29,8 +29,8 @@ type TeamTableFilterFormType = {
   prefLocation: string;
 };
 
-const TeamTableFilter = () => {
-  const initialValues: TeamTableFilterFormType = {
+const UsersTableFilter = () => {
+  const initialValues: UsersTableFilterFormType = {
     firstName: "",
     lastName: "",
     email: "",
@@ -53,8 +53,8 @@ const TeamTableFilter = () => {
   });
 
   const onSubmitHandler = (
-    values: TeamTableFilterFormType,
-    { setSubmitting }: FormikHelpers<TeamTableFilterFormType>,
+    values: UsersTableFilterFormType,
+    { setSubmitting }: FormikHelpers<UsersTableFilterFormType>,
   ): void => {
     setSubmitting(true);
 
@@ -244,4 +244,4 @@ const TeamTableFilter = () => {
   );
 };
 
-export default React.memo(TeamTableFilter);
+export default React.memo(UsersTableFilter);

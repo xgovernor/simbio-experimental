@@ -249,7 +249,7 @@ const FORM: FormBuilderFormType = {
     },
     {
       title: "Extra Info",
-      className: "w-full grid grid-cols-1 gap-x-13 gap-y-3",
+      className: "w-full grid grid-cols-1 gap-x-[3.25rem] gap-y-3",
       labelClassName:
         "w-full max-w-[250px] min-w-[125px] text-[13px] leading-[32px] font-medium",
       fields: [

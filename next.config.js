@@ -14,6 +14,9 @@ const nextConfig = {
   devIndicators: {
     buildActivityPosition: "top-right",
   },
+  images: {
+    domains: ["simbio.dot9.dev", "example.com"],
+  },
   // experimental: {
   //     instrumentationHook: true
   // },

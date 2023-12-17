@@ -46,7 +46,7 @@ interface RequestFormType {
 }
 
 const FORM: FormBuilderFormType = {
-  sectionClassName: "w-full grid grid-cols-2 gap-x-13 gap-y-3",
+  sectionClassName: "w-full grid grid-cols-2 gap-x-[3.25rem] gap-y-3",
   fieldClassName: "flex flex-row items-start justify-between gap-4 w-full",
   labelClassName:
     "w-full max-w-[150px] min-w-[125px] text-[13px] leading-[32px] font-medium",

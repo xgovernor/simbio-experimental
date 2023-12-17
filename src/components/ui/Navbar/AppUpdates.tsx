@@ -111,7 +111,7 @@ const AppUpdates: FC = () => {
         />
       </MenuTrigger>
 
-      <MenuPopover className="max-h-[500px] max-w-[400px] rounded border-gray-100 p-0 shadow-lg">
+      <MenuPopover className="border-gray-[100px] max-h-[500px] max-w-[400px] rounded p-0 shadow-lg">
         <div className="sticky top-0 z-[2] flex items-center justify-between bg-[#f5f5f5] px-[14px] pb-1 pt-2">
           <p className="subtitle2">Updates</p>
 

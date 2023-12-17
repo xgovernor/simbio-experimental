@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "@/styles/globals.scss";
 import { StoreProvider } from "@/store/StoreProvider";
+// import { GeistSans } from "geist/font/sans";
+// import { GeistMono } from "geist/font/mono";
 
 export const metadata: Metadata = {
   title: "Simbio",
@@ -14,6 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <StoreProvider>
+      {/* <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}> */}
       <html lang="en">
         <head>
           <meta charSet="utf-8" />
@@ -24,7 +27,10 @@ export default function RootLayout({
           {/* Meta Codes */}
           <meta name="application-name" content={metadata.title as string} />
           <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+          <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="default"
+          />
           <meta
             name="apple-mobile-web-app-title"
             content={metadata.title as string}
@@ -32,7 +38,10 @@ export default function RootLayout({
           <meta name="description" content={metadata.description as string} />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
-          <meta name="msapplication-config" content="/icons/browserconfig.xml" />
+          <meta
+            name="msapplication-config"
+            content="/icons/browserconfig.xml"
+          />
           <meta name="msapplication-TileColor" content="#2B5797" />
           <meta name="msapplication-tap-highlight" content="no" />
           <meta name="theme-color" content="#000000" />

@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: ["class"],
   important: true,
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,21 +12,24 @@ const config: Config = {
     "./src/utils/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
       },
+    },
+    extend: {
+      // fontFamily: {
+      //   sans: ['var(--font-geist-sans)'],
+      //   mono: ['var(--font-geist-mono)'],
+      // },
       colors: {
         primary: "#194B67", // rgb(38 105 160)
       },
       spacing: {
-        5.5: "22px",
-        "22px": "22px",
         13: "3.25rem",
         17: "68px",
-        "18px": "18px",
         100: "100px",
       },
       width: {
@@ -97,10 +101,24 @@ const config: Config = {
       zIndex: {
         1: "1",
       },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
     },
   },
   jit: true,
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
 
 export default config;

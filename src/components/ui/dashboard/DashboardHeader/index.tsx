@@ -6,7 +6,7 @@ import Link from "next/link";
 const DashboadHeader: FC = () => {
   return (
     <section className="flex w-full items-center justify-center bg-white">
-      <div className="flex w-full flex-row flex-nowrap items-start justify-between p-22px">
+      <div className="flex w-full flex-row flex-nowrap items-start justify-between p-[22px]">
         <div className="w-2/5">
           <div className="flex w-full flex-row flex-nowrap items-center justify-start gap-6">
             <div className="flex h-24 w-24 rounded-full">

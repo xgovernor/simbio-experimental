@@ -1,11 +1,12 @@
 import Layout from "@/components/ui/Layout";
+import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import { memo } from "react";
 
 const PageRootComponent = () => {
   return (
-    <Layout>
+    <DashboardLayout>
       <h1>Single member page</h1>
-    </Layout>
+    </DashboardLayout>
   );
 };
 

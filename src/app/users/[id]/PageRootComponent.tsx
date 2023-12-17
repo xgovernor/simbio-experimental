@@ -1,11 +1,11 @@
-import Layout from "@/components/ui/Layout";
+import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import { memo } from "react";
 
 const PageRootComponent = () => {
   return (
-    <Layout>
+    <DashboardLayout>
       <h1>User Profile</h1>
-    </Layout>
+    </DashboardLayout>
   );
 };
 

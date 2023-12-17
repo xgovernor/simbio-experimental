@@ -7,7 +7,7 @@ import DeviceList from "@/components/settings/DeviceList";
 const PageRootComponent: FC = () => {
   return (
     <DashboardLayout>
-      <div className="grid grid-cols-4 gap-22px p-[22px] 2xl:grid-cols-6">
+      <div className="grid grid-cols-4 gap-[22px] p-[22px] 2xl:grid-cols-6">
         {/* Profile Stats */}
         <div className="col-span-4 col-start-1 col-end-5 rounded bg-white p-5 shadow">
           <div className="grid grid-cols-4 gap-5">

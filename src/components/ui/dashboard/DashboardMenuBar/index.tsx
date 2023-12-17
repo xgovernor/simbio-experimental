@@ -104,7 +104,7 @@ const profileActionMenu: MenuItemType[] = [
   },
   {
     title: "Add Donation",
-    url: "/donation/new ",
+    url: "/donations/new ",
     icon: <MoneyHand24Regular />,
   },
   {
