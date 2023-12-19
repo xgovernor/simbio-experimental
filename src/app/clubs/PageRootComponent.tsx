@@ -5,19 +5,7 @@ import ChartMatrix from "@/components/charts/ChartMatrix";
 import ChartMemberStats from "@/components/charts/ChartMemberStats";
 import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
 import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";
-import ClubsTable from "@/components/clubs/ClubsTable";
-
-export type ClubItemType = {
-  _id: string;
-  avatar: string;
-  name: string;
-  location: string;
-  total_member: number;
-  total_donation: number;
-  phone: string;
-  email: string;
-  status: string;
-};
+import ClubsTable, { ClubItemType } from "@/components/clubs/ClubsTable";
 
 export type ClubsResponseType = {
   data: ClubItemType[];
@@ -36,14 +24,6 @@ interface PageRootComponentPropsType {
   config: PageConfig;
 }
 
-/**
- * Renders the Clubs Page component.
- *
- * @param isSettings - Boolean indicating whether it is in settings mode.
- * @param isAnalytics - Boolean indicating whether it is in analytics mode.
- * @param data - Data containing club information.
- * @returns The Clubs Page component.
- */
 const PageRootComponent: FC<PageRootComponentPropsType> = ({
   data,
   config,
@@ -60,11 +40,13 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
           </ChartMatrix>
         )}
 
-        {/* Render the clubs table */}
         <ClubsTable
           title="Clubs Table"
           description={`Showing ${data?.limit} of ${data?.total} clubs`}
           data={data?.data}
+          // columns={columns}
+          // data={tasks}
+          // filters={{ priorities, statuses }}
         />
       </div>
     </DashboardLayout>

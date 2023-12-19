@@ -13,6 +13,7 @@ export type UsersResponseType = {
   total: number;
   limit: number;
 };
+
 export type PageConfig = {
   analytics?: boolean;
   settings?: boolean;
@@ -49,14 +50,6 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
           // data={tasks}
           // filters={{ priorities, statuses }}
         />
-
-        {/* This component moved to the UserTable component */}
-        {/* <DataGrid
-          columns={columns}
-          // data={data?.data}
-          data={tasks}
-          filters={{ priorities, statuses }}
-        /> */}
       </div>
     </DashboardLayout>
   );

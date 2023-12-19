@@ -1,28 +1,26 @@
 import {
-  Avatar,
-  Card,
-  CardHeader,
-  CardPreview,
-  Table,
-  TableBody,
-  TableCell,
-  TableCellLayout,
-  TableHeader,
-  TableRow,
-  Text,
-  Toolbar,
-  ToolbarButton,
   makeStyles,
-  mergeClasses,
   shorthands,
   tokens,
   typographyStyles,
 } from "@fluentui/react-components";
-import { FC, memo, useMemo } from "react";
+import { FC, memo } from "react";
 import MembersTableMenu from "./MembersTableMenu";
-import MembersTableFilter from "./MembersTableFilter";
-import Link from "next/link";
-import { MemberItemType } from "@/app/members/PageRootComponent";
+import { columns, filters } from "./data";
+import { DataGrid } from "@/components/ui/DataGrid";
+
+export type MemberItemType = {
+  id: string;
+  avatar: string;
+  name: string;
+  gender: "Male" | "Female" | "Trans";
+  blood_group: string; // "A+" | "A-" | "B+" | "B-" | "AB+" | "AB-" | "O+" | "O-"; // BloodType;
+  last_blood_donation: string;
+  phone: string;
+  location: string;
+  status: string;
+  role: string;
+};
 
 interface MembersTablePropsType {
   className?: string;
@@ -124,169 +122,34 @@ const MembersTable: FC<MembersTablePropsType> = ({
   const classes = useStyles();
 
   return (
-    <section className="h-full w-full" {...rest}>
-      <Card className="h-full w-full pe-0 ps-0">
-        <CardHeader
-          className="pe-0 ps-2.5"
-          header={
-            <Text
-              className={mergeClasses(classes.header_title, "m-0")}
-              block
-              as="h4"
-            >
+    <>
+      <section
+        className="gap grid h-full w-full gap-3 rounded bg-white"
+        style={{
+          boxShadow: "0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.14)",
+        }}
+      >
+        {/* Card Header */}
+        <div className="relative flex w-full flex-nowrap justify-between gap-3 pe-2 ps-5 pt-4">
+          <div className="">
+            <h1 className="text-[16px] font-bold leading-[22px] text-[#242424]">
               {title}
-            </Text>
-          }
-          description={
-            <Text className={classes.table_description} block>
-              {description}
-            </Text>
-          }
-          action={
-            <Toolbar>
-              <MembersTableFilter />
-              <MembersTableMenu />
-            </Toolbar>
-          }
-        />
+            </h1>
+            <p className="text-xs text-[#616161]">{description}</p>
+          </div>
 
-        <CardPreview>
-          <Table className="w-full" sortable noNativeElements={true}>
-            <TableHeader className="sticky top-0 w-full">
-              <TableHeaderRow classes={classes} />
-            </TableHeader>
+          <div className="flex gap-2">
+            <MembersTableMenu />
+          </div>
+        </div>
 
-            <TableBody className="w-full">
-              {data.map((item, i) => (
-                <TableBodyRow key={i} classes={classes} item={item} />
-              ))}
-            </TableBody>
-          </Table>
-        </CardPreview>
-      </Card>
-    </section>
+        {/* Card Body */}
+        <div className="pb-4">
+          <DataGrid columns={columns} data={data} filters={filters} />
+        </div>
+      </section>
+    </>
   );
 };
-
-const TableHeaderRow: FC<{ classes: any }> = ({ classes }) => (
-  <TableRow className={classes.memberTable_head_row}>
-    <TableHeaderCell
-      className={mergeClasses(classes.thc_title, classes.thc_name)}
-      labelClass={classes.thc_label}
-      label="Name"
-    />
-    <TableHeaderCell
-      className={mergeClasses(classes.thc_title, classes.thc_gender)}
-      labelClass={classes.thc_label}
-      label="Gender"
-    />
-    <TableHeaderCell
-      className={mergeClasses(classes.thc_title, classes.thc_blood)}
-      labelClass={classes.thc_label}
-      label="Blood"
-    />
-    <TableHeaderCell
-      className={mergeClasses(classes.thc_title, classes.thc_donation)}
-      labelClass={classes.thc_label}
-      label="Last Donation"
-    />
-    <TableHeaderCell
-      className={mergeClasses(classes.thc_title, classes.thc_phone)}
-      labelClass={classes.thc_label}
-      label="Phone"
-    />
-    <TableHeaderCell
-      className={mergeClasses(classes.thc_title, classes.thc_location)}
-      labelClass={classes.thc_label}
-      label="Location"
-    />
-    <TableHeaderCell
-      className={mergeClasses(classes.thc_title, classes.thc_prefLocation)}
-      labelClass={classes.thc_label}
-      label="Prefered Location"
-    />
-  </TableRow>
-);
-
-const TableHeaderCell: FC<{
-  className: any;
-  label: string;
-  labelClass: any;
-}> = ({ className, label, labelClass }) => (
-  <TableCell className={className}>
-    <Text className={labelClass}>{label}</Text>
-  </TableCell>
-);
-
-const TableBodyRow: FC<{ classes: any; item: MemberItemType }> = ({
-  classes,
-  item,
-}) => {
-  return useMemo(
-    () => (
-      <TableRow key={item.id} className={classes.memberTable_body_row}>
-        <TableCell className={mergeClasses(classes.tbc_root, classes.tbc_name)}>
-          <TableCellLayout
-            media={
-              <Avatar
-                aria-label={item.name}
-                name={item.name}
-                image={{ src: item.avatar }}
-                size={28}
-              />
-            }
-          >
-            <Link href={`/members/${item.id}`}>
-              <Text className={classes.tbc_name_label}>{item.name}</Text>
-            </Link>
-          </TableCellLayout>
-        </TableCell>
-        <TableBodyCell
-          className={mergeClasses(classes.tbc_text, classes.tbc_gender)}
-          labelClass=""
-          label={item.gender}
-        />
-        <TableBodyCell
-          className={mergeClasses(classes.tbc_text, classes.tbc_blood)}
-          labelClass=""
-          label={item.blood_group || ""}
-        />
-        <TableBodyCell
-          className={mergeClasses(classes.tbc_text, classes.tbc_donation)}
-          labelClass=""
-          label={item.last_blood_donation}
-        />
-        <TableBodyCell
-          className={mergeClasses(classes.tbc_text, classes.tbc_phone)}
-          labelClass=""
-          label={item.phone}
-        />
-        <TableBodyCell
-          className={mergeClasses(classes.tbc_text, classes.tbc_location)}
-          labelClass=""
-          label={item.location}
-        />
-        <TableBodyCell
-          className={mergeClasses(classes.tbc_text, classes.tbc_prefLocation)}
-          labelClass=""
-          label={item.preferred_location}
-        />
-      </TableRow>
-    ),
-    [classes, item],
-  );
-};
-
-const TableBodyCell: FC<{
-  className: any;
-  label: string;
-  labelClass?: any;
-}> = ({ className, label, labelClass }) => (
-  <TableCell className={className}>
-    <TableCellLayout>
-      <Text className={labelClass}>{label}</Text>
-    </TableCellLayout>
-  </TableCell>
-);
 
 export default memo(MembersTable);

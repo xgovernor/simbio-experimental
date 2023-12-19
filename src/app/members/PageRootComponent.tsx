@@ -5,20 +5,9 @@ import ChartMatrix from "@/components/charts/ChartMatrix";
 import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
 import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";
 import ChartMemberStats from "@/components/charts/ChartMemberStats";
-import MembersTable from "@/components/members/MembersTable";
-
-export type MemberItemType = {
-  id: string;
-  avatar: string;
-  name: string;
-  gender: string;
-  blood_group: string; // "A+" | "A-" | "B+" | "B-" | "AB+" | "AB-" | "O+" | "O-"; // BloodType;
-  last_blood_donation: string;
-  phone: string;
-  location: string;
-  status: string;
-  preferred_location: string;
-};
+import MembersTable, {
+  MemberItemType,
+} from "@/components/members/MembersTable";
 
 export type MembersResponseType = {
   data: MemberItemType[];
