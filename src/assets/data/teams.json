@@ -1,9 +1,9 @@
 {
   "data": [
     {
-      "_id": "1",
-      "avatar": "team1.jpg",
-      "title": "Development Team",
+      "id": "SBDTS1",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS1",
+      "name": "Development Team",
       "total_member": 12,
       "period_from": "2022-01-15",
       "period_to": "2023-01-15",
@@ -13,9 +13,9 @@
       "status": "Active"
     },
     {
-      "_id": "2",
-      "avatar": "team2.jpg",
-      "title": "Marketing Team",
+      "id": "SBDTS2",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS2",
+      "name": "Marketing Team",
       "total_member": 8,
       "period_from": "2022-02-20",
       "period_to": "2023-02-20",
@@ -25,9 +25,9 @@
       "status": "Active"
     },
     {
-      "_id": "3",
-      "avatar": "team3.jpg",
-      "title": "Design Team",
+      "id": "SBDTS3",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS3",
+      "name": "Design Team",
       "total_member": 10,
       "period_from": "2022-03-10",
       "period_to": "2023-03-10",
@@ -37,9 +37,9 @@
       "status": "Inactive"
     },
     {
-      "_id": "4",
-      "avatar": "team4.jpg",
-      "title": "Support Team",
+      "id": "SBDTS4",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS4",
+      "name": "Support Team",
       "total_member": 9,
       "period_from": "2022-04-05",
       "period_to": "2023-04-05",
@@ -49,9 +49,9 @@
       "status": "Active"
     },
     {
-      "_id": "5",
-      "avatar": "team5.jpg",
-      "title": "Quality Assurance Team",
+      "id": "SBDTS5",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS5",
+      "name": "Quality Assurance Team",
       "total_member": 11,
       "period_from": "2022-05-20",
       "period_to": "2023-05-20",
@@ -61,9 +61,9 @@
       "status": "Active"
     },
     {
-      "_id": "6",
-      "avatar": "team6.jpg",
-      "title": "Finance Team",
+      "id": "SBDTS6",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS6",
+      "name": "Finance Team",
       "total_member": 13,
       "period_from": "2022-06-15",
       "period_to": "2023-06-15",
@@ -73,9 +73,9 @@
       "status": "Inactive"
     },
     {
-      "_id": "7",
-      "avatar": "team7.jpg",
-      "title": "IT Team",
+      "id": "SBDTS7",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS7",
+      "name": "IT Team",
       "total_member": 9,
       "period_from": "2022-07-02",
       "period_to": "2023-07-02",
@@ -85,9 +85,9 @@
       "status": "Active"
     },
     {
-      "_id": "8",
-      "avatar": "team8.jpg",
-      "title": "Legal Team",
+      "id": "SBDTS8",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS8",
+      "name": "Legal Team",
       "total_member": 11,
       "period_from": "2022-08-10",
       "period_to": "2023-08-10",
@@ -97,9 +97,9 @@
       "status": "Active"
     },
     {
-      "_id": "9",
-      "avatar": "team9.jpg",
-      "title": "Customer Support Team",
+      "id": "SBDTS9",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS9",
+      "name": "Customer Support Team",
       "total_member": 10,
       "period_from": "2022-09-15",
       "period_to": "2023-09-15",
@@ -109,9 +109,9 @@
       "status": "Active"
     },
     {
-      "_id": "10",
-      "avatar": "team10.jpg",
-      "title": "Research & Development Team",
+      "id": "SBDTS10",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS10",
+      "name": "Research & Development Team",
       "total_member": 15,
       "period_from": "2022-10-22",
       "period_to": "2023-10-22",
@@ -121,9 +121,9 @@
       "status": "Inactive"
     },
     {
-      "_id": "11",
-      "avatar": "team11.jpg",
-      "title": "Sales Team",
+      "id": "SBDTS11",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS11",
+      "name": "Sales Team",
       "total_member": 12,
       "period_from": "2022-11-05",
       "period_to": "2023-11-05",
@@ -133,9 +133,9 @@
       "status": "Active"
     },
     {
-      "_id": "12",
-      "avatar": "team12.jpg",
-      "title": "Product Team",
+      "id": "SBDTS12",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS12",
+      "name": "Product Team",
       "total_member": 8,
       "period_from": "2022-12-30",
       "period_to": "2023-12-30",
@@ -145,9 +145,9 @@
       "status": "Active"
     },
     {
-      "_id": "13",
-      "avatar": "team13.jpg",
-      "title": "HR Team",
+      "id": "SBDTS13",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS13",
+      "name": "HR Team",
       "total_member": 10,
       "period_from": "2023-01-05",
       "period_to": "2024-01-05",
@@ -156,9 +156,9 @@
       "status": "Inactive"
     },
     {
-      "_id": "14",
-      "avatar": "team14.jpg",
-      "title": "Content Team",
+      "id": "SBDTS14",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS14",
+      "name": "Content Team",
       "total_member": 11,
       "period_from": "2023-02-20",
       "period_to": "2024-02-20",
@@ -168,9 +168,9 @@
       "status": "Active"
     },
     {
-      "_id": "15",
-      "avatar": "team15.jpg",
-      "title": "Design Team",
+      "id": "SBDTS15",
+      "avatar": "https://i.pravatar.cc/28?u=SBDTS15",
+      "name": "Design Team",
       "total_member": 9,
       "period_from": "2023-03-10",
       "period_to": "2024-03-10",

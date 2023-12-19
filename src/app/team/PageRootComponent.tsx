@@ -1,20 +1,7 @@
 "use client";
-import TeamTable from "@/components/team/TeamTable";
+import TeamTable, { TeamItemType } from "@/components/team/TeamTable";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import { FC, memo } from "react";
-
-export type TeamItemType = {
-  _id: string;
-  avatar: string;
-  name: string;
-  designation: string;
-  period_from: string;
-  period_to: string;
-  phone: string;
-  email: string;
-  location: string;
-  status: string;
-};
 
 export type TeamResponseType = {
   data: TeamItemType[];

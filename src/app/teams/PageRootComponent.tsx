@@ -1,24 +1,10 @@
 "use client";
 import { FC, Suspense, memo } from "react";
-import { TeamStatus } from "@/types";
 import ChartMatrix from "@/components/charts/ChartMatrix";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
 import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";
-import TeamsTable from "@/components/teams/TeamsTable";
-
-export type TeamsItemType = {
-  _id: string;
-  avatar: string;
-  title: string;
-  total_member: number;
-  period_from: string;
-  period_to: string;
-  president: string;
-  vice_president?: string;
-  management: string;
-  status: string; // TeamStatus;
-};
+import TeamsTable, { TeamsItemType } from "@/components/teams/TeamsTable";
 
 export type TeamsResponseType = {
   data: TeamsItemType[];
