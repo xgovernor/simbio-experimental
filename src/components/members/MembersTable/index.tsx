@@ -13,7 +13,7 @@ export type MemberItemType = {
   id: string;
   avatar: string;
   name: string;
-  gender: "Male" | "Female" | "Trans";
+  gender: string;
   blood_group: string; // "A+" | "A-" | "B+" | "B-" | "AB+" | "AB-" | "O+" | "O-"; // BloodType;
   last_blood_donation: string;
   phone: string;

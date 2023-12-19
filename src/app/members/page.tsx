@@ -8,7 +8,7 @@ import data from "@/assets/data/members.json";
 /**
  * Retrieves data from the specified URL.
  *
- * @return {Promise<RequestResponseType>} The retrieved data.
+ * @return {Promise<MembersResponseType>} The retrieved data.
  */
 // async function getData(): Promise<MembersResponseType> {
 //     const res = await fetch("/data/members.json");
