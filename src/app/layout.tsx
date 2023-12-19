@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <StoreProvider>
       {/* <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}> */}
-      <html lang="en">
+      <html lang="en" className="overflow-hidden">
         <head>
           <meta charSet="utf-8" />
           <meta name="description" content={metadata.description as string} />

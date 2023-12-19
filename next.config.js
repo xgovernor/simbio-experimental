@@ -15,7 +15,7 @@ const nextConfig = {
     buildActivityPosition: "top-right",
   },
   images: {
-    domains: ["simbio.dot9.dev", "example.com"],
+    domains: ["simbio.dot9.dev", "example.com", "i.pravatar.cc", "localhost"],
   },
   // experimental: {
   //     instrumentationHook: true

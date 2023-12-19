@@ -7,6 +7,7 @@ import {
 import { Column } from "@tanstack/react-table";
 
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,7 +15,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
+import { EyeOff } from "lucide-react";
 
 interface DataTableColumnHeaderProps<TData, TValue>
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -38,7 +39,7 @@ export function DataTableColumnHeader<TData, TValue>({
           <Button
             variant="ghost"
             size="sm"
-            className="data-[state=open]:bg-accent -ml-3 h-8"
+            className="data-[state=open]:bg-accent -ml-3 h-8 px-2 text-left align-middle text-[14px] font-semibold leading-5 text-[#242424] dark:text-zinc-400 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
           >
             <span>{title}</span>
             {column.getIsSorted() === "desc" ? (
@@ -61,7 +62,7 @@ export function DataTableColumnHeader<TData, TValue>({
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={() => column.toggleVisibility(false)}>
-            <EyeNoneIcon className="text-muted-foreground/70 mr-2 h-3.5 w-3.5" />
+            <EyeOff className="text-muted-foreground/70 mr-2 h-3.5 w-3.5" />
             Hide
           </DropdownMenuItem>
         </DropdownMenuContent>

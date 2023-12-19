@@ -6,8 +6,6 @@ import ChartMemberStats from "@/components/charts/ChartMemberStats";
 import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
 import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";
 import UsersTable, { UsersItemType } from "@/components/users/UsersTable";
-import { DataTable } from "./data-table";
-import { columns } from "./columns";
 
 export type UsersResponseType = {
   data: UsersItemType[];
@@ -43,13 +41,22 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
         )}
 
         {/* Render the clubs table */}
-        {/* <UsersTable
+        <UsersTable
           title="Clubs Table"
           description={`Showing ${data?.limit} of ${data?.total} clubs`}
           data={data?.data}
-        /> */}
+          // columns={columns}
+          // data={tasks}
+          // filters={{ priorities, statuses }}
+        />
 
-        <DataTable columns={columns} data={data?.data} />
+        {/* This component moved to the UserTable component */}
+        {/* <DataGrid
+          columns={columns}
+          // data={data?.data}
+          data={tasks}
+          filters={{ priorities, statuses }}
+        /> */}
       </div>
     </DashboardLayout>
   );
