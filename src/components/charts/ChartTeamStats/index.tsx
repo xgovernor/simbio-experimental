@@ -20,7 +20,7 @@ import {
   DocumentTableArrowRight24Regular,
 } from "@fluentui/react-icons";
 import Link from "next/link";
-import { FC, memo } from "react";
+import { memo } from "react";
 import DonationsStatsChart from "../DonationsStatsChart";
 
 const chartData = [20, 30, 15, 25, 40]; // Example data for the chart

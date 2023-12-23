@@ -1,7 +1,4 @@
-import PageRootComponent, {
-  PageConfig,
-  TeamsResponseType,
-} from "./PageRootComponent";
+import PageRootComponent, { PageConfig } from "./PageRootComponent";
 import { memo } from "react";
 import data from "@/assets/data/teams.json";
 

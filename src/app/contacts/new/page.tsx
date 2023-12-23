@@ -1,6 +1,5 @@
 "use client";
 import NewContactForm from "@/components/contacts/NewContactForm";
-import TeamMemberForm from "@/components/team/TeamMemberForm";
 import Layout from "@/components/ui/Layout";
 import { PeopleTeam24Regular } from "@fluentui/react-icons";
 import { memo } from "react";

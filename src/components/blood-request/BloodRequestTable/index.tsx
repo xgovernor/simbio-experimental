@@ -1,38 +1,25 @@
 "use client";
-import { RequestItemType } from "@/app/blood-requests/page";
-import {
-  Avatar,
-  Button,
-  Card,
-  CardHeader,
-  CardPreview,
-  FluentProvider,
-  Menu,
-  MenuItem,
-  MenuList,
-  MenuPopover,
-  MenuTrigger,
-  Table,
-  TableBody,
-  TableCell,
-  TableCellLayout,
-  TableHeader,
-  TableRow,
-  Text,
-  Toolbar,
-  ToolbarButton,
-  teamsLightTheme,
-} from "@fluentui/react-components";
-import {
-  DocumentTableArrowRight24Regular,
-  Add24Regular,
-  MoreHorizontal20Filled,
-  BookQuestionMark24Regular,
-  Bug24Regular,
-} from "@fluentui/react-icons";
-import Link from "next/link";
+import { Button } from "@fluentui/react-components";
+import { Add24Regular } from "@fluentui/react-icons";
 import { useRouter } from "next/navigation";
 import { FC, memo } from "react";
+import BloodRequestTableMenu from "./BloodRequestTableMenu";
+import { DataGrid } from "@/components/ui/DataGrid";
+import { columns, filters } from "./data";
+
+export type RequestItemType = {
+  id: string;
+  avatar: string;
+  name: string;
+  blood_group: string;
+  blood_type: string;
+  quantity: string;
+  delivery_date: string;
+  health_issue: string;
+  location: string;
+  status: string;
+  phone: string;
+};
 
 interface BloodRequestTablePropsType {
   className?: string;
@@ -105,135 +92,37 @@ const BloodRequestTable: FC<BloodRequestTablePropsType> = ({
 
   return (
     <section
-      className="mt-[22px] h-full w-full pb-[22px] pe-[22px] ps-[22px] pt-0"
-      {...rest}
+      className="gap grid h-full w-full gap-3 rounded bg-white"
+      style={{
+        boxShadow: "0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.14)",
+      }}
     >
-      <div className="h-full w-full">
-        <Card className="h-full w-full">
-          <CardHeader
-            className=""
-            header={<h4 className="subtitle2Stronger m-0">{title}</h4>}
-            description={<p>{description}</p>}
-            action={
-              <Toolbar aria-label="Default">
-                <ToolbarButton
-                  appearance="primary"
-                  icon={<Add24Regular />}
-                  // size="small"
-                  style={{ width: "110px" }}
-                  onClick={() => router.push("/blood-requests/new")}
-                >
-                  Add new
-                </ToolbarButton>
+      {/* Card Header */}
+      <div className="relative flex w-full flex-nowrap justify-between gap-3 pe-2 ps-5 pt-4">
+        <div className="">
+          <h1 className="text-[16px] font-bold leading-[22px] text-[#242424]">
+            {title}
+          </h1>
+          <p className="text-xs text-[#616161]">{description}</p>
+        </div>
 
-                {/*
-                                <ToolbarButton
-                                    appearance="subtle"
-                                    icon={<Filter16Regular />}
-                                // size="small"
-                                >
-                                    Filter
-                                </ToolbarButton> */}
+        <div className="flex gap-2">
+          <Button
+            appearance="primary"
+            icon={<Add24Regular />}
+            // size="small"
+            style={{ width: "110px" }}
+            onClick={() => router.push("/blood-requests/new")}
+          >
+            Add new
+          </Button>
+          <BloodRequestTableMenu />
+        </div>
+      </div>
 
-                <Menu>
-                  <MenuTrigger disableButtonEnhancement>
-                    <Button
-                      appearance="transparent"
-                      icon={<MoreHorizontal20Filled />}
-                      aria-label="More options"
-                    />
-                  </MenuTrigger>
-
-                  <MenuPopover>
-                    <MenuList>
-                      <MenuItem
-                        onClick={() => alert("This feature comming soon!")}
-                        icon={<DocumentTableArrowRight24Regular />}
-                      >
-                        Export
-                      </MenuItem>
-                      <MenuItem
-                        onClick={() => router.push("/doc/page/request")}
-                        icon={<BookQuestionMark24Regular />}
-                      >
-                        Help
-                      </MenuItem>
-                      <MenuItem
-                        onClick={() => router.push("/issue/report")}
-                        icon={<Bug24Regular />}
-                      >
-                        Report issue
-                      </MenuItem>
-                    </MenuList>
-                  </MenuPopover>
-                </Menu>
-              </Toolbar>
-            }
-          />
-
-          <CardPreview>
-            <Table className="w-full" sortable noNativeElements={true}>
-              <TableHeader className="w-full">
-                <TableRow className="border-b-[rgb(240, 240, 240)] px-[22px]">
-                  {COLUMN.map((item, index) => (
-                    <TableCell key={index} className={item.className}>
-                      <p className="body1Strong">{item.name}</p>
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableHeader>
-
-              <TableBody className="w-full">
-                {data.map((item, index) => (
-                  <TableRow
-                    key={index}
-                    className="border-b-[rgb(240, 240, 240)] px-[22px]"
-                  >
-                    <TableCell className="min-w-[250px]">
-                      <TableCellLayout
-                        truncate
-                        media={
-                          <Avatar
-                            aria-label={item.name}
-                            name={item.name}
-                            image={{ src: item.avatar }}
-                            // badge={{ status: item.status }}
-                          />
-                        }
-                      >
-                        <Link href={`/members/${item._id}`}>
-                          <Text className="body1Strong">{item.name}</Text>
-                        </Link>
-                      </TableCellLayout>
-                    </TableCell>
-                    <TableCell className="caption1 w-full">
-                      <TableCellLayout>
-                        {item?.blood_group && item.blood_group}{" "}
-                        {item?.blood_type && item.blood_type} (
-                        {item?.quantity && item.quantity} beg)
-                      </TableCellLayout>
-                    </TableCell>
-                    <TableCell className="caption1Strong w-full">
-                      <TableCellLayout>{item?.delivery_date}</TableCellLayout>
-                    </TableCell>
-                    <TableCell className="caption1">
-                      <TableCellLayout>{item?.health_issue}</TableCellLayout>
-                    </TableCell>
-                    <TableCell className="caption1">
-                      <TableCellLayout>{item?.phone}</TableCellLayout>
-                    </TableCell>
-                    <TableCell className="caption1">
-                      <TableCellLayout>{item?.status}</TableCellLayout>
-                    </TableCell>
-                    <TableCell className="caption1">
-                      <TableCellLayout>{item?.phone}</TableCellLayout>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </CardPreview>
-        </Card>
+      {/* Card Body */}
+      <div className="pb-4">
+        <DataGrid columns={columns} data={data} filters={filters} />
       </div>
     </section>
   );

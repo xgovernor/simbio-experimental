@@ -22,7 +22,6 @@ import {
   BookQuestionMark24Regular,
   DocumentTableArrowRight24Regular,
 } from "@fluentui/react-icons";
-import Link from "next/link";
 import ReactECharts, { EChartsOption } from "echarts-for-react";
 // import * as echarts from 'echarts/core';
 // import { BarChart } from 'echarts/charts';

@@ -1,19 +1,4 @@
-import {
-  Avatar,
-  Card,
-  CardHeader,
-  CardPreview,
-  Table,
-  TableBody,
-  TableCell,
-  TableCellLayout,
-  TableHeader,
-  TableRow,
-  Text,
-  Toolbar,
-} from "@fluentui/react-components";
-import Link from "next/link";
-import { FC, memo, useMemo } from "react";
+import { FC, memo } from "react";
 import ClubsTableMenu from "./ClubsTableMenu";
 import { DataGrid } from "@/components/ui/DataGrid";
 import { columns, filters } from "./data";

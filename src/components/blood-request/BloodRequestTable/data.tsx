@@ -11,25 +11,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { DotsHorizontalIcon } from "@radix-ui/react-icons";
-import {
-  Baby,
-  Ban,
-  CircleDashed,
-  Fingerprint,
-  MapPin,
-  PersonStanding,
-  ScanEye,
-  ShieldCheck,
-  ShieldQuestion,
-  User,
-  UserMinus,
-  VenetianMask,
-} from "lucide-react";
+import { CircleIcon, DotsHorizontalIcon } from "@radix-ui/react-icons";
+import { MapPin, PersonStanding, ScanEye, VenetianMask } from "lucide-react";
 import { DataTableColumnHeader } from "@/components/ui/DataGrid/DataTableColumnHeader";
-import { MemberItemType } from ".";
+import { RequestItemType } from ".";
 
-export const columns: ColumnDef<MemberItemType>[] = [
+export const columns: ColumnDef<RequestItemType>[] = [
   {
     accessorKey: "name",
     header: "User",
@@ -55,16 +42,24 @@ export const columns: ColumnDef<MemberItemType>[] = [
     },
   },
   {
-    accessorKey: "gender",
-    header: "Gender",
+    accessorKey: "blood_type",
+    header: "Blood Type",
+    cell: ({ row }) => {
+      return (
+        <div className="flex items-center gap-2">
+          {row.original.blood_group} ({row.original.blood_type} •{" "}
+          {row.original.quantity})
+        </div>
+      );
+    },
   },
   {
-    accessorKey: "blood_group",
-    header: "Blood group",
+    accessorKey: "delivery_date",
+    header: "Delivery",
   },
   {
-    accessorKey: "last_blood_donation",
-    header: "Last donation",
+    accessorKey: "health_issue",
+    header: "Health issue",
   },
   {
     accessorKey: "phone",
@@ -74,12 +69,6 @@ export const columns: ColumnDef<MemberItemType>[] = [
     accessorKey: "location",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Location" />
-    ),
-  },
-  {
-    accessorKey: "role",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Role" />
     ),
   },
   {
@@ -121,84 +110,6 @@ export const columns: ColumnDef<MemberItemType>[] = [
   },
 ];
 
-// Filter: Status
-export const statuses = [
-  {
-    value: "Active",
-    label: "Active",
-    icon: ShieldCheck,
-  },
-  {
-    value: "Pending", // Need to be reviewed.
-    label: "Pending",
-    icon: CircleDashed,
-  },
-  {
-    value: "Suspend", // Temporary Blocked. Active upon suspension/request.
-    label: "Suspend",
-    icon: ShieldQuestion,
-  },
-  {
-    value: "Banned", // Forever blocked.
-    label: "Banned",
-    icon: Ban,
-  },
-  {
-    value: "Cancelled", // Applied for membership. But cancelled by reviewer.
-    label: "Cancelled",
-    icon: Fingerprint,
-  },
-  {
-    value: "Removed", // Soft delete.
-    label: "Removed",
-    icon: UserMinus,
-  },
-];
-
-// Filter: Status
-export const roles = [
-  {
-    value: "Founder",
-    label: "Founder",
-    icon: Baby,
-  },
-  {
-    value: "Co-Founder",
-    label: "Co-Founder",
-    icon: Baby,
-  },
-  {
-    value: "Communication",
-    label: "Communication",
-    icon: Baby,
-  },
-  {
-    value: "President",
-    label: "President",
-    icon: Baby,
-  },
-  {
-    value: "Accountant",
-    label: "Accountant",
-    icon: Baby,
-  },
-  {
-    value: "Volunteer",
-    label: "Volunteer",
-    icon: Baby,
-  },
-  {
-    value: "Ambassador",
-    label: "Ambassador",
-    icon: ShieldQuestion,
-  },
-  {
-    value: "Member",
-    label: "Member",
-    icon: User,
-  },
-];
-
 // Filter: Telecom Operator
 export const gender = [
   {
@@ -237,25 +148,93 @@ export const locations = [
   },
 ];
 
+// Filter: Blood Group
+export const blood_groups = [
+  {
+    value: "A+",
+    label: "A+",
+    icon: CircleIcon,
+  },
+  {
+    value: "A-",
+    label: "A-",
+    icon: CircleIcon,
+  },
+  {
+    value: "B+",
+    label: "B+",
+    icon: CircleIcon,
+  },
+  {
+    value: "B-",
+    label: "B-",
+    icon: CircleIcon,
+  },
+  {
+    value: "AB+",
+    label: "AB+",
+    icon: CircleIcon,
+  },
+  {
+    value: "AB-",
+    label: "AB-",
+    icon: CircleIcon,
+  },
+  {
+    value: "O+",
+    label: "O+",
+    icon: CircleIcon,
+  },
+  {
+    value: "O-",
+    label: "O-",
+    icon: CircleIcon,
+  },
+];
+
+// Filter: Blood Group
+export const substance = [
+  {
+    value: "Plasma",
+    label: "Plasma",
+    icon: CircleIcon,
+  },
+  {
+    value: "Platelet",
+    label: "Platelet",
+    icon: CircleIcon,
+  },
+  {
+    value: "Double red cell",
+    label: "Double red cell",
+    icon: CircleIcon,
+  },
+  {
+    value: "Whole blood cell",
+    label: "Whole blood cell",
+    icon: CircleIcon,
+  },
+];
+
 export const filters = [
   {
-    key: "gender",
-    label: "Gender",
-    options: gender,
+    key: "blood_group",
+    label: "Blood Group",
+    options: blood_groups,
   },
   {
-    key: "status",
-    label: "Status",
-    options: statuses,
-  },
-  {
-    key: "role",
-    label: "Role",
-    options: roles,
+    key: "substance",
+    label: "Substance",
+    options: substance,
   },
   {
     key: "location",
     label: "Location",
     options: locations,
+  },
+  {
+    key: "delivery_date",
+    label: "Delivery",
+    options: [], // TODO: Put Calender
   },
 ];

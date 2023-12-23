@@ -1,5 +1,4 @@
 "use client";
-import { isPwa } from "@/utils/pwa";
 import { Button } from "@fluentui/react-components";
 import {
   ChevronLeft24Regular,

@@ -1,5 +1,3 @@
-"use client";
-
 import { ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,24 +10,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
-import {
-  Baby,
-  Ban,
-  CircleDashed,
-  Fingerprint,
-  MapPin,
-  PersonStanding,
-  ScanEye,
-  ShieldCheck,
-  ShieldQuestion,
-  User,
-  UserMinus,
-  VenetianMask,
-} from "lucide-react";
+import { MapPin, PersonStanding, ScanEye, VenetianMask } from "lucide-react";
 import { DataTableColumnHeader } from "@/components/ui/DataGrid/DataTableColumnHeader";
-import { MemberItemType } from ".";
+import { DonationItemType } from ".";
 
-export const columns: ColumnDef<MemberItemType>[] = [
+export const columns: ColumnDef<DonationItemType>[] = [
   {
     accessorKey: "name",
     header: "User",
@@ -45,7 +30,7 @@ export const columns: ColumnDef<MemberItemType>[] = [
           />
           <Link
             className="text-sm font-semibold"
-            href={`/members/${row.original.id}`}
+            href={`/donations/${row.original.id}`}
             hrefLang="en"
           >
             {row.original.name}
@@ -55,37 +40,29 @@ export const columns: ColumnDef<MemberItemType>[] = [
     },
   },
   {
+    accessorKey: "amount",
+    header: "Amount",
+  },
+  {
+    accessorKey: "date",
+    header: "Date",
+  },
+  {
     accessorKey: "gender",
     header: "Gender",
-  },
-  {
-    accessorKey: "blood_group",
-    header: "Blood group",
-  },
-  {
-    accessorKey: "last_blood_donation",
-    header: "Last donation",
   },
   {
     accessorKey: "phone",
     header: "Phone",
   },
   {
+    accessorKey: "email",
+    header: "Email",
+  },
+  {
     accessorKey: "location",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Location" />
-    ),
-  },
-  {
-    accessorKey: "role",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Role" />
-    ),
-  },
-  {
-    accessorKey: "status",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Status" />
     ),
   },
   {
@@ -118,84 +95,6 @@ export const columns: ColumnDef<MemberItemType>[] = [
         </DropdownMenu>
       );
     },
-  },
-];
-
-// Filter: Status
-export const statuses = [
-  {
-    value: "Active",
-    label: "Active",
-    icon: ShieldCheck,
-  },
-  {
-    value: "Pending", // Need to be reviewed.
-    label: "Pending",
-    icon: CircleDashed,
-  },
-  {
-    value: "Suspend", // Temporary Blocked. Active upon suspension/request.
-    label: "Suspend",
-    icon: ShieldQuestion,
-  },
-  {
-    value: "Banned", // Forever blocked.
-    label: "Banned",
-    icon: Ban,
-  },
-  {
-    value: "Cancelled", // Applied for membership. But cancelled by reviewer.
-    label: "Cancelled",
-    icon: Fingerprint,
-  },
-  {
-    value: "Removed", // Soft delete.
-    label: "Removed",
-    icon: UserMinus,
-  },
-];
-
-// Filter: Status
-export const roles = [
-  {
-    value: "Founder",
-    label: "Founder",
-    icon: Baby,
-  },
-  {
-    value: "Co-Founder",
-    label: "Co-Founder",
-    icon: Baby,
-  },
-  {
-    value: "Communication",
-    label: "Communication",
-    icon: Baby,
-  },
-  {
-    value: "President",
-    label: "President",
-    icon: Baby,
-  },
-  {
-    value: "Accountant",
-    label: "Accountant",
-    icon: Baby,
-  },
-  {
-    value: "Volunteer",
-    label: "Volunteer",
-    icon: Baby,
-  },
-  {
-    value: "Ambassador",
-    label: "Ambassador",
-    icon: ShieldQuestion,
-  },
-  {
-    value: "Member",
-    label: "Member",
-    icon: User,
   },
 ];
 
@@ -244,18 +143,18 @@ export const filters = [
     options: gender,
   },
   {
-    key: "status",
-    label: "Status",
-    options: statuses,
-  },
-  {
-    key: "role",
-    label: "Role",
-    options: roles,
-  },
-  {
     key: "location",
     label: "Location",
     options: locations,
+  },
+  {
+    key: "amount",
+    label: "Amount",
+    options: [],
+  },
+  {
+    key: "date",
+    label: "Date",
+    options: [],
   },
 ];

@@ -1,7 +1,4 @@
-import PageRootComponent, {
-  CentersResponseType,
-  PageConfig,
-} from "./PageRootComponent";
+import PageRootComponent, { PageConfig } from "./PageRootComponent";
 import { memo } from "react";
 import data from "@/assets/data/blood-centers.json";
 

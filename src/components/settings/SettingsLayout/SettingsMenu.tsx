@@ -6,7 +6,6 @@ import {
   Tab,
   TabList,
   TabValue,
-  Text,
   makeStyles,
   mergeClasses,
   shorthands,

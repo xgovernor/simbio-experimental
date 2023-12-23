@@ -1,22 +1,17 @@
-import {
-  Avatar,
-  Card,
-  CardHeader,
-  CardPreview,
-  Table,
-  TableBody,
-  TableCell,
-  TableCellLayout,
-  TableHeader,
-  TableRow,
-  Text,
-  Toolbar,
-} from "@fluentui/react-components";
-import Link from "next/link";
-import { FC, memo, useMemo } from "react";
-import ContactsTableFilter from "./ContactsTableFilter";
+import { FC, memo } from "react";
 import ContactsTableMenu from "./ContactsTableMenu";
-import { ContactItemType } from "@/app/contacts/PageRootComponent";
+import { DataGrid } from "@/components/ui/DataGrid";
+import { columns, filters } from "./data";
+
+export type ContactItemType = {
+  id: string;
+  avatar: string;
+  name: string;
+  phone: string;
+  email: string;
+  location: string;
+  status: string; // "available" | "offline" | "busy";
+};
 
 interface ContactsTablePropsType {
   title: string;
@@ -30,126 +25,32 @@ const ContactsTable: FC<ContactsTablePropsType> = ({
   data,
 }: ContactsTablePropsType) => {
   return (
-    <section className="h-full w-full">
-      <Card className="h-full w-full pe-0 ps-0">
-        <CardHeader
-          className="pe-0 ps-2.5"
-          header={<h4 className="subtitle2Stronger m-0">{title}</h4>}
-          description={
-            <Text className="caption1 text-[#adadad]">{description}</Text>
-          }
-          action={
-            <Toolbar>
-              <ContactsTableFilter />
-              <ContactsTableMenu />
-            </Toolbar>
-          }
-        />
+    <section
+      className="gap grid h-full w-full gap-3 rounded bg-white"
+      style={{
+        boxShadow: "0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.14)",
+      }}
+    >
+      {/* Card Header */}
+      <div className="relative flex w-full flex-nowrap justify-between gap-3 pe-2 ps-5 pt-4">
+        <div className="">
+          <h1 className="text-[16px] font-bold leading-[22px] text-[#242424]">
+            {title}
+          </h1>
+          <p className="text-xs text-[#616161]">{description}</p>
+        </div>
 
-        <CardPreview>
-          <Table className="w-full" sortable noNativeElements={true}>
-            <TableHeader className="sticky top-0 w-full">
-              <TableHeaderRow />
-            </TableHeader>
+        <div className="flex gap-2">
+          <ContactsTableMenu />
+        </div>
+      </div>
 
-            <TableBody className="w-full">
-              {data.map((item, i) => (
-                <TableBodyRow key={i} item={item} />
-              ))}
-            </TableBody>
-          </Table>
-        </CardPreview>
-      </Card>
+      {/* Card Body */}
+      <div className="pb-4">
+        <DataGrid columns={columns} data={data} filters={filters} />
+      </div>
     </section>
   );
 };
-
-const TableHeaderRow: FC = () => (
-  <TableRow className="border-b-[rgb(240, 240, 240)] px-[22px]">
-    <TableHeaderCell
-      className="w-full min-w-[250px] max-w-[300px]"
-      labelClass="w-full relative inline-block body1Strong"
-      label="Name"
-    />
-    <TableHeaderCell
-      className="w-full min-w-[100px] max-w-[180px]"
-      labelClass="w-full relative inline-block body1Strong"
-      label="Phone"
-    />
-    <TableHeaderCell
-      className="w-full min-w-[100px] max-w-[230px]"
-      labelClass="w-full relative inline-block body1Strong"
-      label="Email"
-    />
-    <TableHeaderCell
-      className="w-full min-w-[100px] max-w-[250px]"
-      labelClass="w-full relative inline-block body1Strong"
-      label="Location"
-    />
-  </TableRow>
-);
-
-const TableHeaderCell: FC<{
-  className: any;
-  label: string;
-  labelClass: any;
-}> = ({ className, label, labelClass }) => (
-  <TableCell className={className}>
-    <Text className={labelClass}>{label}</Text>
-  </TableCell>
-);
-
-const TableBodyRow: FC<{ item: ContactItemType }> = ({ item }) => {
-  return useMemo(
-    () => (
-      <TableRow key={item._id} className="text-[rgb(240, 240, 240)] px-[22px]">
-        <TableCell className="caption1 w-full min-w-[100px] max-w-[100px]">
-          <TableCellLayout
-            media={
-              <Avatar
-                aria-label={item.name}
-                name={item.name}
-                image={{ src: item.avatar }}
-                size={28}
-              />
-            }
-          >
-            <Link href={`/members/${item._id}`}>
-              <p className="body1Strong">{item.name}</p>
-            </Link>
-          </TableCellLayout>
-        </TableCell>
-        <TableBodyCell
-          className="caption1 relative w-full min-w-[100px] max-w-[180px] text-[#adadad]"
-          valueClass=""
-          value={item.phone}
-        />
-        <TableBodyCell
-          className="caption1 relative w-full min-w-[100px] max-w-[230px] text-[#adadad]"
-          valueClass=""
-          value={item.email}
-        />
-        <TableBodyCell
-          className="caption1 relative w-full min-w-[100px] max-w-[250px] text-[#adadad]"
-          valueClass=""
-          value={item.location}
-        />
-      </TableRow>
-    ),
-    [item],
-  );
-};
-
-const TableBodyCell: FC<{
-  className: string;
-  valueClass?: string;
-  value: any;
-}> = ({ className, value, valueClass }) => (
-  <TableCell className={className}>
-    <TableCellLayout>
-      <Text className={valueClass}>{value}</Text>
-    </TableCellLayout>
-  </TableCell>
-);
 
 export default memo(ContactsTable);

@@ -1,20 +1,9 @@
 "use client";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import { FC, Suspense, memo } from "react";
-import BloodCenterTable from "@/components/bloodCenters/BloodCenterTable";
-
-export type CentersItemType = {
-  _id: string;
-  avatar: string;
-  name: string;
-  area: string;
-  location: string;
-  facility: string;
-  phone: string;
-  email: string;
-  status: string;
-  mapUrl: string;
-};
+import BloodCenterTable, {
+  CentersItemType,
+} from "@/components/bloodCenters/BloodCenterTable";
 
 export type CentersResponseType = {
   data: CentersItemType[];

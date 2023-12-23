@@ -1,20 +1,7 @@
 import PageRootComponent from "./PageRootComponent";
 import { memo } from "react";
 import data from "@/assets/data/requests.json";
-
-export type RequestItemType = {
-  _id: string;
-  avatar: string;
-  name: string;
-  blood_group: string;
-  blood_type: string;
-  quantity: string;
-  delivery_date: string;
-  health_issue: string;
-  location: string;
-  status: string;
-  phone: string;
-};
+import { RequestItemType } from "@/components/blood-request/BloodRequestTable";
 
 export type RequestResponseType = {
   data: RequestItemType[];

@@ -1,8 +1,8 @@
 {
   "data": [
     {
-      "_id": "1",
-      "avatar": "https://example.com/avatar1.jpg",
+      "id": "SBDCC1",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC1",
       "name": "Red Cross Blood Donation Center",
       "area": "Downtown",
       "location": "123 Main Street, Cityville, State",
@@ -13,8 +13,8 @@
       "mapUrl": "https://maps.google.com/maps?q=123+Main+Street"
     },
     {
-      "_id": "2",
-      "avatar": "https://example.com/avatar2.jpg",
+      "id": "SBDCC2",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC2",
       "name": "City Blood Bank",
       "area": "Uptown",
       "location": "456 Elm Street, Townville, State",
@@ -25,8 +25,8 @@
       "mapUrl": "https://maps.google.com/maps?q=456+Elm+Street"
     },
     {
-      "_id": "3",
-      "avatar": "https://example.com/avatar3.jpg",
+      "id": "SBDCC3",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC3",
       "name": "Community Health Center Blood Drive",
       "area": "Suburbia",
       "location": "789 Oak Avenue, Villagetown, State",
@@ -37,8 +37,8 @@
       "mapUrl": "https://maps.google.com/maps?q=789+Oak+Avenue"
     },
     {
-      "_id": "4",
-      "avatar": "https://example.com/avatar4.jpg",
+      "id": "SBDCC4",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC4",
       "name": "Local Hospital Blood Donation Center",
       "area": "Central",
       "location": "101 Pine Road, Townsville, State",
@@ -49,8 +49,8 @@
       "mapUrl": "https://maps.google.com/maps?q=101+Pine+Road"
     },
     {
-      "_id": "5",
-      "avatar": "https://example.com/avatar5.jpg",
+      "id": "SBDCC5",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC5",
       "name": "Regional Blood Center",
       "area": "Downtown",
       "location": "202 Cedar Lane, Citytown, State",
@@ -61,8 +61,8 @@
       "mapUrl": "https://maps.google.com/maps?q=202+Cedar+Lane"
     },
     {
-      "_id": "6",
-      "avatar": "https://example.com/avatar6.jpg",
+      "id": "SBDCC6",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC6",
       "name": "Sunshine Blood Bank",
       "area": "Uptown",
       "location": "303 Birch Street, Beachville, State",
@@ -73,8 +73,8 @@
       "mapUrl": "https://maps.google.com/maps?q=303+Birch+Street"
     },
     {
-      "_id": "7",
-      "avatar": "https://example.com/avatar7.jpg",
+      "id": "SBDCC7",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC7",
       "name": "Hope Hospital Blood Donation Center",
       "area": "Suburbia",
       "location": "404 Oakwood Drive, Villagetown, State",
@@ -85,8 +85,8 @@
       "mapUrl": "https://maps.google.com/maps?q=404+Oakwood+Drive"
     },
     {
-      "_id": "8",
-      "avatar": "https://example.com/avatar8.jpg",
+      "id": "SBDCC8",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC8",
       "name": "Unity Community Blood Drive",
       "area": "Central",
       "location": "505 Willow Lane, Townsville, State",
@@ -97,8 +97,8 @@
       "mapUrl": "https://maps.google.com/maps?q=505+Willow+Lane"
     },
     {
-      "_id": "9",
-      "avatar": "https://example.com/avatar9.jpg",
+      "id": "SBDCC9",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC9",
       "name": "Metro Blood Bank",
       "area": "Downtown",
       "location": "606 Maple Street, Citytown, State",
@@ -109,8 +109,8 @@
       "mapUrl": "https://maps.google.com/maps?q=606+Maple+Street"
     },
     {
-      "_id": "10",
-      "avatar": "https://example.com/avatar10.jpg",
+      "id": "SBDCC10",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC1",
       "name": "Central Hospital Blood Donation Center",
       "area": "Uptown",
       "location": "707 Redwood Avenue, Beachville, State",
@@ -121,8 +121,8 @@
       "mapUrl": "https://maps.google.com/maps?q=707+Redwood+Avenue"
     },
     {
-      "_id": "11",
-      "avatar": "https://example.com/avatar11.jpg",
+      "id": "SBDCC11",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC1",
       "name": "Citywide Blood Drive",
       "area": "Suburbia",
       "location": "808 Cedar Drive, Villagetown, State",
@@ -133,8 +133,8 @@
       "mapUrl": "https://maps.google.com/maps?q=808+Cedar+Drive"
     },
     {
-      "_id": "12",
-      "avatar": "https://example.com/avatar12.jpg",
+      "id": "SBDCC12",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC1",
       "name": "County Hospital Blood Donation Center",
       "area": "Central",
       "location": "909 Willow Avenue, Townsville, State",
@@ -145,8 +145,8 @@
       "mapUrl": "https://maps.google.com/maps?q=909+Willow+Avenue"
     },
     {
-      "_id": "13",
-      "avatar": "https://example.com/avatar13.jpg",
+      "id": "SBDCC13",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC1",
       "name": "Hometown Blood Bank",
       "area": "Downtown",
       "location": "1010 Elmwood Lane, Citytown, State",
@@ -157,8 +157,8 @@
       "mapUrl": "https://maps.google.com/maps?q=1010+Elmwood+Lane"
     },
     {
-      "_id": "14",
-      "avatar": "https://example.com/avatar14.jpg",
+      "id": "SBDCC14",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC1",
       "name": "Sunrise Health Blood Donation Center",
       "area": "Uptown",
       "location": "1111 Oak Lane, Beachville, State",
@@ -169,8 +169,8 @@
       "mapUrl": "https://maps.google.com/maps?q=1111+Oak+Lane"
     },
     {
-      "_id": "15",
-      "avatar": "https://example.com/avatar15.jpg",
+      "id": "SBDCC15",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC1",
       "name": "Metro Health Services Blood Drive",
       "area": "Suburbia",
       "location": "1212 Pine Street, Villagetown, State",
@@ -181,8 +181,8 @@
       "mapUrl": "https://maps.google.com/maps?q=1212+Pine+Street"
     },
     {
-      "_id": "16",
-      "avatar": "https://example.com/avatar16.jpg",
+      "id": "SBDCC16",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC1",
       "name": "Hopeful Hearts Blood Bank",
       "area": "Central",
       "location": "1313 Elm Avenue, Townsville, State",
@@ -193,8 +193,8 @@
       "mapUrl": "https://maps.google.com/maps?q=1313+Elm+Avenue"
     },
     {
-      "_id": "17",
-      "avatar": "https://example.com/avatar17.jpg",
+      "id": "SBDCC17",
+      "avatar": "https://i.pravatar.cc/28?u=SBDCC1",
       "name": "City Community Blood Donation Center",
       "area": "Downtown",
       "location": "1414 Oakwood Drive, Citytown, State",

@@ -1,18 +1,9 @@
 "use client";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import { FC, Suspense, memo } from "react";
-import { BloodType } from "@/types";
-import ContactsTable from "@/components/contacts/ContactsTable";
-
-export type ContactItemType = {
-  _id: string;
-  avatar: string;
-  name: string;
-  phone: string;
-  email: string;
-  location: string;
-  status: string; // "available" | "offline" | "busy";
-};
+import ContactsTable, {
+  ContactItemType,
+} from "@/components/contacts/ContactsTable";
 
 export type ContactResponseType = {
   data: ContactItemType[];

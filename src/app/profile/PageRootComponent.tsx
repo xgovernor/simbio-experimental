@@ -1,6 +1,5 @@
 "use client";
 import { FC, memo } from "react";
-import { Menu, MenuItemLink } from "@fluentui/react-components";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import DeviceList from "@/components/settings/DeviceList";
 

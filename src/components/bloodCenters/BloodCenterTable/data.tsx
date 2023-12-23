@@ -1,5 +1,4 @@
 "use client";
-
 import { ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,24 +11,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
-import {
-  Baby,
-  Ban,
-  CircleDashed,
-  Fingerprint,
-  MapPin,
-  PersonStanding,
-  ScanEye,
-  ShieldCheck,
-  ShieldQuestion,
-  User,
-  UserMinus,
-  VenetianMask,
-} from "lucide-react";
+import { Baby, Bot, Church, CircleDashed, MapPin } from "lucide-react";
 import { DataTableColumnHeader } from "@/components/ui/DataGrid/DataTableColumnHeader";
-import { MemberItemType } from ".";
+import { CentersItemType } from ".";
 
-export const columns: ColumnDef<MemberItemType>[] = [
+export const columns: ColumnDef<CentersItemType>[] = [
   {
     accessorKey: "name",
     header: "User",
@@ -55,37 +41,23 @@ export const columns: ColumnDef<MemberItemType>[] = [
     },
   },
   {
-    accessorKey: "gender",
-    header: "Gender",
-  },
-  {
-    accessorKey: "blood_group",
-    header: "Blood group",
-  },
-  {
-    accessorKey: "last_blood_donation",
-    header: "Last donation",
+    accessorKey: "facility",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Facility" />
+    ),
   },
   {
     accessorKey: "phone",
     header: "Phone",
   },
   {
+    accessorKey: "email",
+    header: "Email",
+  },
+  {
     accessorKey: "location",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Location" />
-    ),
-  },
-  {
-    accessorKey: "role",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Role" />
-    ),
-  },
-  {
-    accessorKey: "status",
-    header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Status" />
     ),
   },
   {
@@ -122,99 +94,26 @@ export const columns: ColumnDef<MemberItemType>[] = [
 ];
 
 // Filter: Status
-export const statuses = [
+const facility = [
   {
-    value: "Active",
-    label: "Active",
-    icon: ShieldCheck,
+    value: "hospital",
+    label: "Hospital",
+    icon: Church,
   },
   {
-    value: "Pending", // Need to be reviewed.
-    label: "Pending",
+    value: "blood bank",
+    label: "Blood Bank",
+    icon: Baby,
+  },
+  {
+    value: "lab",
+    label: "Lab",
+    icon: Bot,
+  },
+  {
+    value: "community center",
+    label: "Community Center",
     icon: CircleDashed,
-  },
-  {
-    value: "Suspend", // Temporary Blocked. Active upon suspension/request.
-    label: "Suspend",
-    icon: ShieldQuestion,
-  },
-  {
-    value: "Banned", // Forever blocked.
-    label: "Banned",
-    icon: Ban,
-  },
-  {
-    value: "Cancelled", // Applied for membership. But cancelled by reviewer.
-    label: "Cancelled",
-    icon: Fingerprint,
-  },
-  {
-    value: "Removed", // Soft delete.
-    label: "Removed",
-    icon: UserMinus,
-  },
-];
-
-// Filter: Status
-export const roles = [
-  {
-    value: "Founder",
-    label: "Founder",
-    icon: Baby,
-  },
-  {
-    value: "Co-Founder",
-    label: "Co-Founder",
-    icon: Baby,
-  },
-  {
-    value: "Communication",
-    label: "Communication",
-    icon: Baby,
-  },
-  {
-    value: "President",
-    label: "President",
-    icon: Baby,
-  },
-  {
-    value: "Accountant",
-    label: "Accountant",
-    icon: Baby,
-  },
-  {
-    value: "Volunteer",
-    label: "Volunteer",
-    icon: Baby,
-  },
-  {
-    value: "Ambassador",
-    label: "Ambassador",
-    icon: ShieldQuestion,
-  },
-  {
-    value: "Member",
-    label: "Member",
-    icon: User,
-  },
-];
-
-// Filter: Telecom Operator
-export const gender = [
-  {
-    value: "Male",
-    label: "Male",
-    icon: PersonStanding,
-  },
-  {
-    value: "Female",
-    label: "Female",
-    icon: ScanEye,
-  },
-  {
-    value: "Trans",
-    label: "Trans",
-    icon: VenetianMask,
   },
 ];
 
@@ -239,19 +138,9 @@ export const locations = [
 
 export const filters = [
   {
-    key: "gender",
-    label: "Gender",
-    options: gender,
-  },
-  {
-    key: "status",
-    label: "Status",
-    options: statuses,
-  },
-  {
-    key: "role",
-    label: "Role",
-    options: roles,
+    key: "facility",
+    label: "Facility",
+    options: facility,
   },
   {
     key: "location",

@@ -1,24 +1,11 @@
 "use client";
 import Layout from "@/components/ui/Layout";
-import RequestTable from "@/components/blood-request/BloodRequestTable";
+import RequestTable, {
+  RequestItemType,
+} from "@/components/blood-request/BloodRequestTable";
 // import ProfileDashboardHeader from "@/app/components/profileDashboard/ProfileDashboardHeader";
 // import MenuBar from "@/app/components/profileDashboard/MenuBar";
-import { PeopleAdd24Regular } from "@fluentui/react-icons";
-import { memo } from "react";
-
-export type RequestItemType = {
-  _id: string;
-  avatar: string;
-  name: string;
-  blood_group: string;
-  blood_type: string;
-  quantity: string;
-  delivery_date: string;
-  health_issue: string;
-  location: string;
-  status: string;
-  phone: string;
-};
+import { Suspense, memo } from "react";
 
 export type RequestResponseType = {
   data: RequestItemType[];
@@ -29,15 +16,18 @@ export type RequestResponseType = {
 
 const PageRootComponent = ({ data }: { data: RequestResponseType }) => {
   return (
-    <Layout title="Special blood requests" icon={<PeopleAdd24Regular />}>
-      {/* <ProfileDashboardHeader />
-            <MenuBar /> */}
-
-      <RequestTable
-        title="Special Blood Request list"
-        description={`Showing ${data?.limit} of ${data?.total} donations`}
-        data={data?.data}
-      />
+    <Layout>
+      <div className="mt-[22px] grid grid-cols-1">
+        <Suspense>
+          <div className="px-[22px] pb-[22px]">
+            <RequestTable
+              title="Special Blood Request list"
+              description={`Showing ${data?.limit} of ${data?.total} donations`}
+              data={data?.data}
+            />
+          </div>
+        </Suspense>
+      </div>
     </Layout>
   );
 };

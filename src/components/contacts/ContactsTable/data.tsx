@@ -1,4 +1,5 @@
 "use client";
+
 import { ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,19 +12,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
-import {
-  CircleDashed,
-  Fingerprint,
-  MapPin,
-  PersonStanding,
-  ScanEye,
-  ShieldCheck,
-  ShieldQuestion,
-  VenetianMask,
-} from "lucide-react";
-import { TeamsItemType } from ".";
+import { MapPin } from "lucide-react";
+import { DataTableColumnHeader } from "@/components/ui/DataGrid/DataTableColumnHeader";
+import { ContactItemType } from ".";
 
-export const columns: ColumnDef<TeamsItemType>[] = [
+export const columns: ColumnDef<ContactItemType>[] = [
   {
     accessorKey: "name",
     header: "User",
@@ -39,7 +32,7 @@ export const columns: ColumnDef<TeamsItemType>[] = [
           />
           <Link
             className="text-sm font-semibold"
-            href={`/members/${row.original.id}`}
+            href={`/contacts/${row.original.id}`}
             hrefLang="en"
           >
             {row.original.name}
@@ -49,37 +42,18 @@ export const columns: ColumnDef<TeamsItemType>[] = [
     },
   },
   {
-    accessorKey: "total_member",
-    header: "Members",
+    accessorKey: "phone",
+    header: "Phone",
   },
   {
-    id: "period",
-    header: "Period",
-    cell: ({ row }) => {
-      const user = row.original;
-
-      return (
-        <span className="flex items-center gap-2">
-          {user.period_from} - {user.period_to}
-        </span>
-      );
-    },
+    accessorKey: "email",
+    header: "Email",
   },
   {
-    accessorKey: "president",
-    header: "President",
-  },
-  {
-    accessorKey: "vice_president",
-    header: "Vice President",
-  },
-  {
-    accessorKey: "management",
-    header: "Management",
-  },
-  {
-    accessorKey: "status",
-    header: "Status",
+    accessorKey: "location",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Location" />
+    ),
   },
   {
     id: "actions",
@@ -114,49 +88,6 @@ export const columns: ColumnDef<TeamsItemType>[] = [
   },
 ];
 
-// Filter: Status
-export const statuses = [
-  {
-    value: "Active",
-    label: "Active",
-    icon: ShieldCheck,
-  },
-  {
-    value: "Pending", // Need to be reviewed.
-    label: "Pending",
-    icon: CircleDashed,
-  },
-  {
-    value: "Suspend", // Temporary Blocked. Active upon suspension/request.
-    label: "Suspend",
-    icon: ShieldQuestion,
-  },
-  {
-    value: "Cancelled", // Applied for membership. But cancelled by reviewer.
-    label: "Cancelled",
-    icon: Fingerprint,
-  },
-];
-
-// Filter: Telecom Operator
-export const period = [
-  {
-    value: "period",
-    label: "Period1",
-    icon: PersonStanding,
-  },
-  {
-    value: "Female",
-    label: "Female",
-    icon: ScanEye,
-  },
-  {
-    value: "Trans",
-    label: "Trans",
-    icon: VenetianMask,
-  },
-];
-
 // Filter: Location
 export const locations = [
   {
@@ -178,18 +109,13 @@ export const locations = [
 
 export const filters = [
   {
-    key: "status",
-    label: "Status",
-    options: statuses,
-  },
-  {
     key: "location",
     label: "Location",
     options: locations,
   },
   {
-    key: "president",
-    label: "Period",
-    options: period,
+    key: "org_type",
+    label: "Organization Type",
+    options: [],
   },
 ];

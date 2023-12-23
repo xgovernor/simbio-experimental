@@ -5,6 +5,7 @@ import { Column } from "@tanstack/react-table";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+
 import {
   Command,
   CommandEmpty,
@@ -108,14 +109,19 @@ export function DataTableFacetedFilter<TData, TValue>({
                   >
                     <div
                       className={cn(
-                        "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
+                        "mr-2 flex h-4 w-4 items-center justify-center rounded border border-primary",
                         isSelected
-                          ? "text-primary-foreground bg-primary"
+                          ? "bg-black text-white"
                           : "opacity-50 [&_svg]:invisible",
                       )}
                     >
                       <CheckIcon className={cn("h-4 w-4")} />
                     </div>
+                    {/* <Checkbox
+                      className="mr-2 h-4 w-4 items-center justify-center rounded"
+                      checked={isSelected}
+                    /> */}
+
                     {option.icon && (
                       <option.icon className="text-muted-foreground mr-2 h-4 w-4" />
                     )}

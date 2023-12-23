@@ -1,7 +1,4 @@
-import PageRootComponent, {
-  DonationResponseType,
-  PageConfig,
-} from "./PageRootComponent";
+import PageRootComponent, { PageConfig } from "./PageRootComponent";
 import { memo } from "react";
 import data from "@/assets/data/donations.json";
 

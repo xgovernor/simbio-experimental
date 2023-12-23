@@ -4,19 +4,9 @@ import ChartMatrix from "@/components/charts/ChartMatrix";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
 import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";
-import DonationTable from "@/components/donations/DonationTable";
-
-export type DonationItemType = {
-  _id: string;
-  avatar: string;
-  name: string;
-  amount: string;
-  date: string;
-  location: string;
-  phone: string;
-  email: string;
-  reference: string;
-};
+import DonationTable, {
+  DonationItemType,
+} from "@/components/donations/DonationTable";
 
 export type DonationResponseType = {
   data: DonationItemType[];
