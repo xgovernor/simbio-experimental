@@ -1,5 +1,5 @@
 import Date from "@/components/ui/Date";
-import { SupportMessagePriorityType, SupportMessageStatusType } from "@/types";
+import { TSupportMessagePriority, TSupportMessageStatus } from "@/types";
 import { getColorWithKey } from "@/utils/color-factory";
 import { Card, CardPreview } from "@fluentui/react-components";
 import Image from "next/image";
@@ -33,22 +33,22 @@ const COLUMNS = [
   },
 ];
 
-export type SupportMessageItemType = {
+export type TSupportMessageItem = {
   id: string;
   incident_id: string;
   title: string;
-  priority: SupportMessagePriorityType;
+  priority: TSupportMessagePriority;
   timestamp: string;
   from: {
     id: string;
     title: string;
   };
   message: string[];
-  status: SupportMessageStatusType;
+  status: TSupportMessageStatus;
   isViewed: boolean;
 };
 
-const MESSAGES: SupportMessageItemType[] = [
+const MESSAGES: TSupportMessageItem[] = [
   {
     id: "SMB-SM00",
     incident_id: "12534",
@@ -223,7 +223,7 @@ const MessagesTable: React.FC<MessagesTablePropsType> = ({
   );
 };
 
-const TableRow: React.FC<SupportMessageItemType> = ({
+const TableRow: React.FC<TSupportMessageItem> = ({
   incident_id,
   title,
   priority,

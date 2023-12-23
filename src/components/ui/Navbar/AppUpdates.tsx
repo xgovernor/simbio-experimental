@@ -158,18 +158,18 @@ const AppUpdates: FC = () => {
 };
 
 // New Membership Template
-type TemplateNewMemberPropsType = {
+type TTemplateNewMemberProps = {
   onDeny: () => void;
   onAccept: () => void;
 } & AppUpdatesListItemType;
 
-const TemplateNewMember: FC<TemplateNewMemberPropsType> = ({
+const TemplateNewMember: FC<TTemplateNewMemberProps> = ({
   id,
   title,
   date,
   onAccept,
   onDeny,
-}: TemplateNewMemberPropsType) => {
+}: TTemplateNewMemberProps) => {
   return (
     <div
       key={id}

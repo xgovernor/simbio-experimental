@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface UserType {
+interface IUser {
   user: Object;
   users: Object[];
   total: number;
@@ -12,7 +12,7 @@ interface UserType {
   error: string | null;
 }
 
-const initialState: UserType = {
+const initialState: IUser = {
   user: {},
   users: [],
   total: 0,

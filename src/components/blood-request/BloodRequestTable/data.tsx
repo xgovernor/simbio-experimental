@@ -14,9 +14,9 @@ import { Button } from "@/components/ui/button";
 import { CircleIcon, DotsHorizontalIcon } from "@radix-ui/react-icons";
 import { MapPin, PersonStanding, ScanEye, VenetianMask } from "lucide-react";
 import { DataTableColumnHeader } from "@/components/ui/DataGrid/DataTableColumnHeader";
-import { RequestItemType } from ".";
+import { TRequestItem } from ".";
 
-export const columns: ColumnDef<RequestItemType>[] = [
+export const columns: ColumnDef<TRequestItem>[] = [
   {
     accessorKey: "name",
     header: "User",

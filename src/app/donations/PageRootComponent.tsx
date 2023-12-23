@@ -5,17 +5,17 @@ import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
 import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";
 import DonationTable, {
-  DonationItemType,
+  TDonationItem,
 } from "@/components/donations/DonationTable";
 
 export type DonationResponseType = {
-  data: DonationItemType[];
+  data: TDonationItem[];
   offset: number;
   total: number;
   limit: number;
 };
 
-export type PageConfig = {
+export type TPageConfig = {
   analytics?: boolean;
   settings?: boolean;
   table?: boolean;
@@ -23,7 +23,7 @@ export type PageConfig = {
 
 interface PageRootComponentPropsType {
   data: DonationResponseType;
-  config: PageConfig;
+  config: TPageConfig;
 }
 
 const PageRootComponent: FC<PageRootComponentPropsType> = ({

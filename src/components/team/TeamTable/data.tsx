@@ -13,9 +13,9 @@ import { Button } from "@/components/ui/button";
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
 import { MapPin, ScanEye, VenetianMask } from "lucide-react";
 import { DataTableColumnHeader } from "@/components/ui/DataGrid/DataTableColumnHeader";
-import { TeamItemType } from ".";
+import { TTeamItem } from ".";
 
-export const columns: ColumnDef<TeamItemType>[] = [
+export const columns: ColumnDef<TTeamItem>[] = [
   {
     accessorKey: "name",
     header: "Name",

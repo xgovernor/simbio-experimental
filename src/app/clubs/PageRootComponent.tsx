@@ -5,15 +5,15 @@ import ChartMatrix from "@/components/charts/ChartMatrix";
 import ChartMemberStats from "@/components/charts/ChartMemberStats";
 import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
 import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";
-import ClubsTable, { ClubItemType } from "@/components/clubs/ClubsTable";
+import ClubsTable, { TClubItem } from "@/components/clubs/ClubsTable";
 
 export type ClubsResponseType = {
-  data: ClubItemType[];
+  data: TClubItem[];
   offset: number;
   total: number;
   limit: number;
 };
-export type PageConfig = {
+export type TPageConfig = {
   analytics?: boolean;
   settings?: boolean;
   table?: boolean;
@@ -21,7 +21,7 @@ export type PageConfig = {
 
 interface PageRootComponentPropsType {
   data: ClubsResponseType;
-  config: PageConfig;
+  config: TPageConfig;
 }
 
 const PageRootComponent: FC<PageRootComponentPropsType> = ({

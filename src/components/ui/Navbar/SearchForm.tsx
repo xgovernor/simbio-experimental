@@ -5,22 +5,22 @@ import { Search16Regular } from "@fluentui/react-icons";
 import { Form, Formik, FormikHelpers } from "formik";
 import { memo, useRef } from "react";
 
-interface SearchFormPropsType {
+interface ISearchFormProps {
   className?: string;
   children?: React.ReactNode;
   layout?: boolean;
 }
 
-interface SearchFormType {
+interface ISearchForm {
   search: string;
 }
 
-const SearchForm: React.FC<SearchFormPropsType> = ({
+const SearchForm: React.FC<ISearchFormProps> = ({
   className,
   children,
   layout = true,
   ...rest
-}: SearchFormPropsType) => {
+}: ISearchFormProps) => {
   const searchBox = useRef<HTMLInputElement>(null);
 
   const expandOnFocus = () => {
@@ -37,7 +37,7 @@ const SearchForm: React.FC<SearchFormPropsType> = ({
     }
   };
 
-  const initialState: SearchFormType = {
+  const initialState: ISearchForm = {
     search: "",
   };
 
@@ -46,8 +46,8 @@ const SearchForm: React.FC<SearchFormPropsType> = ({
   });
 
   const onSubmitHandler = (
-    values: SearchFormType,
-    { setSubmitting }: FormikHelpers<SearchFormType>,
+    values: ISearchForm,
+    { setSubmitting }: FormikHelpers<ISearchForm>,
   ) => {
     setSubmitting(true);
 

@@ -1,6 +1,6 @@
 import { SelectProps } from "@fluentui/react-components";
 
-export type BloodType =
+export type TBlood =
   | "A+"
   | "A-"
   | "B+"
@@ -13,7 +13,7 @@ export type BloodType =
 
 export type TeamStatus = "Active" | "Inactive" | "Pending";
 
-type AddressType = {
+type TAddress = {
   address: string;
   city: string;
   district: string;
@@ -22,17 +22,17 @@ type AddressType = {
 };
 
 // DynamicSelect
-export interface OptionType {
+export interface IOption {
   key?: string;
   value?: string;
   label: string;
 }
-export type DynamicSelectPropsType = SelectProps & {
-  options: OptionType[];
+export type TDynamicSelectProps = SelectProps & {
+  options: IOption[];
   name: string;
 };
 
-export interface SettingsMenuTabType {
+export interface ISettingsMenuTab {
   id: string;
   name: string;
   icon: React.ReactElement;
@@ -40,7 +40,7 @@ export interface SettingsMenuTabType {
 }
 
 // Menu Item
-export interface MenuItemType {
+export interface IMenuItem {
   id?: string;
   title: string;
   url: string;
@@ -48,25 +48,25 @@ export interface MenuItemType {
 }
 
 // Settings
-export type LanguageItemType = {
+export type TLanguageItem = {
   key?: string;
   label: string;
   value?: string;
 };
 
-export type TimeZoonItemType = {
+export type TTimeZoonItem = {
   key?: string;
   label: string;
   value: string;
 };
 
-export type TimeFormatType = {
+export type TTimeFormat = {
   key?: string;
   label: string;
   value: string;
 };
 
-export type DateFormatType = {
+export type TDateFormat = {
   key?: string;
   label: string;
   value: string;
@@ -76,7 +76,7 @@ export type DateFormatType = {
 /* Support                                                           */
 /* ***************************************************************** */
 // Available priority types
-export type SupportMessagePriorityType = "high" | "medium" | "low" | "none";
+export type TSupportMessagePriority = "high" | "medium" | "low" | "none";
 
 // Support Message Status
-export type SupportMessageStatusType = "open" | "close" | "delete" | "flag";
+export type TSupportMessageStatus = "open" | "close" | "delete" | "flag";

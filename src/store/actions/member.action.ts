@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface MemberType {
+interface IMember {
   data: {
     member: Object;
     members: Object[];
@@ -14,7 +14,7 @@ interface MemberType {
   error: string | null;
 }
 
-const initialState: MemberType = {
+const initialState: IMember = {
   data: {
     member: {},
     members: [],

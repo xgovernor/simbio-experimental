@@ -2,17 +2,17 @@
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import { FC, Suspense, memo } from "react";
 import BloodCenterTable, {
-  CentersItemType,
+  TCentersItem,
 } from "@/components/bloodCenters/BloodCenterTable";
 
 export type CentersResponseType = {
-  data: CentersItemType[];
+  data: TCentersItem[];
   offset: number;
   total: number;
   limit: number;
 };
 
-export type PageConfig = {
+export type TPageConfig = {
   analytics?: boolean;
   settings?: boolean;
   table?: boolean;
@@ -20,7 +20,7 @@ export type PageConfig = {
 
 interface PageRootComponentPropsType {
   data: CentersResponseType;
-  config: PageConfig;
+  config: TPageConfig;
 }
 
 const PageRootComponent: FC<PageRootComponentPropsType> = ({

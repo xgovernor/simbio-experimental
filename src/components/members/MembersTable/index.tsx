@@ -3,12 +3,12 @@ import MembersTableMenu from "./MembersTableMenu";
 import { columns, filters } from "./data";
 import { DataGrid } from "@/components/ui/DataGrid";
 
-export type MemberItemType = {
+export type TMemberItem = {
   id: string;
   avatar: string;
   name: string;
   gender: string;
-  blood_group: string; // "A+" | "A-" | "B+" | "B-" | "AB+" | "AB-" | "O+" | "O-"; // BloodType;
+  blood_group: string; // "A+" | "A-" | "B+" | "B-" | "AB+" | "AB-" | "O+" | "O-"; // TBlood;
   last_blood_donation: string;
   phone: string;
   location: string;
@@ -16,21 +16,21 @@ export type MemberItemType = {
   role: string;
 };
 
-interface MembersTablePropsType {
+interface TMembersTableProps {
   className?: string;
   title: string;
   description?: string;
-  data: MemberItemType[];
+  data: TMemberItem[];
   rest?: object;
 }
 
-const MembersTable: FC<MembersTablePropsType> = ({
+const MembersTable: FC<TMembersTableProps> = ({
   className,
   title,
   description,
   data,
   ...rest
-}: MembersTablePropsType) => {
+}: TMembersTableProps) => {
   return (
     <>
       <section

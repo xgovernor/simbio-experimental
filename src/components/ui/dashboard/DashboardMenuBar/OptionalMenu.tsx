@@ -1,4 +1,4 @@
-import { MenuItemType } from "@/types";
+import { IMenuItem } from "@/types";
 import {
   Menu,
   MenuItem,
@@ -11,13 +11,13 @@ import { Navigation24Filled } from "@fluentui/react-icons";
 import { useRouter } from "next/navigation";
 import { memo } from "react";
 
-interface OptionalMenuPropsType {
-  menu: MenuItemType[];
+interface IOptionalMenuProps {
+  menu: IMenuItem[];
 }
 
-const OptionalMenu: React.FC<OptionalMenuPropsType> = ({
+const OptionalMenu: React.FC<IOptionalMenuProps> = ({
   menu,
-}: OptionalMenuPropsType) => {
+}: IOptionalMenuProps) => {
   const router = useRouter();
 
   return (

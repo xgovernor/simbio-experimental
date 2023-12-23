@@ -7,7 +7,7 @@ import {
   shorthands,
 } from "@fluentui/react-components";
 import { memo } from "react";
-import { SettingsMenuTabType } from "@/types";
+import { ISettingsMenuTab } from "@/types";
 import SettingsMenu from "./SettingsMenu";
 import SettingsCanvas from "./SettingsCanvas";
 
@@ -24,16 +24,16 @@ const useStyle = makeStyles({
   canvas: {},
 });
 
-interface ContactLayoutPropsType {
+interface IContactLayoutProps {
   className?: string;
-  tabs: SettingsMenuTabType[];
+  tabs: ISettingsMenuTab[];
   selectedValue: TabValue;
   onTabSelect: (event: SelectTabEvent, data: SelectTabData) => void;
   children: React.ReactNode;
   rest?: object;
 }
 
-const ContactLayout: React.FC<ContactLayoutPropsType> = ({
+const ContactLayout: React.FC<IContactLayoutProps> = ({
   className,
   children,
   tabs,

@@ -9,7 +9,7 @@ import DonationTableMenu from "./DonationTableMenu";
 import { DataGrid } from "@/components/ui/DataGrid";
 import { columns, filters } from "./data";
 
-export type DonationItemType = {
+export type TDonationItem = {
   id: string;
   avatar: string;
   name: string;
@@ -22,11 +22,11 @@ export type DonationItemType = {
   reference: string;
 };
 
-interface DonationsTablePropsType {
+interface TDonationsTableProps {
   className?: string;
   title: string;
   description?: string;
-  data: DonationItemType[];
+  data: TDonationItem[];
   rest?: object;
 }
 
@@ -117,13 +117,13 @@ const useStyles = makeStyles({
   tbc_prefLocation: {},
 });
 
-const DonationsTable: FC<DonationsTablePropsType> = ({
+const DonationsTable: FC<TDonationsTableProps> = ({
   className,
   title,
   description,
   data,
   ...rest
-}: DonationsTablePropsType) => {
+}: TDonationsTableProps) => {
   const classes = useStyles();
   const [showSearch, setShowSearch] = useState(false);
 

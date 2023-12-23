@@ -2,17 +2,17 @@
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import { FC, Suspense, memo } from "react";
 import ContactsTable, {
-  ContactItemType,
+  TContactItem,
 } from "@/components/contacts/ContactsTable";
 
 export type ContactResponseType = {
-  data: ContactItemType[];
+  data: TContactItem[];
   offset: number;
   total: number;
   limit: number;
 };
 
-export type PageConfig = {
+export type TPageConfig = {
   analytics?: boolean;
   settings?: boolean;
   table?: boolean;
@@ -20,7 +20,7 @@ export type PageConfig = {
 
 interface PageRootComponentPropsType {
   data: ContactResponseType;
-  config: PageConfig;
+  config: TPageConfig;
 }
 
 const PageRootComponent: FC<PageRootComponentPropsType> = ({

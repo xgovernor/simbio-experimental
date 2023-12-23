@@ -2,19 +2,19 @@ import { Button, makeStyles, shorthands } from "@fluentui/react-components";
 import { Form, Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { memo } from "react";
-import FormBuilder, { FormBuilderFormType } from "@/components/ui/FormBuilder";
+import FormBuilder, { TFormBuilderForm } from "@/components/ui/FormBuilder";
 import {
   createFormikInitialValue,
   createFormikYupSchema,
 } from "@/utils/formBuilder.util";
 
-interface DonationFormPropsType {
+interface TDonationFormProps {
   className?: string;
   children?: React.ReactNode;
   rest?: object;
 }
 
-interface DonationFormType {
+interface TDonationForm {
   // Reference
   refId: string;
 
@@ -102,7 +102,7 @@ const useStyles = makeStyles({
   },
 });
 
-const FORM: FormBuilderFormType = {
+const FORM: TFormBuilderForm = {
   sectionClassName: "w-full grid grid-cols-2 gap-x-13 gap-y-3",
   fieldClassName: "flex flex-row items-start justify-between gap-4 w-full",
   labelClassName:
@@ -340,18 +340,18 @@ const FORM: FormBuilderFormType = {
   ],
 };
 
-const DonationForm: React.FC<DonationFormPropsType> = ({
+const DonationForm: React.FC<TDonationFormProps> = ({
   className,
   children,
   ...rest
-}: DonationFormPropsType) => {
+}: TDonationFormProps) => {
   const classes = useStyles();
   const initialValues = createFormikInitialValue(FORM);
   const validationSchema = createFormikYupSchema(FORM);
 
   const onSubmitHandler = (
-    values: DonationFormType,
-    { setSubmitting }: FormikHelpers<DonationFormType>,
+    values: TDonationForm,
+    { setSubmitting }: FormikHelpers<TDonationForm>,
   ): void => {
     setSubmitting(true);
 
@@ -363,7 +363,7 @@ const DonationForm: React.FC<DonationFormPropsType> = ({
 
   return (
     <Formik
-      initialValues={initialValues as DonationFormType}
+      initialValues={initialValues as TDonationForm}
       validationSchema={validationSchema}
       onSubmit={onSubmitHandler}
       {...rest}

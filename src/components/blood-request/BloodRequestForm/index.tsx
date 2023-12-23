@@ -2,7 +2,7 @@ import { Button } from "@fluentui/react-components";
 import { Form, Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { memo } from "react";
-import FormBuilder, { FormBuilderFormType } from "@/components/ui/FormBuilder";
+import FormBuilder, { TFormBuilderForm } from "@/components/ui/FormBuilder";
 import {
   createFormikInitialValue,
   createFormikYupSchema,
@@ -14,7 +14,7 @@ interface RequestFormPropsType {
   rest?: object;
 }
 
-interface RequestFormType {
+interface TRequestForm {
   // Patient Info
   patientFirstName: string;
   patientLastName: string;
@@ -45,7 +45,7 @@ interface RequestFormType {
   note: string;
 }
 
-const FORM: FormBuilderFormType = {
+const FORM: TFormBuilderForm = {
   sectionClassName: "w-full grid grid-cols-2 gap-x-[3.25rem] gap-y-3",
   fieldClassName: "flex flex-row items-start justify-between gap-4 w-full",
   labelClassName:
@@ -354,8 +354,8 @@ const RequestForm: React.FC<RequestFormPropsType> = ({
   const validationSchema = createFormikYupSchema(FORM);
 
   const onSubmitHandler = (
-    values: RequestFormType,
-    { setSubmitting }: FormikHelpers<RequestFormType>,
+    values: TRequestForm,
+    { setSubmitting }: FormikHelpers<TRequestForm>,
   ): void => {
     setSubmitting(true);
 
@@ -367,7 +367,7 @@ const RequestForm: React.FC<RequestFormPropsType> = ({
 
   return (
     <Formik
-      initialValues={initialValues as RequestFormType}
+      initialValues={initialValues as TRequestForm}
       validationSchema={validationSchema}
       onSubmit={onSubmitHandler}
       {...rest}

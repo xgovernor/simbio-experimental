@@ -31,13 +31,13 @@ const NOTICE_LINKS = [
   },
 ];
 
-interface SettingsPrivacyPropsType {
+interface ISettingsPrivacyProps {
   className?: string;
 }
 
-const SettingsPrivacy: FC<SettingsPrivacyPropsType> = ({
+const SettingsPrivacy: FC<ISettingsPrivacyProps> = ({
   className,
-}: SettingsPrivacyPropsType) => {
+}: ISettingsPrivacyProps) => {
   return (
     <SettingsTemplate className={className} title="Security">
       <>

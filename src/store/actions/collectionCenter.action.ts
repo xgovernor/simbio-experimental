@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface CollectionCenterType {
+interface ICollectionCenter {
   data: {
     center: Object;
     centers: Object[];
@@ -14,7 +14,7 @@ interface CollectionCenterType {
   error: string | null;
 }
 
-const initialState: CollectionCenterType = {
+const initialState: ICollectionCenter = {
   data: {
     center: {},
     centers: [],

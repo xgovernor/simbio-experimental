@@ -1,13 +1,13 @@
 import { FC, memo } from "react";
 import SettingsTemplate from "../SettingsTemplate";
 
-interface SettingsAppearancePropsType {
+interface TSettingsAppearanceProps {
   className?: string;
 }
 
-const SettingsAppearance: FC<SettingsAppearancePropsType> = ({
+const SettingsAppearance: FC<TSettingsAppearanceProps> = ({
   className,
-}: SettingsAppearancePropsType) => {
+}: TSettingsAppearanceProps) => {
   const onDiscardHandler = () => {
     alert("Discard");
   };

@@ -1,7 +1,7 @@
 "use client";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
-import Sidebar, { SidebarMenuItemType } from "../Sidebar";
+import Sidebar, { ISidebarMenuItem } from "../Sidebar";
 import {
   Home24Regular,
   People24Regular,
@@ -12,7 +12,7 @@ import { memo } from "react";
 import Canvas from "../Canvas";
 import { BreadcrumbLinkType } from "../Canvas/CanvasBreadcrumb";
 
-interface LayoutPropsType {
+interface ILayoutProps {
   className?: string;
   children: React.ReactNode;
   aside?: React.ReactNode;
@@ -23,7 +23,7 @@ interface LayoutPropsType {
   rest?: object;
 }
 
-const SIDEBAR_MENU_ITEMS: SidebarMenuItemType[] = [
+const SIDEBAR_MENU_ITEMS: ISidebarMenuItem[] = [
   {
     name: "Home",
     description: "Home page",
@@ -68,7 +68,7 @@ const SIDEBAR_MENU_ITEMS: SidebarMenuItemType[] = [
   },
 ];
 
-const Layout: React.FC<LayoutPropsType> = ({
+const Layout: React.FC<ILayoutProps> = ({
   className,
   children,
   aside,
@@ -77,7 +77,7 @@ const Layout: React.FC<LayoutPropsType> = ({
   icon,
   breadcrumb,
   ...rest
-}: LayoutPropsType) => {
+}: ILayoutProps) => {
   return (
     <>
       {layout && (

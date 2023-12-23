@@ -20,10 +20,10 @@ import {
   ShieldQuestion,
   UserMinus,
 } from "lucide-react";
-import { ClubItemType } from ".";
+import { TClubItem } from ".";
 import { DataTableColumnHeader } from "@/components/ui/DataGrid/DataTableColumnHeader";
 
-export const columns: ColumnDef<ClubItemType>[] = [
+export const columns: ColumnDef<TClubItem>[] = [
   {
     accessorKey: "name",
     header: "Club",

@@ -1,16 +1,16 @@
-import { SupportMessagePriorityType, SupportMessageStatusType } from "../types";
+import { TSupportMessagePriority, TSupportMessageStatus } from "../types";
 
 // CSS Attribute Type
 export type GetColorWithKeyParamAttributeKey = "bg" | "border" | "text";
 
 // List of keys available function dictionary
-export type GetColorWithKeyParamType =
-  | SupportMessagePriorityType
-  | SupportMessageStatusType;
+export type TGetColorWithKeyParam =
+  | TSupportMessagePriority
+  | TSupportMessageStatus;
 
 // Function Type
 export type GetColorWithKey = (
-  key: string, // GetColorWithKeyParamType,
+  key: string, // TGetColorWithKeyParam,
   attributeType: GetColorWithKeyParamAttributeKey,
 ) => string | undefined;
 

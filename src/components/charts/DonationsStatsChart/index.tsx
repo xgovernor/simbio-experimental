@@ -8,17 +8,17 @@ import { useState } from "react";
 
 // Register the required components
 // echarts.use([TitleComponent, TooltipComponent, BarChart, CanvasRenderer]);
-interface DonationsStatsChartPropsType {
+interface TDonationsStatsChartProps {
   className?: string;
   data?: object;
   rest?: object;
 }
 
-const DonationsStatsChart: React.FC<DonationsStatsChartPropsType> = ({
+const DonationsStatsChart: React.FC<TDonationsStatsChartProps> = ({
   className,
   data,
   ...rest
-}: DonationsStatsChartPropsType) => {
+}: TDonationsStatsChartProps) => {
   const [options, setOptions] = useState({
     tooltip: {
       trigger: "item",

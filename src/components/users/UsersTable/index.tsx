@@ -3,7 +3,7 @@ import { columns, filters } from "./data";
 import UsersTableMenu from "./UsersTableMenu";
 import { DataGrid } from "@/components/ui/DataGrid";
 
-export type UsersItemType = {
+export type TUsersItem = {
   id: string;
   avatar: string;
   name: string;
@@ -16,13 +16,13 @@ export type UsersItemType = {
   location: string;
 };
 
-interface UsersTablePropsType {
+interface IUsersTableProps {
   title: string;
   description?: string;
-  data: UsersItemType[];
+  data: TUsersItem[];
 }
 
-function UsersTable({ title, description, data }: UsersTablePropsType) {
+function UsersTable({ title, description, data }: IUsersTableProps) {
   return (
     <section
       className="gap grid h-full w-full gap-3 rounded bg-white"

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { StoreStateType } from "..";
+import { TStoreState } from "..";
 
-export interface SupportType {
+export interface ISupport {
   data: {
     organization: {
       id: number;
@@ -19,7 +19,7 @@ export interface SupportType {
   error: string | null;
 }
 
-const initialState: SupportType = {
+const initialState: ISupport = {
   data: {
     organization: {
       id: 0,
@@ -54,7 +54,7 @@ const supportSlice = createSlice({
   },
 });
 
-export const selectSupport = (state: StoreStateType) => state.support;
+export const selectSupport = (state: TStoreState) => state.support;
 
 export const { updateMessages, updateSeasons, updateOrganizations } =
   supportSlice.actions;

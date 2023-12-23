@@ -5,16 +5,16 @@ import ChartMatrix from "@/components/charts/ChartMatrix";
 import ChartMemberStats from "@/components/charts/ChartMemberStats";
 import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
 import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";
-import UsersTable, { UsersItemType } from "@/components/users/UsersTable";
+import UsersTable, { TUsersItem } from "@/components/users/UsersTable";
 
 export type UsersResponseType = {
-  data: UsersItemType[];
+  data: TUsersItem[];
   offset: number;
   total: number;
   limit: number;
 };
 
-export type PageConfig = {
+export type TPageConfig = {
   analytics?: boolean;
   settings?: boolean;
   table?: boolean;
@@ -22,7 +22,7 @@ export type PageConfig = {
 
 interface PageRootComponentPropsType {
   data: UsersResponseType;
-  config: PageConfig;
+  config: TPageConfig;
 }
 
 const PageRootComponent: FC<PageRootComponentPropsType> = ({

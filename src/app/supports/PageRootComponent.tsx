@@ -12,7 +12,7 @@ import { PeopleAdd24Regular } from "@fluentui/react-icons";
 import { memo, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-export type PageConfig = {
+export type TPageConfig = {
   analytics?: boolean;
   settings?: boolean;
   organizations: true;
@@ -26,15 +26,15 @@ export type OrganizationsResponseType = {
   limit: number;
 };
 
-type SupportOrganizationsPropsType = {
+type TSupportOrganizationsProps = {
   organizations: OrganizationsResponseType;
-  config: PageConfig;
+  config: TPageConfig;
 };
 
-const SupportPage: React.FC<SupportOrganizationsPropsType> = ({
+const SupportPage: React.FC<TSupportOrganizationsProps> = ({
   organizations,
   config,
-}: SupportOrganizationsPropsType) => {
+}: TSupportOrganizationsProps) => {
   const dispatch = useDispatch();
   const supportState = useSelector(selectSupport);
 

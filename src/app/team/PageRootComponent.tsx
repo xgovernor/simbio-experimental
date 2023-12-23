@@ -1,16 +1,16 @@
 "use client";
-import TeamTable, { TeamItemType } from "@/components/team/TeamTable";
+import TeamTable, { TTeamItem } from "@/components/team/TeamTable";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import { FC, memo } from "react";
 
 export type TeamResponseType = {
-  data: TeamItemType[];
+  data: TTeamItem[];
   offset: number;
   total: number;
   limit: number;
 };
 
-export type PageConfig = {
+export type TPageConfig = {
   analytics?: boolean;
   settings?: boolean;
   table?: boolean;
@@ -18,7 +18,7 @@ export type PageConfig = {
 
 interface PageRootComponentPropsType {
   data: TeamResponseType;
-  config: PageConfig;
+  config: TPageConfig;
 }
 
 const PageRootComponent: FC<PageRootComponentPropsType> = ({

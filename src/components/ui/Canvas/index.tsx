@@ -2,7 +2,7 @@ import CanvasHeader from "./CanvasHeader";
 import CanvasBreadcrumb, { BreadcrumbLinkType } from "./CanvasBreadcrumb";
 import { memo } from "react";
 
-export interface CanvasPropsType {
+export interface ICanvasProps {
   className?: string;
   title?: string;
   icon?: React.ReactNode;
@@ -11,7 +11,7 @@ export interface CanvasPropsType {
   style?: object;
   rest?: object;
 }
-const Canvas: React.FC<CanvasPropsType> = ({
+const Canvas: React.FC<ICanvasProps> = ({
   className,
   title,
   icon,
@@ -19,7 +19,7 @@ const Canvas: React.FC<CanvasPropsType> = ({
   breadcrumb,
   style,
   ...rest
-}: CanvasPropsType) => {
+}: ICanvasProps) => {
   return (
     // <main className={mergeClasses(classes.Canvas, className)} style={style} {...rest}>
     <main

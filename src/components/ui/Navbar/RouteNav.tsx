@@ -7,12 +7,12 @@ import {
 import { useRouter } from "next/navigation";
 import { memo } from "react";
 
-interface RouteNavPropsType {
+interface IRouteNavProps {
   className?: string;
   rest?: object;
 }
 
-const RouteNav = ({ className, ...rest }: RouteNavPropsType) => {
+const RouteNav = ({ className, ...rest }: IRouteNavProps) => {
   const router = useRouter();
 
   // Backward Button

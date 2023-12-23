@@ -4,16 +4,16 @@ import ChartMatrix from "@/components/charts/ChartMatrix";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
 import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";
-import TeamsTable, { TeamsItemType } from "@/components/teams/TeamsTable";
+import TeamsTable, { TTeamsItem } from "@/components/teams/TeamsTable";
 
 export type TeamsResponseType = {
-  data: TeamsItemType[];
+  data: TTeamsItem[];
   offset: number;
   total: number;
   limit: number;
 };
 
-export type PageConfig = {
+export type TPageConfig = {
   analytics?: boolean;
   settings?: boolean;
   table?: boolean;
@@ -21,7 +21,7 @@ export type PageConfig = {
 
 interface PageRootComponentPropsType {
   data: TeamsResponseType;
-  config: PageConfig;
+  config: TPageConfig;
 }
 
 const PageRootComponent: FC<PageRootComponentPropsType> = ({

@@ -27,9 +27,9 @@ import {
   VenetianMask,
 } from "lucide-react";
 import { DataTableColumnHeader } from "@/components/ui/DataGrid/DataTableColumnHeader";
-import { MemberItemType } from ".";
+import { TMemberItem } from ".";
 
-export const columns: ColumnDef<MemberItemType>[] = [
+export const columns: ColumnDef<TMemberItem>[] = [
   {
     accessorKey: "name",
     header: "User",

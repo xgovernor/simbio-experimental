@@ -5,7 +5,7 @@ import {
 } from "@fluentui/react-components";
 import { FC, memo } from "react";
 
-interface SettingsTemplatePropsType {
+interface ISettingsTemplateProps {
   className?: string;
   children: React.ReactElement;
   title: string;
@@ -13,13 +13,13 @@ interface SettingsTemplatePropsType {
   onDiscard?: () => void;
 }
 
-const SettingsTemplate: FC<SettingsTemplatePropsType> = ({
+const SettingsTemplate: FC<ISettingsTemplateProps> = ({
   className,
   children,
   title,
   onDiscard,
   onSubmit,
-}: SettingsTemplatePropsType) => {
+}: ISettingsTemplateProps) => {
   return (
     <div className={mergeClasses(className, "fw-full flex flex-col")}>
       {/* Header */}

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface EventType {
+interface IEvent {
   data: {
     event: Object;
     events: Object[];
@@ -14,7 +14,7 @@ interface EventType {
   error: string | null;
 }
 
-const initialState: EventType = {
+const initialState: IEvent = {
   data: {
     event: {},
     events: [],

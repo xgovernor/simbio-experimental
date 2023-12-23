@@ -15,7 +15,7 @@ import {
   Alert24Regular,
   Accessibility24Regular,
 } from "@fluentui/react-icons";
-import { SettingsMenuTabType } from "@/types";
+import { ISettingsMenuTab } from "@/types";
 import { FC, memo, useState } from "react";
 import { Settings24Regular } from "@fluentui/react-icons";
 import SettingsLayout from "@/components/settings/SettingsLayout";
@@ -30,7 +30,7 @@ import SettingsSecurity from "@/components/settings/SettingsSecurity";
 import SettingsPrivacy from "@/components/settings/SettingsPrivacy";
 import SettingsHelp from "@/components/settings/SettingsHelp";
 
-export type PageConfig = {
+export type TPageConfig = {
   analytics?: boolean;
   settings?: boolean;
   data?: boolean;
@@ -39,7 +39,7 @@ export type PageConfig = {
 interface PageRootComponentPropsType {
   page: string;
   data: any;
-  config: PageConfig;
+  config: TPageConfig;
 }
 
 export const BREADCRUMB_MENU = [
@@ -58,7 +58,7 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
 }: PageRootComponentPropsType) => {
   const [selectedValue, setSelectedValue] = useState<TabValue>(page);
   // const route = useRouter();
-  const TABS: SettingsMenuTabType[] = [
+  const TABS: ISettingsMenuTab[] = [
     {
       id: "account",
       name: "Account",

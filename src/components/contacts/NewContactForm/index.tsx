@@ -2,19 +2,19 @@ import { Button, makeStyles, shorthands } from "@fluentui/react-components";
 import { Form, Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { memo } from "react";
-import FormBuilder, { FormBuilderFormType } from "@/components/ui/FormBuilder";
+import FormBuilder, { TFormBuilderForm } from "@/components/ui/FormBuilder";
 import {
   createFormikInitialValue,
   createFormikYupSchema,
 } from "@/utils/formBuilder.util";
 
-interface NewContactFormPropsType {
+interface TNewContactFormProps {
   className?: string;
   children?: React.ReactNode;
   rest?: object;
 }
 
-interface NewContactFormType {
+interface INewContactForm {
   // Reference
   refId: string;
 
@@ -93,7 +93,7 @@ const useStyles = makeStyles({
   },
 });
 
-const FORM: FormBuilderFormType = {
+const FORM: TFormBuilderForm = {
   sectionClassName: "w-full grid grid-cols-2 gap-x-13 gap-y-3",
   fieldClassName: "flex flex-row items-start justify-between gap-4 w-full",
   labelClassName:
@@ -259,18 +259,18 @@ const FORM: FormBuilderFormType = {
   ],
 };
 
-const NewContactForm: React.FC<NewContactFormPropsType> = ({
+const NewContactForm: React.FC<TNewContactFormProps> = ({
   className,
   children,
   ...rest
-}: NewContactFormPropsType) => {
+}: TNewContactFormProps) => {
   const classes = useStyles();
   const initialValues = createFormikInitialValue(FORM);
   const validationSchema = createFormikYupSchema(FORM);
 
   const onSubmitHandler = (
-    values: NewContactFormType,
-    { setSubmitting }: FormikHelpers<NewContactFormType>,
+    values: INewContactForm,
+    { setSubmitting }: FormikHelpers<INewContactForm>,
   ): void => {
     setSubmitting(true);
 
@@ -282,7 +282,7 @@ const NewContactForm: React.FC<NewContactFormPropsType> = ({
 
   return (
     <Formik
-      initialValues={initialValues as NewContactFormType}
+      initialValues={initialValues as INewContactForm}
       validationSchema={validationSchema}
       onSubmit={onSubmitHandler}
       {...rest}

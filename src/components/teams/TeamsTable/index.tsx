@@ -3,7 +3,7 @@ import TeamsTableMenu from "./TeamsTableMenu";
 import { DataGrid } from "@/components/ui/DataGrid";
 import { columns, filters } from "./data";
 
-export type TeamsItemType = {
+export type TTeamsItem = {
   id: string;
   avatar: string;
   name: string;
@@ -16,17 +16,17 @@ export type TeamsItemType = {
   status: string; // TeamStatus;
 };
 
-interface TeamsTablePropsType {
+interface TTeamsTableProps {
   title: string;
   description?: string;
-  data: TeamsItemType[];
+  data: TTeamsItem[];
 }
 
-const TeamsTable: FC<TeamsTablePropsType> = ({
+const TeamsTable: FC<TTeamsTableProps> = ({
   title,
   description,
   data,
-}: TeamsTablePropsType) => {
+}: TTeamsTableProps) => {
   return (
     <section
       className="gap grid h-full w-full gap-3 rounded bg-white"

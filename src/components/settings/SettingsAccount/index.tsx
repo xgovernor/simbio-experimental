@@ -1,14 +1,14 @@
 import { FC, memo } from "react";
 import SettingsTemplate from "../SettingsTemplate";
 import { Form, Formik } from "formik";
-import FormBuilder, { FormBuilderFormType } from "@/components/ui/FormBuilder";
+import FormBuilder, { TFormBuilderForm } from "@/components/ui/FormBuilder";
 import * as yup from "yup";
 import {
   createFormikInitialValue,
   createFormikYupSchema,
 } from "@/utils/formBuilder.util";
 
-interface SettingsAccountPropsType {
+interface TSettingsAccountProps {
   className?: string;
 }
 // const initialValues = {
@@ -35,7 +35,7 @@ interface SettingsAccountPropsType {
 //     confirmNewPassword: "",
 // }
 
-const FORM: FormBuilderFormType = {
+const FORM: TFormBuilderForm = {
   sectionClassName: "w-full grid grid-cols-3 gap-x-5 gap-y-3",
   fieldClassName: "flex flex-col items-start justify-between gap-1 w-full",
   labelClassName:
@@ -92,9 +92,9 @@ const FORM: FormBuilderFormType = {
   ],
 };
 
-const SettingsAccount: FC<SettingsAccountPropsType> = ({
+const SettingsAccount: FC<TSettingsAccountProps> = ({
   className,
-}: SettingsAccountPropsType) => {
+}: TSettingsAccountProps) => {
   const initialValues = createFormikInitialValue(FORM);
   const validationSchema = createFormikYupSchema(FORM);
 

@@ -1,7 +1,7 @@
 import { makeStyles, mergeClasses } from "@fluentui/react-components";
 import { memo } from "react";
 
-interface SettingsCanvasPropsType {
+interface ISettingsCanvasProps {
   className?: string;
   children: React.ReactNode;
   rest?: object;
@@ -14,11 +14,11 @@ const useStyles = makeStyles({
   },
 });
 
-const SettingsCanvas: React.FC<SettingsCanvasPropsType> = ({
+const SettingsCanvas: React.FC<ISettingsCanvasProps> = ({
   className,
   children,
   ...rest
-}: SettingsCanvasPropsType) => {
+}: ISettingsCanvasProps) => {
   const classes = useStyles();
 
   return (

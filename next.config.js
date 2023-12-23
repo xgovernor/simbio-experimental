@@ -15,7 +15,24 @@ const nextConfig = {
     buildActivityPosition: "top-right",
   },
   images: {
-    domains: ["simbio.dot9.dev", "example.com", "i.pravatar.cc", "localhost"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "simbio.dot9.dev",
+      },
+      {
+        protocol: "https",
+        hostname: "i.pravatar.cc",
+        // port: '',
+        // pathname: '/my-bucket/**',
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "3000",
+        // pathname: '/my-bucket/**',
+      },
+    ],
   },
   // experimental: {
   //     instrumentationHook: true

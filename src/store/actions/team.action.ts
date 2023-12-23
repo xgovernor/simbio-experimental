@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface SettingsType {
+interface ISettings {
   team: Object[];
   teams: Object[];
   total: number;
@@ -12,7 +12,7 @@ interface SettingsType {
   error: string | null;
 }
 
-const initialState: SettingsType = {
+const initialState: ISettings = {
   team: [],
   teams: [],
   total: 0,

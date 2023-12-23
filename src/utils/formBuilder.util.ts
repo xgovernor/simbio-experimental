@@ -1,7 +1,7 @@
-import { FormBuilderFormType } from "@/components/ui/FormBuilder";
+import { TFormBuilderForm } from "@/components/ui/FormBuilder";
 import { object } from "yup";
 
-export type CreateFormikInitialValueType = (form: FormBuilderFormType) => {
+export type TCreateFormikInitialValue = (form: TFormBuilderForm) => {
   [key: string]: any;
 };
 
@@ -10,9 +10,7 @@ export type CreateFormikInitialValueType = (form: FormBuilderFormType) => {
  * @param form - The form object containing sections and fields.
  * @returns The initial values as an object.
  */
-export const createFormikInitialValue: CreateFormikInitialValueType = (
-  form,
-) => {
+export const createFormikInitialValue: TCreateFormikInitialValue = (form) => {
   // Initialize an empty object to hold the initial values
   const initialValues: { [key: string]: any } = {};
 
@@ -29,17 +27,17 @@ export const createFormikInitialValue: CreateFormikInitialValueType = (
   return initialValues;
 };
 
-export type CreateFormikYupSchemaType = (form: FormBuilderFormType) => {
+export type TCreateFormikYupSchema = (form: TFormBuilderForm) => {
   [key: string]: any;
 };
 
 /**
- * Create a Yup validation schema for Formik based on a FormBuilderFormType object.
- * @param form - The FormBuilderFormType object representing the form structure.
+ * Create a Yup validation schema for Formik based on a TFormBuilderForm object.
+ * @param form - The TFormBuilderForm object representing the form structure.
  * @returns The Yup validation schema.
  */
-export const createFormikYupSchema: CreateFormikYupSchemaType = (
-  form: FormBuilderFormType,
+export const createFormikYupSchema: TCreateFormikYupSchema = (
+  form: TFormBuilderForm,
 ) => {
   // Create an empty object to store the schema
   const schema: { [key: string]: any } = {};

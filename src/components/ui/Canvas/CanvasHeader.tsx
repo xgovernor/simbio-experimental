@@ -1,14 +1,14 @@
 import { memo } from "react";
 
-interface CanvasHeaderPropsType {
+interface ICanvasHeaderProps {
   title?: string;
   icon?: React.ReactNode;
 }
 
-const CanvasHeader: React.FC<CanvasHeaderPropsType> = ({
+const CanvasHeader: React.FC<ICanvasHeaderProps> = ({
   title,
   icon,
-}: CanvasHeaderPropsType) => {
+}: ICanvasHeaderProps) => {
   return (
     <header className="sticky top-0 z-1 flex h-12 w-full flex-row flex-nowrap items-center justify-start bg-white">
       <div className="flex h-full w-full flex-row flex-nowrap items-center justify-start gap-3 px-5 py-[14px] text-primary">

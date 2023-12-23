@@ -9,7 +9,7 @@ import {
 import { FC, memo } from "react";
 import SettingsTemplate from "../SettingsTemplate";
 
-interface SettingsDevicePropsType {
+interface TSettingsDeviceProps {
   className?: string;
 }
 
@@ -63,9 +63,9 @@ const COLUMNS = [
   },
 ];
 
-const SettingsDevice: FC<SettingsDevicePropsType> = ({
+const SettingsDevice: FC<TSettingsDeviceProps> = ({
   className,
-}: SettingsDevicePropsType) => {
+}: TSettingsDeviceProps) => {
   return (
     <SettingsTemplate title="Device">
       <>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { memo } from "react";
 
-export interface SidebarMenuItemType {
+export interface ISidebarMenuItem {
   name: string;
   description?: string;
   icon?: React.ReactElement;
@@ -10,7 +10,7 @@ export interface SidebarMenuItemType {
 interface SidebarProps {
   className?: string;
   children?: React.ReactNode;
-  menu: SidebarMenuItemType[];
+  menu: ISidebarMenuItem[];
 }
 
 const Sidebar: React.FC<SidebarProps> = ({

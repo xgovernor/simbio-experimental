@@ -1,13 +1,13 @@
 import { FC, memo } from "react";
 import SettingsTemplate from "../SettingsTemplate";
 
-interface SettingsSecurityPropsType {
+interface ISettingsSecurityProps {
   className?: string;
 }
 
-const SettingsSecurity: FC<SettingsSecurityPropsType> = ({
+const SettingsSecurity: FC<ISettingsSecurityProps> = ({
   className,
-}: SettingsSecurityPropsType) => {
+}: ISettingsSecurityProps) => {
   const onDiscardHandler = () => {
     alert("Discard");
   };

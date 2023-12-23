@@ -13,9 +13,9 @@ import { Button } from "@/components/ui/button";
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
 import { Baby, Bot, Church, CircleDashed, MapPin } from "lucide-react";
 import { DataTableColumnHeader } from "@/components/ui/DataGrid/DataTableColumnHeader";
-import { CentersItemType } from ".";
+import { TCentersItem } from ".";
 
-export const columns: ColumnDef<CentersItemType>[] = [
+export const columns: ColumnDef<TCentersItem>[] = [
   {
     accessorKey: "name",
     header: "User",

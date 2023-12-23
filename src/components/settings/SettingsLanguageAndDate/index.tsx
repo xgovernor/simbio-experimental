@@ -2,28 +2,28 @@ import { Combobox, Field, Label, Option } from "@fluentui/react-components";
 import { SparkleFilled } from "@fluentui/react-icons";
 import { FC, memo } from "react";
 import {
-  DateFormatType,
-  LanguageItemType,
-  TimeFormatType,
-  TimeZoonItemType,
+  TDateFormat,
+  TLanguageItem,
+  TTimeFormat,
+  TTimeZoonItem,
 } from "@/types";
 import SettingsTemplate from "../SettingsTemplate";
 
-interface SettingsLanguageAndDatePropsType {
+interface TSettingsLanguageAndDateProps {
   className?: string;
-  language: LanguageItemType[];
-  timeZones: TimeZoonItemType[];
-  timeFormats: TimeFormatType[];
-  dateFormats: DateFormatType[];
+  language: TLanguageItem[];
+  timeZones: TTimeZoonItem[];
+  timeFormats: TTimeFormat[];
+  dateFormats: TDateFormat[];
 }
 
-const SettingsLanguageAndDate: FC<SettingsLanguageAndDatePropsType> = ({
+const SettingsLanguageAndDate: FC<TSettingsLanguageAndDateProps> = ({
   className,
   language,
   timeZones,
   timeFormats,
   dateFormats,
-}: SettingsLanguageAndDatePropsType) => {
+}: TSettingsLanguageAndDateProps) => {
   const onDiscardHandler = () => {
     alert("Discard");
   };

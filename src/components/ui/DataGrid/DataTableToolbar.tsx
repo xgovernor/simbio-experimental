@@ -3,10 +3,7 @@ import { Cross2Icon } from "@radix-ui/react-icons";
 import { Table } from "@tanstack/react-table";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  DataTableFacetedFilter,
-  FilterItemType,
-} from "./DataTableFacetedFilter";
+import { DataTableFacetedFilter, TFilterItem } from "./DataTableFacetedFilter";
 import { DataTableViewOptions } from "./DataTableViewOptions";
 import {
   ArrowDownIcon,
@@ -68,8 +65,8 @@ export const priorities = [
 export type DataGridFilter = {
   key: string;
   label: string;
-  // options: Record<string, FilterItemType[]>;
-  options: FilterItemType[];
+  // options: Record<string, TFilterItem[]>;
+  options: TFilterItem[];
 };
 
 export type DataGridFilters = DataGridFilter[];

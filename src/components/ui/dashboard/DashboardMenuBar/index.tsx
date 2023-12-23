@@ -11,16 +11,16 @@ import {
 } from "@fluentui/react-icons";
 import { FC, RefObject, memo, useEffect, useRef, useState } from "react";
 import ProfileMenu from "./ProfileMenu";
-import { MenuItemType } from "@/types";
+import { IMenuItem } from "@/types";
 import AddNewMenu from "./AddNewMenu";
 import OptionalMenu from "./OptionalMenu";
 
-interface MenuBarPropsType {
+interface IMenuBarProps {
   className?: string;
   rest?: object;
 }
 
-const profileMenu: MenuItemType[] = [
+const profileMenu: IMenuItem[] = [
   {
     title: "Dashboard",
     url: "/dashboard",
@@ -73,7 +73,7 @@ const profileMenu: MenuItemType[] = [
   },
 ];
 
-const optionalProfileMenu: MenuItemType[] = [
+const optionalProfileMenu: IMenuItem[] = [
   {
     title: "Report error",
     url: "/report/error",
@@ -86,7 +86,7 @@ const optionalProfileMenu: MenuItemType[] = [
   },
 ];
 
-const profileActionMenu: MenuItemType[] = [
+const profileActionMenu: IMenuItem[] = [
   {
     title: "Add member",
     url: "/members/new",
@@ -124,10 +124,10 @@ const profileActionMenu: MenuItemType[] = [
   },
 ];
 
-const DashboardMenuBar: FC<MenuBarPropsType> = ({
+const DashboardMenuBar: FC<IMenuBarProps> = ({
   className,
   ...rest
-}: MenuBarPropsType) => {
+}: IMenuBarProps) => {
   const [showAvatar, setShowAvatar] = useState(false);
   const menuBarRef: RefObject<HTMLDivElement> = useRef(null);
 

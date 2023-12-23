@@ -2,13 +2,13 @@ import { Checkbox } from "@fluentui/react-components";
 import { FC, memo, useState } from "react";
 import SettingsTemplate from "../SettingsTemplate";
 
-interface SettingsAccessibilityPropsType {
+interface TSettingsAccessibilityProps {
   className?: string;
 }
 
-const SettingsAccessibility: FC<SettingsAccessibilityPropsType> = ({
+const SettingsAccessibility: FC<TSettingsAccessibilityProps> = ({
   className,
-}: SettingsAccessibilityPropsType) => {
+}: TSettingsAccessibilityProps) => {
   const [option1, setOption1] = useState(false);
   const [option2, setOption2] = useState(true);
 

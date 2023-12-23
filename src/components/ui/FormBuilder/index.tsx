@@ -14,7 +14,7 @@ type FormBuilderFieldSelectOptionType = {
   value?: string;
 };
 
-type FormBuilderFieldType = {
+type TFormBuilderField = {
   className?: string;
   labelClassName?: string;
   inputClassName?: string;
@@ -52,10 +52,10 @@ type FormBuilderFormSectionType = {
   inputClassName?: string;
   autoComplete?: "on" | "off";
   required?: boolean;
-  fields: Array<FormBuilderFieldType>;
+  fields: Array<TFormBuilderField>;
 };
 
-export type FormBuilderFormType = {
+export type TFormBuilderForm = {
   id?: string;
   className?: string;
   sectionClassName?: string;
@@ -73,7 +73,7 @@ export type FormBuilderFormType = {
 };
 
 export type FormBuilderPropsType = {
-  form: FormBuilderFormType;
+  form: TFormBuilderForm;
   onChange: any;
   onBlur: any;
   touched?: any;

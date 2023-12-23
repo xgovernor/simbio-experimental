@@ -1,4 +1,4 @@
-import { MenuItemType } from "@/types";
+import { IMenuItem } from "@/types";
 import {
   Button,
   Menu,
@@ -11,11 +11,11 @@ import { ChevronDown20Regular } from "@fluentui/react-icons";
 import { useRouter } from "next/navigation";
 import { FC, memo } from "react";
 
-export interface AddNewMenuPropsType {
-  menu: MenuItemType[];
+export interface IAddNewMenuProps {
+  menu: IMenuItem[];
 }
 
-const AddNewMenu: FC<AddNewMenuPropsType> = ({ menu }: AddNewMenuPropsType) => {
+const AddNewMenu: FC<IAddNewMenuProps> = ({ menu }: IAddNewMenuProps) => {
   const router = useRouter();
 
   return (

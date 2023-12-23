@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface ContactType {
+interface IContact {
   data: {
     contact: Object;
     contacts: Object[];
@@ -14,7 +14,7 @@ interface ContactType {
   error: string | null;
 }
 
-const initialState: ContactType = {
+const initialState: IContact = {
   data: {
     contact: {},
     contacts: [],

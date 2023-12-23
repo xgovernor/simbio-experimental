@@ -1,4 +1,4 @@
-import { SettingsMenuTabType } from "@/types";
+import { ISettingsMenuTab } from "@/types";
 import {
   Overflow,
   SelectTabData,
@@ -12,9 +12,9 @@ import {
 } from "@fluentui/react-components";
 import { memo } from "react";
 
-interface SettingsMenuPropsType {
+interface ISettingsMenuProps {
   className?: string;
-  tabs: SettingsMenuTabType[];
+  tabs: ISettingsMenuTab[];
   selectedValue: TabValue;
   onTabSelect: (event: SelectTabEvent, data: SelectTabData) => void;
   rest?: object;
@@ -41,13 +41,13 @@ const useStyles = makeStyles({
   },
 });
 
-const SettingsMenu: React.FC<SettingsMenuPropsType> = ({
+const SettingsMenu: React.FC<ISettingsMenuProps> = ({
   className,
   tabs,
   selectedValue,
   onTabSelect,
   ...rest
-}: SettingsMenuPropsType) => {
+}: ISettingsMenuProps) => {
   const classes = useStyles();
 
   return (

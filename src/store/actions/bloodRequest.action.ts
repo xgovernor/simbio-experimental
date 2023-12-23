@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface BloodRequestType {
+interface IBloodRequest {
   data: {
     request: Object;
     requests: Object[];
@@ -14,7 +14,7 @@ interface BloodRequestType {
   error: string | null;
 }
 
-const initialState: BloodRequestType = {
+const initialState: IBloodRequest = {
   data: {
     request: {},
     requests: [],

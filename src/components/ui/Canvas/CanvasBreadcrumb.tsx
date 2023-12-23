@@ -7,7 +7,7 @@ export interface BreadcrumbLinkType {
   url?: string;
 }
 
-interface CanvasBreadcrumbPropsType {
+interface ICanvasBreadcrumbProps {
   className?: string;
   links?: BreadcrumbLinkType[];
   rest?: object;
@@ -55,11 +55,11 @@ const GenerateLink = ({
   );
 };
 
-const CanvasBreadcrumb: React.FC<CanvasBreadcrumbPropsType> = ({
+const CanvasBreadcrumb: React.FC<ICanvasBreadcrumbProps> = ({
   className,
   links,
   ...rest
-}: CanvasBreadcrumbPropsType) => {
+}: ICanvasBreadcrumbProps) => {
   const linksLength = links?.length || 0;
 
   return (

@@ -14,9 +14,9 @@ import { Button } from "@/components/ui/button";
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
 import { MapPin } from "lucide-react";
 import { DataTableColumnHeader } from "@/components/ui/DataGrid/DataTableColumnHeader";
-import { ContactItemType } from ".";
+import { TContactItem } from ".";
 
-export const columns: ColumnDef<ContactItemType>[] = [
+export const columns: ColumnDef<TContactItem>[] = [
   {
     accessorKey: "name",
     header: "User",

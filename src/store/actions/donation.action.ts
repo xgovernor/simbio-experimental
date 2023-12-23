@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface DonationType {
+interface IDonation {
   data: {
     donation: Object;
     donations: Object[];
@@ -14,7 +14,7 @@ interface DonationType {
   error: string | null;
 }
 
-const initialState: DonationType = {
+const initialState: IDonation = {
   data: {
     donation: {},
     donations: [],

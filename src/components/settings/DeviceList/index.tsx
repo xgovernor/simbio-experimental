@@ -7,7 +7,7 @@ import {
 } from "@fluentui/react-components";
 import { FC, memo } from "react";
 
-interface DeviceListPropsType {
+interface TDeviceListProps {
   className?: string;
 }
 
@@ -61,9 +61,7 @@ const COLUMNS = [
   },
 ];
 
-const DeviceList: FC<DeviceListPropsType> = ({
-  className,
-}: DeviceListPropsType) => {
+const DeviceList: FC<TDeviceListProps> = ({ className }: TDeviceListProps) => {
   return (
     <Table className="mt-5 w-full">
       <TableHeader>

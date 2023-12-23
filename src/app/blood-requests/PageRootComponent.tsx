@@ -1,14 +1,14 @@
 "use client";
 import Layout from "@/components/ui/Layout";
 import RequestTable, {
-  RequestItemType,
+  TRequestItem,
 } from "@/components/blood-request/BloodRequestTable";
 // import ProfileDashboardHeader from "@/app/components/profileDashboard/ProfileDashboardHeader";
 // import MenuBar from "@/app/components/profileDashboard/MenuBar";
 import { Suspense, memo } from "react";
 
 export type RequestResponseType = {
-  data: RequestItemType[];
+  data: TRequestItem[];
   offset: number;
   total: number;
   limit: number;

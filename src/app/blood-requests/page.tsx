@@ -1,10 +1,10 @@
 import PageRootComponent from "./PageRootComponent";
 import { memo } from "react";
 import data from "@/assets/data/requests.json";
-import { RequestItemType } from "@/components/blood-request/BloodRequestTable";
+import { TRequestItem } from "@/components/blood-request/BloodRequestTable";
 
 export type RequestResponseType = {
-  data: RequestItemType[];
+  data: TRequestItem[];
   offset: number;
   total: number;
   limit: number;

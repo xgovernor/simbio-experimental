@@ -2,13 +2,13 @@ import { Button, makeStyles, shorthands } from "@fluentui/react-components";
 import { Form, Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { memo } from "react";
-import FormBuilder, { FormBuilderFormType } from "@/components/ui/FormBuilder";
+import FormBuilder, { TFormBuilderForm } from "@/components/ui/FormBuilder";
 import {
   createFormikInitialValue,
   createFormikYupSchema,
 } from "@/utils/formBuilder.util";
 
-interface TeamMemberFormPropsType {
+interface ITeamMemberFormProps {
   className?: string;
   children?: React.ReactNode;
   rest?: object;
@@ -70,7 +70,7 @@ const useStyles = makeStyles({
   },
 });
 
-const FORM: FormBuilderFormType = {
+const FORM: TFormBuilderForm = {
   sectionClassName: "w-full grid grid-cols-2 gap-x-13 gap-y-3",
   fieldClassName: "flex flex-row items-start justify-between gap-4 w-full",
   labelClassName:
@@ -125,11 +125,11 @@ const FORM: FormBuilderFormType = {
   ],
 };
 
-const TeamMemberForm: React.FC<TeamMemberFormPropsType> = ({
+const TeamMemberForm: React.FC<ITeamMemberFormProps> = ({
   className,
   children,
   ...rest
-}: TeamMemberFormPropsType) => {
+}: ITeamMemberFormProps) => {
   const classes = useStyles();
   const initialValues = createFormikInitialValue(FORM);
   const validationSchema = createFormikYupSchema(FORM);

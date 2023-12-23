@@ -29,10 +29,10 @@ import {
   User,
   UserMinus,
 } from "lucide-react";
-import { UsersItemType } from ".";
+import { TUsersItem } from ".";
 import { DataTableColumnHeader } from "@/components/ui/DataGrid/DataTableColumnHeader";
 
-export const columns: ColumnDef<UsersItemType>[] = [
+export const columns: ColumnDef<TUsersItem>[] = [
   {
     accessorKey: "name",
     header: "User",

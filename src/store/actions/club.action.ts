@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface ClubType {
+interface IClub {
   data: {
     club: Object;
     clubs: Object[];
@@ -14,7 +14,7 @@ interface ClubType {
   error: string | null;
 }
 
-const initialState: ClubType = {
+const initialState: IClub = {
   data: {
     club: {},
     clubs: [],

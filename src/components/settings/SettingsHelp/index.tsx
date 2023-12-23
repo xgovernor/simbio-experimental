@@ -1,13 +1,13 @@
 import { FC, memo } from "react";
 import SettingsTemplate from "../SettingsTemplate";
 
-interface SettingsHelpPropsType {
+interface TSettingsHelpProps {
   className?: string;
 }
 
-const SettingsHelp: FC<SettingsHelpPropsType> = ({
+const SettingsHelp: FC<TSettingsHelpProps> = ({
   className,
-}: SettingsHelpPropsType) => {
+}: TSettingsHelpProps) => {
   const onDiscardHandler = () => {
     alert("Discard");
   };

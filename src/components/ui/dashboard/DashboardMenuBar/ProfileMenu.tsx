@@ -1,10 +1,10 @@
-import { MenuItemType } from "@/types";
+import { IMenuItem } from "@/types";
 import { Button } from "@fluentui/react-components";
 import { usePathname, useRouter } from "next/navigation";
 import { FC, memo } from "react";
 
 interface ProfileMenuProps {
-  menu: MenuItemType[];
+  menu: IMenuItem[];
 }
 
 const ProfileMenu: FC<ProfileMenuProps> = ({ menu }) => {

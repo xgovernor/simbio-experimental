@@ -1,18 +1,18 @@
 import { memo } from "react";
 
-interface FormSectionPropsType {
+interface IFormSectionProps {
   className?: string;
   title?: string;
   children?: React.ReactNode;
   rest?: object;
 }
 
-const FormSection: React.FC<FormSectionPropsType> = ({
+const FormSection: React.FC<IFormSectionProps> = ({
   className,
   title,
   children,
   ...rest
-}: FormSectionPropsType) => {
+}: IFormSectionProps) => {
   return (
     <div className="mb-5 w-full">
       {title && (

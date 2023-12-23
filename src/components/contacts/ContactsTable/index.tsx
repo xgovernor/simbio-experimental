@@ -3,7 +3,7 @@ import ContactsTableMenu from "./ContactsTableMenu";
 import { DataGrid } from "@/components/ui/DataGrid";
 import { columns, filters } from "./data";
 
-export type ContactItemType = {
+export type TContactItem = {
   id: string;
   avatar: string;
   name: string;
@@ -13,17 +13,17 @@ export type ContactItemType = {
   status: string; // "available" | "offline" | "busy";
 };
 
-interface ContactsTablePropsType {
+interface TContactsTableProps {
   title: string;
   description?: string;
-  data: ContactItemType[];
+  data: TContactItem[];
 }
 
-const ContactsTable: FC<ContactsTablePropsType> = ({
+const ContactsTable: FC<TContactsTableProps> = ({
   title,
   description,
   data,
-}: ContactsTablePropsType) => {
+}: TContactsTableProps) => {
   return (
     <section
       className="gap grid h-full w-full gap-3 rounded bg-white"

@@ -21,9 +21,9 @@ import {
   ShieldQuestion,
   VenetianMask,
 } from "lucide-react";
-import { TeamsItemType } from ".";
+import { TTeamsItem } from ".";
 
-export const columns: ColumnDef<TeamsItemType>[] = [
+export const columns: ColumnDef<TTeamsItem>[] = [
   {
     accessorKey: "name",
     header: "User",

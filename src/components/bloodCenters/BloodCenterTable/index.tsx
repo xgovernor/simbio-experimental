@@ -3,7 +3,7 @@ import BloodCenterTableMenu from "./BloodCenterTableMenu";
 import { DataGrid } from "@/components/ui/DataGrid";
 import { columns, filters } from "./data";
 
-export type CentersItemType = {
+export type TCentersItem = {
   id: string;
   avatar: string;
   name: string;
@@ -16,17 +16,17 @@ export type CentersItemType = {
   mapUrl: string;
 };
 
-interface CentersTablePropsType {
+interface TCentersTableProps {
   title: string;
   description?: string;
-  data: CentersItemType[];
+  data: TCentersItem[];
 }
 
-const CentersTable: FC<CentersTablePropsType> = ({
+const CentersTable: FC<TCentersTableProps> = ({
   title,
   description,
   data,
-}: CentersTablePropsType) => {
+}: TCentersTableProps) => {
   return (
     <section
       className="gap grid h-full w-full gap-3 rounded bg-white"

@@ -7,7 +7,7 @@ import BloodRequestTableMenu from "./BloodRequestTableMenu";
 import { DataGrid } from "@/components/ui/DataGrid";
 import { columns, filters } from "./data";
 
-export type RequestItemType = {
+export type TRequestItem = {
   id: string;
   avatar: string;
   name: string;
@@ -25,7 +25,7 @@ interface BloodRequestTablePropsType {
   className?: string;
   title: string;
   description?: string;
-  data: RequestItemType[];
+  data: TRequestItem[];
   rest?: object;
 }
 

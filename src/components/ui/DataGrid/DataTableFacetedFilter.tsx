@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/popover";
 import { Separator } from "@/components/ui/separator";
 
-export type FilterItemType = {
+export type TFilterItem = {
   label: string;
   value: string;
   icon: any;
@@ -31,7 +31,7 @@ export type FilterItemType = {
 interface DataTableFacetedFilterProps<TData, TValue> {
   column?: Column<TData, TValue>;
   title?: string;
-  options: FilterItemType[];
+  options: TFilterItem[];
 }
 
 export function DataTableFacetedFilter<TData, TValue>({
@@ -68,10 +68,10 @@ export function DataTableFacetedFilter<TData, TValue>({
                 ) : (
                   options
                     .filter((option) => selectedValues.has(option.value))
-                    .map((option) => (
+                    .map((option, index) => (
                       <Badge
                         variant="secondary"
-                        key={option.value}
+                        key={index}
                         className="rounded-sm px-1 font-normal"
                       >
                         {option.label}
@@ -90,11 +90,11 @@ export function DataTableFacetedFilter<TData, TValue>({
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup>
-              {options.map((option) => {
+              {options.map((option, index) => {
                 const isSelected = selectedValues.has(option.value);
                 return (
                   <CommandItem
-                    key={option.value}
+                    key={index}
                     onSelect={() => {
                       if (isSelected) {
                         selectedValues.delete(option.value);

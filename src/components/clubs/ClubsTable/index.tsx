@@ -3,7 +3,7 @@ import ClubsTableMenu from "./ClubsTableMenu";
 import { DataGrid } from "@/components/ui/DataGrid";
 import { columns, filters } from "./data";
 
-export type ClubItemType = {
+export type TClubItem = {
   id: string;
   avatar: string;
   name: string;
@@ -15,17 +15,17 @@ export type ClubItemType = {
   status: string;
 };
 
-interface ClubsTablePropsType {
+interface TClubsTableProps {
   title: string;
   description?: string;
-  data: ClubItemType[];
+  data: TClubItem[];
 }
 
-const ClubsTable: FC<ClubsTablePropsType> = ({
+const ClubsTable: FC<TClubsTableProps> = ({
   title,
   description,
   data,
-}: ClubsTablePropsType) => {
+}: TClubsTableProps) => {
   return (
     <section
       className="gap grid h-full w-full gap-3 rounded bg-white"

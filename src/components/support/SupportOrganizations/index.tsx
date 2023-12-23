@@ -9,13 +9,13 @@ export type OrganizationsItemType = {
   location: string;
 };
 
-type SupportOrganizationsPropsType = {
+type TSupportOrganizationsProps = {
   organizations: OrganizationsItemType[];
 };
 
-const SupportOrganizations: React.FC<SupportOrganizationsPropsType> = ({
+const SupportOrganizations: React.FC<TSupportOrganizationsProps> = ({
   organizations,
-}: SupportOrganizationsPropsType) => {
+}: TSupportOrganizationsProps) => {
   return (
     <section className="min-h-max max-w-full overflow-y-auto overflow-x-hidden rounded-lg px-1">
       {organizations.map((organization, i) => (

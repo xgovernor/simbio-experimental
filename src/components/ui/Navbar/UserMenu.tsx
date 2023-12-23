@@ -21,11 +21,11 @@ import { useRouter } from "next/navigation";
 import { FC, memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-interface UserMenuPropsType {
+interface IUserMenuProps {
   className?: string;
 }
 
-const UserMenu: FC<UserMenuPropsType> = ({ className }: UserMenuPropsType) => {
+const UserMenu: FC<IUserMenuProps> = ({ className }: IUserMenuProps) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const settings = useSelector((state: any) => state.settings);

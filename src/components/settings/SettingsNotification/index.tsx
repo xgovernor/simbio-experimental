@@ -2,13 +2,13 @@ import { Checkbox, Text } from "@fluentui/react-components";
 import { FC, memo, useState } from "react";
 import SettingsTemplate from "../SettingsTemplate";
 
-interface SettingsNotificationPropsType {
+interface ISettingsNotificationProps {
   className?: string;
 }
 
-const SettingsNotification: FC<SettingsNotificationPropsType> = ({
+const SettingsNotification: FC<ISettingsNotificationProps> = ({
   className,
-}: SettingsNotificationPropsType) => {
+}: ISettingsNotificationProps) => {
   const [option1, setOption1] = useState(false);
   const [option2, setOption2] = useState(true);
   const [option3, setOption3] = useState(false);

@@ -12,9 +12,9 @@ import { Button } from "@/components/ui/button";
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
 import { MapPin, PersonStanding, ScanEye, VenetianMask } from "lucide-react";
 import { DataTableColumnHeader } from "@/components/ui/DataGrid/DataTableColumnHeader";
-import { DonationItemType } from ".";
+import { TDonationItem } from ".";
 
-export const columns: ColumnDef<DonationItemType>[] = [
+export const columns: ColumnDef<TDonationItem>[] = [
   {
     accessorKey: "name",
     header: "User",
