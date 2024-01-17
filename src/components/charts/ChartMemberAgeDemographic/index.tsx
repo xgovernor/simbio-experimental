@@ -1,9 +1,6 @@
 /**
  * This component shows member's stats in Pie chart.
  * Labels: Active, Offline, Inactive, Cancelled.
- *
- * TODO:
- * - Component is not optimized yet.
  */
 import {
   Button,
@@ -22,10 +19,26 @@ import {
   BookQuestionMark24Regular,
   DocumentTableArrowRight24Regular,
 } from "@fluentui/react-icons";
-import ReactECharts, { EChartsOption } from "echarts-for-react";
-import { FC, memo } from "react";
+import { memo } from "react";
+import ReactECharts from 'echarts-for-react/lib/core';
+import { PieChart } from 'echarts/charts';
+import * as echarts from 'echarts/core';
+import { SVGRenderer } from 'echarts/renderers';
+import React from 'react';
+import { EChartsOption } from "echarts-for-react";
+import { LegendComponent, TooltipComponent } from "echarts/components";
+
+// Register the required components
+echarts.use([
+  SVGRenderer,
+  PieChart,
+  TooltipComponent,
+  LegendComponent
+]);
+
 
 const options: EChartsOption = {
+  animation: false,
   tooltip: {
     trigger: "item",
   },
@@ -37,7 +50,7 @@ const options: EChartsOption = {
   },
   series: [
     {
-      name: "Male Age Demograpic",
+      name: "Male Age Demographic",
       type: "pie",
       radius: ["40%", "70%"],
       center: ["50%", "50%"],
@@ -74,10 +87,13 @@ const options: EChartsOption = {
   ],
 };
 
-const Chart: FC = () => (
+const Chart = () => (
   <ReactECharts
+    echarts={echarts}
     className="h-55 max-h-55 w-full"
     option={options}
+    notMerge={true}
+    lazyUpdate={true}
     opts={{ renderer: "svg", height: 212, width: "auto" }}
   />
 );

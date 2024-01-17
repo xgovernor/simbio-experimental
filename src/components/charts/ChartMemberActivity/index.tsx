@@ -1,3 +1,4 @@
+"use client";
 /**
  * This component shows member's stats in Pie chart.
  * Labels: Active, Offline, Inactive, Cancelled.
@@ -22,12 +23,148 @@ import {
   BookQuestionMark24Regular,
   DocumentTableArrowRight24Regular,
 } from "@fluentui/react-icons";
-import ReactECharts, { EChartsOption } from "echarts-for-react";
-// import * as echarts from 'echarts/core';
-// import { BarChart } from 'echarts/charts';
-// import { TitleComponent, TooltipComponent } from 'echarts/components';
-// import { CanvasRenderer } from 'echarts/renderers';
 import { FC, memo } from "react";
+
+
+import ReactECharts from 'echarts-for-react/lib/core'
+import {
+  RadarChart,
+  // BarChart,
+  // LineChart,
+  // PieChart,
+  // ScatterChart,
+  // GaugeChart,
+  // FunnelChart,
+  // EffectScatterChart,
+  // CandlestickChart,
+  // HeatmapChart,
+  // TreeChart,
+  // TreemapChart,
+  // SunburstChart,
+  // MapChart,
+  // LinesChart,
+  // GraphChart,
+  // BoxplotChart,
+  // ParallelChart,
+  // SankeyChart,
+  // ThemeRiverChart,
+  // PictorialBarChart,
+  // CustomChart
+} from 'echarts/charts'
+import {
+  // GridSimpleComponent,
+  // GridComponent,
+  // PolarComponent,
+  RadarComponent,
+  // GeoComponent,
+  // SingleAxisComponent,
+  // ParallelComponent,
+  // CalendarComponent,
+  // GraphicComponent,
+  // ToolboxComponent,
+  // TooltipComponent,
+  // AxisPointerComponent,
+  // BrushComponent,
+  // TitleComponent,
+  // TimelineComponent,
+  // MarkPointComponent,
+  // MarkLineComponent,
+  // MarkAreaComponent,
+  // LegendComponent,
+  // LegendScrollComponent,
+  // LegendPlainComponent,
+  // DataZoomComponent,
+  // DataZoomInsideComponent,
+  // DataZoomSliderComponent,
+  // VisualMapComponent,
+  // VisualMapContinuousComponent,
+  // VisualMapPiecewiseComponent,
+  // AriaComponent,
+  // TransformComponent,
+  // DatasetComponent,
+} from 'echarts/components'
+import * as echarts from 'echarts/core'
+import {
+  // CanvasRenderer,
+  SVGRenderer
+} from 'echarts/renderers'
+import React from 'react'
+import { EChartsOption } from "echarts-for-react";
+
+// Register the required components
+echarts.use([
+  // GridSimpleComponent,
+  // GridComponent,
+  // PolarComponent,
+  RadarComponent,
+  // GeoComponent,
+  // SingleAxisComponent,
+  // ParallelComponent,
+  // CalendarComponent,
+  // GraphicComponent,
+  // ToolboxComponent,
+  // TooltipComponent,
+  // AxisPointerComponent,
+  // BrushComponent,
+  // TitleComponent,
+  // TimelineComponent,
+  // MarkPointComponent,
+  // MarkLineComponent,
+  // MarkAreaComponent,
+  // LegendComponent,
+  // LegendScrollComponent,
+  // LegendPlainComponent,
+  // DataZoomComponent,
+  // DataZoomInsideComponent,
+  // DataZoomSliderComponent,
+  // VisualMapComponent,
+  // VisualMapContinuousComponent,
+  // VisualMapPiecewiseComponent,
+  // AriaComponent,
+  // TransformComponent,
+  // DatasetComponent,
+  // TitleComponent,
+  // MarkPointComponent,
+  // MarkLineComponent,
+  // MarkAreaComponent,
+  // TimelineComponent,
+  // DataZoomComponent,
+  // BrushComponent,
+  // VisualMapComponent,
+  // ToolboxComponent,
+  // GraphicComponent,
+  // TooltipComponent,
+  RadarChart,
+  RadarComponent,
+  // CanvasRenderer,
+  // DatasetComponent,
+  SVGRenderer,
+  // PolarComponent,
+
+  // BarChart,
+  // LineChart,
+  // PieChart,
+  // ScatterChart,
+  // GaugeChart,
+  // FunnelChart,
+  // EffectScatterChart,
+  // CandlestickChart,
+  // HeatmapChart,
+  // TreeChart,
+  // TreemapChart,
+  // SunburstChart,
+  // MapChart,
+  // LinesChart,
+  // GraphChart,
+  // BoxplotChart,
+  // ParallelChart,
+  // SankeyChart,
+  // ThemeRiverChart,
+  // PictorialBarChart,
+  // CustomChart
+]);
+
+
 
 const dataGZ = [
   [26, 37, 27, 1.163, 27, 13, 1],
@@ -37,6 +174,7 @@ const dataGZ = [
 ];
 
 const options: EChartsOption = {
+  animation: false,
   legend: {
     show: false,
   },
@@ -100,8 +238,11 @@ const options: EChartsOption = {
 
 const Chart: FC = () => (
   <ReactECharts
+    echarts={echarts}
     className="h-55 max-h-55 w-full"
     option={options}
+    notMerge={true}
+    lazyUpdate={true}
     opts={{ renderer: "svg", height: 212, width: "auto" }}
   />
 );

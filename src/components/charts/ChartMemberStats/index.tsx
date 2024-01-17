@@ -1,9 +1,6 @@
 /**
  * This component shows member's stats in Pie chart.
  * Labels: Active, Offline, Inactive, Cancelled.
- *
- * TODO:
- * - Component is not optimised yet.
  */
 import {
   Button,
@@ -22,14 +19,28 @@ import {
   BookQuestionMark24Regular,
   DocumentTableArrowRight24Regular,
 } from "@fluentui/react-icons";
-import ReactECharts from "echarts-for-react";
-// import * as echarts from 'echarts/core';
-// import { BarChart } from 'echarts/charts';
-// import { TitleComponent, TooltipComponent } from 'echarts/components';
-// import { CanvasRenderer } from 'echarts/renderers';
 import { memo } from "react";
+import ReactECharts from 'echarts-for-react/lib/core';
+import { PieChart } from 'echarts/charts';
+import * as echarts from 'echarts/core';
+import { SVGRenderer } from 'echarts/renderers';
+import React from 'react';
+import { LegendComponent, ToolboxComponent, TooltipComponent } from "echarts/components";
+import { EChartsOption } from "echarts-for-react";
 
-const options = {
+// Register the required components
+echarts.use([
+  SVGRenderer,
+  PieChart,
+  ToolboxComponent,
+  TooltipComponent,
+  LegendComponent
+]);
+
+
+const options: EChartsOption = {
+  animation: false,
+  foo: "bar",
   tooltip: {
     trigger: "item",
   },
@@ -78,8 +89,11 @@ const options = {
 
 const Chart = () => (
   <ReactECharts
+    echarts={echarts}
     className="h-55 max-h-55 w-full"
     option={options}
+    notMerge={true}
+    lazyUpdate={true}
     opts={{ renderer: "svg", height: 212, width: "auto" }}
   />
 );

@@ -1,7 +1,10 @@
+/**
+ * This component shows member's stats in Pie chart.
+ * Labels: Active, Offline, Inactive, Cancelled.
+ */
 import {
   Button,
   Card,
-  CardFooter,
   CardHeader,
   CardPreview,
   Menu,
@@ -9,25 +12,95 @@ import {
   MenuList,
   MenuPopover,
   MenuTrigger,
-  Toolbar,
-  ToolbarButton,
 } from "@fluentui/react-components";
 import {
   MoreHorizontal20Filled,
   Bug24Regular,
   BookQuestionMark24Regular,
-  ArrowSortDown24Filled,
   DocumentTableArrowRight24Regular,
 } from "@fluentui/react-icons";
-import Link from "next/link";
 import { memo } from "react";
-import DonationsStatsChart from "../DonationsStatsChart";
+import ReactECharts from 'echarts-for-react/lib/core';
+import { PieChart } from 'echarts/charts';
+import * as echarts from 'echarts/core';
+import { SVGRenderer } from 'echarts/renderers';
+import React from 'react';
+import { LegendComponent, ToolboxComponent, TooltipComponent } from "echarts/components";
+import { EChartsOption } from "echarts-for-react";
 
-const chartData = [20, 30, 15, 25, 40]; // Example data for the chart
+// Register the required components
+echarts.use([
+  SVGRenderer,
+  PieChart,
+  ToolboxComponent,
+  TooltipComponent,
+  LegendComponent
+]);
+
+
+const options: EChartsOption = {
+  animation: false,
+  foo: "bar",
+  tooltip: {
+    trigger: "item",
+  },
+  legend: {
+    show: false,
+  },
+  series: [
+    {
+      name: "Member Stats",
+      type: "pie",
+      radius: ["70%", "100%"],
+      center: ["100%", "50%"],
+      // adjust the start angle
+      clockwise: true,
+      startAngle: -90,
+      label: {
+        show: true,
+        formatter(param: any) {
+          // correct the percentage
+          return param.name + " (" + param.percent! * 2 + "%)";
+        },
+      },
+      data: [
+        { value: 1048, name: "Active" },
+        { value: 735, name: "Inactive" },
+        { value: 580, name: "Offline" },
+        { value: 484, name: "Cancelled" },
+        {
+          // make an record to fill the bottom 50%
+          value: 1048 + 735 + 580 + 484,
+          itemStyle: {
+            // stop the chart from rendering this piece
+            color: "none",
+            decal: {
+              symbol: "none",
+            },
+          },
+          label: {
+            show: false,
+          },
+        },
+      ],
+    },
+  ],
+};
+
+const Chart = () => (
+  <ReactECharts
+    echarts={echarts}
+    className="h-55 max-h-55 w-full"
+    option={options}
+    notMerge={true}
+    lazyUpdate={true}
+    opts={{ renderer: "svg", height: 212, width: "auto" }}
+  />
+);
 
 const ChartTeamStats = () => {
   return (
-    <Card className="h-fit w-full max-w-[296px] p-4">
+    <Card className="w-full p-4">
       <CardHeader
         header={<h3 className="subtitle2Stronger m-0">Team&apos;s Stats</h3>}
         action={
@@ -53,45 +126,17 @@ const ChartTeamStats = () => {
         }
       />
 
-      <CardPreview className="relative block px-3 py-0">
-        <Toolbar className="mb-5" size="small" aria-label="Default" as="div">
-          <ToolbarButton
-            className="caption1 w-full min-w-1/3 max-w-fit gap-0"
-            as="button"
-            value="7"
-          >
-            7 days
-          </ToolbarButton>
-          <ToolbarButton
-            className="caption1 w-full min-w-1/3 max-w-fit gap-0"
-            as="button"
-            value="30"
-          >
-            30 days
-          </ToolbarButton>
-          <ToolbarButton
-            className="caption1 w-full min-w-1/3 max-w-fit gap-0"
-            as="button"
-            value="60"
-          >
-            60 days
-          </ToolbarButton>
-        </Toolbar>
+      <CardPreview className="relative m-0 block px-3">
+        {/**
+         * Time period selector
+         * This filters Pie chart data based on time period like 7 days, 30 days, 90 days, etc.
+         * This feature was implemented but It is commented now due to not necessary, as well occurence some style erros .
+         */}
 
-        <div className="relative h-40 w-full">
-          <DonationsStatsChart className="h-40 w-full" data={chartData} />
+        <div className="relative h-55 w-full">
+          <Chart />
         </div>
       </CardPreview>
-
-      <CardFooter>
-        <Link
-          className="caption1Stronger m-0 flex h-3 flex-row flex-nowrap items-center justify-start p-0 hover:underline"
-          href="/stats/member-stats"
-        >
-          View details{" "}
-          <ArrowSortDown24Filled style={{ transform: "rotate(270deg)" }} />
-        </Link>
-      </CardFooter>
     </Card>
   );
 };
