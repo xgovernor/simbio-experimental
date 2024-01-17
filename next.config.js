@@ -11,6 +11,7 @@
 const nextConfig = {
   reactStrictMode: false,
   poweredByHeader: false,
+  transpilePackages: ["echarts", "@fluentui/react", "@radix-ui/react"],
   devIndicators: {
     buildActivityPosition: "top-right",
   },

@@ -1,4 +1,4 @@
-import PageRootComponent, { PageConfig } from "./PageRootComponent";
+import PageRootComponent, { TPageConfig } from "./PageRootComponent";
 import { memo } from "react";
 import data from "@/assets/data/clubs.json";
 
@@ -16,7 +16,7 @@ import data from "@/assets/data/clubs.json";
 
 const PageClubs = async () => {
   // const data = await getData();
-  const config: PageConfig = {
+  const config: TPageConfig = {
     analytics: false,
     settings: false,
     table: true,

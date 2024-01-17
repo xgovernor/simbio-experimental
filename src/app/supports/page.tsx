@@ -1,7 +1,7 @@
 import { OrganizationsItemType } from "@/components/support/SupportOrganizations";
 import PageRootComponent, {
   OrganizationsResponseType,
-  PageConfig,
+  TPageConfig,
 } from "./PageRootComponent";
 import { memo } from "react";
 
@@ -88,7 +88,7 @@ const ORGANIZATIONS_DATA: OrganizationsResponseType = {
 
 const PageSupports = async () => {
   // const data = await getData();
-  const config: PageConfig = {
+  const config: TPageConfig = {
     analytics: true,
     settings: true,
     organizations: true,
