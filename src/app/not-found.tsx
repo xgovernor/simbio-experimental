@@ -10,18 +10,18 @@ const Error404Page: FC = () => {
 
       {/* Backgorund */}
       <div
-        className="absolute left-0 top-0 -z-1 h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat"
+        className="absolute left-0 top-0 -z-1 h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat overflow-y-auto"
         style={{
           backgroundImage: `url(${BG.src})`,
         }}
       />
 
       {/* <div className="relative mx-auto block w-full min-w-[440px] max-w-[640px]"> */}
-      <div className="relative flex flex-center items-center w-screen p-[22px]">
+      <div className="relative flex flex-center items-center w-screen min-h-[252px] h-screen p-[22px]">
 
         {/* Error Card */}
         {/* <div className="fixed top-[45%] mb-5 w-full min-w-[440px] max-w-[640px] -translate-y-1/2 rounded-md bg-white p-11 shadow shadow-[rgba(0,0,0,0.2)]"> */}
-        <div className="fixed top-[45%] mb-5 mx-auto w-full  max-w-[640px] -translate-y-1/2 rounded-md bg-white p-11 shadow shadow-[rgba(0,0,0,0.2)]">
+        <div className="mx-auto w-full max-w-[640px] rounded-md bg-white p-8 md:p-10 lg:p-11 shadow shadow-[rgba(0,0,0,0.2)]">
           <div>
             <Image
               className="brandLogo"
@@ -32,7 +32,7 @@ const Error404Page: FC = () => {
             />
           </div>
 
-          <div className="mb-4">
+          <div className="">
             <div>
               <h1 className="mb-4 mt-4 text-2xl font-semibold leading-7">
                 Opps!

@@ -6,9 +6,9 @@ import DeviceList from "@/components/settings/DeviceList";
 const PageRootComponent: FC = () => {
   return (
     <DashboardLayout>
-      <div className="grid grid-cols-4 gap-[22px] p-[22px] 2xl:grid-cols-6">
+      <div className="grid max-md:grid-cols-1 grid-rows-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-[22px] p-[22px]">
         {/* Profile Stats */}
-        <div className="col-span-4 col-start-1 col-end-5 rounded bg-white p-5 shadow">
+        <div className="max-md:col-span-1 max-md:col-end-2 col-span-4 col-start-1 col-end-5 rounded bg-white p-5 shadow">
           <div className="grid grid-cols-4 gap-5">
             <div className="border-e">
               <p>Profile stats</p>
@@ -91,11 +91,11 @@ const PageRootComponent: FC = () => {
         </div>
 
         {/* Login Activity */}
-        <div className="col-span-2 rounded bg-white py-5 shadow">
+        <div className="max-md:col-span-1 max-md:col-end-2 col-span-2 rounded bg-white py-5 shadow">
           <div className="w-full">
             <div className="px-5">
               <h3 className="font-bold">Login Activity</h3>
-              <p className="mt-3">
+              <p className="mt-3 text-sm">
                 This will show last 10 login information with device, browser
                 and location
               </p>
