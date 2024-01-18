@@ -11,7 +11,7 @@
 const nextConfig = {
   reactStrictMode: false,
   poweredByHeader: false,
-  transpilePackages: ["echarts", "@fluentui/react", "@radix-ui/react"],
+  transpilePackages: ["echarts"],
   devIndicators: {
     buildActivityPosition: "top-right",
   },
@@ -97,9 +97,12 @@ const nextConfig = {
     ];
   },
 };
+const withPWA = require("next-pwa")({
+  dest: "public",
+});
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === process.env.BUNDLE_ANALYZE || "false",
 });
 
-module.exports = withBundleAnalyzer(nextConfig);
+module.exports = withBundleAnalyzer(withPWA(nextConfig));

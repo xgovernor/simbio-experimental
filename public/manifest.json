@@ -4,7 +4,9 @@
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fff",
+  "theme_color": "#143B52",
   "description": "A centralized blood donation platform.",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "/favicon.svg",

@@ -7,6 +7,10 @@ import { StoreProvider } from "@/store/StoreProvider";
 export const metadata: Metadata = {
   title: "Simbio",
   description: "A centralized blood donation platform",
+  // themeColor: [
+  //   { media: "(prefers-color-scheme: light)", color: "#fafafa" },
+  //   { media: "(prefers-color-scheme: dark)", color: "#18181b" }
+  // ]
 };
 
 export default function RootLayout({
@@ -21,7 +25,10 @@ export default function RootLayout({
         <head>
           <meta charSet="utf-8" />
           <meta name="description" content={metadata.description as string} />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta
+            name='viewport'
+            content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
+          />
           <title>{metadata.title as string}</title>
 
           {/* Meta Codes */}
@@ -35,56 +42,55 @@ export default function RootLayout({
             name="apple-mobile-web-app-title"
             content={metadata.title as string}
           />
-          <meta name="description" content={metadata.description as string} />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta
             name="msapplication-config"
             content="/icons/browserconfig.xml"
           />
-          <meta name="msapplication-TileColor" content="#2B5797" />
+          {/* <meta name="msapplication-TileColor" content="#2B5797" /> */}
           <meta name="msapplication-tap-highlight" content="no" />
-          <meta name="theme-color" content="#000000" />
+          {/* <meta name="theme-color" content="#000000" /> */}
 
-          <link rel="apple-touch-icon" href="/icons/touch-icon-iphone.png" />
+          <link rel="apple-touch-icon" href="/favicon.svg" />
           <link
             rel="apple-touch-icon"
             sizes="152x152"
-            href="/icons/touch-icon-ipad.png"
+            href="/favicon.svg"
           />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/icons/touch-icon-iphone-retina.png"
+            href="/favicon.svg"
           />
           <link
             rel="apple-touch-icon"
             sizes="167x167"
-            href="/icons/touch-icon-ipad-retina.png"
+            href="/favicon.svg"
           />
 
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="/icons/favicon-32x32.png"
+            href="/favicon.svg"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/icons/favicon-16x16.png"
+            href="/favicon.svg"
           />
           <link rel="manifest" href="/manifest.json" />
           <link
             rel="mask-icon"
-            href="/icons/safari-pinned-tab.svg"
+            href="/favicon.svg"
             color="#5bbad5"
           />
           <link rel="shortcut icon" href="/favicon.ico" />
 
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:url" content="https://yourdomain.com" />
+          <meta name="twitter:url" content="https://simbio.dot9.dev" />
           <meta name="twitter:title" content={metadata.title as string} />
           <meta
             name="twitter:description"
@@ -102,10 +108,10 @@ export default function RootLayout({
             content={metadata.description as string}
           />
           <meta property="og:site_name" content={metadata.title as string} />
-          <meta property="og:url" content="https://yourdomain.com" />
+          <meta property="og:url" content="https://simbio.dot9.dev" />
           <meta
             property="og:image"
-            content="https://yourdomain.com/icons/apple-touch-icon.png"
+            content="https://simbio.dot9.dev/favicon.svg"
           />
 
           {/* apple splash screen images */}
