@@ -34,7 +34,7 @@ const MembersTable: FC<TMembersTableProps> = ({
   return (
     <>
       <section
-        className="gap grid h-full w-full gap-3 rounded bg-white"
+        className="relative gap grid h-full w-full gap-3 rounded bg-white overflow-hidden"
         style={{
           boxShadow: "0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.14)",
         }}
@@ -54,7 +54,7 @@ const MembersTable: FC<TMembersTableProps> = ({
         </div>
 
         {/* Card Body */}
-        <div className="pb-4">
+        <div className="pb-4 overflow-x-auto">
           <DataGrid columns={columns} data={data} filters={filters} />
         </div>
       </section>
