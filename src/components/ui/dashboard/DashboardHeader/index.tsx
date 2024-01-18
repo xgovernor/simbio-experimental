@@ -7,8 +7,8 @@ const DashboadHeader: FC = () => {
   return (
     <section className="flex w-full items-center justify-center bg-white">
       <div className="flex w-full flex-row flex-nowrap items-start justify-between p-[22px]">
-        <div className="w-2/5">
-          <div className="flex w-full flex-row flex-nowrap items-center justify-start gap-6">
+        <div className="max-md:w-full w-2/5">
+          <div className="flex w-full flex-row flex-nowrap max-md:items-start items-center justify-start gap-6">
             <div className="flex h-24 w-24 rounded-full">
               <Link href="/profile">
                 <Image
@@ -27,8 +27,8 @@ const DashboadHeader: FC = () => {
             </div>
 
             <div className="relative block">
-              <h1 className="title3 mb-2 mt-0">Blood Soldier Society (BSS)</h1>
-              <p className="body1 m-0 w-112">
+              <h1 className="title3 mb-2 mt-0 max-md:text-xl">Blood Soldier Society (BSS)</h1>
+              <p className="body1 m-0 md:w-112 max-md:text-sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -39,7 +39,7 @@ const DashboadHeader: FC = () => {
           </div>
         </div>
 
-        <div className="">
+        <div className="max-md:hidden">
           <DashboardHeaderStats />
         </div>
       </div>

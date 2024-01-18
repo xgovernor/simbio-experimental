@@ -12,7 +12,7 @@ const ProfileMenu: FC<ProfileMenuProps> = ({ menu }) => {
   const router = useRouter();
 
   return (
-    <div className="flex w-full flex-row flex-nowrap items-center justify-start">
+    <div className="flex w-max flex-row flex-nowrap items-center justify-start overflow-x-auto">
       {menu.map((e, i) => {
         const isSamePath = e.url === pathName;
 

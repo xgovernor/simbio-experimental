@@ -23,7 +23,7 @@ const Canvas: React.FC<ICanvasProps> = ({
   return (
     // <main className={mergeClasses(classes.Canvas, className)} style={style} {...rest}>
     <main
-      className="overflow-y-auto bg-[#F4F4F4]"
+      className="overflow-y-auto bg-[#F4F4F4]  max-md:col-span-2 max-md:col-start-1 max-md:col-end-3 "
       style={{
         minHeight: "calc(100vh - 88px)",
         boxShadow:

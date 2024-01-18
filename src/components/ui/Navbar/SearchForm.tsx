@@ -59,7 +59,7 @@ const SearchForm: React.FC<ISearchFormProps> = ({
 
   return (
     <div
-      className="flex w-full min-w-[300px] items-center justify-center"
+      className="flex w-full min-w-[300px] items-center justify-center max-md:hidden"
       ref={searchBox}
     >
       <Formik

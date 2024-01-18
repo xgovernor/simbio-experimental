@@ -157,13 +157,13 @@ const DashboardMenuBar: FC<IMenuBarProps> = ({
 
   return (
     <header
-      className="sticky top-0 z-1 w-full border-b border-b-[#e0e0e0] bg-[#f5f5f5]"
+      className="sticky top-0 z-1 w-full border-b border-b-[#e0e0e0] bg-[#f5f5f5] max-md:w-screen"
       ref={menuBarRef}
       {...rest}
     >
       <div className="flex h-full w-full flex-row flex-nowrap items-start justify-between px-4 py-2">
         <div className="flex w-full flex-row flex-nowrap items-center justify-start gap-3">
-          {/* This is member profile avater. This will be visible when
+          {/* This is member profile avatar. This will be visible when
                     user page get scrolled and profile header is not in the viewport. */}
           {showAvatar && (
             <Avatar
@@ -173,7 +173,7 @@ const DashboardMenuBar: FC<IMenuBarProps> = ({
           )}
 
           {/* Dropdown Menu */}
-          <OptionalMenu menu={optionalProfileMenu} />
+          <OptionalMenu menu={profileActionMenu} />
 
           <ProfileMenu menu={profileMenu} />
         </div>

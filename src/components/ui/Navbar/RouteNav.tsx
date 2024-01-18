@@ -27,7 +27,7 @@ const RouteNav = ({ className, ...rest }: IRouteNavProps) => {
 
   return (
     <div
-      className="flex h-[24px] w-[52px] items-center justify-between"
+      className="flex h-[24px] w-[52px] items-center justify-between max-md:hidden"
       {...rest}
     >
       <div className="flex w-6 items-center justify-start">

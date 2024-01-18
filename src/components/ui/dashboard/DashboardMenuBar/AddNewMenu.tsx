@@ -22,6 +22,7 @@ const AddNewMenu: FC<IAddNewMenuProps> = ({ menu }: IAddNewMenuProps) => {
     <Menu positioning="below-end">
       <MenuTrigger disableButtonEnhancement>
         <Button
+          className="max-md:hidden"
           style={{ width: "max-content" }}
           icon={<ChevronDown20Regular />}
           iconPosition="after"
