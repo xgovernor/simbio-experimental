@@ -4,8 +4,8 @@ import {
   tokens,
   typographyStyles,
 } from "@fluentui/react-components";
-import { FC, memo, useState } from "react";
-import DonationTableMenu from "./DonationTableMenu";
+import { FC, memo } from "react";
+import DonationTableMenu from "./FundTableMenu";
 import { DataGrid } from "@/components/ui/DataGrid";
 import { columns, filters } from "./data";
 
@@ -22,7 +22,7 @@ export type TDonationItem = {
   reference: string;
 };
 
-interface TDonationsTableProps {
+interface TFundTableProps {
   className?: string;
   title: string;
   description?: string;
@@ -117,15 +117,15 @@ const useStyles = makeStyles({
   tbc_prefLocation: {},
 });
 
-const DonationsTable: FC<TDonationsTableProps> = ({
+const FundTable: FC<TFundTableProps> = ({
   className,
   title,
   description,
   data,
   ...rest
-}: TDonationsTableProps) => {
-  const classes = useStyles();
-  const [showSearch, setShowSearch] = useState(false);
+}: TFundTableProps) => {
+  // const classes = useStyles();
+  // const [showSearch, setShowSearch] = useState(false);
 
   return (
     <section
@@ -156,4 +156,4 @@ const DonationsTable: FC<TDonationsTableProps> = ({
   );
 };
 
-export default memo(DonationsTable);
+export default memo(FundTable);

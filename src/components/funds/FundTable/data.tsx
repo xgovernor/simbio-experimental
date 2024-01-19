@@ -30,7 +30,7 @@ export const columns: ColumnDef<TDonationItem>[] = [
           />
           <Link
             className="text-sm font-semibold"
-            href={`/donations/${row.original.id}`}
+            href={`funds/${row.original.id}`}
             hrefLang="en"
           >
             {row.original.name}

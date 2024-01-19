@@ -14,7 +14,7 @@ import {
 import Link from "next/link";
 import { FC, memo } from "react";
 
-const DontaionTableMenu: FC = () => {
+const FundTableMenu: FC = () => {
   return (
     <Menu>
       <MenuTrigger disableButtonEnhancement>
@@ -44,4 +44,4 @@ const DontaionTableMenu: FC = () => {
   );
 };
 
-export default memo(DontaionTableMenu);
+export default memo(FundTableMenu);

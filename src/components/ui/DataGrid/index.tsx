@@ -21,16 +21,18 @@ interface DataGridProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
   filters?: DataGridFilters;
+  hiddenColumns?: VisibilityState;
 }
 
 export function DataGrid<TData, TValue>({
   columns,
   data,
   filters = [],
+  hiddenColumns = {},
 }: DataGridProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({});
+    React.useState<VisibilityState>({ ...hiddenColumns });
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     [],
   );

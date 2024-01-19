@@ -1,28 +1,28 @@
 import PageRootComponent, { TPageConfig } from "./PageRootComponent";
 import { memo } from "react";
-import data from "@/assets/data/team.json";
+import data from "@/assets/data/funds.json";
 
 /**
  * Retrieves data from the specified URL.
  *
  * @return {Promise<RequestResponseType>} The retrieved data.
  */
-// async function getData(): Promise<TeamResponseType> {
-//     const res = await fetch("/data/team.json");
+// async function getData(): Promise<DonationResponseType> {
+//     const res = await fetch("/datafunds.json");
 //     const data = await res.json();
 
 //     return data;
 // }
 
-const PageTeam = async () => {
+const PageDonations = async () => {
   // const data = await getData();
   const config: TPageConfig = {
-    analytics: false,
-    settings: false,
+    analytics: true,
+    settings: true,
     table: true,
   };
 
   return <PageRootComponent data={data} config={config} />;
 };
 
-export default memo(PageTeam);
+export default memo(PageDonations);

@@ -1,11 +1,11 @@
 "use client";
-import { Button } from "@fluentui/react-components";
 import { Add24Regular } from "@fluentui/react-icons";
 import { useRouter } from "next/navigation";
 import { FC, memo } from "react";
-import BloodRequestTableMenu from "./BloodRequestTableMenu";
+import TableMenu from "./TableMenu";
 import { DataGrid } from "@/components/ui/DataGrid";
-import { columns, filters } from "./data";
+import { columns, filters, hiddenColumns } from "./data";
+import { Button } from "@/components/ui/button";
 
 export type TRequestItem = {
   id: string;
@@ -37,58 +37,6 @@ const BloodRequestTable: FC<BloodRequestTablePropsType> = ({
   ...rest
 }: BloodRequestTablePropsType) => {
   const router = useRouter();
-  const COLUMN = [
-    {
-      key: "patient",
-      name: "Patient",
-      fieldName: "patient",
-      minWidth: 250,
-      maxWidth: 250,
-      className: "min-w-[255px]",
-    },
-    {
-      key: "blood",
-      name: "Blood",
-      fieldName: "blood",
-      minWidth: 100,
-      maxWidth: 100,
-    },
-    {
-      key: "delivery_date",
-      name: "Delivery",
-      fieldName: "delivery_date",
-      minWidth: 100,
-      maxWidth: 100,
-    },
-    {
-      key: "healthIssue",
-      name: "Health issue",
-      fieldName: "healthIssue",
-      minWidth: 100,
-      maxWidth: 100,
-    },
-    {
-      key: "location",
-      name: "Location",
-      fieldName: "location",
-      minWidth: 100,
-      maxWidth: 100,
-    },
-    {
-      key: "status",
-      name: "Status",
-      fieldName: "status",
-      minWidth: 100,
-      maxWidth: 100,
-    },
-    {
-      key: "phone",
-      name: "Phone",
-      fieldName: "phone",
-      minWidth: 100,
-      maxWidth: 100,
-    },
-  ];
 
   return (
     <section
@@ -108,21 +56,21 @@ const BloodRequestTable: FC<BloodRequestTablePropsType> = ({
 
         <div className="flex gap-2">
           <Button
-            appearance="primary"
-            icon={<Add24Regular />}
-            // size="small"
-            style={{ width: "110px" }}
+            className="shadow-none"
+            size="sm"
+            // style={{ width: "110px" }}
             onClick={() => router.push("/blood-requests/new")}
           >
+            <Add24Regular className="mr-2 h-4 w-4" />
             Add new
           </Button>
-          <BloodRequestTableMenu />
+          <TableMenu />
         </div>
       </div>
 
       {/* Card Body */}
       <div className="pb-4 overflow-x-auto">
-        <DataGrid columns={columns} data={data} filters={filters} />
+        <DataGrid columns={columns} data={data} filters={filters} hiddenColumns={hiddenColumns} />
       </div>
     </section>
   );

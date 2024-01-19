@@ -6,7 +6,7 @@ import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
 import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";
 import DonationTable, {
   TDonationItem,
-} from "@/components/donations/DonationTable";
+} from "@/components/funds/FundTable";
 
 export type DonationResponseType = {
   data: TDonationItem[];

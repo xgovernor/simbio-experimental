@@ -19,7 +19,7 @@ import { TRequestItem } from ".";
 export const columns: ColumnDef<TRequestItem>[] = [
   {
     accessorKey: "name",
-    header: "User",
+    header: "Patient",
     cell: ({ row }) => {
       return (
         <div className="flex items-center gap-2">
@@ -42,8 +42,19 @@ export const columns: ColumnDef<TRequestItem>[] = [
     },
   },
   {
+    accessorKey: "blood_group",
+    enableHiding: true,
+  },
+  {
+    accessorKey: "quantity",
+  },
+  {
     accessorKey: "blood_type",
-    header: "Blood Type",
+    enableHiding: true,
+  },
+  {
+    id: "blood",
+    header: "Blood",
     cell: ({ row }) => {
       return (
         <div className="flex items-center gap-2">
@@ -109,6 +120,8 @@ export const columns: ColumnDef<TRequestItem>[] = [
     },
   },
 ];
+
+export const hiddenColumns = { "blood_group": false, "quantity": false, "blood_type": false };
 
 // Filter: Telecom Operator
 export const gender = [
@@ -223,7 +236,7 @@ export const filters = [
     options: blood_groups,
   },
   {
-    key: "substance",
+    key: "blood_type",
     label: "Substance",
     options: substance,
   },

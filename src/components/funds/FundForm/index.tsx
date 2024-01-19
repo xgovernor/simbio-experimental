@@ -8,13 +8,13 @@ import {
   createFormikYupSchema,
 } from "@/utils/formBuilder.util";
 
-interface TDonationFormProps {
+interface TFundFormProps {
   className?: string;
   children?: React.ReactNode;
   rest?: object;
 }
 
-interface TDonationForm {
+interface TFundForm {
   // Reference
   refId: string;
 
@@ -340,18 +340,18 @@ const FORM: TFormBuilderForm = {
   ],
 };
 
-const DonationForm: React.FC<TDonationFormProps> = ({
+const FundForm: React.FC<TFundFormProps> = ({
   className,
   children,
   ...rest
-}: TDonationFormProps) => {
+}: TFundFormProps) => {
   const classes = useStyles();
   const initialValues = createFormikInitialValue(FORM);
   const validationSchema = createFormikYupSchema(FORM);
 
   const onSubmitHandler = (
-    values: TDonationForm,
-    { setSubmitting }: FormikHelpers<TDonationForm>,
+    values: TFundForm,
+    { setSubmitting }: FormikHelpers<TFundForm>,
   ): void => {
     setSubmitting(true);
 
@@ -363,7 +363,7 @@ const DonationForm: React.FC<TDonationFormProps> = ({
 
   return (
     <Formik
-      initialValues={initialValues as TDonationForm}
+      initialValues={initialValues as TFundForm}
       validationSchema={validationSchema}
       onSubmit={onSubmitHandler}
       {...rest}
@@ -407,4 +407,4 @@ const DonationForm: React.FC<TDonationFormProps> = ({
   );
 };
 
-export default memo(DonationForm);
+export default memo(FundForm);

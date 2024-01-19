@@ -46,19 +46,20 @@ const profileMenu: IMenuItem[] = [
     url: "/clubs",
     icon: <HomeMore24Filled />,
   },
-  {
-    title: "Team",
-    url: "/team",
-    icon: <PeopleTeam24Regular />,
-  },
+  // Now `Team` is accessible through `Teams` directory.
+  // {
+  //   title: "Team",
+  //   url: "/team",
+  //   icon: <PeopleTeam24Regular />,
+  // },
   {
     title: "Teams",
     url: "/teams",
     icon: <PeopleTeam24Regular />,
   },
   {
-    title: "Donations",
-    url: "/donations",
+    title: "Funds",
+    url: "/funds",
     icon: <MoneyHand24Regular />,
   },
   {
@@ -104,7 +105,7 @@ const profileActionMenu: IMenuItem[] = [
   },
   {
     title: "Add Donation",
-    url: "/donations/new ",
+    url: "funds/new ",
     icon: <MoneyHand24Regular />,
   },
   {

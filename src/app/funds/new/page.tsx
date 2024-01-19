@@ -1,5 +1,5 @@
 "use client";
-import DonationForm from "@/components/donations/DonationForm";
+import DonationForm from "@/components/funds/FundForm";
 import Layout from "@/components/ui/Layout";
 // import Alert from "@/components/ui/Alert";
 import { PeopleAdd24Regular } from "@fluentui/react-icons";
@@ -12,7 +12,7 @@ const BREADCRUMB_MENU = [
   },
   {
     title: "Donations",
-    url: "/donations",
+    url: "funds",
   },
   {
     title: "New",
