@@ -22,18 +22,13 @@ interface IMenuBarProps {
 
 const profileMenu: IMenuItem[] = [
   {
-    title: "Dashboard",
-    url: "/dashboard",
-    icon: <People24Regular />,
-  },
-  {
     title: "Profile",
     url: "/profile",
     icon: <People24Regular />,
   },
   {
-    title: "Members",
-    url: "/members",
+    title: "Analytics",
+    url: "/analytics",
     icon: <People24Regular />,
   },
   {
@@ -42,9 +37,14 @@ const profileMenu: IMenuItem[] = [
     icon: <People24Regular />,
   },
   {
-    title: "Clubs",
-    url: "/clubs",
-    icon: <HomeMore24Filled />,
+    title: "Teams",
+    url: "/teams",
+    icon: <PeopleTeam24Regular />,
+  },
+  {
+    title: "Members",
+    url: "/members",
+    icon: <People24Regular />,
   },
   // Now `Team` is accessible through `Teams` directory.
   // {
@@ -52,11 +52,6 @@ const profileMenu: IMenuItem[] = [
   //   url: "/team",
   //   icon: <PeopleTeam24Regular />,
   // },
-  {
-    title: "Teams",
-    url: "/teams",
-    icon: <PeopleTeam24Regular />,
-  },
   {
     title: "Funds",
     url: "/funds",
@@ -66,6 +61,11 @@ const profileMenu: IMenuItem[] = [
     title: "Contacts",
     url: "/contacts",
     icon: <BookContacts24Regular />,
+  },
+  {
+    title: "Clubs",
+    url: "/clubs",
+    icon: <HomeMore24Filled />,
   },
   {
     title: "Centers",
