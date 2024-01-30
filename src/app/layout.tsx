@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.scss";
 import { StoreProvider } from "@/store/StoreProvider";
+import Script from "next/script";
 // import { GeistSans } from "geist/font/sans";
 // import { GeistMono } from "geist/font/mono";
 
@@ -124,6 +125,16 @@ export default function RootLayout({
         <link rel='apple-touch-startup-image' href='/images/apple_splash_750.png' sizes='750x1334' />
         <link rel='apple-touch-startup-image' href='/images/apple_splash_640.png' sizes='640x1136' />
         */}
+
+          <Script strategy="lazyOnload" id="clarity-script">
+            {`
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "ku1hcvfs7d");
+        `}
+          </Script>
         </head>
         <body>{children}</body>
       </html>

@@ -7,7 +7,7 @@ import { memo } from "react";
 const BREADCRUMB_MENU = [
   {
     title: "Home",
-    url: "/dashboard",
+    url: "/analytics",
   },
   {
     title: "Team",

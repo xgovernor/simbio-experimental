@@ -28,7 +28,7 @@ const SIDEBAR_MENU_ITEMS: ISidebarMenuItem[] = [
     name: "Home",
     description: "Home page",
     icon: <Home24Regular />,
-    url: "/dashboard",
+    url: "/analytics",
   },
   {
     name: "Requests",
