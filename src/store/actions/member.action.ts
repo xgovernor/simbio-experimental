@@ -1,9 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface IMember {
+interface IMemberState {
   data: {
     member: Object;
-    members: Object[];
+    members: {
+      id: string;
+      avatar: string;
+      name: string;
+      gender: string;
+      blood_group: string;
+      last_blood_donation: string;
+      phone: string;
+      location: string;
+      status: string;
+      role: string;
+    }[];
     total: number;
     page: number;
     limit: number;
@@ -14,7 +25,7 @@ interface IMember {
   error: string | null;
 }
 
-const initialState: IMember = {
+const initialState: IMemberState = {
   data: {
     member: {},
     members: [],
