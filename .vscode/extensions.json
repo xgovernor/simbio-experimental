@@ -6,6 +6,16 @@
     "ms-azuretools.vscode-docker",
     "visualstudioexptteam.vscodeintellicode",
     "eamodio.gitlens",
-    "streetsidesoftware.code-spell-checker"
+    "42crunch.vscode-openapi",
+    "at-mah.dark-pie",
+    "github.vscode-github-actions",
+    "wix.vscode-import-cost",
+    "prisma.prisma",
+    "rvest.vs-code-prettier-eslint",
+    "snyk-security.snyk-vulnerability-scanner",
+    "stylelint.vscode-stylelint",
+    "bradlc.vscode-tailwindcss",
+    "zixuanchen.vitest-explorer",
+    "redhat.vscode-yaml"
   ]
 }
