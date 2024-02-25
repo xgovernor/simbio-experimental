@@ -39,7 +39,7 @@ export const columns: ColumnDef<TTeamsItem>[] = [
           />
           <Link
             className="text-sm font-semibold"
-            href={`/members/${row.original.id}`}
+            href={`/teams/${row.original.id}`}
             hrefLang="en"
           >
             {row.original.name}
