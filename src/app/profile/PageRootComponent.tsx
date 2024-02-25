@@ -7,7 +7,7 @@ const PageRootComponent: FC = () => {
   return (
     <DashboardLayout>
 
-      <div className="grid max-md:grid-cols-1 grid-rows-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-[22px] p-[22px]">
+      <div className="grid max-md:grid-cols-1 grid-rows-auto md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 max-md:gap-4 gap-[22px] p-[22px]">
         {/* <div className="max-md:col-span-1 max-md:col-end-2 col-span-4 col-start-1 col-end-5"> */}
         {/* <Alert className="shadow"> */}
         {/* <Terminal className="h-4 w-4" /> */}
@@ -33,7 +33,7 @@ const PageRootComponent: FC = () => {
         {/* Profile Stats */}
         <div className="max-md:col-span-1 max-md:col-end-2 col-span-4 col-start-1 col-end-5 rounded bg-white p-5 shadow">
 
-          <div className="grid grid-cols-5 gap-5">
+          <div className="grid max-md:grid-cols-2 md:grid-cols-2 lg:grid-cols-5 grid-cols-5 gap-5">
             <dl className="space-y-2 border-e">
               <dt className="text-sm font-medium text-gray-600">Unique views</dt>
 
@@ -51,7 +51,7 @@ const PageRootComponent: FC = () => {
               </dd>
             </dl>
 
-            <dl className="space-y-2 border-e">
+            <dl className="space-y-2 md:border-e">
               <dt className="text-sm font-medium text-gray-500">Bounce rate</dt>
 
               <dd className="text-5xl font-light md:text-6xl">21%</dd>
@@ -85,7 +85,7 @@ const PageRootComponent: FC = () => {
               </dd>
             </dl>
 
-            <dl className="space-y-2 border-e">
+            <dl className="space-y-2 md:border-e">
               <dt className="text-sm font-medium text-gray-500">Bounce rate</dt>
 
               <dd className="text-5xl font-light md:text-6xl">21%</dd>
