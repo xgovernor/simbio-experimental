@@ -32,7 +32,7 @@ export const columns: ColumnDef<TRequestItem>[] = [
           />
           <Link
             className="text-sm font-semibold"
-            href={`/members/${row.original.id}`}
+            href={`/blood-requests/${row.original.id}`}
             hrefLang="en"
           >
             {row.original.name}

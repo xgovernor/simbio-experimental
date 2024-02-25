@@ -31,7 +31,7 @@ export const columns: ColumnDef<TCentersItem>[] = [
           />
           <Link
             className="text-sm font-semibold"
-            href={`/members/${row.original.id}`}
+            href={`/collection-centers/${row.original.id}`}
             hrefLang="en"
           >
             {row.original.name}

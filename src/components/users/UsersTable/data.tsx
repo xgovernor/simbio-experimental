@@ -48,7 +48,7 @@ export const columns: ColumnDef<TUsersItem>[] = [
           />
           <Link
             className="text-sm font-semibold"
-            href={`/users/${row.original.id}`}
+            href={`/members/${row.original.id}`}
             hrefLang="en"
           >
             {row.original.name}
