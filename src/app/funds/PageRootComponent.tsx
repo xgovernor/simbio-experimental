@@ -4,12 +4,12 @@ import ChartMatrix from "@/components/charts/ChartMatrix";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import ChartMemberActivity from "@/components/charts/ChartMemberActivity";
 import ChartMemberAgeDemographic from "@/components/charts/ChartMemberAgeDemographic";
-import DonationTable, {
-  TDonationItem,
+import FundTable, {
+  TFundItem,
 } from "@/components/funds/FundTable";
 
 export type DonationResponseType = {
-  data: TDonationItem[];
+  data: TFundItem[];
   offset: number;
   total: number;
   limit: number;
@@ -42,8 +42,8 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
 
         <Suspense>
           <div className="px-[22px] pb-[22px]">
-            <DonationTable
-              title="Donor's list"
+            <FundTable
+              title="Funds"
               description={`Showing ${data?.limit} of ${data?.total} donations`}
               data={data?.data}
             />
