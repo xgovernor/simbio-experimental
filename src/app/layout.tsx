@@ -7,7 +7,16 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Simbio",
+  assets: "http://localhost/assets",
   description: "A centralized blood donation platform",
+  applicationName: "SIMBIO",
+  authors: [{ name: "Dot9 Lab", url: "https://dot9.dev" }],
+  creator: "Dot9 Lab",
+  icons: "/favicon.svg",
+  manifest: "/manifest.json",
+  viewport: { width: "device-width", initialScale: 1 },
+
+
   // themeColor: [
   //   { media: "(prefers-color-scheme: light)", color: "#fafafa" },
   //   { media: "(prefers-color-scheme: dark)", color: "#18181b" }
@@ -25,15 +34,12 @@ export default function RootLayout({
       <html lang="en" className="overflow-hidden">
         <head>
           <meta charSet="utf-8" />
-          <meta name="description" content={metadata.description as string} />
           <meta
             name='viewport'
             content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
           />
-          <title>{metadata.title as string}</title>
 
           {/* Meta Codes */}
-          <meta name="application-name" content={metadata.title as string} />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
@@ -82,7 +88,6 @@ export default function RootLayout({
             sizes="16x16"
             href="/favicon.svg"
           />
-          <link rel="manifest" href="/manifest.json" />
           <link
             rel="mask-icon"
             href="/favicon.svg"
