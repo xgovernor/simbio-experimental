@@ -29,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         {menu.map((item, index) => (
           <Link
             key={index}
-            className="flex h-full min-h-13 w-full min-w-13 max-w-13 flex-col flex-nowrap items-center justify-center gap-0 rounded px-1 hover:bg-white hover:text-primary"
+            className="flex h-full min-h-13 w-full min-w-13 max-w-13 flex-col flex-nowrap items-center justify-center gap-0 rounded px-1 hover:bg-white hover:text-primary hover:shadow"
             href={item.url}
             title={item.description}
           >

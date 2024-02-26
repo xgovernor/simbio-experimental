@@ -37,6 +37,12 @@ const SIDEBAR_MENU_ITEMS: ISidebarMenuItem[] = [
     url: "/blood-requests",
   },
   {
+    name: "Donations",
+    description: "List of donations",
+    icon: <People24Regular />,
+    url: "/donations",
+  },
+  {
     name: "Events",
     description: "Blood donation events",
     icon: <People24Regular />,

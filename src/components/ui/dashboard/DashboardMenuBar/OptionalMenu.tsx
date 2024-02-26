@@ -29,7 +29,7 @@ const OptionalMenu: React.FC<IOptionalMenuProps> = ({
       <MenuPopover>
         <MenuList>
           {menu.map((e, i) => (
-            <MenuItem key={i} icon={e.icon} onClick={() => router.push(e.url)}>
+            <MenuItem className="shadow" key={i} icon={e.icon} onClick={() => router.push(e.url)}>
               {e.title}
             </MenuItem>
           ))}

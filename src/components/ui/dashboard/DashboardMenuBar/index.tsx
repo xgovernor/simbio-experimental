@@ -68,7 +68,7 @@ const profileMenu: IMenuItem[] = [
     icon: <HomeMore24Filled />,
   },
   {
-    title: "Centers",
+    title: "Collection Centers",
     url: "/collection-centers",
     icon: <HomeMore24Regular />,
   },
@@ -116,6 +116,11 @@ const profileActionMenu: IMenuItem[] = [
   {
     title: "Add collection center",
     url: "/collection-center/new",
+    icon: <HomeMore24Regular />,
+  },
+  {
+    title: "New donation",
+    url: "/donations/new",
     icon: <HomeMore24Regular />,
   },
   {
