@@ -45,7 +45,7 @@ const SupportPage: React.FC<TSupportOrganizationsProps> = ({
   return (
     <Layout title="Support messages" icon={<PeopleAdd24Regular />} className="">
       <div
-        className="grid h-full gap-5 overflow-hidden p-[22px]"
+        className="relative grid h-full gap-5 overflow-hidden p-[22px]"
         style={{
           maxHeight: "calc(100vh - 136px)",
           gridTemplateColumns: "22rem 1fr",

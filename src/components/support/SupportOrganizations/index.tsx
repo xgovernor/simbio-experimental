@@ -17,7 +17,7 @@ const SupportOrganizations: React.FC<TSupportOrganizationsProps> = ({
   organizations,
 }: TSupportOrganizationsProps) => {
   return (
-    <section className="min-h-max max-w-full overflow-y-auto overflow-x-hidden rounded-lg px-1">
+    <section className="flex flex-col gap-3">
       {organizations.map((organization, i) => (
         <SupportOrganizationCard
           key={organization.id}
