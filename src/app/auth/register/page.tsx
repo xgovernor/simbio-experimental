@@ -18,7 +18,7 @@ const PageAuthRegistered: FC = () => {
       {/* Main content */}
       <div className="relative mx-auto block h-screen w-full min-w-[440px] max-w-[440px] overflow-y-auto">
         {/* Login Card Start */}
-        <div className="absolute top-1/2 mb-5 flex w-full max-w-[440px] -translate-y-1/2 flex-col gap-8 rounded-md bg-white px-11 pb-8 pt-11 shadow shadow-[rgba(0,0,0,0.2)]">
+        <div className="absolute top-1/2 mb-5 flex w-full max-w-[440px] -translate-y-1/2 flex-col gap-8 rounded-md bg-white px-11 pb-8 pt-11 shadow">
           <div>
             {/* Logo */}
             <Image
@@ -64,11 +64,10 @@ const PageAuthRegistered: FC = () => {
                   a GET request.
                 </p> */}
               </div>
-              <div className="">
-                {/* Error message */}
-                <p className="caption1 font-medium">
-                  &copy; All right reserver by Simbio.
-                </p>
+
+              <div className="flex items-start justify-between">
+                <p className="caption1 font-medium">All right reserved.</p>
+                <p className="caption1 font-medium">&copy; SIMBIO</p>
               </div>
             </div>
           </div>

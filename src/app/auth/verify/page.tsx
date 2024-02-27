@@ -4,8 +4,9 @@ import BG from "@/assets/images/bg.svg";
 import { FC } from "react";
 import LOGO from "@/assets/images/simbio-color.svg";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
-const PageAuthLogin: FC = () => {
+const PageAuthVerification: FC = () => {
   return (
     <section className="relative block h-screen w-full">
       {/* Background image */}
@@ -16,9 +17,8 @@ const PageAuthLogin: FC = () => {
         }}
       />
       {/* Main content */}
-      <div className="relative mx-auto block h-screen w-full min-w-[440px] max-w-[440px] overflow-y-auto">
-        {/* Login Card Start */}
-        <div className="absolute top-1/2 mb-5 flex w-full max-w-[440px] -translate-y-1/2 flex-col gap-8 rounded-md bg-white px-11 pb-8 pt-11 shadow">
+      <div className="relative mx-auto block w-full min-w-[440px] max-w-[440px]">
+        <div className=" fixed top-[45%] mb-5 flex w-full min-w-[440px] max-w-[440px] -translate-y-1/2 flex-col gap-8 rounded-md bg-white px-11 pb-8 pt-11 shadow">
           <div>
             {/* Logo */}
             <Image
@@ -32,38 +32,28 @@ const PageAuthLogin: FC = () => {
           <div className="">
             <div>
               {/* Title */}
-              <h1 className="mb-4 text-xl font-semibold leading-7">
-                Login with
+              <h1 className="mb-3 text-lg font-semibold leading-7">
+                Recover with
               </h1>
             </div>
 
             <div className="flex flex-col gap-7 ">
-              <div className="flex flex-col gap-4">
-                <Button className="w-full bg-[#EA4335] text-white">
-                  Login with Google
-                </Button>
-                <Button className="w-full bg-black text-white">
-                  Login with Apple
-                </Button>
-                <Button className="w-full bg-blue-500 text-white">
-                  Login with Microsoft
-                </Button>
-                <Button className="w-full bg-gray-900 text-white">
-                  Login with GitHub
-                </Button>
-              </div>
+              <form className="flex flex-col gap-3">
+                <Input placeholder="Security content" />
+                <Button className="w-full bg-black text-white">Recover</Button>
+              </form>
 
               <div className="">
                 {/* Error message */}
-                <p className="caption1 mb-2 font-semibold">
-                  We do not support login with email and password.
+                <p className="caption1 mb-2 font-medium">
+                  We do not support email and password based registration.
+                  Please go with one of the above options.
                 </p>
                 {/* <p className="caption1 font-medium text-[#1b1b1b]">
                   ADSTS900561: The endpoint only accepts POST requests. Received
                   a GET request.
                 </p> */}
               </div>
-
               <div className="flex items-start justify-between">
                 <p className="caption1 font-medium">All right reserved.</p>
                 <p className="caption1 font-medium">&copy; SIMBIO</p>
@@ -71,10 +61,9 @@ const PageAuthLogin: FC = () => {
             </div>
           </div>
         </div>
-        {/* Login Card End */}
       </div>
     </section>
   );
 };
 
-export default PageAuthLogin;
+export default PageAuthVerification;
