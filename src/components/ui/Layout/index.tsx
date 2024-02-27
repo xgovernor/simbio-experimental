@@ -28,7 +28,7 @@ const SIDEBAR_MENU_ITEMS: ISidebarMenuItem[] = [
     name: "Home",
     description: "Home page",
     icon: <Home24Regular />,
-    url: "/analytics",
+    url: "/profile",
   },
   {
     name: "Requests",
@@ -98,12 +98,12 @@ const Layout: React.FC<ILayoutProps> = ({
           <Navbar className="sticky left-0 right-0 top-0 z-50 col-span-2 col-start-1 col-end-3 row-span-1 row-start-1 row-end-2 w-full" />
 
           <Sidebar
-            className="max-md:hidden col-span-1 col-start-1 col-end-2 row-span-2 row-start-2 row-end-4 md:flex w-17 flex-col flex-nowrap items-center justify-start overflow-y-auto overflow-x-hidden pt-3"
+            className="col-span-1 col-start-1 col-end-2 row-span-2 row-start-2 row-end-4 w-17 flex-col flex-nowrap items-center justify-start overflow-y-auto overflow-x-hidden pt-3 max-md:hidden md:flex"
             menu={SIDEBAR_MENU_ITEMS}
           />
 
           <Canvas
-            className="md:relative col-span-1 col-start-2 col-end-3 row-span-1 row-start-2 row-end-3 block h-full w-full overflow-y-auto"
+            className="col-span-1 col-start-2 col-end-3 row-span-1 row-start-2 row-end-3 block h-full w-full overflow-y-auto md:relative"
             title={title}
             icon={icon}
             breadcrumb={breadcrumb}
@@ -116,7 +116,7 @@ const Layout: React.FC<ILayoutProps> = ({
             {/* </Transition> */}
           </Canvas>
 
-          <Footer className="z-10 max-md:col-span-2 max-md:col-start-1 max-md:col-end-3 col-span-1 col-start-2 col-end-3 row-span-1 row-start-3 row-end-4 bg-white" />
+          <Footer className="z-10 col-span-1 col-start-2 col-end-3 row-span-1 row-start-3 row-end-4 bg-white max-md:col-span-2 max-md:col-start-1 max-md:col-end-3" />
         </div>
       )}
 

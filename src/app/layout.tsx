@@ -14,8 +14,6 @@ export const metadata: Metadata = {
   creator: "Dot9 Lab",
   icons: "/favicon.svg",
   manifest: "/manifest.json",
-  viewport: { width: "device-width", initialScale: 1 },
-
 
   // themeColor: [
   //   { media: "(prefers-color-scheme: light)", color: "#fafafa" },
@@ -35,8 +33,8 @@ export default function RootLayout({
         <head>
           <meta charSet="utf-8" />
           <meta
-            name='viewport'
-            content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
           />
 
           {/* Meta Codes */}
@@ -60,39 +58,13 @@ export default function RootLayout({
           <meta name="theme-color" content="#143B52" />
 
           <link rel="apple-touch-icon" href="/favicon.svg" />
-          <link
-            rel="apple-touch-icon"
-            sizes="152x152"
-            href="/favicon.svg"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/favicon.svg"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="167x167"
-            href="/favicon.svg"
-          />
+          <link rel="apple-touch-icon" sizes="152x152" href="/favicon.svg" />
+          <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+          <link rel="apple-touch-icon" sizes="167x167" href="/favicon.svg" />
 
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicon.svg"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon.svg"
-          />
-          <link
-            rel="mask-icon"
-            href="/favicon.svg"
-            color="#5bbad5"
-          />
+          <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+          <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg" />
+          <link rel="mask-icon" href="/favicon.svg" color="#5bbad5" />
           <link rel="shortcut icon" href="/favicon.ico" />
 
           <meta name="twitter:card" content="summary" />
