@@ -6,7 +6,7 @@ import LOGO from "@/assets/images/simbio-color.svg";
 
 const PageAuthError: FC = () => {
   return (
-    <section>
+    <section className="relative block h-screen w-full">
       {/* Background image */}
       <div
         className="absolute left-0 top-0 -z-1 h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat"
@@ -15,8 +15,9 @@ const PageAuthError: FC = () => {
         }}
       />
       {/* Main content */}
-      <div className="relative mx-auto block w-full min-w-[440px] max-w-[640px]">
-        <div className="fixed top-[45%] mb-5 w-full min-w-[440px] max-w-[640px] -translate-y-1/2 rounded-md bg-white p-11 shadow shadow-[rgba(0,0,0,0.2)]">
+      <div className="relative mx-auto block h-full min-h-screen w-full max-w-[640px] overflow-y-auto max-md:px-5 max-md:py-10 md:px-8 md:py-14 lg:py-20">
+        {/* Login Card Start */}
+        <div className="flex w-full max-w-[640px] flex-col gap-8 rounded-md bg-white px-11 pb-8 pt-11 shadow">
           <div>
             {/* Logo */}
             <Image
@@ -27,15 +28,12 @@ const PageAuthError: FC = () => {
             />
           </div>
 
-          <div className="mb-4">
+          <div className="flex flex-col gap-7">
             <div>
               {/* Title */}
               <h1 className="mb-4 mt-4 text-2xl font-semibold leading-7">
                 Opps!
               </h1>
-            </div>
-
-            <div>
               {/* Error message */}
               <p className="caption1 mb-2 font-semibold">
                 Sorry, but we are having trouble signing you in.
@@ -44,6 +42,11 @@ const PageAuthError: FC = () => {
                 ADSTS900561: The endpoint only accepts POST requests. Received a
                 GET request.
               </p>
+            </div>
+
+            <div className="flex items-start justify-between">
+              <p className="caption1 font-medium">All right reserved.</p>
+              <p className="caption1 font-medium">&copy; SIMBIO</p>
             </div>
           </div>
         </div>

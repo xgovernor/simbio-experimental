@@ -17,8 +17,8 @@ const PageAuthRecovery: FC = () => {
         }}
       />
       {/* Main content */}
-      <div className="relative mx-auto block w-full min-w-[440px] max-w-[440px]">
-        <div className=" fixed top-[45%] mb-5 flex w-full min-w-[440px] max-w-[440px] -translate-y-1/2 flex-col gap-8 rounded-md bg-white px-11 pb-8 pt-11 shadow">
+      <div className="relative mx-auto block h-full w-full max-w-[440px] overflow-y-auto  max-md:px-5 max-md:py-10 md:py-14 lg:py-20">
+        <div className="flex w-full max-w-[440px] flex-col gap-8 rounded-md bg-white pb-8 pt-11 shadow max-md:px-8 md:absolute md:top-1/2 md:-translate-y-1/2 md:px-11">
           <div>
             {/* Logo */}
             <Image
