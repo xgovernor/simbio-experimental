@@ -6,6 +6,18 @@ import LOGO from "@/assets/images/simbio-color.svg";
 import { Button } from "@/components/ui/button";
 
 const PageAuthLogin: FC = () => {
+  const handleLogin = async (
+    medium: "google" | "apple" | "microsoft" | "github",
+  ) => {
+    try {
+      const response = await fetch(`/auth/login/${medium}`);
+      console.log("Response:", response);
+      window.location.href = response.url; // Redirect to Google login
+    } catch (error) {
+      console.error("Error logging in with Google:", error);
+    }
+  };
+
   return (
     <section className="relative block h-screen w-full">
       {/* Background image */}
@@ -39,16 +51,28 @@ const PageAuthLogin: FC = () => {
 
             <div className="flex flex-col gap-7 ">
               <div className="flex flex-col gap-4">
-                <Button className="w-full bg-[#EA4335] text-white">
+                <Button
+                  onClick={() => handleLogin("google")}
+                  className="w-full bg-[#EA4335] text-white"
+                >
                   Login with Google
                 </Button>
-                <Button className="w-full bg-black text-white">
+                <Button
+                  onClick={() => handleLogin("apple")}
+                  className="w-full bg-black text-white"
+                >
                   Login with Apple
                 </Button>
-                <Button className="w-full bg-blue-500 text-white">
+                <Button
+                  onClick={() => handleLogin("microsoft")}
+                  className="w-full bg-blue-500 text-white"
+                >
                   Login with Microsoft
                 </Button>
-                <Button className="w-full bg-gray-900 text-white">
+                <Button
+                  onClick={() => handleLogin("github")}
+                  className="w-full bg-gray-900 text-white"
+                >
                   Login with GitHub
                 </Button>
               </div>
