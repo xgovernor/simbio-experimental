@@ -8,9 +8,10 @@ export type TDonationItem = {
   avatar: string;
   donor: string;
   patient: string;
-  amount: string;
+  cause: string;
   date: string;
-  location: string;
+  collectionCenter: string;
+  organization: string;
   phone: string;
   email: string;
   gender: string;
