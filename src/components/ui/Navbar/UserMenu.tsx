@@ -15,6 +15,7 @@ import {
   Settings24Regular,
   SignOut24Regular,
 } from "@fluentui/react-icons";
+import { signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -36,8 +37,9 @@ const UserMenu: FC<IUserMenuProps> = ({ className }: IUserMenuProps) => {
   };
 
   const logoutHandler = () => {
-    console.log("CLICKED: Sign Out");
-    router.replace("/auth/login");
+    // console.log("CLICKED: Sign Out");
+    signOut({ callbackUrl: "/auth/login" });
+    // router.replace("/auth/login");
   };
 
   return (
