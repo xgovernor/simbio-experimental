@@ -5,8 +5,7 @@ import Sidebar, { ISidebarMenuItem } from "../Sidebar";
 import {
   Home24Regular,
   People24Regular,
-  Settings24Regular,
-  SignOut24Regular,
+  Settings24Regular
 } from "@fluentui/react-icons";
 import { memo } from "react";
 import Canvas from "../Canvas";
@@ -66,12 +65,12 @@ const SIDEBAR_MENU_ITEMS: ISidebarMenuItem[] = [
     icon: <People24Regular />,
     url: "/about",
   },
-  {
-    name: "Logout",
-    description: "Logout from account",
-    icon: <SignOut24Regular />,
-    url: "/auth/logout",
-  },
+  // {
+  //   name: "Logout",
+  //   description: "Logout from account",
+  //   icon: <SignOut24Regular />,
+  //   url: "/auth/logout",
+  // },
 ];
 
 const Layout: React.FC<ILayoutProps> = ({
@@ -84,6 +83,7 @@ const Layout: React.FC<ILayoutProps> = ({
   breadcrumb,
   ...rest
 }: ILayoutProps) => {
+
   return (
     <>
       {layout && (

@@ -1,5 +1,7 @@
+import { auth } from "@/lib/auth";
 import PageRootComponent from "./PageRootComponent";
 import { memo } from "react";
+import { Session } from "next-auth";
 
 /**
  * Retrieves data from the specified URL.
@@ -15,6 +17,8 @@ import { memo } from "react";
 
 const PageProfile = async () => {
   // const data = await getData();
+  const session = await auth() as Session;
+  console.log("session", session);
 
   return <PageRootComponent />;
 };

@@ -1,10 +1,19 @@
-"use client";
+
 import Image from "next/image";
 import BG from "@/assets/images/bg.svg";
 import { FC } from "react";
 import LOGO from "@/assets/images/simbio-color.svg";
 
-const PageAuthError: FC = () => {
+// error = redirect_uri_mismatch
+// error_description = The + redirect_uri + MUST + match + the + registered + callback + URL +for+this + application.
+// error_uri= https % 3A % 2F % 2Fdocs.github.com % 2Fapps % 2Fmanaging - oauth - apps % 2Ftroubleshooting - authorization - request - errors % 2F % 23redirect - uri - mismatch
+
+const PageAuthError: FC = ({ searchParams }: {
+  // query?: { error?: string, error_description?: string, error_uri?: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}) => {
+  console.log("SEARCH PARAMS ", searchParams);
+
   return (
     <section className="relative block h-screen w-full">
       {/* Background image */}
@@ -32,7 +41,7 @@ const PageAuthError: FC = () => {
             <div>
               {/* Title */}
               <h1 className="mb-4 mt-4 text-2xl font-semibold leading-7">
-                Opps!
+                {searchParams.error}
               </h1>
               {/* Error message */}
               <p className="caption1 mb-2 font-semibold">

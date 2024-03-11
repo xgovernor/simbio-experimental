@@ -68,6 +68,16 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   // theme: {
   //   logo: "https://next-auth.js.org/img/logo/logo-sm.png",
   // },
+  // pages: {
+  //   signIn: "/auth/login",
+  //   signOut: "/auth/login",
+  //   error: "/auth/error",
+  // },
+  debug: true,
+  session: {
+    // strategy: "jwt",
+    maxAge: 60 * 60 * 24 * 1,
+  },
   providers: [
     // Apple,
     // Atlassian,
@@ -143,5 +153,20 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       if (trigger === "update") token.name = session.user.name;
       return token;
     },
+    async redirect({ url, baseUrl }) {
+      return url.startsWith(baseUrl) ? url : baseUrl;
+    }
   },
+  // events: {
+  //   async signIn({ user, account, profile, isNewUser }) {
+  //     console.log("signIn");
+  //     console.log({ user, account, profile, isNewUser });
+  //   },
+  //   async signOut() {
+  //     console.log("signOut");
+  //   },
+  //   async linkAccount({ user, account, profile }) {
+  //     console.log({ user, account, profile });
+  //   }
+  // }
 });

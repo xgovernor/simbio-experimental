@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "@/styles/globals.scss";
 import { StoreProvider } from "@/store/StoreProvider";
 import Script from "next/script";
+import { auth } from "@/lib/auth";
+import { Session } from "next-auth";
 // import { GeistSans } from "geist/font/sans";
 // import { GeistMono } from "geist/font/mono";
 
@@ -26,6 +28,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const session = await auth() as Session;
+
   return (
     <StoreProvider>
       {/* <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}> */}

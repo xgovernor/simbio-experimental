@@ -1,12 +1,49 @@
 import { auth } from "@/lib/auth";
-
-// import { NextRequest, NextResponse } from "next/server";
-// export { auth as middleware } from "@/lib/auth";
+import { NextResponse } from "next/server";
+import { DEFAULT_LOGIN_REDIRECT, apiAuthPrefix, authRoutes, publicRoutes } from "./app/routes";
 
 export const runtime = "experimental-edge";
-// Or like this if you need to do something here.
+
+// Read more: https://nextjs.org/docs/app/building-your-application/routing/middleware
+
+const NON_AUTH_PAGE = ["/auth/login", "/auth/register"];
+
 export default auth((req) => {
-  console.log("USER ", req.auth); //  { session: { user: { ... } } }
+  const { nextUrl } = req;
+  const isLoggedIn = !!req.auth;
+
+  const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
+  const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
+  const isAuthRoute = authRoutes.includes(nextUrl.pathname);
+
+  if (isApiAuthRoute) {
+    return NextResponse.next();
+  }
+
+  if (isAuthRoute) {
+    if (isLoggedIn) {
+      return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
+    }
+    return NextResponse.next();
+  }
+
+  if (!isPublicRoute && !isLoggedIn) {
+    return NextResponse.redirect(new URL("/auth/login", nextUrl));
+  }
+  //   if (NON_AUTH_PAGE.includes(req.nextUrl.pathname) && !req.auth) {
+  //     return;
+  //   }
+
+  //   if (NON_AUTH_PAGE.includes(req.nextUrl.pathname) && req.auth) {
+  //     return NextResponse.redirect(new URL("/", req.url));
+  //   }
+
+  // if (!req.auth) {
+  //   return NextResponse.redirect(new URL("/auth/login", req.url));
+  // }
+  console.log("MIDDLEWARE",);
+  return NextResponse.next();
+  //   // console.log("USER ", req.auth); //  { session: { user: { ... } } }
 });
 
 // function generateHybridId(request: any) {
@@ -49,5 +86,5 @@ export default auth((req) => {
 
 // Read more: https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
-};
+  matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
+}
