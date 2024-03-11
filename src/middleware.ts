@@ -5,13 +5,10 @@ import { DEFAULT_LOGIN_REDIRECT, apiAuthPrefix, authRoutes, publicRoutes } from 
 export const runtime = "experimental-edge";
 
 // Read more: https://nextjs.org/docs/app/building-your-application/routing/middleware
-
-const NON_AUTH_PAGE = ["/auth/login", "/auth/register"];
-
 export default auth((req) => {
   const { nextUrl } = req;
   const isLoggedIn = !!req.auth;
-
+  const callbackUrl = nextUrl.searchParams.get("callback_url");
   const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
   const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
@@ -22,28 +19,25 @@ export default auth((req) => {
 
   if (isAuthRoute) {
     if (isLoggedIn) {
-      return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
+      return NextResponse.redirect(new URL(callbackUrl || DEFAULT_LOGIN_REDIRECT, nextUrl));
     }
     return NextResponse.next();
   }
 
   if (!isPublicRoute && !isLoggedIn) {
-    return NextResponse.redirect(new URL("/auth/login", nextUrl));
+    let callbackUrl = nextUrl.pathname;
+
+    if (nextUrl.search) {
+      callbackUrl += nextUrl.search;
+    }
+
+    const encodedCallbackUrl = encodeURIComponent(callbackUrl);
+
+    return NextResponse.redirect(new URL(`/auth/login?callback_url=${encodedCallbackUrl}`, nextUrl));
   }
-  //   if (NON_AUTH_PAGE.includes(req.nextUrl.pathname) && !req.auth) {
-  //     return;
-  //   }
 
-  //   if (NON_AUTH_PAGE.includes(req.nextUrl.pathname) && req.auth) {
-  //     return NextResponse.redirect(new URL("/", req.url));
-  //   }
 
-  // if (!req.auth) {
-  //   return NextResponse.redirect(new URL("/auth/login", req.url));
-  // }
-  console.log("MIDDLEWARE",);
   return NextResponse.next();
-  //   // console.log("USER ", req.auth); //  { session: { user: { ... } } }
 });
 
 // function generateHybridId(request: any) {

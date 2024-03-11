@@ -18,7 +18,6 @@ import { Session } from "next-auth";
 const PageProfile = async () => {
   // const data = await getData();
   const session = await auth() as Session;
-  console.log("session", session);
 
   return <PageRootComponent />;
 };

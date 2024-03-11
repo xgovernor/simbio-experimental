@@ -8,7 +8,6 @@ import { signIn } from "next-auth/react";
 
 const PageAuthLogin: FC = () => {
   const handleLogin = async (provider: "google" | "apple" | "github") => {
-    console.log("Provider:", provider);
     if (provider === "google") {
       signIn("google");
     }

@@ -4,15 +4,10 @@ import BG from "@/assets/images/bg.svg";
 import { FC } from "react";
 import LOGO from "@/assets/images/simbio-color.svg";
 
-// error = redirect_uri_mismatch
-// error_description = The + redirect_uri + MUST + match + the + registered + callback + URL +for+this + application.
-// error_uri= https % 3A % 2F % 2Fdocs.github.com % 2Fapps % 2Fmanaging - oauth - apps % 2Ftroubleshooting - authorization - request - errors % 2F % 23redirect - uri - mismatch
 
 const PageAuthError: FC = ({ searchParams }: {
-  // query?: { error?: string, error_description?: string, error_uri?: string };
   searchParams?: { [key: string]: string | string[] | undefined };
 }) => {
-  console.log("SEARCH PARAMS ", searchParams);
 
   return (
     <section className="relative block h-screen w-full">
@@ -41,15 +36,14 @@ const PageAuthError: FC = ({ searchParams }: {
             <div>
               {/* Title */}
               <h1 className="mb-4 mt-4 text-2xl font-semibold leading-7">
-                {searchParams.error}
+                {searchParams?.error}
               </h1>
               {/* Error message */}
               <p className="caption1 mb-2 font-semibold">
-                Sorry, but we are having trouble signing you in.
+                {searchParams?.error_description}
               </p>
               <p className="caption1 font-medium text-[#1b1b1b]">
-                ADSTS900561: The endpoint only accepts POST requests. Received a
-                GET request.
+                {searchParams?.error_uri}
               </p>
             </div>
 

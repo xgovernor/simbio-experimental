@@ -33,6 +33,12 @@ const nextConfig = {
         port: "3000",
         // pathname: '/my-bucket/**',
       },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        // port: '',
+        // pathname: '/my-bucket/**',
+      }
     ],
   },
   // experimental: {
