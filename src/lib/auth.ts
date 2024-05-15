@@ -1,6 +1,5 @@
 import NextAuth from "next-auth";
-
-import Apple from "next-auth/providers/apple"
+import Apple from "next-auth/providers/apple";
 // import Facebook from "next-auth/providers/facebook"
 import GitHub from "next-auth/providers/github";
 // import Gitlab from "next-auth/providers/gitlab"
@@ -10,21 +9,18 @@ import Google from "next-auth/providers/google";
 
 declare module "next-auth" {
   interface User {
-    role: string
+    role: string;
   }
 }
 
-
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  // Configure one or more authentication providers
-  // theme: {
-  //   logo: "https://next-auth.js.org/img/logo/logo-sm.png",
-  // },
   pages: {
     signIn: "/auth/login",
-    //   signOut: "/auth/login",
+    // signOut: "/auth/login",
     error: "/auth/error",
+    newUser: "/auth/new-user",
   },
+  trustHost: true,
   debug: false,
   session: {
     strategy: "jwt",
@@ -32,67 +28,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
   providers: [
     Apple,
-    // Atlassian,
-    // Auth0,
-    // Authentik,
-    // AzureAD,
-    // AzureB2C,
-    // Battlenet,
-    // Box,
-    // BoxyHQSAML,
-    // Bungie,
-    // Cognito,
-    // Coinbase,
-    // Discord,
-    // Dropbox,
-    // DuendeIDS6,
-    // Eveonline,
     // Facebook,
-    // Faceit,
-    // FortyTwoSchool,
-    // Foursquare,
-    // Freshbooks,
-    // Fusionauth,
     GitHub,
     // Gitlab,
     Google,
-    // Hubspot,
-    // Instagram,
-    // Kakao,
-    // Keycloak,
-    // Line,
     // LinkedIn,
-    // Mailchimp,
-    // Mailru,
-    // Medium,
-    // Naver,
-    // Netlify,
-    // Okta,
-    // Onelogin,
-    // Osso,
-    // Osu,
-    // Passage,
-    // Patreon,
-    // Pinterest,
-    // Pipedrive,
-    // Reddit,
-    // Salesforce,
-    // Slack,
-    // Spotify,
-    // Strava,
-    // Todoist,
-    // Trakt,
-    // Twitch,
     // Twitter,
-    // UnitedEffects,
-    // Vk,
-    // Wikimedia,
-    // Wordpress,
-    // WorkOS,
-    // Yandex,
-    // Zitadel,
-    // Zoho,
-    // Zoom,
   ],
   // basePath: "/auth",
   callbacks: {
@@ -100,7 +41,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       if (token.sub && session.user) {
         session.user.id = token.sub;
       }
-
       if (token.role && session.user) {
         session.user.role = token.role as string;
       }
@@ -114,7 +54,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         // Set a default role if no role found
         token.role = "member";
       }
-
       return token;
     },
   },

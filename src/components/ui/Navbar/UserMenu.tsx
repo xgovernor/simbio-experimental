@@ -63,7 +63,7 @@ const UserMenu: FC<IUserMenuProps> = ({ className }: IUserMenuProps) => {
           />
         </MenuTrigger>
 
-        <MenuPopover className="h-[280px] min-h-[270px] w-full min-w-[320px] max-w-[320px] rounded border-0 bg-white p-0 shadow-lg">
+        <MenuPopover className="h-[308px] min-h-[270px] w-full min-w-[320px] max-w-[320px] rounded border-0 bg-white p-0 shadow-lg">
           <div className="inherit flex h-[268px] min-h-[220px] flex-col items-center justify-center p-[14px]">
             {/* <Link href={"/user/profile"}> */}
             <Link

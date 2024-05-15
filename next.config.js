@@ -38,12 +38,19 @@ const nextConfig = {
         hostname: "avatars.githubusercontent.com",
         // port: '',
         // pathname: '/my-bucket/**',
+      },
+      {
+        protocol: "https",
+        hostname: "*.googleusercontent.com",
+        // port: '',
+        // pathname: '/my-bucket/**',
       }
     ],
   },
-  // experimental: {
+  experimental: {
+    taint: true,
   //     instrumentationHook: true
-  // },
+  },
   async redirects() {
     return [
       {
@@ -115,4 +122,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.BUNDLE_ANALYZE || false,
 });
 
-module.exports = withBundleAnalyzer(withPWA(nextConfig));
+// module.exports = withBundleAnalyzer(withPWA(nextConfig));
+
+// Without PWA, Bundle analyzer support
+module.exports = nextConfig;

@@ -23,11 +23,13 @@
     "jsx": "preserve"
   },
   "include": [
-    "next-env.d.ts",
-     "**/*.ts",
-     "**/*.tsx",
-     "**/**/*.ts",
-     "**/**/*.tsx",
-     ".next/types/**/*.ts"],
+    "src/types/next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/**/*.ts",
+    "**/**/*.tsx",
+    ".next/types/**/*.ts",
+    "./src/types/*.d.ts"
+  ],
   "exclude": ["node_modules"]
 }
