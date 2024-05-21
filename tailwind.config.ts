@@ -26,6 +26,10 @@ const config: Config = {
       // },
       colors: {
         primary: "#194B67", // rgb(38 105 160)
+        blue: "#0077CC",
+        green: "#00BFB3",
+        yellow: "#FEC514",
+        dark: "343741",
       },
       spacing: {
         13: "3.25rem",
