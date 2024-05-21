@@ -15,7 +15,7 @@
     "commitlint": "commitlint --edit",
     "test": "vitest --config ./vitest.config.ts",
     "version": "lerna version --force-publish -y --no-push --no-changelog --no-git-tag-version $npm_package_version",
-    "version:auto": "yarn version --no-git-tag-version --new-version $1",
+    "version:auto": "pnpm version --no-git-tag-version --new-version $1",
     "changelog": "node scripts/create-changelog"
   },
   "dependencies": {
@@ -52,6 +52,7 @@
     "prettier-plugin-tailwindcss": "^0.5.9",
     "react": "^18",
     "react-dom": "^18",
+    "react-icons": "^5.2.1",
     "react-redux": "^9.0.4",
     "sass": "^1.69.5",
     "scss": "^0.2.4",
@@ -108,10 +109,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo ”[Husky] pre-commit”"
+      "pre-commit": "lint-staged"
     }
   },
-  "packageManager": "yarn@4.1.1",
   "engines": {
     "node": ">=18"
   },
