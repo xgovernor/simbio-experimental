@@ -1645,32 +1645,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/is-prop-valid@npm:^0.8.2":
-  version: 0.8.8
-  resolution: "@emotion/is-prop-valid@npm:0.8.8"
-  dependencies:
-    "@emotion/memoize": "npm:0.7.4"
-  checksum: 10c0/f6be625f067c7fa56a12a4edaf090715616dc4fc7803c87212831f38c969350107b9709b1be54100e53153b18d9fa068eb4bf4f9ac66a37a8edf1bac9b64e279
-  languageName: node
-  linkType: hard
-
-"@emotion/memoize@npm:0.7.4":
-  version: 0.7.4
-  resolution: "@emotion/memoize@npm:0.7.4"
-  checksum: 10c0/b2376548fc147b43afd1ff005a80a1a025bd7eb4fb759fdb23e96e5ff290ee8ba16628a332848d600fb91c3cdc319eee5395fa33d8875e5d5a8c4ce18cddc18e
-  languageName: node
-  linkType: hard
-
-"@esbuild/aix-ppc64@npm:0.20.2":
-  version: 0.20.2
-  resolution: "@esbuild/aix-ppc64@npm:0.20.2"
-  conditions: os=aix & cpu=ppc64
-  languageName: node
-  linkType: hard
-
-"@esbuild/android-arm64@npm:0.20.2":
-  version: 0.20.2
-  resolution: "@esbuild/android-arm64@npm:0.20.2"
+"@esbuild/android-arm64@npm:0.19.9":
+  version: 0.19.9
+  resolution: "@esbuild/android-arm64@npm:0.19.9"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
@@ -8913,24 +8890,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^10.16.4":
-  version: 10.18.0
-  resolution: "framer-motion@npm:10.18.0"
+"framer-motion@npm:^11.2.0":
+  version: 11.2.0
+  resolution: "framer-motion@npm:11.2.0"
   dependencies:
-    "@emotion/is-prop-valid": "npm:^0.8.2"
     tslib: "npm:^2.4.0"
   peerDependencies:
+    "@emotion/is-prop-valid": "*"
     react: ^18.0.0
     react-dom: ^18.0.0
-  dependenciesMeta:
+  peerDependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  peerDependenciesMeta:
     react:
       optional: true
     react-dom:
       optional: true
-  checksum: 10c0/0aea1b3dc5cf06687e31f3b6c0b6b1a2cd070afdd4a9d38ebf15715c662ca1d6d1c25e6778695e5ebff37a6ce92b031d036c02570370e6057e66aa9de9f9370f
+  checksum: 10c0/c9d3d321872c1cd97b0efcb506989346ead4b41f187e73ea3040b75eedc3cca426cbbe4398572864d5b2481165b2b85363ad17258fdcfa24cb5b55a37b3f8695
   languageName: node
   linkType: hard
 
@@ -14455,7 +14431,7 @@ __metadata:
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-unused-imports: "npm:^3.1.0"
     formik: "npm:^2.4.5"
-    framer-motion: "npm:^10.16.4"
+    framer-motion: "npm:^11.2.0"
     geist: "npm:^1.2.0"
     husky: "npm:^8.0.3"
     jsdom: "npm:^23.0.1"

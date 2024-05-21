@@ -1,7 +1,9 @@
+import "server-only";
 import Image from "next/image";
 import BG from "@/assets/images/bg.svg";
 import { FC } from "react";
 import LOGO from "@/assets/images/simbio-color.svg";
+import Link from "next/link";
 
 const PageAuthError: FC = ({
   searchParams,
@@ -9,10 +11,10 @@ const PageAuthError: FC = ({
   searchParams?: { [key: string]: string | string[] | undefined };
 }) => {
   return (
-    <section className="relative block h-screen w-full">
+    <section className="relative block min-h-screen w-full">
       {/* Background image */}
       <div
-        className="absolute left-0 top-0 -z-1 h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat"
+        className="absolute left-0 top-0 -z-1 min-h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${BG.src})`,
         }}
@@ -22,24 +24,27 @@ const PageAuthError: FC = ({
         {/* Login Card Start */}
         <div className="flex w-full max-w-[640px] flex-col gap-8 rounded-md bg-white px-11 pb-8 pt-11 shadow">
           <div>
-            {/* Logo */}
-            <Image
-              className="brandLogo"
-              src={LOGO}
-              alt="Simbio logo"
-              priority
-            />
+            <Link href="/">
+              {/* Logo */}
+              <Image
+                className="brandLogo"
+                src={LOGO}
+                alt="Simbio logo"
+                priority
+              />
+            </Link>
           </div>
 
           <div className="flex flex-col gap-7">
             <div>
               {/* Title */}
-              <h1 className="mb-4 mt-4 text-2xl font-semibold leading-7">
-                {searchParams?.error}
+              <h1 className="mb-3 text-xl font-semibold leading-7">
+                {searchParams?.error || "Server error"}
               </h1>
               {/* Error message */}
-              <p className="caption1 mb-2 font-semibold">
-                {searchParams?.error_description}
+              <p className="caption1 mb-2 font-medium">
+                {searchParams?.error_description ||
+                  "Something went wrong on the server. Please try again later."}
               </p>
               <p className="caption1 font-medium text-[#1b1b1b]">
                 {searchParams?.error_uri}

@@ -71,8 +71,10 @@ const useStyles = makeStyles({
 });
 
 const FORM: TFormBuilderForm = {
-  sectionClassName: "w-full grid max-md:grid-cols-1 grid-cols-2 gap-x-13 gap-y-3",
-  fieldClassName: "flex max-md:flex-col max-md:gap-1 flex-row items-start justify-between gap-4 w-full",
+  sectionClassName:
+    "w-full grid max-md:grid-cols-1 grid-cols-2 gap-x-13 gap-y-3",
+  fieldClassName:
+    "flex max-md:flex-col max-md:gap-1 flex-row items-start justify-between gap-4 w-full",
   labelClassName:
     "w-full max-w-[150px] min-w-[125px] text-[13px] leading-[32px] font-medium",
   inputClassName: "w-full",

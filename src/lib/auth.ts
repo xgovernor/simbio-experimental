@@ -17,7 +17,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   pages: {
     signIn: "/auth/login",
     // signOut: "/auth/login",
-    error: "/auth/error",
+    error: "/error",
     newUser: "/auth/new-user",
   },
   trustHost: true,
@@ -36,37 +36,37 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     // Twitter,
   ],
   // basePath: "/auth",
-  callbacks: {
-    async session({ session, token }) {
-      if (token.sub && session.user) {
-        session.user.id = token.sub;
-      }
-      if (token.role && session.user) {
-        session.user.role = token.role as string;
-      }
-      return session;
-    },
-    async jwt({ token, trigger, session }) {
-      // Check if user object has a role property
-      if (session?.user?.role) {
-        token.role = session.user.role;
-      } else {
-        // Set a default role if no role found
-        token.role = "member";
-      }
-      return token;
-    },
-  },
-  // events: {
-  // async signIn({ user, account, profile, isNewUser }) {
-  //   console.log("signIn");
-  //   console.log({ user, account, profile, isNewUser });
-  // },
-  //   async signOut() {
-  //     console.log("signOut");
+  // callbacks: {
+  //   async session({ session, token }) {
+  //     if (token.sub && session.user) {
+  //       session.user.id = token.sub;
+  //     }
+  //     if (token.role && session.user) {
+  //       session.user.role = token.role as string;
+  //     }
+  //     return session;
   //   },
-  // async linkAccount({ user, account, profile }) {
-  //   console.log("LINK ACCOUNT", { user, account, profile });
-  // }
+  //   async jwt({ token, trigger, session }) {
+  //     // Check if user object has a role property
+  //     if (session?.user?.role) {
+  //       token.role = session.user.role;
+  //     } else {
+  //       // Set a default role if no role found
+  //       token.role = "member";
+  //     }
+  //     return token;
+  //   },
   // },
+  events: {
+    async signIn({ user, account, profile, isNewUser }) {
+      console.log("*****************signIn*******************");
+      console.log({ user, account, profile, isNewUser });
+    },
+    //   async signOut() {
+    //     console.log("signOut");
+    //   },
+    // async linkAccount({ user, account, profile }) {
+    //   console.log("LINK ACCOUNT", { user, account, profile });
+    // }
+  },
 });

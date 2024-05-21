@@ -148,9 +148,6 @@ export const locations = [
   },
 ];
 
-
-
-
 /**
  * Filters:
  *  - City

@@ -94,7 +94,10 @@ const DeviceList: FC<TDeviceListProps> = ({ className }: TDeviceListProps) => {
               borderBottomColor: "rgb(240, 240, 240)",
             }}
           >
-            <TableCell className="text-sm" style={{ color: "#424242", fontSize: "13px" }}>
+            <TableCell
+              className="text-sm"
+              style={{ color: "#424242", fontSize: "13px" }}
+            >
               {activity.date}
             </TableCell>
             <TableCell
@@ -103,10 +106,16 @@ const DeviceList: FC<TDeviceListProps> = ({ className }: TDeviceListProps) => {
             >
               {activity.device}
             </TableCell>
-            <TableCell className="text-sm" style={{ color: "#424242", fontSize: "13px" }}>
+            <TableCell
+              className="text-sm"
+              style={{ color: "#424242", fontSize: "13px" }}
+            >
               {activity.mac}
             </TableCell>
-            <TableCell className="text-sm" style={{ color: "#424242", fontSize: "13px" }}>
+            <TableCell
+              className="text-sm"
+              style={{ color: "#424242", fontSize: "13px" }}
+            >
               {activity.ip}
             </TableCell>
           </TableRow>

@@ -1,6 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 import {
   MoreVertical16Regular,
@@ -24,7 +31,7 @@ const TableMenu: FC = () => {
         <DropdownMenuSeparator />
 
         <DropdownMenuItem>
-          <DropdownMenuCheckboxItem className="ps-0 py-0">
+          <DropdownMenuCheckboxItem className="py-0 ps-0">
             <BookQuestionMark24Regular className="h-5 w-5" />
           </DropdownMenuCheckboxItem>
 
@@ -33,9 +40,8 @@ const TableMenu: FC = () => {
           </Link>
         </DropdownMenuItem>
 
-        <DropdownMenuItem >
-
-          <DropdownMenuCheckboxItem className="ps-0 py-0">
+        <DropdownMenuItem>
+          <DropdownMenuCheckboxItem className="py-0 ps-0">
             <Bug24Regular className="h-5 w-5" />
           </DropdownMenuCheckboxItem>
           <Link href={"/issues/report"} target="_blank">
