@@ -4,6 +4,7 @@ node_modules/
 .pnp.js
 .cache/
 .next/
+.yarn/
 out/
 
 # Ignore testing files
@@ -21,10 +22,7 @@ yarn-error.log*
 
 # Ignore local environment files
 .env
-.env.local
-.env.development
-.env.test
-.env.production
+.env.*
 
 # Ignore TypeScript build info and Next.js specific files
 *.tsbuildinfo

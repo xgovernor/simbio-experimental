@@ -1,0 +1,66 @@
+[31m[1mUnknown Syntax Error[22m[39m: Unsupported option name ("--verbose").
+
+$ yarn cache clean [--mirror] [--all]
+$ yarn cache clean [--mirror] [--all]
+$ yarn config get [--why] [--json] [--no-redacted] <name>
+$ yarn config set [--json] [-H,--home] <name> <value>
+$ yarn config unset [-H,--home] <name>
+$ yarn set resolution <descriptor> <resolution>
+$ yarn set version from sources [--path #0] [--repository #0] [--branch #0] [--plugin #0] [-n,--dry-run] [--no-minify] [-f,--force] [--skip-plugins]
+$ yarn set version [--yarn-path] [--only-if-needed] <version>
+$ yarn --clipanion=definitions
+$ yarn help
+$ yarn help
+$ yarn help
+$ yarn <leadingArgument> ...
+$ yarn -v
+$ yarn -v
+$ yarn add [--json] [-F,--fixed] [-E,--exact] [-T,--tilde] [-C,--caret] [-D,--dev] [-P,--peer] [-O,--optional] [--prefer-dev] [-i,--interactive] [--cached] [--mode #0] ...
+$ yarn dedupe [-s,--strategy #0] [-c,--check] [--json] [--mode #0] ...
+$ yarn exec <commandName> ...
+$ yarn explain peer-requirements <hash>
+$ yarn explain [--json] [code]
+$ yarn info [-A,--all] [-R,--recursive] [-X,--extra #0] [--cache] [--dependents] [--manifest] [--name-only] [--virtuals] [--json] ...
+$ yarn install [--json] [--immutable] [--immutable-cache] [--refresh-lockfile] [--check-cache] [--check-resolutions] [--inline-builds] [--mode #0]
+$ yarn install [--json] [--immutable] [--immutable-cache] [--refresh-lockfile] [--check-cache] [--check-resolutions] [--inline-builds] [--mode #0]
+$ yarn link [-A,--all] [-p,--private] [-r,--relative] ...
+$ yarn unlink [-A,--all] ...
+$ yarn node ...
+$ yarn plugin check [--json]
+$ yarn plugin import from sources [--path #0] [--repository #0] [--branch #0] [--no-minify] [-f,--force] <name>
+$ yarn plugin import [--checksum] <name>
+$ yarn plugin remove <name>
+$ yarn plugin list [--json]
+$ yarn plugin runtime [--json]
+$ yarn rebuild ...
+$ yarn remove [-A,--all] [--mode #0] ...
+$ yarn run [--json]
+$ yarn run [--inspect] [--inspect-brk] [-T,--top-level] [-B,--binaries-only] [--require #0] <scriptName> ...
+$ yarn up [-i,--interactive] [-F,--fixed] [-E,--exact] [-T,--tilde] [-C,--caret] [-R,--recursive] [--mode #0] ...
+$ yarn why [-R,--recursive] [--json] [--peers] <package>
+$ yarn workspace <workspaceName> <commandName> ...
+$ yarn constraints query [--json] <query>
+$ yarn constraints [--fix] [--json]
+$ yarn create [-p,--package #0] [-q,--quiet] <command> ...
+$ yarn dlx [-p,--package #0] [-q,--quiet] <command> ...
+$ yarn init [-p,--private] [-w,--workspace] [-i,--install] [-n,--name #0]
+$ yarn search
+$ yarn upgrade-interactive
+$ yarn npm audit [-A,--all] [-R,--recursive] [--environment #0] [--json] [--no-deprecations] [--severity #0] [--exclude #0] [--ignore #0]
+$ yarn npm info [-f,--fields #0] [--json] ...
+$ yarn npm login [-s,--scope #0] [--publish] [--always-auth]
+$ yarn npm logout [-s,--scope #0] [--publish] [-A,--all]
+$ yarn npm publish [--access #0] [--tag #0] [--tolerate-republish] [--otp #0]
+$ yarn npm tag add <package> <tag>
+$ yarn npm tag list [--json] [package]
+$ yarn npm tag remove <package> <tag>
+$ yarn npm whoami [-s,--scope #0] [--publish]
+$ yarn pack [--install-if-needed] [-n,--dry-run] [--json] [-o,--out #0]
+$ yarn patch-commit [-s,--save] <patchFolder>
+$ yarn patch [-u,--update] [--json] <package>
+$ yarn unplug [-A,--all] [-R,--recursive] [--json] ...
+$ yarn stage [-c,--commit] [-r,--reset] [-n,--dry-run]
+$ yarn version apply [--all] [--dry-run] [--prerelease] [-R,--recursive] [--json]
+$ yarn version check [-i,--interactive]
+$ yarn version [-d,--deferred] [-i,--immediate] <strategy>
+$ yarn workspaces focus [--json] [--production] [-A,--all] ...

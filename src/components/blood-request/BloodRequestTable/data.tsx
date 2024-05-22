@@ -121,7 +121,11 @@ export const columns: ColumnDef<TRequestItem>[] = [
   },
 ];
 
-export const hiddenColumns = { "blood_group": false, "quantity": false, "blood_type": false };
+export const hiddenColumns = {
+  blood_group: false,
+  quantity: false,
+  blood_type: false,
+};
 
 // Filter: Telecom Operator
 export const gender = [

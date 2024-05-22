@@ -6,6 +6,7 @@ node_modules/
 .pnp.js
 .cache/
 .next/
+.yarn/
 out/
 
 # testing
@@ -23,10 +24,7 @@ yarn-error.log*
 
 # Ignore local environment files
 .env
-.env.local
-.env.development
-.env.test
-.env.production
+.env.*
 
 # Ignore TypeScript build info and Next.js specific files
 *.tsbuildinfo
@@ -34,7 +32,6 @@ next-env.d.ts
 
 # Ignore package.json (you generally don't need to lint it)
 package.json
-
 
 # misc
 .DS_Store

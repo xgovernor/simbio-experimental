@@ -25,8 +25,7 @@ import {
 } from "@fluentui/react-icons";
 import { FC, memo } from "react";
 
-
-import ReactECharts from 'echarts-for-react/lib/core'
+import ReactECharts from "echarts-for-react/lib/core";
 import {
   RadarChart,
   // BarChart,
@@ -50,7 +49,7 @@ import {
   // ThemeRiverChart,
   // PictorialBarChart,
   // CustomChart
-} from 'echarts/charts'
+} from "echarts/charts";
 import {
   // GridSimpleComponent,
   // GridComponent,
@@ -82,13 +81,13 @@ import {
   // AriaComponent,
   // TransformComponent,
   // DatasetComponent,
-} from 'echarts/components'
-import * as echarts from 'echarts/core'
+} from "echarts/components";
+import * as echarts from "echarts/core";
 import {
   // CanvasRenderer,
-  SVGRenderer
-} from 'echarts/renderers'
-import React from 'react'
+  SVGRenderer,
+} from "echarts/renderers";
+import React from "react";
 import { EChartsOption } from "echarts-for-react";
 
 // Register the required components
@@ -163,8 +162,6 @@ echarts.use([
   // PictorialBarChart,
   // CustomChart
 ]);
-
-
 
 const dataGZ = [
   [26, 37, 27, 1.163, 27, 13, 1],

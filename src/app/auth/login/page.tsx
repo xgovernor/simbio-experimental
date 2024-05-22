@@ -4,17 +4,16 @@ import BG from "@/assets/images/bg.svg";
 import { FC } from "react";
 import LOGO from "@/assets/images/simbio-color.svg";
 import { Button } from "@/components/ui/button";
+import { signIn } from "next-auth/react";
 
 const PageAuthLogin: FC = () => {
-  const handleLogin = async (
-    medium: "google" | "apple" | "microsoft" | "github",
-  ) => {
-    try {
-      const response = await fetch(`/auth/login/${medium}`);
-      console.log("Response:", response);
-      window.location.href = response.url; // Redirect to Google login
-    } catch (error) {
-      console.error("Error logging in with Google:", error);
+  const handleLogin = async (provider: "google" | "apple" | "github") => {
+    if (provider === "google") {
+      signIn("google");
+    }
+
+    if (provider === "github") {
+      signIn("github");
     }
   };
 
@@ -63,12 +62,12 @@ const PageAuthLogin: FC = () => {
                 >
                   Login with Apple
                 </Button>
-                <Button
+                {/* <Button
                   onClick={() => handleLogin("microsoft")}
                   className="w-full bg-blue-500 text-white"
                 >
                   Login with Microsoft
-                </Button>
+                </Button> */}
                 <Button
                   onClick={() => handleLogin("github")}
                   className="w-full bg-gray-900 text-white"

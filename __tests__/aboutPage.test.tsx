@@ -1,6 +1,6 @@
 import React from "react";
 import { describe, expect, it } from "vitest";
-import PageAbout from "./../src/app/about/page";
+import PageAbout from "../src/app/dashboard/about/page";
 import { render, screen } from "@testing-library/react";
 
 describe("About Page", () => {

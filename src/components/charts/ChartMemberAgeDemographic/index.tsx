@@ -20,22 +20,16 @@ import {
   DocumentTableArrowRight24Regular,
 } from "@fluentui/react-icons";
 import { memo } from "react";
-import ReactECharts from 'echarts-for-react/lib/core';
-import { PieChart } from 'echarts/charts';
-import * as echarts from 'echarts/core';
-import { SVGRenderer } from 'echarts/renderers';
-import React from 'react';
+import ReactECharts from "echarts-for-react/lib/core";
+import { PieChart } from "echarts/charts";
+import * as echarts from "echarts/core";
+import { SVGRenderer } from "echarts/renderers";
+import React from "react";
 import { EChartsOption } from "echarts-for-react";
 import { LegendComponent, TooltipComponent } from "echarts/components";
 
 // Register the required components
-echarts.use([
-  SVGRenderer,
-  PieChart,
-  TooltipComponent,
-  LegendComponent
-]);
-
+echarts.use([SVGRenderer, PieChart, TooltipComponent, LegendComponent]);
 
 const options: EChartsOption = {
   animation: false,

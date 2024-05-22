@@ -49,7 +49,7 @@ const TeamsTable: FC<TTeamsTableProps> = ({
       </div>
 
       {/* Card Body */}
-      <div className="pb-4 overflow-x-auto">
+      <div className="overflow-x-auto pb-4">
         <DataGrid columns={columns} data={data} filters={filters} />
       </div>
     </section>

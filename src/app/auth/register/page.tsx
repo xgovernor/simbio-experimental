@@ -65,7 +65,7 @@ const PageAuthRegistered: FC = () => {
                 </Button>
                 <Button
                   onClick={() => handleRegister("microsoft")}
-                  className="w-full bg-blue-700 text-white"
+                  className="bg-blue-700 w-full text-white"
                 >
                   Register with Microsoft
                 </Button>

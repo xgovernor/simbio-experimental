@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { memo } from "react";
+import { SignOut24Regular } from "@fluentui/react-icons";
+import { signOut } from "next-auth/react";
 
 export interface ISidebarMenuItem {
   name: string;
@@ -37,6 +39,16 @@ const Sidebar: React.FC<SidebarProps> = ({
             <span className="caption2Strong text-inherit">{item.name}</span>
           </Link>
         ))}
+
+        {/* Logout Button */}
+        <button
+          className="flex h-full min-h-13 w-full min-w-13 max-w-13 flex-col flex-nowrap items-center justify-center gap-0 rounded px-1 hover:bg-white hover:text-primary hover:shadow"
+          onClick={() => signOut()}
+          title="Logout from account"
+        >
+          <SignOut24Regular />
+          <span className="caption2Strong text-inherit">Sign out</span>
+        </button>
       </div>
 
       {children}

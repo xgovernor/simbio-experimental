@@ -26,7 +26,6 @@ interface TFundTableProps {
   rest?: object;
 }
 
-
 const FundTable: FC<TFundTableProps> = ({
   className,
   title,
@@ -34,7 +33,6 @@ const FundTable: FC<TFundTableProps> = ({
   data,
   ...rest
 }: TFundTableProps) => {
-
   return (
     <section
       className="gap grid h-full w-full gap-3 rounded bg-white"
@@ -57,7 +55,7 @@ const FundTable: FC<TFundTableProps> = ({
       </div>
 
       {/* Card Body */}
-      <div className="pb-4 overflow-x-auto">
+      <div className="overflow-x-auto pb-4">
         <DataGrid columns={columns} data={data} filters={filters} />
       </div>
     </section>
