@@ -12,7 +12,7 @@ const DashboadHeader: FC = () => {
             <div className="flex h-24 w-24 rounded-full">
               <Link href="/profile">
                 <Image
-                  className="border-rounded min-w-24 min-h-24"
+                  className="border-rounded min-h-24 min-w-24"
                   src="/image/logo/bss.jpg"
                   alt="Blood Soldier Society (BSS)"
                   width={96}

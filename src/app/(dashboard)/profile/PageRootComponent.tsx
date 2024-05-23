@@ -2,6 +2,7 @@
 import { FC, memo } from "react";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
 import DeviceList from "@/components/settings/DeviceList";
+import { Badge } from "@/components/ui/badge";
 
 const PageRootComponent: FC = () => {
   return (
@@ -32,14 +33,12 @@ const PageRootComponent: FC = () => {
         <div className="col-span-4 col-start-1 col-end-5 rounded bg-white p-5 shadow  max-md:col-span-1 max-md:col-end-2">
           <div className="grid grid-cols-5 gap-5 max-md:grid-cols-2 md:grid-cols-2 lg:grid-cols-5">
             <dl className="space-y-2 border-e">
-              <dt className="text-sm font-medium text-gray-600">
-                Unique views
-              </dt>
+              <dt className="text-sm font-medium text-gray-600">Donations</dt>
 
-              <dd className="text-5xl font-light md:text-6xl">192.1k</dd>
+              <dd className="text-5xl font-light md:text-6xl">192 bag</dd>
 
               <dd className="text-green-500 flex items-center space-x-1 text-sm font-medium">
-                <span>32k increase</span>
+                <span>32% increase</span>
 
                 <svg
                   className="h-5 w-5"
@@ -66,9 +65,9 @@ const PageRootComponent: FC = () => {
             </dl>
 
             <dl className="space-y-2 md:border-e">
-              <dt className="text-sm font-medium text-gray-500">Bounce rate</dt>
+              <dt className="text-sm font-medium text-gray-500">Fund raised</dt>
 
-              <dd className="text-5xl font-light md:text-6xl">21%</dd>
+              <dd className="text-5xl font-light md:text-6xl">20K</dd>
 
               <dd className="flex items-center space-x-1 text-sm font-medium text-red-500">
                 <span>7% increase</span>
@@ -98,11 +97,9 @@ const PageRootComponent: FC = () => {
             </dl>
 
             <dl className="space-y-2 border-e">
-              <dt className="text-sm font-medium text-gray-500">
-                Average time on page
-              </dt>
+              <dt className="text-sm font-medium text-gray-500">New member</dt>
 
-              <dd className="text-5xl font-light md:text-6xl">03:12</dd>
+              <dd className="text-5xl font-light md:text-6xl">10</dd>
 
               <dd className="text-green-500 flex items-center space-x-1 text-sm font-medium">
                 <span>3% increase</span>
@@ -132,9 +129,11 @@ const PageRootComponent: FC = () => {
             </dl>
 
             <dl className="space-y-2 md:border-e">
-              <dt className="text-sm font-medium text-gray-500">Bounce rate</dt>
+              <dt className="text-sm font-medium text-gray-500">
+                Patient served
+              </dt>
 
-              <dd className="text-5xl font-light md:text-6xl">21%</dd>
+              <dd className="text-5xl font-light md:text-6xl">180</dd>
 
               <dd className="flex items-center space-x-1 text-sm font-medium text-red-500">
                 <span>7% increase</span>
@@ -165,10 +164,10 @@ const PageRootComponent: FC = () => {
 
             <dl className="space-y-2">
               <dt className="text-sm font-medium text-gray-500">
-                Average time on page
+                Special request
               </dt>
 
-              <dd className="text-5xl font-light md:text-6xl">03:12</dd>
+              <dd className="text-5xl font-light md:text-6xl">20</dd>
 
               <dd className="text-green-500 flex items-center space-x-1 text-sm font-medium">
                 <span>3% increase</span>
@@ -204,30 +203,30 @@ const PageRootComponent: FC = () => {
           <div className="w-full">
             <h3 className="font-bold">Blood groups</h3>
             <div className="mt-3 flex flex-wrap gap-2">
-              <div className="rounded-full border px-2.5 py-0.5 text-xs">
+              <Badge className="rounded-full" variant="secondary">
                 A+
-              </div>
-              <div className="rounded-full border px-2.5 py-0.5 text-xs">
+              </Badge>
+              <Badge className="rounded-full" variant="secondary">
                 A-
-              </div>
-              <div className="rounded-full border px-2.5 py-0.5 text-xs">
+              </Badge>
+              <Badge className="rounded-full" variant="secondary">
                 B+
-              </div>
-              <div className="rounded-full border px-2.5 py-0.5 text-xs">
+              </Badge>
+              <Badge className="rounded-full" variant="secondary">
                 B-
-              </div>
-              <div className="rounded-full border px-2.5 py-0.5 text-xs">
+              </Badge>
+              <Badge className="rounded-full" variant="secondary">
                 AB+
-              </div>
-              <div className="rounded-full border px-2.5 py-0.5 text-xs">
+              </Badge>
+              <Badge className="rounded-full" variant="secondary">
                 AB-
-              </div>
-              <div className="rounded-full border px-2.5 py-0.5 text-xs">
+              </Badge>
+              <Badge className="rounded-full" variant="secondary">
                 O+
-              </div>
-              <div className="rounded-full border px-2.5 py-0.5 text-xs">
+              </Badge>
+              <Badge className="rounded-full" variant="secondary">
                 O-
-              </div>
+              </Badge>
             </div>
           </div>
         </div>
@@ -237,9 +236,9 @@ const PageRootComponent: FC = () => {
           <div className="w-full">
             <h3 className="font-bold">
               Personal Information
-              <span className="bg-green-100 text-green-500 ml-2 inline-block rounded-md px-2 py-px text-xs">
+              <Badge className="ms-1 rounded-full text-xs" variant="secondary">
                 +4.4%
-              </span>
+              </Badge>
             </h3>
             <div className="mt-3">
               This will display organization information

@@ -10,7 +10,6 @@ import {
 } from "@fluentui/react-components";
 import { Alert24Regular, Alert20Regular } from "@fluentui/react-icons";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { FC, memo } from "react";
 
 export interface AppUpdatesListItemType {
@@ -91,12 +90,6 @@ const UPDATES: AppUpdatesListItemType[] = [
 ];
 
 const AppUpdates: FC = () => {
-  const router = useRouter();
-
-  const handleSettings = () => {
-    router.push("/settings?tab=notification");
-  };
-
   return (
     <Menu>
       <MenuTrigger>

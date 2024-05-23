@@ -1,9 +1,10 @@
 "use client";
-import DonationForm from "@/components/donations/DonationForm";
+import FormBuilder from "@/components/ui/FormBuilder";
 import Layout from "@/components/ui/Layout";
 // import Alert from "@/components/ui/Alert";
 import { PeopleAdd24Regular } from "@fluentui/react-icons";
 import { memo } from "react";
+import { formSchema } from "./donation-form.schema";
 
 const BREADCRUMB_MENU = [
   {
@@ -20,6 +21,18 @@ const BREADCRUMB_MENU = [
 ];
 
 const PageNewMember: React.FC = () => {
+  /**
+   * Form handler
+   */
+  function onSubmitHandler(values: Record<string, unknown>): void {
+    // setSubmitting(true);
+
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      // setSubmitting(false);
+    }, 1000);
+  }
+
   return (
     <Layout
       breadcrumb={BREADCRUMB_MENU}
@@ -34,7 +47,7 @@ const PageNewMember: React.FC = () => {
               {/* <Alert title="New member added" /> */}
             </div>
 
-            <DonationForm />
+            <FormBuilder formSchema={formSchema} onSubmit={onSubmitHandler} />
           </div>
         </div>
         <div className="flex h-full w-full max-w-[289px] flex-col flex-nowrap items-start justify-start"></div>

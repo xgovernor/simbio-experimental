@@ -1,15 +1,35 @@
+"use client";
 import FormSection from "@/components/ui/form/FormSection";
-import {
-  Field,
-  Input,
-  Label,
-  Select,
-  Textarea,
-} from "@fluentui/react-components";
 import { memo } from "react";
-// import { Input } from "../input";
+import { Input } from "../input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../select";
+import { Textarea } from "../textarea";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "../form";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { Button } from "../button";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  createInitialValue,
+  createValidationSchema,
+} from "@/components/ui/FormBuilder/formBuilder.util";
+import { z } from "zod";
+import { cn } from "@/lib/utils";
 
-type FormBuilderFieldSelectOptionType = {
+type TFormBuilderFieldSelectOption = {
   key?: string;
   label: string;
   value?: string;
@@ -22,7 +42,7 @@ type TFormBuilderField = {
   label: string;
   name: string;
   placeholder?: string;
-  defaultValue?: string;
+  value?: string | number;
   validation: any;
   type?:
     | "text"
@@ -39,12 +59,12 @@ type TFormBuilderField = {
     | "month"
     | "week"
     | "textarea";
-  options?: Array<FormBuilderFieldSelectOptionType>;
+  options?: Array<TFormBuilderFieldSelectOption>;
   autoComplete?: "on" | "off";
   required?: boolean;
 };
 
-type FormBuilderFormSectionType = {
+type TFormBuilderFormSection = {
   id?: string;
   title?: string;
   className?: string;
@@ -70,169 +90,177 @@ export type TFormBuilderForm = {
   // onBlur?: any;
   // values?: any;
   // errors?: any;
-  sections: Array<FormBuilderFormSectionType>;
+  sections: Array<TFormBuilderFormSection>;
 };
 
-export type FormBuilderPropsType = {
-  form: TFormBuilderForm;
-  onChange: any;
-  onBlur: any;
-  touched?: any;
-  values: any;
-  errors: any;
+export type TFormBuilderProps = {
+  formSchema: TFormBuilderForm;
+  onSubmit: (data: any) => void;
 };
 
-const FormBuilder: React.FC<FormBuilderPropsType> = ({
-  form,
-  onChange,
-  onBlur,
-  values,
-  errors,
-  touched,
-}: FormBuilderPropsType) => {
+const FormBuilder = ({ formSchema, onSubmit }: TFormBuilderProps) => {
+  const defaultValues = createInitialValue(formSchema);
+  const validationSchema = createValidationSchema(formSchema);
+  type TFormData = z.infer<typeof validationSchema>;
+  const form = useForm<TFormData>({
+    resolver: zodResolver(validationSchema),
+    defaultValues,
+  });
+
+  const submitHandler: SubmitHandler<TFormData> = (values) => {
+    // onSubmit();
+    console.log(values);
+  };
+
   return (
-    <>
-      {form.sections.map((section: any, index: number) => (
-        <FormSection title={section?.title} key={section?.id || index}>
-          <div className={section?.className || form.sectionClassName}>
-            {section?.fields?.map((field: any, index: number) => (
-              <div
-                className={
-                  field?.className ||
-                  section.fieldClassName ||
-                  form.fieldClassName
-                }
-                key={field?.id || index}
-              >
-                <Label
-                  className={
-                    field?.labelClassName ||
-                    section.labelClassName ||
-                    form.labelClassName
-                  }
-                  htmlFor={field?.name}
-                  required={field?.required || form.required}
-                >
-                  {field?.label}
-                </Label>
-
-                <Field
-                  className={
-                    field.inputClassName ||
-                    section.inputClassName ||
-                    form.inputClassName
-                  }
-                  validationMessage={
-                    touched[field.name] &&
-                    errors[field.name] &&
-                    errors[field.name]
-                  }
-                  required={
-                    field?.required ||
-                    section?.required ||
-                    form?.required ||
-                    true
-                  }
-                >
-                  {/* Text Field */}
-                  {(!field.type ||
-                    field?.type === "text" ||
-                    field?.type === "number" ||
-                    field?.type === "email" ||
-                    field?.type === "password" ||
-                    field?.type === "url" ||
-                    field?.type === "tel" ||
-                    field?.type === "search" ||
-                    field?.type === "date" ||
-                    field?.type === "time" ||
-                    field?.type === "datetime-local" ||
-                    field?.type === "month" ||
-                    field?.type === "week") && (
-                    <Input
-                      name={field?.name}
-                      id={field?.name}
-                      type={field?.type || section.type || "text"}
-                      appearance="filled-lighter"
-                      placeholder={field?.placeholder}
-                      onChange={onChange}
-                      onBlur={onBlur}
-                      value={values[field?.name]}
-                      autoComplete={
-                        field?.autoComplete ||
-                        section.autoComplete ||
-                        form.autoComplete ||
-                        "on"
-                      }
-                      required={
-                        field?.required ||
-                        section?.required ||
-                        form?.required ||
-                        true
-                      }
-                    />
-                  )}
-
-                  {/* Select Field */}
-                  {field?.type === "select" && (
-                    <Select
-                      name={field?.name}
-                      id={field?.name}
-                      appearance="filled-lighter"
-                      onChange={onChange}
-                      onBlur={onBlur}
-                      value={values[field?.name]}
-                      autoComplete={
-                        field?.autoComplete ||
-                        section.autoComplete ||
-                        form.autoComplete ||
-                        "on"
-                      }
-                      required={
-                        field?.required ||
-                        section?.required ||
-                        form?.required ||
-                        true
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)}>
+        {formSchema.sections.map((section: any, index: number) => (
+          <FormSection title={section?.title} key={section?.id || index}>
+            <div className={section?.className || formSchema.sectionClassName}>
+              {section?.fields?.map((fField: any, index: number) => (
+                <FormField
+                  key={fField?.name || index}
+                  control={form.control}
+                  name={fField?.name}
+                  render={({ field }) => (
+                    <FormItem
+                      className={
+                        fField?.className ||
+                        section.fieldClassName ||
+                        formSchema.fieldClassName
                       }
                     >
-                      {field?.options?.map((option: any, index: number) => (
-                        <option value={option.value} key={index}>
-                          {option.label}
-                        </option>
-                      ))}
-                    </Select>
-                  )}
+                      <FormLabel
+                        className={
+                          fField?.labelClassName ||
+                          section.labelClassName ||
+                          formSchema.labelClassName
+                        }
+                      >
+                        {fField?.label}
+                      </FormLabel>
 
-                  {/* Textarea Field */}
-                  {field?.type === "textarea" && (
-                    <Textarea
-                      name={field?.name}
-                      id={field?.name}
-                      appearance="filled-lighter"
-                      placeholder={field?.placeholder}
-                      onChange={onChange}
-                      onBlur={onBlur}
-                      value={values[field?.name]}
-                      autoComplete={
-                        field?.autoComplete ||
-                        section.autoComplete ||
-                        form.autoComplete ||
-                        "on"
-                      }
-                      required={
-                        field?.required ||
-                        section?.required ||
-                        form?.required ||
-                        true
-                      }
-                    />
+                      <div
+                        className={cn(
+                          fField?.inputClassName ||
+                            section.inputClassName ||
+                            formSchema.inputClassName,
+                        )}
+                      >
+                        <FormControl>
+                          <>
+                            {/* Text Field */}
+                            {(!fField.type ||
+                              fField?.type === "text" ||
+                              fField?.type === "number" ||
+                              fField?.type === "email" ||
+                              fField?.type === "password" ||
+                              fField?.type === "url" ||
+                              fField?.type === "tel" ||
+                              fField?.type === "search" ||
+                              fField?.type === "date" ||
+                              fField?.type === "time" ||
+                              fField?.type === "datetime-local" ||
+                              fField?.type === "month" ||
+                              fField?.type === "week") && (
+                              <Input
+                                className={cn(
+                                  "bg-white shadow-none",
+                                  fField?.inputClassName ||
+                                    section.inputClassName ||
+                                    formSchema.inputClassName,
+                                )}
+                                type={fField?.type || section.type || "text"}
+                                placeholder={fField?.placeholder}
+                                required={fField?.required ?? true}
+                                autoComplete={
+                                  fField?.auoComplete ||
+                                  section?.auoComplete ||
+                                  formSchema?.autoComplete ||
+                                  "on"
+                                }
+                                {...field}
+                              />
+                            )}
+
+                            {/* Select Field */}
+                            {fField?.type === "select" && (
+                              <Select
+                                required={fField?.required ?? true}
+                                {...field}
+                                onValueChange={field.onChange}
+                                defaultValue={field.value}
+                              >
+                                <SelectTrigger
+                                  className={cn(
+                                    "bg-white shadow-none",
+                                    fField?.inputClassName ||
+                                      section.inputClassName ||
+                                      formSchema.inputClassName,
+                                  )}
+                                >
+                                  <SelectValue
+                                    placeholder={fField?.placeholder}
+                                  />
+                                </SelectTrigger>
+                                <SelectContent>
+                                  {fField?.options?.map(
+                                    (option: any, index: number) => (
+                                      <SelectItem
+                                        value={option.value}
+                                        key={index}
+                                      >
+                                        {option.label}
+                                      </SelectItem>
+                                    ),
+                                  )}
+                                </SelectContent>
+                              </Select>
+                            )}
+
+                            {/* Textarea Field */}
+                            {fField?.type === "textarea" && (
+                              <Textarea
+                                className={cn(
+                                  "bg-white shadow-none",
+                                  fField?.inputClassName ||
+                                    section.inputClassName ||
+                                    formSchema.inputClassName,
+                                )}
+                                placeholder={fField?.placeholder}
+                                required={fField?.required ?? true}
+                                autoComplete={
+                                  fField?.auoComplete ||
+                                  section?.auoComplete ||
+                                  formSchema?.autoComplete ||
+                                  "on"
+                                }
+                                {...field}
+                              />
+                            )}
+                          </>
+                        </FormControl>
+
+                        <FormDescription />
+                        <FormMessage />
+                      </div>
+                    </FormItem>
                   )}
-                </Field>
-              </div>
-            ))}
-          </div>
-        </FormSection>
-      ))}
-    </>
+                />
+              ))}
+            </div>
+          </FormSection>
+        ))}
+
+        {/* Submit Button */}
+        <div className="flex w-full flex-row items-center justify-end gap-4">
+          <Button type="submit" variant="default">
+            Submit
+          </Button>
+        </div>
+      </form>
+    </Form>
   );
 };
 

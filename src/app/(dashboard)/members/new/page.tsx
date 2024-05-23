@@ -1,14 +1,15 @@
 "use client";
-import MemberForm from "@/components/members/MemberForm";
+import FormBuilder from "@/components/ui/FormBuilder";
 import Layout from "@/components/ui/Layout";
 // import Alert from "@/components/ui/Alert";
 import { PeopleAdd24Regular } from "@fluentui/react-icons";
 import { memo } from "react";
+import { formSchema } from "./member-form.schema";
 
 const BREADCRUMB_MENU = [
   {
     title: "Home",
-    url: "/analytics",
+    url: "/",
   },
   {
     title: "Members",
@@ -20,10 +21,22 @@ const BREADCRUMB_MENU = [
 ];
 
 const PageNewMember: React.FC = () => {
+  /**
+   * Form handler
+   */
+  function onSubmitHandler(values: Record<string, unknown>): void {
+    // setSubmitting(true);
+
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      // setSubmitting(false);
+    }, 1000);
+  }
+
   return (
     <Layout
       breadcrumb={BREADCRUMB_MENU}
-      title="Add new request"
+      title="Add new member"
       icon={<PeopleAdd24Regular />}
     >
       <section className="flex h-full w-full flex-row flex-nowrap items-start justify-start p-[22px] max-md:flex-wrap">
@@ -34,7 +47,7 @@ const PageNewMember: React.FC = () => {
               {/* <Alert title="New member added" /> */}
             </div>
 
-            <MemberForm />
+            <FormBuilder formSchema={formSchema} onSubmit={onSubmitHandler} />
           </div>
         </div>
         <div className="flex h-full w-full max-w-[289px] flex-col flex-nowrap items-start justify-start"></div>

@@ -331,7 +331,7 @@ const PriorityBadge = ({
       }}
     >
       <span
-        className={`min-w-1.5 min-h-1.5 h-1.5 w-1.5 rounded-full ${getColorWithKey(
+        className={`h-1.5 min-h-1.5 w-1.5 min-w-1.5 rounded-full ${getColorWithKey(
           priority,
           "bg",
         )}`}

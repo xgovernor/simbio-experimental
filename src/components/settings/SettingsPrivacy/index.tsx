@@ -1,3 +1,4 @@
+"use client";
 import {
   Button,
   Divider,
@@ -93,7 +94,7 @@ const SettingsPrivacy: FC<ISettingsPrivacyProps> = ({
             {NOTICE_LINKS?.map(({ id, title, url }) => (
               <Link
                 key={id}
-                className="body1 mb-2 block text-black hover:underline "
+                className="body1 mb-1 block text-sm text-black hover:underline "
                 style={{
                   color: "rgb(0, 120, 212)",
                 }}

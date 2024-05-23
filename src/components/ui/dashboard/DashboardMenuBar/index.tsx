@@ -1,8 +1,6 @@
 import { Avatar } from "@fluentui/react-components";
 import {
   HomeMore24Regular,
-  DocumentBulletList24Regular,
-  CalendarError24Regular,
   PeopleTeam24Regular,
   People24Regular,
   HomeMore24Filled,
@@ -74,48 +72,35 @@ const profileMenu: IMenuItem[] = [
   },
 ];
 
-const optionalProfileMenu: IMenuItem[] = [
-  {
-    title: "Report error",
-    url: "/report/error",
-    icon: <CalendarError24Regular />,
-  },
-  {
-    title: "Help",
-    url: "/doc/help",
-    icon: <DocumentBulletList24Regular />,
-  },
-];
-
 const profileActionMenu: IMenuItem[] = [
   {
-    title: "Add member",
+    title: "New member",
     url: "/members/new",
     icon: <People24Regular />,
   },
   {
-    title: "Add club",
+    title: "New club",
     url: "/clubs/new",
     icon: <HomeMore24Filled />,
   },
   {
-    title: "Add team member",
-    url: "/team/new",
+    title: "Mew team member",
+    url: "/teams/new",
     icon: <PeopleTeam24Regular />,
   },
   {
-    title: "Add Donation",
+    title: "New Fund",
     url: "funds/new ",
     icon: <MoneyHand24Regular />,
   },
   {
-    title: "Add contact",
+    title: "New contact",
     url: "/contacts/new",
     icon: <BookContacts24Regular />,
   },
   {
-    title: "Add collection center",
-    url: "/collection-center/new",
+    title: "New collection center",
+    url: "/collection-centers/new",
     icon: <HomeMore24Regular />,
   },
   {

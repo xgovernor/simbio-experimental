@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { memo } from "react";
-import { SignOut24Regular } from "@fluentui/react-icons";
+import { IoLogOutOutline } from "react-icons/io5";
 import { signOut } from "next-auth/react";
+import { cn } from "@/lib/utils";
 
 export interface ISidebarMenuItem {
   name: string;
@@ -21,12 +22,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   menu,
 }: SidebarProps) => {
   return (
-    <aside
-      className={className}
-      style={{
-        backgroundColor: "rgb(240 240 240)",
-      }}
-    >
+    <aside className={cn("bg-[rgb(240,240,240)]", className)}>
       <div className="ms-1 flex w-full cursor-pointer flex-col flex-nowrap items-center justify-start gap-2">
         {menu.map((item, index) => (
           <Link
@@ -46,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           onClick={() => signOut()}
           title="Logout from account"
         >
-          <SignOut24Regular />
+          <IoLogOutOutline className="h-6 w-6" />
           <span className="caption2Strong text-inherit">Sign out</span>
         </button>
       </div>

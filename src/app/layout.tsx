@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import "@/styles/globals.scss";
+import type { Metadata } from "next";
 import { StoreProvider } from "@/store/StoreProvider";
 import Script from "next/script";
 import { auth } from "@/lib/auth";

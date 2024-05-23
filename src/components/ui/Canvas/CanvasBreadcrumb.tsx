@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronRight24Regular } from "@fluentui/react-icons";
+import { GoChevronRight } from "react-icons/go";
 import { memo } from "react";
 
 export interface BreadcrumbLinkType {
@@ -44,12 +44,7 @@ const GenerateLink = ({
         </p>
       )}
       {icon && (
-        <ChevronRight24Regular
-          className="h-[13px] w-[13px] text-[#424242]"
-          style={{
-            fontSize: "13px",
-          }}
-        />
+        <GoChevronRight className="h-[13px] w-[13px] text-[13px] text-[#424242]" />
       )}
     </>
   );

@@ -26,7 +26,7 @@ const Footer = ({ className }: { className: string }) => {
       <div className="mx-auto my-0 flex w-full items-center justify-between gap-4 px-5 py-2">
         <div className="flex w-1/3 items-center justify-start text-sm">
           <p className="text-xs font-medium leading-4 text-neutral-900">
-            © Symbio 2023. Powered by{" "}
+            © 2023. Powered by{" "}
             <Link
               className="hover:text-primary hover:underline"
               href="https://dot9.dev"

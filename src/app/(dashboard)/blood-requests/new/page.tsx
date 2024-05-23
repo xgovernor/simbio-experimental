@@ -1,9 +1,10 @@
 "use client";
-import BloodRequestForm from "@/components/blood-request/BloodRequestForm";
+import FormBuilder from "@/components/ui/FormBuilder";
 import Layout from "@/components/ui/Layout";
 // import Alert from "@/components/ui/Alert";
 import { PeopleAdd24Regular } from "@fluentui/react-icons";
 import { memo } from "react";
+import { formSchema } from "./blood-requests-form.schema";
 
 const BREADCRUMB_MENU = [
   {
@@ -20,6 +21,18 @@ const BREADCRUMB_MENU = [
 ];
 
 const PageNewBloodRequest: React.FC = () => {
+  /**
+   * Form handler
+   */
+  function onSubmitHandler(values: Record<string, unknown>): void {
+    // setSubmitting(true);
+
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      // setSubmitting(false);
+    }, 1000);
+  }
+
   return (
     <Layout
       breadcrumb={BREADCRUMB_MENU}
@@ -34,7 +47,7 @@ const PageNewBloodRequest: React.FC = () => {
               {/* <Alert title="New member added" /> */}
             </div>
 
-            <BloodRequestForm />
+            <FormBuilder formSchema={formSchema} onSubmit={onSubmitHandler} />
           </div>
         </div>
         <div className="flex h-full w-full max-w-[289px] flex-col flex-nowrap items-start justify-start"></div>

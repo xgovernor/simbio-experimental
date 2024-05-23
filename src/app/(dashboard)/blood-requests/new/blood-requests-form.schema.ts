@@ -1,51 +1,7 @@
-import { Button } from "@fluentui/react-components";
-import { Form, Formik, FormikHelpers } from "formik";
-import * as Yup from "yup";
-import { memo } from "react";
-import FormBuilder, { TFormBuilderForm } from "@/components/ui/FormBuilder";
-import {
-  createFormikInitialValue,
-  createFormikYupSchema,
-} from "@/utils/formBuilder.util";
+import { TFormBuilderForm } from "@/components/ui/FormBuilder";
+import { z } from "zod";
 
-interface RequestFormPropsType {
-  className?: string;
-  children?: React.ReactNode;
-  rest?: object;
-}
-
-interface TRequestForm {
-  // Patient Info
-  patientFirstName: string;
-  patientLastName: string;
-  patientDob: string;
-  patientGender: "male" | "female" | "transgender";
-  patientProfession: string;
-  patientAddress: string;
-  patientPhone: string;
-  patientIdType: string;
-  patientId: string;
-
-  // Donation Info
-  healthIssue: string;
-  bloodGroup: "A+" | "A-" | "B+" | "B-" | "AB+" | "AB-" | "O+" | "O-";
-  quantity: number;
-  donationType: string;
-  donationDateTime: string;
-  hospitalName: string;
-  hospitalAddress: string;
-  hospitalPhone: string;
-  hospitalEmail: string;
-
-  // Reference & Contact
-  refId: string;
-  refPhone: string;
-
-  // Extra Info
-  note: string;
-}
-
-const FORM: TFormBuilderForm = {
+export const formSchema: TFormBuilderForm = {
   sectionClassName:
     "w-full grid max-md:grid-cols-1 grid-cols-2 gap-x-13 gap-y-3",
   fieldClassName:
@@ -61,14 +17,14 @@ const FORM: TFormBuilderForm = {
           label: "Referral's ID",
           name: "refId",
           placeholder: "E.G. SMBL-1234",
-          validation: Yup.string().required("Required"),
+          validation: z.string(),
         },
         {
           label: "Member Phone",
           name: "refPhone",
           type: "tel",
           placeholder: "E.G. +91 1234567890",
-          validation: Yup.string().required("Required"),
+          validation: z.string(),
         },
       ],
     },
@@ -79,13 +35,13 @@ const FORM: TFormBuilderForm = {
           label: "Health Issue",
           name: "healthIssue",
           placeholder: "E.G. Cancer",
-          validation: Yup.string().required("Required"),
+          validation: z.string(),
         },
         {
           label: "Blood Group",
           name: "bloodGroup",
           placeholder: "E.G. SMBL-1234",
-          defaultValue: "A+",
+          value: "A+",
           type: "select",
           options: [
             {
@@ -121,17 +77,16 @@ const FORM: TFormBuilderForm = {
               value: "O-",
             },
           ],
-          validation: Yup.string()
-            .required("Required")
-            .oneOf(
-              ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"],
-              "We only accept A+, A-, B+, B-, O+, O-, AB+, AB-",
-            ),
+          validation: z.string(),
+          // .oneOf(
+          //   ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"],
+          //   "We only accept A+, A-, B+, B-, O+, O-, AB+, AB-",
+          // ),
         },
         {
           label: "Quantity",
           name: "quantity",
-          defaultValue: "1",
+          value: "1",
           type: "select",
           options: [
             {
@@ -159,8 +114,9 @@ const FORM: TFormBuilderForm = {
               value: "5",
             },
           ],
-          validation: Yup.number()
-            .required("Required")
+          validation: z
+            .number()
+
             .min(1, "Must be greater than 0")
             .max(5, "Must be less than 5"),
         },
@@ -186,44 +142,43 @@ const FORM: TFormBuilderForm = {
               value: "double red cell",
             },
           ],
-          validation: Yup.string()
-            .required("Required")
-            .oneOf(
-              ["whole blood", "plasma", "platelet", "double red cell"],
-              "We only accept whole blood, plasma platelet and double red cell",
-            ),
+          validation: z.string(),
+          // .oneOf(
+          //   ["whole blood", "plasma", "platelet", "double red cell"],
+          //   "We only accept whole blood, plasma platelet and double red cell",
+          // ),
         },
         {
           label: "Date & Time",
           name: "donationDateTime",
           type: "datetime-local",
-          validation: Yup.string().required("Required"),
+          validation: z.string(),
         },
         {
           label: "Hospital Name",
           name: "hospitalName",
           placeholder: "E.G. Square Medical Lab",
-          validation: Yup.string().required("Required"),
+          validation: z.string(),
         },
         {
           label: "Hospital Address",
           name: "hospitalAddress",
           placeholder: "E.G. 123 Main St, Anytown, USA 12345",
-          validation: Yup.string().required("Required"),
+          validation: z.string(),
         },
         {
           label: "Hospital Phone",
           name: "hospitalPhone",
           type: "tel",
           placeholder: "E.G. (123) 456-7890",
-          validation: Yup.string().required("Required"),
+          validation: z.string(),
         },
         {
           label: "Hospital Email",
           name: "hospitalEmail",
           type: "email",
           placeholder: "E.G. JbF7H@example.com",
-          validation: Yup.string().email().required("Required"),
+          validation: z.string().email(),
         },
       ],
     },
@@ -234,19 +189,19 @@ const FORM: TFormBuilderForm = {
           label: "First name",
           name: "patientFirstName",
           placeholder: "E.G. John",
-          validation: Yup.string().required("Required"),
+          validation: z.string(),
         },
         {
           label: "Last name",
           name: "patientLastName",
           placeholder: "E.G. Doe",
-          validation: Yup.string(),
+          validation: z.string(),
         },
         {
           label: "Date of birth",
           name: "patientDob",
           type: "date",
-          validation: Yup.string().required("Required"),
+          validation: z.string(),
         },
         {
           label: "Gender",
@@ -266,31 +221,30 @@ const FORM: TFormBuilderForm = {
               value: "transgender",
             },
           ],
-          validation: Yup.string()
-            .required("Required")
-            .oneOf(
-              ["male", "female", "transgender"],
-              "We only accept male, female and transgender",
-            ),
+          validation: z.string(),
+          // .oneOf(
+          //   ["male", "female", "transgender"],
+          //   "We only accept male, female and transgender",
+          // ),
         },
         {
           label: "Profession",
           name: "patientProfession",
           placeholder: "E.G. Doctor",
-          validation: Yup.string().required("Required"),
+          validation: z.string(),
         },
         {
           label: "Address",
           name: "patientAddress",
           placeholder: "E.G. 123, Banani, Dhaka",
-          validation: Yup.string().required("Required"),
+          validation: z.string(),
         },
         {
           label: "Phone",
           name: "patientPhone",
           placeholder: "E.g: 01xxx-xxxxxx",
           type: "tel",
-          validation: Yup.string().required("Required"),
+          validation: z.string(),
         },
         {
           label: "ID Type",
@@ -322,95 +276,26 @@ const FORM: TFormBuilderForm = {
               value: "ration card",
             },
           ],
-          validation: Yup.string()
-            .required("Required")
-            .oneOf(
-              [
-                "passport",
-                "nid",
-                "driving license",
-                "birth certificate",
-                "ration card",
-              ],
-              "We only accept none, passport, nid, driving license, birth certificate and ration card",
-            ),
+          validation: z.string(),
+          // .oneOf(
+          //   [
+          //     "passport",
+          //     "nid",
+          //     "driving license",
+          //     "birth certificate",
+          //     "ration card",
+          //   ],
+          //   "We only accept none, passport, nid, driving license, birth certificate and ration card",
+          // ),
         },
         {
           label: "ID",
           name: "patientId",
           placeholder: "",
-          validation: Yup.string(),
+          validation: z.string(),
         },
       ],
     },
   ],
   //     );
 };
-
-const RequestForm: React.FC<RequestFormPropsType> = ({
-  className,
-  children,
-  ...rest
-}: RequestFormPropsType) => {
-  const initialValues = createFormikInitialValue(FORM);
-  const validationSchema = createFormikYupSchema(FORM);
-
-  const onSubmitHandler = (
-    values: TRequestForm,
-    { setSubmitting }: FormikHelpers<TRequestForm>,
-  ): void => {
-    setSubmitting(true);
-
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 1000);
-  };
-
-  return (
-    <Formik
-      initialValues={initialValues as TRequestForm}
-      validationSchema={validationSchema}
-      onSubmit={onSubmitHandler}
-      {...rest}
-    >
-      {({
-        values,
-        errors,
-        touched,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        isSubmitting,
-      }) => (
-        <Form>
-          {/* General Information */}
-          <div>
-            {/* Creates form fields based on a object */}
-            <FormBuilder
-              form={FORM}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              values={values}
-              touched={touched}
-              errors={errors}
-            />
-
-            {/* Submit Button */}
-            <div className="flex w-full flex-row items-center justify-end gap-4">
-              <Button
-                type="submit"
-                appearance="primary"
-                disabled={isSubmitting}
-              >
-                Submit
-              </Button>
-            </div>
-          </div>
-        </Form>
-      )}
-    </Formik>
-  );
-};
-
-export default memo(RequestForm);
