@@ -131,14 +131,14 @@ const AppUpdates: FC = () => {
             return (
               <div
                 key={item.id}
-                className="mb-1.5 flex cursor-pointer flex-row items-start gap-x-3 rounded-[6px] bg-white pb-[13px] pe-[14px] ps-[14px] pt-2.5 hover:bg-[#f5f5f5] hover:text-[#adadad]"
+                className="mb-1.5 px-4 py-3 flex cursor-pointer flex-row items-start gap-x-3 bg-white"
               >
                 <div>
                   <Avatar icon={<Alert20Regular />} name={item.title} />
                 </div>
 
                 <div>
-                  <p className="body1 mb-1.5">{item.title}</p>
+                  <h3 className="text-sm mb-1.5 text-[#252423]">{item.title}</h3>
                   <p className="caption1 text-[#adadad]">{item.date}</p>
                 </div>
               </div>
@@ -166,14 +166,14 @@ const TemplateNewMember: FC<TTemplateNewMemberProps> = ({
   return (
     <div
       key={id}
-      className="mb-1.5 flex cursor-pointer flex-row items-start gap-x-3 rounded-[6px] bg-white pb-[13px] pe-[14px] ps-[14px] pt-2.5 hover:bg-[#f5f5f5] hover:text-[#adadad]"
+      className="mb-1.5 px-4 py-3 flex cursor-pointer flex-row items-start gap-x-3  bg-white"
     >
       <div>
         <Avatar icon={<Alert20Regular />} name={title} />
       </div>
 
       <div>
-        <p className="body1 mb-1.5">{title}</p>
+        <h3 className="text-sm mb-1.5 text-[#252423]">{title}</h3>
         <p className="caption1 text-[#adadad]">{date}</p>
 
         <Toolbar className="mt-[10px] gap-x-2" size="small">
