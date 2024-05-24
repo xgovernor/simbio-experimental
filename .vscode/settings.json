@@ -13,5 +13,8 @@
     "tailwindcss"
   ],
   "testing.automaticallyOpenPeekView": "never",
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "[markdown]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  }
 }

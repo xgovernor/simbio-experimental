@@ -45,6 +45,18 @@ const nextConfig = {
         // port: '',
         // pathname: '/my-bucket/**',
       },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        // port: '',
+        // pathname: '/my-bucket/**',
+      },
+      {
+        protocol: "https",
+        hostname: "*.googleusercontent.com",
+        // port: '',
+        // pathname: '/my-bucket/**',
+      },
     ],
   },
   eslint: {
@@ -125,6 +137,10 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.BUNDLE_ANALYZE || false,
 });
 
+// module.exports = withBundleAnalyzer(withPWA(nextConfig));
+
+// Without PWA, Bundle analyzer support
+module.exports = nextConfig;
 // module.exports = withBundleAnalyzer(withPWA(nextConfig));
 
 // Without PWA, Bundle analyzer support

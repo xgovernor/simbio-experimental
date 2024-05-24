@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { memo } from "react";
 import FormBuilder from "@/components/ui/FormBuilder";
 import { formSchema } from "./member-form.schema";

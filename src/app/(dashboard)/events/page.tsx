@@ -16,7 +16,11 @@ import { memo } from "react";
 const PageEvents = async () => {
   // const data = await getData();
 
-  return <PageRootComponent />;
+  return (
+    <>
+      <PageRootComponent />
+    </>
+  );
 };
 
 export default memo(PageEvents);

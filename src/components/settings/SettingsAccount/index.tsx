@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { FC, memo } from "react";
 import SettingsTemplate from "../SettingsTemplate";
 import FormBuilder from "@/components/ui/FormBuilder";
@@ -34,7 +34,6 @@ interface TSettingsAccountProps {
 const SettingsAccount: FC<TSettingsAccountProps> = ({
   className,
 }: TSettingsAccountProps) => {
-
   const onDiscardHandler = () => {
     alert("Discard");
   };
@@ -51,9 +50,8 @@ const SettingsAccount: FC<TSettingsAccountProps> = ({
       onSubmit={onSubmitHandler}
     >
       <div>
-
-                {/* Creates form fields based on a object */}
-                {/* <FormBuilder
+        {/* Creates form fields based on a object */}
+        {/* <FormBuilder
                   form={FORM}
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -61,7 +59,7 @@ const SettingsAccount: FC<TSettingsAccountProps> = ({
                   values={values}
                   errors={errors}
                 /> */}
-                <FormBuilder formSchema={formSchema} onSubmit={onSubmitHandler} />
+        <FormBuilder formSchema={formSchema} onSubmit={onSubmitHandler} />
       </div>
     </SettingsTemplate>
   );
