@@ -89,7 +89,7 @@ const profileActionMenu: IMenuItem[] = [
     icon: <PeopleTeam24Regular />,
   },
   {
-    title: "New Fund",
+    title: "New fund",
     url: "funds/new ",
     icon: <MoneyHand24Regular />,
   },
@@ -106,6 +106,11 @@ const profileActionMenu: IMenuItem[] = [
   {
     title: "New donation",
     url: "/donations/new",
+    icon: <HomeMore24Regular />,
+  },
+  {
+    title: "New Event",
+    url: "/events/new",
     icon: <HomeMore24Regular />,
   },
   {
