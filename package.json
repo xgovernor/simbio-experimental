@@ -7,7 +7,7 @@
     "dev": "next dev --turbo",
     "build": "next build && rm -rf ./.next/cache",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint --no-cache",
     "lint:fix": "eslint --fix .",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
