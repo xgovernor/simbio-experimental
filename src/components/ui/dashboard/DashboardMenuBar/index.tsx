@@ -1,17 +1,23 @@
 import { Avatar } from "@fluentui/react-components";
-import {
-  HomeMore24Regular,
-  PeopleTeam24Regular,
-  People24Regular,
-  HomeMore24Filled,
-  BookContacts24Regular,
-  MoneyHand24Regular,
-} from "@fluentui/react-icons";
 import { FC, RefObject, memo, useEffect, useRef, useState } from "react";
 import ProfileMenu from "./ProfileMenu";
 import { IMenuItem } from "@/types";
 import AddNewMenu from "./AddNewMenu";
 import OptionalMenu from "./OptionalMenu";
+import BuildingPeopleIcon from "@/assets/icons/BuildingPeopleIcon";
+import ArrowTrendingLineIcon from "@/assets/icons/ArrowTrendingLineIcon";
+import PeoplesIcon from "@/assets/icons/PeoplesIcon";
+import PeopleCommunityIcon from "@/assets/icons/PeopleCommunityIcon";
+import PeopleTeamIcon from "@/assets/icons/PeopleTeamIcon";
+import MoneyHandIcon from "@/assets/icons/MoneyHandIcon";
+import BookContactsIcon from "@/assets/icons/BookContactsIcon";
+import BuildingBankIcon from "@/assets/icons/BuildingBankIcon";
+import BuildingTownHouseIcon from "@/assets/icons/BuildingTownHouseIcon";
+import PeopleTeamAddIcon from "@/assets/icons/PeopleTeamAddIcon";
+import PeopleAddIcon from "@/assets/icons/PeopleAddIcon";
+import HandshakeIcon from "@/assets/icons/HandshakeIcon";
+import StethoscopeIcon from "@/assets/icons/ StethoscopeIcon";
+import CommunicationIcon from "@/assets/icons/CommunicationIcon";
 
 interface IMenuBarProps {
   className?: string;
@@ -22,27 +28,27 @@ const profileMenu: IMenuItem[] = [
   {
     title: "Profile",
     url: "/profile",
-    icon: <People24Regular />,
+    icon: <BuildingPeopleIcon className="h-6 w-6" />,
   },
   {
     title: "Analytics",
     url: "/analytics",
-    icon: <People24Regular />,
+    icon: <ArrowTrendingLineIcon className="h-6 w-6" />,
   },
   {
     title: "Users",
     url: "/users",
-    icon: <People24Regular />,
+    icon: <PeoplesIcon />,
   },
   {
     title: "Teams",
     url: "/teams",
-    icon: <PeopleTeam24Regular />,
+    icon: <PeopleTeamIcon className="h-6 w-6" />,
   },
   {
     title: "Members",
     url: "/members",
-    icon: <People24Regular />,
+    icon: <PeopleCommunityIcon className="h-6 w-6" />,
   },
   // Now `Team` is accessible through `Teams` directory.
   // {
@@ -53,22 +59,22 @@ const profileMenu: IMenuItem[] = [
   {
     title: "Funds",
     url: "/funds",
-    icon: <MoneyHand24Regular />,
+    icon: <MoneyHandIcon className="h-6 w-6" />,
   },
   {
     title: "Contacts",
     url: "/contacts",
-    icon: <BookContacts24Regular />,
+    icon: <BookContactsIcon className="h-6 w-6" />,
   },
   {
     title: "Clubs",
     url: "/clubs",
-    icon: <HomeMore24Filled />,
+    icon: <BuildingBankIcon className="h-6 w-6" />,
   },
   {
     title: "Collection Centers",
     url: "/collection-centers",
-    icon: <HomeMore24Regular />,
+    icon: <BuildingTownHouseIcon className="h-6 w-6" />,
   },
 ];
 
@@ -76,47 +82,47 @@ const profileActionMenu: IMenuItem[] = [
   {
     title: "New member",
     url: "/members/new",
-    icon: <People24Regular />,
+    icon: <PeopleAddIcon className="h-6 w-6" />,
   },
   {
     title: "New club",
     url: "/clubs/new",
-    icon: <HomeMore24Filled />,
+    icon: <BuildingBankIcon className="h-6 w-6" />,
   },
   {
-    title: "Mew team member",
+    title: "New team member",
     url: "/teams/new",
-    icon: <PeopleTeam24Regular />,
+    icon: <PeopleTeamAddIcon className="h-6 w-6" />,
   },
   {
     title: "New fund",
     url: "funds/new ",
-    icon: <MoneyHand24Regular />,
+    icon: <MoneyHandIcon />,
   },
   {
     title: "New contact",
     url: "/contacts/new",
-    icon: <BookContacts24Regular />,
+    icon: <BookContactsIcon />,
   },
   {
     title: "New collection center",
     url: "/collection-centers/new",
-    icon: <HomeMore24Regular />,
+    icon: <BuildingTownHouseIcon />,
   },
   {
     title: "New donation",
     url: "/donations/new",
-    icon: <HomeMore24Regular />,
+    icon: <HandshakeIcon />,
   },
   {
     title: "New Event",
     url: "/events/new",
-    icon: <HomeMore24Regular />,
+    icon: <StethoscopeIcon />,
   },
   {
     title: "New blood request",
     url: "/blood-requests/new",
-    icon: <HomeMore24Regular />,
+    icon: <CommunicationIcon />,
   },
 ];
 

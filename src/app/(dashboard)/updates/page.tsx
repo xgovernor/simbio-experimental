@@ -6,7 +6,7 @@ const PageUpdates = async () => {
     <>
       <PageRootComponent />
     </>
-  )
+  );
 };
 
 export default memo(PageUpdates);

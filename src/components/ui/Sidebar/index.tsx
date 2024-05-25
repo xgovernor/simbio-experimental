@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { memo } from "react";
-import { IoLogOutOutline } from "react-icons/io5";
 import { signOut } from "next-auth/react";
 import { cn } from "@/lib/utils";
+import SignOutIconIcon from "@/assets/icons/SignOutIconIcon";
 
 export interface ISidebarMenuItem {
   name: string;
@@ -42,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({
           onClick={() => signOut()}
           title="Logout from account"
         >
-          <IoLogOutOutline className="h-6 w-6" />
+          <SignOutIconIcon className="h-6 w-6" />
           <span className="caption2Strong text-inherit">Sign out</span>
         </button>
       </div>

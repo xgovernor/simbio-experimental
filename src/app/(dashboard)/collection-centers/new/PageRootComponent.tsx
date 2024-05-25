@@ -2,9 +2,9 @@
 import FormBuilder from "@/components/ui/FormBuilder";
 import Layout from "@/components/ui/Layout";
 // import Alert from "@/components/ui/Alert";
-import { PeopleAdd24Regular } from "@fluentui/react-icons";
 import { memo } from "react";
 import { formSchema } from "./collection-center-form.schema";
+import BuildingTownHouseIcon from "@/assets/icons/BuildingTownHouseIcon";
 
 const BREADCRUMB_MENU = [
   {
@@ -36,8 +36,8 @@ const PageRootComponent: React.FC = () => {
   return (
     <Layout
       breadcrumb={BREADCRUMB_MENU}
-      title="Add new member"
-      icon={<PeopleAdd24Regular />}
+      title="New collection center"
+      icon={<BuildingTownHouseIcon className="h-6 w-6" />}
     >
       <section className="flex h-full w-full flex-row flex-nowrap items-start justify-start p-[22px] max-md:flex-wrap">
         <div className="h-full w-full">

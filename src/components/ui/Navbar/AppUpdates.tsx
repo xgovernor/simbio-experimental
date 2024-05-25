@@ -131,14 +131,16 @@ const AppUpdates: FC = () => {
             return (
               <div
                 key={item.id}
-                className="mb-1.5 px-4 py-3 flex cursor-pointer flex-row items-start gap-x-3 bg-white"
+                className="mb-1.5 flex cursor-pointer flex-row items-start gap-x-3 bg-white px-4 py-3"
               >
                 <div>
                   <Avatar icon={<Alert20Regular />} name={item.title} />
                 </div>
 
                 <div>
-                  <h3 className="text-sm mb-1.5 text-[#252423]">{item.title}</h3>
+                  <h3 className="mb-1.5 text-sm text-[#252423]">
+                    {item.title}
+                  </h3>
                   <p className="caption1 text-[#adadad]">{item.date}</p>
                 </div>
               </div>
@@ -166,14 +168,14 @@ const TemplateNewMember: FC<TTemplateNewMemberProps> = ({
   return (
     <div
       key={id}
-      className="mb-1.5 px-4 py-3 flex cursor-pointer flex-row items-start gap-x-3  bg-white"
+      className="mb-1.5 flex cursor-pointer flex-row items-start gap-x-3 bg-white px-4  py-3"
     >
       <div>
         <Avatar icon={<Alert20Regular />} name={title} />
       </div>
 
       <div>
-        <h3 className="text-sm mb-1.5 text-[#252423]">{title}</h3>
+        <h3 className="mb-1.5 text-sm text-[#252423]">{title}</h3>
         <p className="caption1 text-[#adadad]">{date}</p>
 
         <Toolbar className="mt-[10px] gap-x-2" size="small">

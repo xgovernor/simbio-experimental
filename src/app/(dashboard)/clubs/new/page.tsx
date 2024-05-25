@@ -1,9 +1,9 @@
 "use client";
 import FormBuilder from "@/components/ui/FormBuilder";
 import Layout from "@/components/ui/Layout";
-import { PeopleTeam24Regular } from "@fluentui/react-icons";
 import { memo } from "react";
 import { formSchema } from "./club-form.schema";
+import BuildingBankIcon from "@/assets/icons/BuildingBankIcon";
 
 const BREADCRUMB_MENU = [
   {
@@ -35,8 +35,8 @@ const PageNewMember: React.FC = () => {
   return (
     <Layout
       breadcrumb={BREADCRUMB_MENU}
-      title="Add new club"
-      icon={<PeopleTeam24Regular />}
+      title="New club"
+      icon={<BuildingBankIcon className="h-6 w-6" />}
     >
       <section className="flex h-full w-full flex-row flex-nowrap items-start justify-start p-[22px] max-md:flex-wrap">
         <div className="h-full w-full">

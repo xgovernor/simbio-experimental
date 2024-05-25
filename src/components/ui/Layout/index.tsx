@@ -1,10 +1,6 @@
 import Footer from "../Footer";
 import Navbar from "../Navbar";
 import Sidebar, { ISidebarMenuItem } from "../Sidebar";
-import { GrCircleInformation } from "react-icons/gr";
-import { GoGear } from "react-icons/go";
-import { LiaHomeSolid } from "react-icons/lia";
-import { HiGlobeEuropeAfrica } from "react-icons/hi2";
 import { memo } from "react";
 import Canvas from "../Canvas";
 import CanvasBreadcrumb, {
@@ -12,6 +8,13 @@ import CanvasBreadcrumb, {
 } from "../Canvas/CanvasBreadcrumb";
 
 import CanvasHeader from "../Canvas/CanvasHeader";
+import PeoplesIcon from "@/assets/icons/PeoplesIcon";
+import HomeIcon from "@/assets/icons/HomeIcon";
+import HandshakeIcon from "@/assets/icons/HandshakeIcon";
+import StethoscopeIcon from "@/assets/icons/ StethoscopeIcon";
+import PersonSupportIcon from "@/assets/icons/PersonSupportIcon";
+import SettingsIcon from "@/assets/icons/SettingsIcon";
+import ErrorCircleIcon from "@/assets/icons/ErrorCircleIcon";
 
 interface ILayoutProps {
   className?: string;
@@ -28,43 +31,43 @@ const SIDEBAR_MENU_ITEMS: ISidebarMenuItem[] = [
   {
     name: "Home",
     description: "Home page",
-    icon: <LiaHomeSolid className="h-6 w-6" />,
+    icon: <HomeIcon className="h-6 w-6" />,
     url: "/profile",
   },
   {
     name: "Requests",
     description: "Special blood requests",
-    icon: <HiGlobeEuropeAfrica className="h-6 w-6" />,
+    icon: <PeoplesIcon className="h-6 w-6" />,
     url: "/blood-requests",
   },
   {
     name: "Donations",
     description: "List of donations",
-    icon: <HiGlobeEuropeAfrica className="h-6 w-6" />,
+    icon: <HandshakeIcon className="h-6 w-6" />,
     url: "/donations",
   },
   {
     name: "Events",
     description: "Blood donation events",
-    icon: <HiGlobeEuropeAfrica className="h-6 w-6" />,
+    icon: <StethoscopeIcon className="h-6 w-6" />,
     url: "/events",
   },
   {
     name: "Support",
     description: "Official support",
-    icon: <HiGlobeEuropeAfrica className="h-6 w-6" />,
+    icon: <PersonSupportIcon className="h-6 w-6" />,
     url: "/supports",
   },
   {
     name: "Settings",
     description: "Profile settings",
-    icon: <GoGear className="h-6 w-6" />,
+    icon: <SettingsIcon className="h-6 w-6" />,
     url: "/settings",
   },
   {
     name: "About",
     description: "About project Simbio",
-    icon: <GrCircleInformation className="h-6 w-6" />,
+    icon: <ErrorCircleIcon className="h-6 w-6" />,
     url: "/about",
   },
 ];

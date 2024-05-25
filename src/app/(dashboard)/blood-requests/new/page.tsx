@@ -2,9 +2,9 @@
 import FormBuilder from "@/components/ui/FormBuilder";
 import Layout from "@/components/ui/Layout";
 // import Alert from "@/components/ui/Alert";
-import { PeopleAdd24Regular } from "@fluentui/react-icons";
 import { memo } from "react";
 import { formSchema } from "./blood-requests-form.schema";
+import CommunicationIcon from "@/assets/icons/CommunicationIcon";
 
 const BREADCRUMB_MENU = [
   {
@@ -36,8 +36,8 @@ const PageNewBloodRequest: React.FC = () => {
   return (
     <Layout
       breadcrumb={BREADCRUMB_MENU}
-      title="Add new request"
-      icon={<PeopleAdd24Regular />}
+      title="New special request"
+      icon={<CommunicationIcon className="h-6 w-6" />}
     >
       <section className="flex h-full w-full flex-row flex-nowrap items-start justify-start p-[22px] max-md:flex-wrap">
         <div className="h-full w-full">

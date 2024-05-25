@@ -2,9 +2,9 @@
 import FormBuilder from "@/components/ui/FormBuilder";
 import Layout from "@/components/ui/Layout";
 // import Alert from "@/components/ui/Alert";
-import { PeopleAdd24Regular } from "@fluentui/react-icons";
 import { memo } from "react";
 import { formSchema } from "./events-form.schema";
+import StethoscopeIcon from "@/assets/icons/ StethoscopeIcon";
 
 const BREADCRUMB_MENU = [
   {
@@ -37,7 +37,7 @@ const PageNewMember: React.FC = () => {
     <Layout
       breadcrumb={BREADCRUMB_MENU}
       title="New event"
-      icon={<PeopleAdd24Regular />}
+      icon={<StethoscopeIcon className="h-6 w-6" />}
     >
       <section className="flex h-full w-full flex-row flex-nowrap items-start justify-start p-[22px] max-md:flex-wrap">
         <div className="h-full w-full">
