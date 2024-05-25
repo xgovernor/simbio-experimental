@@ -5,23 +5,63 @@ import Script from "next/script";
 import { auth } from "@/lib/auth";
 import { Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
+import DATA from "@/assets/data/info.json";
+import OG_IMAGE from "@/assets/images/OG Image_ Global.svg";
+import OG_IMAGE_1 from "@/assets/images/OG Image_ Global.jpg";
 // import { GeistSans } from "geist/font/sans";
 // import { GeistMono } from "geist/font/mono";
 
 export const metadata: Metadata = {
-  title: "Simbio",
-  assets: "http://localhost/assets",
-  description: "A centralized blood donation platform",
-  applicationName: "SIMBIO",
-  authors: [{ name: "Dot9 Lab", url: "https://dot9.dev" }],
-  creator: "Dot9 Lab",
+  metadataBase: new URL(process.env.BASE_URL || DATA.base_url),
+  title: DATA.title,
+  // assets: `${DATA.base_url}/assets`,
+  description: DATA.description,
+  applicationName: DATA.title,
+  authors: DATA.authors,
+  creator: DATA.authors[0].name,
   icons: "/favicon.svg",
   manifest: "/manifest.json",
-
-  // themeColor: [
-  //   { media: "(prefers-color-scheme: light)", color: "#fafafa" },
-  //   { media: "(prefers-color-scheme: dark)", color: "#18181b" }
-  // ]
+  openGraph: {
+    title: DATA.title,
+    description: DATA.description,
+    url: DATA.base_url,
+    siteName: DATA.title,
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 700,
+        height: 400,
+        alt: DATA.title,
+      },
+      {
+        url: OG_IMAGE_1,
+        width: 700,
+        height: 400,
+        alt: DATA.title,
+      },
+    ],
+    locale: "en-US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: DATA.title,
+    description: DATA.description,
+    creator: "@abutahermuhammad",
+    images: [OG_IMAGE, OG_IMAGE_1],
+  },
+  appleWebApp: {
+    capable: true,
+    title: DATA.title,
+    statusBarStyle: "black-translucent",
+  },
+  keywords:
+    "simbio, dot9.dev, blood donation, blood donation management system, CRM, non-profit, Bangladesh, Abu Taher Muhammad",
+  verification: {
+    // google: "",
+    // yandex: "",
+    // yahoo: "",
+  },
 };
 
 export default async function RootLayout({
@@ -44,16 +84,6 @@ export default async function RootLayout({
             />
 
             {/* Meta Codes */}
-            <meta name="apple-mobile-web-app-capable" content="yes" />
-            <meta
-              name="apple-mobile-web-app-status-bar-style"
-              content="default"
-            />
-            <meta
-              name="apple-mobile-web-app-title"
-              content={metadata.title as string}
-            />
-            <meta name="format-detection" content="telephone=no" />
             <meta name="mobile-web-app-capable" content="yes" />
             <meta
               name="msapplication-config"
@@ -63,61 +93,8 @@ export default async function RootLayout({
             <meta name="msapplication-tap-highlight" content="no" />
             <meta name="theme-color" content="#143B52" />
 
-            <link rel="apple-touch-icon" href="/favicon.svg" />
-            <link rel="apple-touch-icon" sizes="152x152" href="/favicon.svg" />
-            <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
-            <link rel="apple-touch-icon" sizes="167x167" href="/favicon.svg" />
-
-            <link
-              rel="icon"
-              type="image/png"
-              sizes="32x32"
-              href="/favicon.svg"
-            />
-            <link
-              rel="icon"
-              type="image/png"
-              sizes="16x16"
-              href="/favicon.svg"
-            />
             <link rel="mask-icon" href="/favicon.svg" color="#5bbad5" />
             <link rel="shortcut icon" href="/favicon.ico" />
-
-            <meta name="twitter:card" content="summary" />
-            <meta name="twitter:url" content="https://simbio.dot9.dev" />
-            <meta name="twitter:title" content={metadata.title as string} />
-            <meta
-              name="twitter:description"
-              content={metadata.description as string}
-            />
-            <meta
-              name="twitter:image"
-              content="https://yourdomain.com/icons/android-chrome-192x192.png"
-            />
-            <meta name="twitter:creator" content="@abutahermuhammad" />
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content={metadata.title as string} />
-            <meta
-              property="og:description"
-              content={metadata.description as string}
-            />
-            <meta property="og:site_name" content={metadata.title as string} />
-            <meta property="og:url" content="https://simbio.dot9.dev" />
-            <meta
-              property="og:image"
-              content="https://simbio.dot9.dev/favicon.svg"
-            />
-
-            {/* apple splash screen images */}
-            {/*
-        <link rel='apple-touch-startup-image' href='/images/apple_splash_2048.png' sizes='2048x2732' />
-        <link rel='apple-touch-startup-image' href='/images/apple_splash_1668.png' sizes='1668x2224' />
-        <link rel='apple-touch-startup-image' href='/images/apple_splash_1536.png' sizes='1536x2048' />
-        <link rel='apple-touch-startup-image' href='/images/apple_splash_1125.png' sizes='1125x2436' />
-        <link rel='apple-touch-startup-image' href='/images/apple_splash_1242.png' sizes='1242x2208' />
-        <link rel='apple-touch-startup-image' href='/images/apple_splash_750.png' sizes='750x1334' />
-        <link rel='apple-touch-startup-image' href='/images/apple_splash_640.png' sizes='640x1136' />
-        */}
 
             <Script strategy="lazyOnload" id="clarity-script">
               {`

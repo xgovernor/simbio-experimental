@@ -3,13 +3,19 @@
   "description": "Simbio is a web application that allows users to create and share simulations of biological processes.",
   "tags": [],
   "logo": "/images/simbio.png",
-  "link": "https://simbio.dot9.dev",
+  "base_url": "https://simbio.dot9.dev",
+  "authors": [
+    {
+      "name": "Dot9.dev",
+      "url": "https://dot9.dev"
+    }
+  ],
   "language": [
     {
       "label": "English"
     },
     {
-      "label": "Bangla"
+      "label": "Bengali"
     }
   ],
   "timeFormats": [
