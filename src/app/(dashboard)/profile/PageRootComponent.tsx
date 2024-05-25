@@ -1,13 +1,12 @@
 "use client";
 import { FC, memo } from "react";
 import DashboardLayout from "@/components/ui/dashboard/DashboardLayout";
-import DeviceList from "@/components/settings/DeviceList";
 import { Badge } from "@/components/ui/badge";
 
 const PageRootComponent: FC = () => {
   return (
     <DashboardLayout>
-      <div className="grid-rows-auto grid gap-[22px] p-[22px] max-md:grid-cols-1 max-md:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6">
+      <div className="grid-rows-auto grid gap-[22px] p-4 max-md:grid-cols-1 max-md:gap-4 md:grid-cols-2 md:p-[22px] lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6">
         {/* <div className="max-md:col-span-1 max-md:col-end-2 col-span-4 col-start-1 col-end-5"> */}
         {/* <Alert className="shadow"> */}
         {/* <Terminal className="h-4 w-4" /> */}
@@ -30,14 +29,14 @@ const PageRootComponent: FC = () => {
         {/* </div> */}
 
         {/* Profile Stats */}
-        <div className="col-span-4 col-start-1 col-end-5 rounded bg-white p-5 shadow  max-md:col-span-1 max-md:col-end-2">
-          <div className="grid grid-cols-5 gap-5 max-md:grid-cols-2 md:grid-cols-2 lg:grid-cols-5">
-            <dl className="space-y-2 border-e">
+        <div className="col-span-4 col-start-1 col-end-5 rounded bg-white shadow max-md:col-span-1  max-md:col-end-2 lg:p-5">
+          <div className="grid grid-cols-2 max-md:grid-cols-2 lg:grid-cols-5 lg:gap-5 ">
+            <dl className="space-y-2 max-lg:col-start-1 max-lg:col-end-3 max-md:border-b max-md:p-4 max-md:text-center lg:border-e">
               <dt className="text-sm font-medium text-gray-600">Donations</dt>
 
               <dd className="text-5xl font-light md:text-6xl">192 bag</dd>
 
-              <dd className="text-green-500 flex items-center space-x-1 text-sm font-medium">
+              <dd className="text-green-500 flex items-center space-x-1 text-sm font-medium max-lg:justify-center">
                 <span>32% increase</span>
 
                 <svg
@@ -64,7 +63,7 @@ const PageRootComponent: FC = () => {
               </dd>
             </dl>
 
-            <dl className="space-y-2 md:border-e">
+            <dl className="space-y-2 border-e max-lg:border-b max-md:p-4">
               <dt className="text-sm font-medium text-gray-500">Fund raised</dt>
 
               <dd className="text-5xl font-light md:text-6xl">20K</dd>
@@ -96,7 +95,7 @@ const PageRootComponent: FC = () => {
               </dd>
             </dl>
 
-            <dl className="space-y-2 border-e">
+            <dl className="space-y-2 max-lg:border-b max-md:p-4 lg:border-e">
               <dt className="text-sm font-medium text-gray-500">New member</dt>
 
               <dd className="text-5xl font-light md:text-6xl">10</dd>
@@ -128,7 +127,7 @@ const PageRootComponent: FC = () => {
               </dd>
             </dl>
 
-            <dl className="space-y-2 md:border-e">
+            <dl className="space-y-2 border-e max-md:p-4">
               <dt className="text-sm font-medium text-gray-500">
                 Patient served
               </dt>
@@ -162,7 +161,7 @@ const PageRootComponent: FC = () => {
               </dd>
             </dl>
 
-            <dl className="space-y-2">
+            <dl className="space-y-2 max-md:p-4">
               <dt className="text-sm font-medium text-gray-500">
                 Special request
               </dt>
@@ -265,20 +264,6 @@ const PageRootComponent: FC = () => {
               This card will show the list of accomplishments made by the
               organization
             </div>
-          </div>
-        </div>
-
-        {/* Login Activity */}
-        <div className="col-span-2 rounded bg-white py-5 shadow max-md:col-span-1 max-md:col-end-2">
-          <div className="w-full">
-            <div className="px-5">
-              <h3 className="font-bold">Login Activity</h3>
-              <p className="mt-3 text-sm">
-                This will show last 10 login information with device, browser
-                and location
-              </p>
-            </div>
-            <DeviceList />
           </div>
         </div>
 
