@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     siteName: DATA.title,
     images: [
       {
-        url: OG_IMAGE,
+        url: OG_IMAGE.src,
         width: 700,
         height: 400,
         alt: DATA.title,
       },
       {
-        url: OG_IMAGE_1,
+        url: OG_IMAGE_1.src,
         width: 700,
         height: 400,
         alt: DATA.title,
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: DATA.title,
     description: DATA.description,
     creator: "@abutahermuhammad",
-    images: [OG_IMAGE, OG_IMAGE_1],
+    images: [OG_IMAGE, OG_IMAGE_1.src],
   },
   appleWebApp: {
     capable: true,
