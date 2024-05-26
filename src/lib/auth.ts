@@ -13,6 +13,12 @@ declare module "next-auth" {
   }
 }
 
+const VERCEL_DEPLOYMENT = !!process.env.VERCEL_URL;
+
+// This function can run for a maximum of 180 seconds
+export const maxDuration = 180;
+export const runtime = "edge";
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   pages: {
     signIn: "/auth/login",
@@ -20,11 +26,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     error: "/error",
     newUser: "/auth/new-user",
   },
-  trustHost: true,
   debug: false,
   session: {
     strategy: "jwt",
-    maxAge: 60 * 60 * 24 * 1,
   },
   providers: [
     Apple,
@@ -36,6 +40,19 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     // Twitter,
   ],
   // basePath: "/auth",
+  cookies: {
+    sessionToken: {
+      name: `${VERCEL_DEPLOYMENT ? "__Secure-" : ""}next-auth.session-token`,
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        // When working on localhost, the cookie domain must be omitted entirely (https://stackoverflow.com/a/1188145)
+        domain: VERCEL_DEPLOYMENT ? ".dot9.dev" : undefined,
+        secure: VERCEL_DEPLOYMENT,
+      },
+    },
+  },
   // callbacks: {
   //   async session({ session, token }) {
   //     if (token.sub && session.user) {
@@ -58,6 +75,23 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   //   },
   // },
   events: {
+    //  async createUser(message) {
+    //   const params: CreateUserEmailProps = {
+    //     user: {
+    //       name: message.user.name,
+    //       email: message.user.email,
+    //     },
+    //   };
+
+    //   await identifyUser(message.user.email ?? message.user.id);
+    //   await trackAnalytics({
+    //     event: "User Signed Up",
+    //     email: message.user.email,
+    //     userId: message.user.id,
+    //   });
+
+    //   await sendWelcomeEmail(params);
+    // },
     async signIn({ user, account, profile, isNewUser }) {
       console.log("*****************signIn*******************");
       console.log({ user, account, profile, isNewUser });
