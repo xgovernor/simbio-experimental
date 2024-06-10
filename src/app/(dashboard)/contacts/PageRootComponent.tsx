@@ -33,7 +33,7 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
         <Suspense>
           <div className="p-[22px]">
             <ContactsTable
-              title="Contacts Table"
+              title="Phone Book"
               description={`Showing ${data?.limit} of ${data?.total} Contacts`}
               data={data?.data}
             />

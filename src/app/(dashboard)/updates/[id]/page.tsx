@@ -1,3 +1,4 @@
+"use client";
 import PageRootComponent from "./PageRootComponent";
 import { memo } from "react";
 

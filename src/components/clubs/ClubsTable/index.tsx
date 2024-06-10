@@ -2,6 +2,8 @@ import { FC, memo } from "react";
 import ClubsTableMenu from "./ClubsTableMenu";
 import { DataGrid } from "@/components/ui/DataGrid";
 import { columns, filters } from "./data";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export type TClubItem = {
   id: string;
@@ -43,6 +45,9 @@ const ClubsTable: FC<TClubsTableProps> = ({
         </div>
 
         <div className="flex gap-2">
+          <Button className="shadow-none" size="sm" asChild>
+            <Link href="/clubs/new">Add new club</Link>
+          </Button>
           <ClubsTableMenu />
         </div>
       </div>

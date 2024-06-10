@@ -26,8 +26,17 @@ const PageNewMember: React.FC = () => {
   function onSubmitHandler(values: Record<string, unknown>): void {
     // setSubmitting(true);
 
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
+    setTimeout(async () => {
+      // alert(JSON.stringify(values, null, 2));
+
+      const response = await fetch(`/api/clubs`, {
+        method: 'POST',
+        body: JSON.stringify(values),
+      })
+
+      // Handle response if necessary
+      const data = await response.json()
+      alert(JSON.stringify(data, null, 2));
       // setSubmitting(false);
     }, 1000);
   }

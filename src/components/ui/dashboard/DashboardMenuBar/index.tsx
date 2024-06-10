@@ -62,7 +62,7 @@ const profileMenu: IMenuItem[] = [
     icon: <MoneyHandIcon className="h-6 w-6" />,
   },
   {
-    title: "Contacts",
+    title: "Phonebook",
     url: "/contacts",
     icon: <BookContactsIcon className="h-6 w-6" />,
   },

@@ -46,15 +46,15 @@ export const formSchema: TFormBuilderForm = {
           options: [
             { value: "male", label: "Male" },
             { value: "female", label: "Female" },
-            { value: "transgender", label: "Transgender" },
+            { value: "binary", label: "Binary" },
           ],
           validation: z
             .string()
             .nonempty("Required")
             .refine(
-              (value) => ["male", "female", "transgender"].includes(value),
+              (value) => ["male", "female", "binary"].includes(value),
               {
-                message: "We only accept male, female and transgender",
+                message: "We only accept male, female and binary",
               },
             ),
         },
@@ -108,20 +108,20 @@ export const formSchema: TFormBuilderForm = {
         {
           label: "Country",
           name: "country",
-          placeholder: "E.G. USA",
+          placeholder: "E.g. Bangladesh",
           value: "Bangladesh",
           validation: z.string().optional(),
         },
         {
           label: "Phone",
           name: "phone",
-          placeholder: "E.G. 1234567890",
+          placeholder: "E.G. (+880) 1234-567891",
           validation: z.string().optional(),
         },
         {
           label: "Email",
           name: "email",
-          placeholder: "E.G. 1234567890",
+          placeholder: "E.G. (+880) 1234-567891",
           validation: z.string().optional(),
         },
       ],
@@ -132,25 +132,25 @@ export const formSchema: TFormBuilderForm = {
         {
           label: "Passport",
           name: "passport",
-          placeholder: "E.G. 1234567890",
+          placeholder: "E.G. (+880) 1234-567891",
           validation: z.string(),
         },
         {
           label: "NID",
           name: "nid",
-          placeholder: "E.G. 1234567890",
+          placeholder: "E.G. (+880) 1234-567891",
           validation: z.string(),
         },
         {
           label: "Driving License",
           name: "drivingLicense",
-          placeholder: "E.G. 1234567890",
+          placeholder: "E.G. (+880) 1234-567891",
           validation: z.string(),
         },
         {
           label: "Birth Certificate",
           name: "birthCertificate",
-          placeholder: "E.G. 1234567890",
+          placeholder: "E.G. (+880) 1234-567891",
           validation: z.string(),
         },
       ],

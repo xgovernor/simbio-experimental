@@ -20,10 +20,10 @@ export const formSchema: TFormBuilderForm = {
           validation: z.string(),
         },
         {
-          label: "Member Phone",
+          label: "Referral's Phone",
           name: "refPhone",
           type: "tel",
-          placeholder: "E.G. +91 1234567890",
+          placeholder: "E.G. +91 (+880) 1234-567891",
           validation: z.string(),
         },
       ],
@@ -173,28 +173,22 @@ export const formSchema: TFormBuilderForm = {
           placeholder: "E.G. (123) 456-7890",
           validation: z.string(),
         },
-        {
-          label: "Hospital Email",
-          name: "hospitalEmail",
-          type: "email",
-          placeholder: "E.G. JbF7H@example.com",
-          validation: z.string().email(),
-        },
+        // {
+        //   label: "Hospital Email",
+        //   name: "hospitalEmail",
+        //   type: "email",
+        //   placeholder: "E.G. JbF7H@example.com",
+        //   validation: z.string().email(),
+        // },
       ],
     },
     {
       title: "Patient Info",
       fields: [
         {
-          label: "First name",
-          name: "patientFirstName",
+          label: "Full name",
+          name: "fullName",
           placeholder: "E.G. John",
-          validation: z.string(),
-        },
-        {
-          label: "Last name",
-          name: "patientLastName",
-          placeholder: "E.G. Doe",
           validation: z.string(),
         },
         {
@@ -217,14 +211,14 @@ export const formSchema: TFormBuilderForm = {
               value: "female",
             },
             {
-              label: "Trans",
-              value: "transgender",
+              label: "Binary",
+              value: "binary",
             },
           ],
           validation: z.string(),
           // .oneOf(
-          //   ["male", "female", "transgender"],
-          //   "We only accept male, female and transgender",
+          //   ["male", "female", "binary"],
+          //   "We only accept male, female and binary",
           // ),
         },
         {
@@ -234,25 +228,12 @@ export const formSchema: TFormBuilderForm = {
           validation: z.string(),
         },
         {
-          label: "Address",
-          name: "patientAddress",
-          placeholder: "E.G. 123, Banani, Dhaka",
-          validation: z.string(),
-        },
-        {
-          label: "Phone",
-          name: "patientPhone",
-          placeholder: "E.g: 01xxx-xxxxxx",
-          type: "tel",
-          validation: z.string(),
-        },
-        {
           label: "ID Type",
           name: "patientIdType",
           type: "select",
           options: [
             {
-              label: "none",
+              label: "None",
               value: "none",
             },
             {
@@ -260,7 +241,7 @@ export const formSchema: TFormBuilderForm = {
               value: "passport",
             },
             {
-              label: "Voter ID",
+              label: "NID",
               value: "nid",
             },
             {
@@ -270,10 +251,6 @@ export const formSchema: TFormBuilderForm = {
             {
               label: "Birth Certificate",
               value: "birth certificate",
-            },
-            {
-              label: "Ration Card",
-              value: "ration card",
             },
           ],
           validation: z.string(),
@@ -292,6 +269,70 @@ export const formSchema: TFormBuilderForm = {
           label: "ID",
           name: "patientId",
           placeholder: "",
+          validation: z.string(),
+        },
+      ],
+    },
+    {
+      title: "Contact Info",
+      fields: [
+        {
+          label: "Address",
+          name: "address",
+          placeholder: "E.G. 123 Main St",
+          validation: z.string(),
+        },
+        {
+          label: "City/Village",
+          name: "city",
+          placeholder: "E.G. Syleht",
+          validation: z.string(),
+        },
+        {
+          label: "State/District",
+          name: "state",
+          placeholder: "E.G. Sylhet",
+          validation: z.string(),
+        },
+        {
+          label: "Zip/Postal code",
+          name: "zip",
+          placeholder: "E.G. 12345",
+          validation: z.string(),
+        },
+        {
+          label: "Country",
+          name: "country",
+          placeholder: "E.G. Bangladesh",
+          value: "Bangladesh",
+          validation: z.string(),
+        },
+        {
+          label: "Phone",
+          name: "phone",
+          placeholder: "E.G. (+880) 1234-567891",
+          validation: z.string(),
+        },
+        {
+          label: "Email",
+          name: "email",
+          placeholder: "E.G. example@mail.com",
+          required: false,
+          validation: z.string().optional(),
+        },
+      ],
+    },
+    {
+      title: "Extra Info",
+      className: "w-full grid grid-cols-1 gap-x-13 gap-y-3",
+      labelClassName:
+        "w-full max-w-[250px] min-w-[125px] text-[13px] leading-[32px] font-medium",
+      fields: [
+        {
+          label: "Note",
+          name: "note",
+          type: "textarea",
+          placeholder: "E.G. None",
           validation: z.string(),
         },
       ],

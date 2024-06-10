@@ -46,14 +46,14 @@ export const formSchema: TFormBuilderForm = {
           options: [
             { value: "male", label: "Male" },
             { value: "female", label: "Female" },
-            { value: "transgender", label: "Transgender" },
+            { value: "binary", label: "Binary" },
           ],
           validation: z
             .string()
             .refine(
-              (value) => ["male", "female", "transgender"].includes(value),
+              (value) => ["male", "female", "binary"].includes(value),
               {
-                message: "We only accept male, female and transgender",
+                message: "We only accept male, female and binary",
               },
             ),
         },
@@ -90,19 +90,19 @@ export const formSchema: TFormBuilderForm = {
           validation: z.string(),
         },
         {
-          label: "City",
+          label: "City/Village",
           name: "city",
           placeholder: "E.G. San Francisco",
           validation: z.string(),
         },
         {
-          label: "State",
+          label: "State/District",
           name: "state",
           placeholder: "E.G. CA",
           validation: z.string(),
         },
         {
-          label: "Zip Code",
+          label: "Zip/Postal code",
           name: "zip",
           placeholder: "E.G. 12345",
           validation: z.string(),
@@ -110,14 +110,14 @@ export const formSchema: TFormBuilderForm = {
         {
           label: "Country",
           name: "country",
-          placeholder: "E.G. USA",
+          placeholder: "E.g. Bangladesh",
           value: "Bangladesh",
           validation: z.string(),
         },
         {
           label: "Phone",
           name: "phone",
-          placeholder: "E.G. +8801234567891",
+          placeholder: "E.G. (+880) 1234-567891",
           validation: z.string(),
         },
         {
@@ -135,28 +135,28 @@ export const formSchema: TFormBuilderForm = {
         {
           label: "Passport",
           name: "passport",
-          placeholder: "E.G. 1234567890",
+          placeholder: "E.G. (+880) 1234-567891",
           required: false,
           validation: z.string().optional(),
         },
         {
           label: "NID",
           name: "nid",
-          placeholder: "E.G. 1234567890",
+          placeholder: "E.G. (+880) 1234-567891",
           required: false,
           validation: z.string().optional(),
         },
         {
           label: "Driving License",
           name: "drivingLicense",
-          placeholder: "E.G. 1234567890",
+          placeholder: "E.G. (+880) 1234-567891",
           required: false,
           validation: z.string().optional(),
         },
         {
           label: "Birth Certificate",
           name: "birthCertificate",
-          placeholder: "E.G. 1234567890",
+          placeholder: "E.G. (+880) 1234-567891",
           required: false,
           validation: z.string().optional(),
         },

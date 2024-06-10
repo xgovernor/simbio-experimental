@@ -173,7 +173,7 @@ const FormBuilder = ({ formSchema, onSubmit }: TFormBuilderProps) => {
                                 )}
                                 type={fField?.type || section.type || "text"}
                                 placeholder={fField?.placeholder}
-                                required={fField?.required ?? true}
+                                required={fField?.required}
                                 autoComplete={
                                   fField?.auoComplete ||
                                   section?.auoComplete ||
@@ -187,7 +187,7 @@ const FormBuilder = ({ formSchema, onSubmit }: TFormBuilderProps) => {
                             {/* Select Field */}
                             {fField?.type === "select" && (
                               <Select
-                                required={fField?.required ?? true}
+                                required={fField?.required}
                                 {...field}
                                 onValueChange={field.onChange}
                                 defaultValue={field.value}
@@ -229,7 +229,7 @@ const FormBuilder = ({ formSchema, onSubmit }: TFormBuilderProps) => {
                                     formSchema.inputClassName,
                                 )}
                                 placeholder={fField?.placeholder}
-                                required={fField?.required ?? true}
+                                required={fField?.required}
                                 autoComplete={
                                   fField?.auoComplete ||
                                   section?.auoComplete ||

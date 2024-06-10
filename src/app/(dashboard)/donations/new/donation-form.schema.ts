@@ -90,6 +90,43 @@ export const formSchema: TFormBuilderForm = {
           // ),
         },
         {
+          label: "Quantity",
+          name: "quantity",
+          value: "1",
+          type: "select",
+          options: [
+            {
+              label: "none",
+              value: "none",
+            },
+            {
+              label: "1 unit",
+              value: "1",
+            },
+            {
+              label: "2 unit",
+              value: "2",
+            },
+            {
+              label: "3 unit",
+              value: "3",
+            },
+            {
+              label: "4 unit",
+              value: "4",
+            },
+            {
+              label: "5 unit",
+              value: "5",
+            },
+          ],
+          validation: z
+            .number()
+
+            .min(1, "Must be greater than 0")
+            .max(5, "Must be less than 5"),
+        },
+        {
           label: "Donation Type",
           name: "donationType",
           type: "select",
@@ -135,21 +172,29 @@ export const formSchema: TFormBuilderForm = {
           placeholder: "E.G. 123 Main St, Anytown, USA 12345",
           validation: z.string(),
         },
+        {
+          label: "Hospital Phone",
+          name: "hospitalPhone",
+          type: "tel",
+          placeholder: "E.G. (123) 456-7890",
+          validation: z.string(),
+        },
+        // {
+        //   label: "Hospital Email",
+        //   name: "hospitalEmail",
+        //   type: "email",
+        //   placeholder: "E.G. JbF7H@example.com",
+        //   validation: z.string().email(),
+        // },
       ],
     },
     {
       title: "Patient Info",
       fields: [
         {
-          label: "First name",
-          name: "patientFirstName",
+          label: "Full name",
+          name: "fullName",
           placeholder: "E.G. John",
-          validation: z.string(),
-        },
-        {
-          label: "Last name",
-          name: "patientLastName",
-          placeholder: "E.G. Doe",
           validation: z.string(),
         },
         {
@@ -172,14 +217,14 @@ export const formSchema: TFormBuilderForm = {
               value: "female",
             },
             {
-              label: "Trans",
-              value: "transgender",
+              label: "Binary",
+              value: "binary",
             },
           ],
           validation: z.string(),
           // .oneOf(
-          //   ["male", "female", "transgender"],
-          //   "We only accept male, female and transgender",
+          //   ["male", "female", "binary"],
+          //   "We only accept male, female and binary",
           // ),
         },
         {
@@ -189,25 +234,12 @@ export const formSchema: TFormBuilderForm = {
           validation: z.string(),
         },
         {
-          label: "Address",
-          name: "patientAddress",
-          placeholder: "E.G. 123, Banani, Dhaka",
-          validation: z.string(),
-        },
-        {
-          label: "Phone",
-          name: "patientPhone",
-          placeholder: "E.g: 01xxx-xxxxxx",
-          type: "tel",
-          validation: z.string(),
-        },
-        {
           label: "ID Type",
           name: "patientIdType",
           type: "select",
           options: [
             {
-              label: "none",
+              label: "None",
               value: "none",
             },
             {
@@ -215,7 +247,7 @@ export const formSchema: TFormBuilderForm = {
               value: "passport",
             },
             {
-              label: "Voter ID",
+              label: "NID",
               value: "nid",
             },
             {
@@ -225,10 +257,6 @@ export const formSchema: TFormBuilderForm = {
             {
               label: "Birth Certificate",
               value: "birth certificate",
-            },
-            {
-              label: "Ration Card",
-              value: "ration card",
             },
           ],
           validation: z.string(),
