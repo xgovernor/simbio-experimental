@@ -1,4 +1,4 @@
-import NextAuth from "next-auth";
+import NextAuth, { type DefaultSession } from "next-auth";
 import Apple from "next-auth/providers/apple";
 // import Facebook from "next-auth/providers/facebook"
 import GitHub from "next-auth/providers/github";
@@ -11,7 +11,21 @@ declare module "next-auth" {
   interface User {
     role: string;
   }
+  // interface Account { }
+  // interface Session {
+  //   user: {
+  //     role: string;
+  //   } & DefaultSession["user"];
+  // }
 }
+
+// declare module "next-auth/jwt" {
+//   /** Returned by the `jwt` callback and `auth`, when using JWT sessions */
+//   interface JWT {
+//     /** OpenID ID Token */
+//     idToken?: string
+//   }
+// }
 
 const VERCEL_DEPLOYMENT = !!process.env.VERCEL_URL;
 
@@ -53,7 +67,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       },
     },
   },
-  // callbacks: {
+  callbacks: {
   //   async session({ session, token }) {
   //     if (token.sub && session.user) {
   //       session.user.id = token.sub;
@@ -73,7 +87,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   //     }
   //     return token;
   //   },
-  // },
+  },
   events: {
     //  async createUser(message) {
     //   const params: CreateUserEmailProps = {
