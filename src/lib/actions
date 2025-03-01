@@ -1,4 +1,0 @@
-export async function createClub<T>(data:T) {
-    console.log("createClub");
-    console.log(data);
-}

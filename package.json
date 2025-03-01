@@ -18,7 +18,8 @@
     "changelog": "node scripts/create-changelog"
   },
   "dependencies": {
-    "@fluentui/react-components": "^9.41.0",
+    "@fluentui/react-components": "^9.60.0",
+    "@fluentui/react-icons": "^2.0.274",
     "@hookform/resolvers": "^3.4.2",
     "@next/bundle-analyzer": "^14.2.3",
     "@next/third-parties": "^14.0.1",
@@ -48,7 +49,7 @@
     "geist": "^1.2.0",
     "lucide-react": "^0.298.0",
     "next": "^14.2.3",
-    "next-auth": "^5.0.0-beta.18",
+    "next-auth": "5.0.0-beta.25",
     "next-pwa": "^5.6.0",
     "openai": "^4.47.1",
     "react": "^18.3.1",
@@ -124,5 +125,13 @@
   "browser": {
     "crypto": false
   },
-  "packageManager": "yarn@4.2.2"
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "@prisma/client",
+      "esbuild",
+      "nx",
+      "sharp"
+    ]
+  }
 }
