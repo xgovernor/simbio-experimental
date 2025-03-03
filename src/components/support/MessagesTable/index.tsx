@@ -18,12 +18,12 @@ const COLUMNS = [
   },
   {
     id: "SMB2",
-    className: "w-40",
+    className: "w-[160px]",
     title: "Priority",
   },
   {
     id: "SMB3",
-    className: "w-40",
+    className: "w-[160px]",
     title: "From",
   },
   {
@@ -204,10 +204,10 @@ const MessagesTable: React.FC<MessagesTablePropsType> = ({
             </tr>
           </thead>
 
-          <tbody className="min-h-max max-w-full overflow-x-auto overflow-y-auto ">
+          <tbody className="min-h-max max-w-full overflow-x-auto overflow-y-auto">
             {/* low  */}
             <tr className="sticky top-0 flex border-b bg-[#f5f5f5]">
-              <th className="flex-1  px-3 py-2 text-left" colSpan={6}>
+              <th className="flex-1 px-3 py-2 text-left" colSpan={6}>
                 <h2 className="text-sm">
                   <span className="mr-1 font-normal">Priority</span>
                   <span>Low</span>
@@ -241,11 +241,11 @@ const TableRow: React.FC<TSupportMessageItem> = ({
         gridTemplateColumns: "100px auto 160px 160px 160px",
       }}
     >
-      <td className="min-w-xs w-full px-4 py-3">
+      <td className="w-full min-w-xs px-4 py-3">
         <div className="group relative w-full">
           {/* Title */}
           <h3>
-            <span className={`${!isViewed && "body1Strong"}  truncate`}>
+            <span className={`${!isViewed && "body1Strong"} truncate`}>
               {title}
             </span>
 
@@ -253,20 +253,20 @@ const TableRow: React.FC<TSupportMessageItem> = ({
               className={`relative ms-2 rounded-full text-xs ${getColorWithKey(
                 status,
                 "bg",
-              )} px-1.5 pb-0.5 capitalize text-white opacity-80`}
+              )} px-1.5 pb-0.5 text-white capitalize opacity-80`}
             >
               {status}
             </span>
           </h3>
 
           {/* dropdown */}
-          <span className="absolute top-0 z-50 ml-4 mt-10 hidden w-screen max-w-lg rounded-md border bg-white p-6 text-gray-900 shadow-lg group-hover:block">
+          <span className="absolute top-0 z-50 mt-10 ml-4 hidden w-screen max-w-lg rounded-md border bg-white p-6 text-gray-900 shadow-lg group-hover:block">
             <article>
               <header>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center justify-start gap-3">
                     <span
-                      className={`bg-blue-600 rounded-sm px-3 py-1 text-xs uppercase leading-none text-white ${getColorWithKey(
+                      className={`rounded-sm bg-blue-600 px-3 py-1 text-xs leading-none text-white uppercase ${getColorWithKey(
                         status,
                         "bg",
                       )}`}
@@ -300,13 +300,13 @@ const TableRow: React.FC<TSupportMessageItem> = ({
         </div>
       </td>
 
-      <td className="truncate px-4 py-3 ">
+      <td className="truncate px-4 py-3">
         <div>
           <PriorityBadge priority={priority} />
         </div>
       </td>
-      <td className="truncate px-4 py-3 ">{from?.title}</td>
-      <td className="truncate px-4 py-3 ">
+      <td className="truncate px-4 py-3">{from?.title}</td>
+      <td className="truncate px-4 py-3">
         <Date dateString={timestamp as string} />
       </td>
     </tr>

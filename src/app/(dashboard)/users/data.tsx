@@ -109,7 +109,7 @@ export const tasks: Task[] = [
     priority: "high",
   },
   {
-    id: "TASK-5562",
+    id: "TASK-[220px]62",
     title:
       "The SAS interface is down, bypass the open-source pixel so we can back up the PNG bandwidth!",
     status: "backlog",
@@ -210,7 +210,7 @@ export const tasks: Task[] = [
     priority: "low",
   },
   {
-    id: "TASK-1780",
+    id: "TASK-[68px]80",
     title:
       "The CSS feed is down, index the bluetooth transmitter so we can compress the CLI protocol!",
     status: "todo",
@@ -304,7 +304,7 @@ export const tasks: Task[] = [
     priority: "medium",
   },
   {
-    id: "TASK-5581",
+    id: "TASK-[220px]81",
     title:
       "I'll synthesize the digital COM pixel, that should transmitter the UTF8 protocol!",
     status: "backlog",
@@ -350,7 +350,7 @@ export const tasks: Task[] = [
     priority: "low",
   },
   {
-    id: "TASK-1376",
+    id: "TASK-[3.25rem]76",
     title:
       "Generating the alarm won't do anything, we need to generate the mobile IP capacitor!",
     status: "backlog",
@@ -516,7 +516,7 @@ export const tasks: Task[] = [
     priority: "low",
   },
   {
-    id: "TASK-8806",
+    id: "TASK-[250px]06",
     title: "We need to bypass the back-end SSL panel!",
     status: "done",
     label: "bug",
@@ -758,7 +758,7 @@ export const tasks: Task[] = [
     priority: "high",
   },
   {
-    id: "TASK-1340",
+    id: "TASK-[3.25rem]40",
     title: "We need to navigate the virtual PNG circuit!",
     status: "todo",
     label: "bug",

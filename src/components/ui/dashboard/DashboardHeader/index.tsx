@@ -27,10 +27,10 @@ const DashboadHeader: FC = () => {
             </div>
 
             <div className="relative block">
-              <h1 className="title3 mb-2 mt-0 max-md:text-xl">
+              <h1 className="title3 mt-0 mb-2 max-md:text-xl">
                 Blood Soldier Society (BSS)
               </h1>
-              <p className="body1 m-0 max-md:text-sm md:w-112">
+              <p className="body1 m-0 max-md:text-sm md:w-[448px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris

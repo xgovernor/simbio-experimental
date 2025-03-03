@@ -100,7 +100,7 @@ const AppUpdates: FC = () => {
       </MenuTrigger>
 
       <MenuPopover className="border-gray-[100px] max-h-[500px] max-w-[400px] rounded p-0 shadow-lg">
-        <div className="sticky top-0 z-[2] flex items-center justify-between bg-[#f5f5f5] px-[14px] pb-1 pt-2">
+        <div className="sticky top-0 z-[2] flex items-center justify-between bg-[#f5f5f5] px-[14px] pt-2 pb-1">
           <p className="subtitle2">Updates</p>
 
           <Toolbar className="p-0">
@@ -110,7 +110,7 @@ const AppUpdates: FC = () => {
           </Toolbar>
         </div>
 
-        <div className="relative top-2 block h-full overflow-y-auto rounded bg-[#f5f5f5] px-3 pb-3 pt-1">
+        <div className="relative top-2 block h-full overflow-y-auto rounded bg-[#f5f5f5] px-3 pt-1 pb-3">
           {UPDATES?.map((item) => {
             if (item.type === "member-request") {
               return (
@@ -168,7 +168,7 @@ const TemplateNewMember: FC<TTemplateNewMemberProps> = ({
   return (
     <div
       key={id}
-      className="mb-1.5 flex cursor-pointer flex-row items-start gap-x-3 bg-white px-4  py-3"
+      className="mb-1.5 flex cursor-pointer flex-row items-start gap-x-3 bg-white px-4 py-3"
     >
       <div>
         <Avatar icon={<Alert20Regular />} name={title} />

@@ -38,7 +38,7 @@ export function DataTableColumnHeader<TData, TValue>({
           <Button
             variant="ghost"
             size="sm"
-            className="data-[state=open]:bg-accent -ml-3 h-8 px-2 text-left align-middle text-[14px] font-semibold leading-5 text-[#242424] dark:text-zinc-400 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+            className="data-[state=open]:bg-accent dark:text-zinc-[160px]0 -ml-3 h-8 px-2 text-left align-middle text-[14px] leading-5 font-semibold text-[#242424] [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
           >
             <span>{title}</span>
             {column.getIsSorted() === "desc" ? (

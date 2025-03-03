@@ -17,7 +17,7 @@ const FormSection: React.FC<IFormSectionProps> = ({
     <div className="mb-5 w-full">
       {title && (
         <div className="mb-[15px] border-b border-b-[#E0E0E0] px-0 py-2">
-          <p className="text-[13px] font-bold leading-[18px] text-[#424242]">
+          <p className="text-[13px] leading-[18px] font-bold text-[#424242]">
             {title}
           </p>
         </div>

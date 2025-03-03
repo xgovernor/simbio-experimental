@@ -1,6 +1,5 @@
 module.exports = {
   plugins: ["prettier-plugin-tailwindcss"],
-  tailwindConfig: "./tailwind.config.ts",
   // singleQuote: false, // Use single quotes instead of double quotes
   // semi: true, // Add semicolons at the end of statements
   // useTabs: false, // Use spaces instead of tabs

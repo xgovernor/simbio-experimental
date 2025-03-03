@@ -14,7 +14,7 @@ const PageAuthError: FC = ({
     <section className="relative block min-h-screen w-full">
       {/* Background image */}
       <div
-        className="absolute left-0 top-0 -z-1 min-h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat"
+        className="absolute top-0 left-0 -z-1 min-h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${BG.src})`,
         }}
@@ -22,7 +22,7 @@ const PageAuthError: FC = ({
       {/* Main content */}
       <div className="relative mx-auto block h-full min-h-screen w-full max-w-[640px] overflow-y-auto max-md:px-5 max-md:py-10 md:px-8 md:py-14 lg:py-20">
         {/* Login Card Start */}
-        <div className="flex w-full max-w-[640px] flex-col gap-8 rounded-md bg-white px-11 pb-8 pt-11 shadow">
+        <div className="flex w-full max-w-[640px] flex-col gap-8 rounded-md bg-white px-11 pt-11 pb-8 shadow">
           <div>
             <Link href="/">
               {/* Logo */}
@@ -38,7 +38,7 @@ const PageAuthError: FC = ({
           <div className="flex flex-col gap-7">
             <div>
               {/* Title */}
-              <h1 className="mb-3 text-xl font-semibold leading-7">
+              <h1 className="mb-3 text-xl leading-7 font-semibold">
                 {searchParams?.error || "Server error"}
               </h1>
               {/* Error message */}

@@ -59,7 +59,9 @@ const Stat = ({
   <div className={className}>
     <p className="mb-1 text-xs font-medium text-gray-800">{title}</p>
 
-    <p className="text- deep-purple-accent-400 text-lg font-bold">{value}</p>
+    <p className="text- deep-purple-accent-[160px]0 text-lg font-bold">
+      {value}
+    </p>
   </div>
 );
 

@@ -63,7 +63,7 @@ const UserMenu: FC<IUserMenuProps> = ({ className }: IUserMenuProps) => {
           />
         </MenuTrigger>
 
-        <MenuPopover className="h-[308px] min-h-[270px] w-full min-w-[320px] max-w-[320px] rounded border-0 bg-white p-0 shadow-lg">
+        <MenuPopover className="h-[308px] min-h-[270px] w-full max-w-[320px] min-w-[320px] rounded border-0 bg-white p-0 shadow-lg">
           <div className="inherit flex h-[268px] min-h-[220px] flex-col items-center justify-center p-[14px]">
             {/* <Link href={"/user/profile"}> */}
             <Link
@@ -83,7 +83,7 @@ const UserMenu: FC<IUserMenuProps> = ({ className }: IUserMenuProps) => {
 
             <div className="mb-[15px]">
               <Link href={"/user"} title={settings.data.user?.name}>
-                <p className="subtitle1 mb-0.5 text-center hover:text-primary hover:underline">
+                <p className="subtitle1 hover:text-primary mb-0.5 text-center hover:underline">
                   {settings.data.user?.name}
                 </p>
               </Link>
@@ -93,7 +93,7 @@ const UserMenu: FC<IUserMenuProps> = ({ className }: IUserMenuProps) => {
               </p>
 
               <Link href={"/profile"}>
-                <p className="body1Strong text-center hover:text-primary hover:underline">
+                <p className="body1Strong hover:text-primary text-center hover:underline">
                   Blood Solider Society
                 </p>
               </Link>
@@ -123,7 +123,7 @@ const UserMenu: FC<IUserMenuProps> = ({ className }: IUserMenuProps) => {
             </Toolbar>
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0 flex h-10 items-center justify-center bg-[#f5f5f5]">
+          <div className="absolute right-0 bottom-0 left-0 flex h-10 items-center justify-center bg-[#f5f5f5]">
             <Text className="caption1 text-[13px] leading-7 text-[#1b1b1b]">
               All rights reserved by <Link href="https://dot9.dev">Dot9</Link>
             </Text>

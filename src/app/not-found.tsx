@@ -9,7 +9,7 @@ const Error404Page: FC = () => {
     <section className="h-screen w-full">
       {/* Backgorund */}
       <div
-        className="absolute left-0 top-0 -z-1 h-screen w-full overflow-y-auto bg-cover bg-fixed bg-center bg-no-repeat"
+        className="absolute top-0 left-0 -z-1 h-screen w-full overflow-y-auto bg-cover bg-fixed bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${BG.src})`,
         }}
@@ -32,7 +32,7 @@ const Error404Page: FC = () => {
 
           <div className="">
             <div>
-              <h1 className="mb-4 mt-4 text-2xl font-semibold leading-7">
+              <h1 className="mt-4 mb-4 text-2xl leading-7 font-semibold">
                 Opps!
               </h1>
             </div>

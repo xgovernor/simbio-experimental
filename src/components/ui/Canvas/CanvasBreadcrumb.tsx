@@ -59,7 +59,7 @@ const CanvasBreadcrumb: React.FC<ICanvasBreadcrumbProps> = ({
 
   return (
     <header
-      className="sticky top-0 flex w-full flex-row flex-nowrap items-center justify-start border-t border-t-[#E0E0E0] bg-white "
+      className="sticky top-0 flex w-full flex-row flex-nowrap items-center justify-start border-t border-t-[#E0E0E0] bg-white"
       style={{
         boxShadow:
           "0px 1.2px 3.6px rgba(0, 0, 0, 0.03), 0px 6.4px 14.4px rgba(0, 0, 0, 0.07)",

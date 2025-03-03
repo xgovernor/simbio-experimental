@@ -35,9 +35,9 @@ const CentersTable: FC<TCentersTableProps> = ({
       }}
     >
       {/* Card Header */}
-      <div className="relative flex w-full flex-nowrap justify-between gap-3 pe-2 ps-5 pt-4">
+      <div className="relative flex w-full flex-nowrap justify-between gap-3 ps-5 pe-2 pt-4">
         <div className="">
-          <h1 className="text-[16px] font-bold leading-[22px] text-[#242424]">
+          <h1 className="text-[16px] leading-[22px] font-bold text-[#242424]">
             {title}
           </h1>
           <p className="text-xs text-[#616161]">{description}</p>

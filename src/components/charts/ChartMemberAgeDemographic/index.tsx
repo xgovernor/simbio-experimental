@@ -84,7 +84,7 @@ const options: EChartsOption = {
 const Chart = () => (
   <ReactECharts
     echarts={echarts}
-    className="h-55 max-h-55 w-full"
+    className="h-[220px] max-h-[220px] w-full"
     option={options}
     notMerge={true}
     lazyUpdate={true}
@@ -126,7 +126,7 @@ const ChartMemberAgeDemographic = () => {
          * This filters Pie chart data based on time period like 7 days, 30 days, 90 days, etc.
          * This feature was implemented but It is commented now due to not necessary, as well occurence some style erros .
          */}
-        <div className="relative h-55 w-full">
+        <div className="relative h-[220px] w-full">
           <Chart />
         </div>
       </CardPreview>

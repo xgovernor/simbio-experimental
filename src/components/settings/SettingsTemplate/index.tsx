@@ -34,7 +34,7 @@ const SettingsTemplate: FC<ISettingsTemplateProps> = ({
 
       {/* Body */}
       <div
-        className="h-full px-5 pb-5 pt-4"
+        className="h-full px-5 pt-4 pb-5"
         style={{
           minHeight: "calc(400px - 124px)",
         }}
@@ -45,7 +45,7 @@ const SettingsTemplate: FC<ISettingsTemplateProps> = ({
       {/* Footer */}
       {(onSubmit || onDiscard) && (
         <Toolbar
-          className="sticky bottom-0 left-0 right-0 flex justify-end gap-4 border-t py-4 pe-4 ps-5"
+          className="sticky right-0 bottom-0 left-0 flex justify-end gap-4 border-t py-4 ps-5 pe-4"
           style={{
             borderColor: "rgb(240, 240, 240)",
           }}

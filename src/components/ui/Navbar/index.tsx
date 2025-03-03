@@ -23,7 +23,7 @@ const NavbarBrand = () => {
 const Navbar = ({ className }: { className?: string }) => {
   return (
     <header className={className}>
-      <nav className="flex h-12 w-full items-center justify-center bg-primary text-white">
+      <nav className="bg-primary flex h-12 w-full items-center justify-center text-white">
         <div className="mx-auto my-0 flex w-full items-center justify-between px-5 py-2">
           <NavbarBrand />
 

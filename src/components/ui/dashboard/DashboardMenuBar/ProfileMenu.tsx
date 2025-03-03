@@ -20,7 +20,7 @@ const ProfileMenu: FC<ProfileMenuProps> = ({ menu }) => {
           <Button
             key={i}
             className={
-              isSamePath ? "event-none pointer-events-none text-primary" : ""
+              isSamePath ? "event-none text-primary pointer-events-none" : ""
             }
             // disabled={isSamePath}
             icon={e.icon}

@@ -4,7 +4,6 @@ import Google from "next-auth/providers/google";
 
 export const runtime = "edge";
 
-
 export const { handlers, auth, signIn, signOut } = NextAuth({
   pages: {
     signIn: "/auth/login",
@@ -20,7 +19,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     Google,
   ],
 });
-
 
 declare module "next-auth" {
   interface User {

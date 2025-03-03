@@ -15,7 +15,7 @@ const PageRootComponent: FC = () => {
         {/* </Alert> */}
 
         {/* Alert Success */}
-        {/* <div className="mt-2 bg-green-50 border border-green-400 px-6 py-4 rounded-md flex items-center w-full">
+        {/* <div className="mt-2 bg-green-50 border border-green-[160px]0 px-6 py-4 rounded-md flex items-center w-full">
             <svg viewBox="0 0 24 24" className="text-green-600 w-5 h-5 sm:w-5 sm:h-5 mr-3">
               <path fill="currentColor"
                 d="M12,0A12,12,0,1,0,24,12,12.014,12.014,0,0,0,12,0Zm6.927,8.2-6.845,9.289a1.011,1.011,0,0,1-1.43.188L5.764,13.769a1,1,0,1,1,1.25-1.562l4.076,3.261,6.227-8.451A1,1,0,1,1,18.927,8.2Z">
@@ -29,14 +29,14 @@ const PageRootComponent: FC = () => {
         {/* </div> */}
 
         {/* Profile Stats */}
-        <div className="col-span-4 col-start-1 col-end-5 rounded bg-white shadow max-md:col-span-1  max-md:col-end-2 lg:p-5">
-          <div className="grid grid-cols-2 max-md:grid-cols-2 lg:grid-cols-5 lg:gap-5 ">
+        <div className="col-span-4 col-start-1 col-end-5 rounded bg-white shadow max-md:col-span-1 max-md:col-end-2 lg:p-5">
+          <div className="grid grid-cols-2 max-md:grid-cols-2 lg:grid-cols-5 lg:gap-5">
             <dl className="space-y-2 max-lg:col-start-1 max-lg:col-end-3 max-md:border-b max-md:p-4 max-md:text-center lg:border-e">
               <dt className="text-sm font-medium text-gray-600">Donations</dt>
 
               <dd className="text-5xl font-light md:text-6xl">192 bag</dd>
 
-              <dd className="text-green-500 flex items-center space-x-1 text-sm font-medium max-lg:justify-center">
+              <dd className="flex items-center space-x-1 text-sm font-medium text-green-500 max-lg:justify-center">
                 <span>32% increase</span>
 
                 <svg
@@ -100,7 +100,7 @@ const PageRootComponent: FC = () => {
 
               <dd className="text-5xl font-light md:text-6xl">10</dd>
 
-              <dd className="text-green-500 flex items-center space-x-1 text-sm font-medium">
+              <dd className="flex items-center space-x-1 text-sm font-medium text-green-500">
                 <span>3% increase</span>
 
                 <svg
@@ -168,7 +168,7 @@ const PageRootComponent: FC = () => {
 
               <dd className="text-5xl font-light md:text-6xl">20</dd>
 
-              <dd className="text-green-500 flex items-center space-x-1 text-sm font-medium">
+              <dd className="flex items-center space-x-1 text-sm font-medium text-green-500">
                 <span>3% increase</span>
 
                 <svg

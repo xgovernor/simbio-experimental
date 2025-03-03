@@ -3,7 +3,7 @@ import { z } from "zod";
 
 export const formSchema: TFormBuilderForm = {
   sectionClassName:
-    "w-full grid max-md:grid-cols-1 grid-cols-2 gap-x-13 gap-y-3",
+    "w-full grid max-md:grid-cols-1 grid-cols-2 gap-x-[3.25rem] gap-y-3",
   fieldClassName:
     "flex max-md:flex-col max-md:gap-1 flex-row items-start justify-between gap-4 w-full",
   labelClassName:

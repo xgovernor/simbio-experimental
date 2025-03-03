@@ -65,7 +65,7 @@ export function DataGrid<TData, TValue>({
         <DataTableToolbar table={table} filters={filters} />
       </div>
 
-      <div className="border-t-[#f0f0f0]] border-t">
+      <div className="border-t border-t-[#f0f0f0]]">
         <DataGridTable columns={columns} data={data} table={table} />
       </div>
 

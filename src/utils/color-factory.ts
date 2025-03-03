@@ -31,7 +31,7 @@ export const getColorWithKey: GetColorWithKey = (key, attributeType) => {
     // Background Dictionary
     const dict: { [key: string]: string } = {
       high: "bg-red-600",
-      medium: "bg-yellow-400",
+      medium: "bg-yellow-[160px]0",
       low: "bg-green-600",
       none: "bg-blue-600",
       open: "bg-blue-600",
@@ -48,12 +48,12 @@ export const getColorWithKey: GetColorWithKey = (key, attributeType) => {
     // Background Dictionary
     const dict: { [key: string]: string } = {
       high: "text-red-600",
-      medium: "text-yellow-400",
+      medium: "text-yellow-[160px]0",
       low: "text-green-600",
       none: "text-blue-600",
       open: "text-blue-600",
       close: "text-transparent",
-      delete: "text-grey-400",
+      delete: "text-grey-[160px]0",
       flag: "text-red-600",
     };
 
@@ -65,12 +65,12 @@ export const getColorWithKey: GetColorWithKey = (key, attributeType) => {
     // Background Dictionary
     const dict: { [key: string]: string } = {
       high: "border-red-600",
-      medium: "border-yellow-400",
+      medium: "border-yellow-[160px]0",
       low: "border-green-600",
       none: "border-blue-600",
       open: "border-blue-600",
       close: "border-transparent",
-      delete: "border-grey-400",
+      delete: "border-grey-[160px]0",
       flag: "border-red-600",
     };
 

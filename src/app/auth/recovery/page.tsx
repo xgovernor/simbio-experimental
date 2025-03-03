@@ -11,14 +11,14 @@ const PageAuthRecovery: FC = () => {
     <section className="relative block h-screen w-full">
       {/* Background image */}
       <div
-        className="absolute left-0 top-0 -z-1 h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat"
+        className="absolute top-0 left-0 z-0 h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${BG.src})`,
         }}
       />
       {/* Main content */}
-      <div className="relative mx-auto block h-full w-full max-w-[440px] overflow-y-auto  max-md:px-5 max-md:py-10 md:py-14 lg:py-20">
-        <div className="flex w-full max-w-[440px] flex-col gap-8 rounded-md bg-white pb-8 pt-11 shadow max-md:px-8 md:absolute md:top-1/2 md:-translate-y-1/2 md:px-11">
+      <div className="relative mx-auto block h-full w-full max-w-[440px] overflow-y-auto max-md:px-5 max-md:py-10 md:py-14 lg:py-20">
+        <div className="flex w-full max-w-[440px] flex-col gap-8 rounded-md bg-white pt-11 pb-8 shadow max-md:px-8 md:absolute md:top-1/2 md:-translate-y-1/2 md:px-11">
           <div>
             {/* Logo */}
             <Image
@@ -32,12 +32,12 @@ const PageAuthRecovery: FC = () => {
           <div className="">
             <div>
               {/* Title */}
-              <h1 className="mb-3 text-lg font-semibold leading-7">
+              <h1 className="mb-3 text-lg leading-7 font-semibold">
                 Recover with
               </h1>
             </div>
 
-            <div className="flex flex-col gap-7 ">
+            <div className="flex flex-col gap-7">
               <form className="flex flex-col gap-3">
                 <Input placeholder="Email" />
                 <div className="text-center">Or</div>

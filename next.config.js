@@ -12,9 +12,6 @@ const nextConfig = {
   reactStrictMode: false,
   poweredByHeader: false,
   transpilePackages: ["echarts"],
-  devIndicators: {
-    buildActivityPosition: "top-right",
-  },
   images: {
     remotePatterns: [
       {
@@ -64,7 +61,6 @@ const nextConfig = {
   },
   experimental: {
     taint: true,
-    //     instrumentationHook: true
   },
   async redirects() {
     return [

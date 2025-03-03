@@ -30,12 +30,12 @@ const PageNewMember: React.FC = () => {
       // alert(JSON.stringify(values, null, 2));
 
       const response = await fetch(`/api/clubs`, {
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify(values),
-      })
+      });
 
       // Handle response if necessary
-      const data = await response.json()
+      const data = await response.json();
       alert(JSON.stringify(data, null, 2));
       // setSubmitting(false);
     }, 1000);

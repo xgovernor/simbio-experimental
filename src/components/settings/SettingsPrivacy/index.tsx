@@ -83,7 +83,7 @@ const SettingsPrivacy: FC<ISettingsPrivacyProps> = ({
 
         <Divider appearance="subtle" />
 
-        <section className="mb-6 mt-5">
+        <section className="mt-5 mb-6">
           <h4 className="subtitle2">Notice</h4>
           <p className="body1 mt-1">
             Simbio uses your previous searches to improve search results. You
@@ -94,7 +94,7 @@ const SettingsPrivacy: FC<ISettingsPrivacyProps> = ({
             {NOTICE_LINKS?.map(({ id, title, url }) => (
               <Link
                 key={id}
-                className="body1 mb-1 block text-sm text-black hover:underline "
+                className="body1 mb-1 block text-sm text-black hover:underline"
                 style={{
                   color: "rgb(0, 120, 212)",
                 }}

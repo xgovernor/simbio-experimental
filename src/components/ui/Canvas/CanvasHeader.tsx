@@ -11,9 +11,9 @@ const CanvasHeader: React.FC<ICanvasHeaderProps> = ({
 }: ICanvasHeaderProps) => {
   return (
     <header className="sticky top-0 z-1 flex h-12 w-full flex-row flex-nowrap items-center justify-start bg-white">
-      <div className="flex h-full w-full flex-row flex-nowrap items-center justify-start gap-3 px-5 py-[14px] text-primary">
+      <div className="text-primary flex h-full w-full flex-row flex-nowrap items-center justify-start gap-3 px-5 py-[14px]">
         {icon && <>{icon}</>}
-        {title && <p className="text-sm font-bold text-primary">{title}</p>}
+        {title && <p className="text-primary text-sm font-bold">{title}</p>}
       </div>
     </header>
   );
