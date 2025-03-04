@@ -7,7 +7,7 @@ import SignOutIconIcon from "@/assets/icons/SignOutIconIcon";
 export interface ISidebarMenuItem {
   name: string;
   description?: string;
-  icon?: React.ReactElement;
+  icon?: React.ReactElement<any>;
   url: string;
 }
 interface SidebarProps {

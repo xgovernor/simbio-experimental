@@ -7,7 +7,7 @@ import { FC, memo } from "react";
 
 interface ISettingsTemplateProps {
   className?: string;
-  children: React.ReactElement;
+  children: React.ReactElement<any>;
   title: string;
   onSubmit?: () => void;
   onDiscard?: () => void;

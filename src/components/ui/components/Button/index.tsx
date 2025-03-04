@@ -1,8 +1,8 @@
 export type ButtonProps = {
   className?: string;
   size?: "small" | "medium" | "large";
-  before?: React.ReactElement;
-  after?: React.ReactElement;
+  before?: React.ReactElement<any>;
+  after?: React.ReactElement<any>;
   children: string;
   style?: object;
   rest?: object;

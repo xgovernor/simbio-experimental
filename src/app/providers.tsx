@@ -7,6 +7,7 @@ import {
   RendererProvider,
   createDOMRenderer,
   renderToStyleElements,
+  IdPrefixProvider,
 } from "@fluentui/react-components";
 import { useServerInsertedHTML } from "next/navigation";
 import { useSelector } from "react-redux";
@@ -30,12 +31,14 @@ export function Providers({ children }: { children: ReactNode }) {
   return (
     <RendererProvider renderer={renderer}>
       <SSRProvider>
+        <IdPrefixProvider value="d9-">
         <FluentProvider
           theme={data.theme === "light" ? lightTheme : teamsDarkTheme}
           className="bg-[transparent]"
         >
           {children}
-        </FluentProvider>
+          </FluentProvider>
+          </IdPrefixProvider>
       </SSRProvider>
     </RendererProvider>
   );

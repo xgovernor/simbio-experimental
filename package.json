@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "commit": "commit",
-    "dev": "next dev --turbo",
+    "dev": "next dev --turbopack",
     "build": "next build && rm -rf ./.next/cache",
     "start": "next start",
     "lint": "next lint --no-cache",
@@ -21,8 +21,8 @@
     "@fluentui/react-components": "^9.60.0",
     "@fluentui/react-icons": "^2.0.274",
     "@hookform/resolvers": "^3.4.2",
-    "@next/bundle-analyzer": "^14.2.3",
-    "@next/third-parties": "^14.0.1",
+    "@next/bundle-analyzer": "15.2.1",
+    "@next/third-parties": "15.2.1",
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-context-menu": "^2.1.5",
@@ -48,12 +48,12 @@
     "framer-motion": "^11.2.0",
     "geist": "^1.2.0",
     "lucide-react": "^0.298.0",
-    "next": "^14.2.3",
+    "next": "15.2.1",
     "next-auth": "5.0.0-beta.25",
     "next-pwa": "^5.6.0",
     "openai": "^4.47.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-hook-form": "^7.51.5",
     "react-icons": "^5.2.1",
     "react-redux": "^9.0.4",
@@ -76,8 +76,8 @@
     "@tailwindcss/postcss": "^4.0.9",
     "@testing-library/react": "^14.1.2",
     "@types/node": "^20",
-    "@types/react": "^18.3.2",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
     "@types/redux-logger": "3.0.9",
     "@types/semver": "^7",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
@@ -85,7 +85,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "commitlint": "^18.2.0",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.3",
+    "eslint-config-next": "15.2.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-unused-imports": "^3.1.0",
     "husky": "^8.0.3",
@@ -132,6 +132,10 @@
       "esbuild",
       "nx",
       "sharp"
-    ]
+    ],
+    "overrides": {
+      "@types/react": "19.0.10",
+      "@types/react-dom": "19.0.4"
+    }
   }
 }

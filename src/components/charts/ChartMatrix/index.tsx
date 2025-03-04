@@ -2,7 +2,7 @@ import { ReactElement, memo } from "react";
 
 interface TChartMatrixProps {
   className?: string;
-  children: ReactElement[];
+  children: ReactElement<any>[];
 }
 
 const ChartMatrix: React.FC<TChartMatrixProps> = ({

@@ -35,8 +35,8 @@ export type TDynamicSelectProps = SelectProps & {
 export interface ISettingsMenuTab {
   id: string;
   name: string;
-  icon: React.ReactElement;
-  component?: React.ReactElement;
+  icon: React.ReactElement<any>;
+  component?: React.ReactElement<any>;
 }
 
 // Menu Item
@@ -44,7 +44,7 @@ export interface IMenuItem {
   id?: string;
   title: string;
   url: string;
-  icon?: React.ReactElement;
+  icon?: React.ReactElement<any>;
   role?: string;
 }
 

@@ -131,7 +131,7 @@ const DashboardMenuBar: FC<IMenuBarProps> = ({
   ...rest
 }: IMenuBarProps) => {
   const [showAvatar, setShowAvatar] = useState(false);
-  const menuBarRef: RefObject<HTMLDivElement> = useRef(null);
+  const menuBarRef: RefObject<HTMLDivElement | null> = useRef(null);
 
   useEffect(() => {
     const mainElement = document.querySelector("main");

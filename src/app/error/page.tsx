@@ -5,11 +5,12 @@ import { FC } from "react";
 import LOGO from "@/assets/images/simbio-color.svg";
 import Link from "next/link";
 
-const PageAuthError: FC = ({
-  searchParams,
-}: {
-  searchParams?: { [key: string]: string | string[] | undefined };
-}) => {
+const PageAuthError: FC = async (
+  props: {
+    searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+  }
+) => {
+  const searchParams = await props.searchParams;
   return (
     <section className="relative block min-h-screen w-full">
       {/* Background image */}
