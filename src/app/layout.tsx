@@ -12,6 +12,7 @@ import { ReactNode } from "react";
 import Head from "next/head";
 import { Providers } from "./providers";
 import { StoreProvider } from "@/store/StoreProvider";
+import { ReactScan } from "@/components/ui/components/dev-tools/ReactScan";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.BASE_URL || DATA.base_url),
@@ -120,7 +121,6 @@ export default async function RootLayout({
             <meta name="theme-color" content="#143B52" />
           </Head>
 
-
           <Script strategy="lazyOnload" id="clarity-script">
             {`
                 (function(c,l,a,r,i,t,y){
@@ -130,6 +130,8 @@ export default async function RootLayout({
                 })(window, document, "clarity", "script", "ku1hcvfs7d");
               `}
           </Script>
+
+          <ReactScan />
 
           <body>
             <Providers>{children}</Providers>
