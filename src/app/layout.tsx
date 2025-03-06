@@ -1,4 +1,4 @@
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";
@@ -67,31 +67,31 @@ export const metadata: Metadata = {
   },
 };
 
-const segoe_ui = localFont({
-  src: [
-    {
-      path: "./../assets/fonts/segoe-ui/segoe-ui.woff",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "./../assets/fonts/segoe-ui/segoe-ui-italic.woff",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "./../assets/fonts/segoe-ui/segoe-ui-bold.woff",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "./../assets/fonts/segoe-ui/segoe-ui-bold-italic.woff",
-      weight: "700",
-      style: "italic",
-    },
-  ],
-  variable: "--font-segoe-ui",
-});
+// const segoe_ui = localFont({
+//   src: [
+//     {
+//       path: "./../assets/fonts/segoe-ui/segoe-ui.woff",
+//       weight: "400",
+//       style: "normal",
+//     },
+//     {
+//       path: "./../assets/fonts/segoe-ui/segoe-ui-italic.woff",
+//       weight: "400",
+//       style: "italic",
+//     },
+//     {
+//       path: "./../assets/fonts/segoe-ui/segoe-ui-bold.woff",
+//       weight: "700",
+//       style: "normal",
+//     },
+//     {
+//       path: "./../assets/fonts/segoe-ui/segoe-ui-bold-italic.woff",
+//       weight: "700",
+//       style: "italic",
+//     },
+//   ],
+//   variable: "--font-segoe-ui",
+// });
 
 export default async function RootLayout({
   children,
@@ -103,7 +103,8 @@ export default async function RootLayout({
   return (
     <SessionProvider session={session}>
       <StoreProvider>
-        <html lang="en" className={`${segoe_ui.className} overflow-hidden`}>
+        {/* <html lang="en" className={`${segoe_ui.className} overflow-hidden`}> */}
+        <html lang="en" className="overflow-hidden">
           <Head>
             <meta
               name="viewport"

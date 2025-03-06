@@ -1,6 +1,5 @@
 @theme {
-  --font-display: "Satoshi", "sans-serif";
-  --font-display: var(--font-segoe-ui);
+  --font-display: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif";
 
   /* Colors */
   --color-primary: #194b67;

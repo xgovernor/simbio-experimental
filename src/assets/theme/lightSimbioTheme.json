@@ -25,7 +25,7 @@
   "lineHeightHero800": "40px",
   "lineHeightHero900": "52px",
   "lineHeightHero1000": "92px",
-  "fontFamilyBase": "'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
+  "fontFamilyBase": " 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
   "fontFamilyMonospace": "Consolas, 'Courier New', Courier, monospace",
   "fontFamilyNumeric": "Bahnschrift, 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
   "fontWeightRegular": 400,
