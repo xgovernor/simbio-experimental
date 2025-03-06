@@ -27,7 +27,7 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
 }: PageRootComponentPropsType) => {
   return (
     <DashboardLayout>
-      <div className="grid grid-cols-1 gap-[22px] p-[22px]">
+      <div className="grid grid-cols-1 gap-5 p-5">
         <TeamTable
           title="Team members"
           description={`Showing ${data?.limit} of ${data?.total} members`}

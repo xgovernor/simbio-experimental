@@ -27,7 +27,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         {menu.map((item, index) => (
           <Link
             key={index}
-            className="hover:text-primary flex h-full min-h-[3.25rem] w-full max-w-[3.25rem] min-w-[3.25rem] flex-col flex-nowrap items-center justify-center gap-0 rounded px-1 hover:bg-white hover:shadow"
+            className="hover:text-primary flex h-full min-h-[3.25rem] w-full max-w-[3.25rem] min-w-[3.25rem] flex-col flex-nowrap items-center justify-center gap-0 rounded-sm px-1 hover:bg-white hover:shadow"
             href={item.url}
             title={item.description}
           >
@@ -38,7 +38,7 @@ const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Logout Button */}
         <button
-          className="hover:text-primary flex h-full min-h-[3.25rem] w-full max-w-[3.25rem] min-w-[3.25rem] flex-col flex-nowrap items-center justify-center gap-0 rounded px-1 hover:bg-white hover:shadow"
+          className="hover:text-primary flex h-full min-h-[3.25rem] w-full max-w-[3.25rem] min-w-[3.25rem] flex-col flex-nowrap items-center justify-center gap-0 rounded-sm px-1 hover:bg-white hover:shadow"
           onClick={() => signOut()}
           title="Logout from account"
         >

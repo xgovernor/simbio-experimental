@@ -31,7 +31,7 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
 }) => {
   return (
     <DashboardLayout>
-      <div className="grid grid-cols-1 gap-[22px] p-[22px]">
+      <div className="grid grid-cols-1 gap-5 p-5">
         {/* Render the admin analytics section if in analytics mode */}
         {config.analytics && (
           <ChartMatrix>

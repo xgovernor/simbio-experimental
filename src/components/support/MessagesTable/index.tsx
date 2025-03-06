@@ -266,7 +266,7 @@ const TableRow: React.FC<TSupportMessageItem> = ({
                 <div className="flex items-center justify-between">
                   <div className="flex items-center justify-start gap-3">
                     <span
-                      className={`rounded-sm bg-blue-600 px-3 py-1 text-xs leading-none text-white uppercase ${getColorWithKey(
+                      className={`rounded-xs bg-blue-600 px-3 py-1 text-xs leading-none text-white uppercase ${getColorWithKey(
                         status,
                         "bg",
                       )}`}

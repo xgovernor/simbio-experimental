@@ -70,10 +70,10 @@ importers:
         specifier: ^8.11.0
         version: 8.21.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       class-variance-authority:
-        specifier: ^0.7.0
+        specifier: ^0.7.1
         version: 0.7.1
       clsx:
-        specifier: ^2.0.0
+        specifier: ^2.1.1
         version: 2.1.1
       cmdk:
         specifier: ^0.2.0
@@ -151,7 +151,7 @@ importers:
         specifier: ^2.2.4
         version: 2.3.2(react@19.0.0)
       tailwind-merge:
-        specifier: ^2.1.0
+        specifier: ^2.6.0
         version: 2.6.0
       tailwindcss-animate:
         specifier: ^1.0.7

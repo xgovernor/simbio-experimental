@@ -25,7 +25,7 @@ interface IUsersTableProps {
 function UsersTable({ title, description, data }: IUsersTableProps) {
   return (
     <section
-      className="gap grid h-full w-full gap-3 rounded bg-white"
+      className="gap grid h-full w-full gap-3 rounded-sm bg-white"
       style={{
         boxShadow: "0 0 2px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.14)",
       }}
@@ -33,7 +33,7 @@ function UsersTable({ title, description, data }: IUsersTableProps) {
       {/* Card Header */}
       <div className="relative flex w-full flex-nowrap justify-between gap-3 ps-5 pe-2 pt-4">
         <div className="">
-          <h1 className="text-[16px] leading-[22px] font-bold text-[#242424]">
+          <h1 className="text-[16px] leading-5 font-bold text-[#242424]">
             {title}
           </h1>
           <p className="text-xs text-[#616161]">{description}</p>

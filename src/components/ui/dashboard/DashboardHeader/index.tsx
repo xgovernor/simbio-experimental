@@ -6,13 +6,13 @@ import Link from "next/link";
 const DashboadHeader: FC = () => {
   return (
     <section className="flex w-full items-center justify-center bg-white">
-      <div className="flex w-full flex-row flex-nowrap items-start justify-between p-[22px]">
+      <div className="flex w-full flex-row flex-nowrap items-start justify-between p-5">
         <div className="w-2/5 max-md:w-full">
           <div className="flex w-full flex-row flex-nowrap items-center justify-start gap-6 max-md:items-start">
             <div className="flex h-24 w-24 rounded-full">
               <Link href="/profile">
                 <Image
-                  className="border-rounded min-h-24 min-w-24"
+                  className="border-rounded-sm min-h-24 min-w-24"
                   src="/image/logo/bss.jpg"
                   alt="Blood Soldier Society (BSS)"
                   width={96}

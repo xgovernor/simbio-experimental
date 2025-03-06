@@ -80,7 +80,7 @@ const SearchForm: React.FC<ISearchFormProps> = ({
           <Form className={mergeClasses("w-full", className)} {...rest}>
             <div className="">
               <Input
-                className="w-full rounded bg-[#143b52] px-2"
+                className="w-full rounded-sm bg-[#143b52] px-2"
                 aria-label="Search"
                 autoComplete="off"
                 id="search"

@@ -12,7 +12,7 @@ const AuthCard = ({
   footer?: ReactNode;
 }) => {
   return (
-    <div className="flex w-full max-w-[440px] flex-col gap-8 rounded-md bg-white pt-11 pb-8 shadow max-md:px-8 md:absolute md:top-1/2 md:-translate-y-1/2 md:px-11">
+    <div className="flex w-full max-w-[440px] flex-col gap-8 rounded-md bg-white pt-11 pb-8 shadow-sm max-md:px-8 md:absolute md:top-1/2 md:-translate-y-1/2 md:px-11">
       <div>
         {/* Logo */}
         <Image className="brandLogo" src={LOGO} alt="Simbio logo" priority />

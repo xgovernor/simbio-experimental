@@ -42,7 +42,7 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
         )}
 
         <Suspense>
-          <div className="px-[22px] pb-[22px]">
+          <div className="px-5 pb-5">
             <MembersTable
               title="Members Table"
               description={`Showing ${data?.limit} of ${data?.total} members`}

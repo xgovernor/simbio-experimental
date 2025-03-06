@@ -1,0 +1,49 @@
+@theme {
+  --font-display: "Satoshi", "sans-serif";
+  --font-display: var(--font-segoe-ui);
+
+  /* Colors */
+  --color-primary: #194b67;
+  --color-blue: #0077cc;
+  --color-green: #00bfb3;
+  --color-yellow: #fec514;
+  --color-dark: #343741;
+
+  /* Ring */
+  --default-ring-width: 3px;
+  --default-ring-color: var(--color-primary-500);
+
+  /* Keyframes */
+  --keyframes-fadeIn: fadeIn 0.5s ease-in-out;
+}
+
+@layer base {
+  /* Default border color */
+  *,
+  ::before,
+  ::after,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  /* Default ring width and color */
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-gray-400);
+  }
+
+  /* Buttons use the default cursor */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  /* Dialog margins removed */
+  dialog {
+    margin: auto;
+  }
+
+}
+
+@custom-variant hover (&:hover);

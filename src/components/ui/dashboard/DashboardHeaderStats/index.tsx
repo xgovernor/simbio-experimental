@@ -35,7 +35,7 @@ const DASHBOARD_STATS = [
 
 const DashboadHeaderStats = () => {
   return (
-    <div className="card grid grid-cols-3 divide-y rounded-sm border bg-[#F4F4F4] sm:divide-x sm:divide-y-0">
+    <div className="card grid grid-cols-3 divide-y rounded-xs border bg-[#F4F4F4] sm:divide-x sm:divide-y-0">
       {DASHBOARD_STATS.map((stats, i) => (
         <div className="flex flex-col justify-between gap-2 p-5" key={i}>
           {stats.map((stat, j) => (

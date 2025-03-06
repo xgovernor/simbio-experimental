@@ -39,7 +39,7 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
         )}
 
         <Suspense>
-          <div className="px-[22px] pb-[22px]">
+          <div className="px-5 pb-5">
             <FundTable
               title="Funds"
               description={`Showing ${data?.limit} of ${data?.total} donations`}

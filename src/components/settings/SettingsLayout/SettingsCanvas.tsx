@@ -9,6 +9,7 @@ interface ISettingsCanvasProps {
 
 const useStyles = makeStyles({
   canvas: {
+    minHeight: "100%",
     // paddingTop: "18px",
     // paddingBottom: "18px"
   },
@@ -23,7 +24,7 @@ const SettingsCanvas: React.FC<ISettingsCanvasProps> = ({
 
   return (
     <>
-      <div className={mergeClasses(classes.canvas, className)}>{children}</div>
+      <div className={mergeClasses(classes.canvas)}>{children}</div>
     </>
   );
 };

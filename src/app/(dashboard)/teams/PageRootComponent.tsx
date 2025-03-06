@@ -30,7 +30,7 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
 }: PageRootComponentPropsType) => {
   return (
     <DashboardLayout>
-      <div className="grid grid-cols-1 gap-[22px]">
+      <div className="grid grid-cols-1 gap-5">
         {config.analytics && (
           <ChartMatrix>
             <ChartMemberActivity />
@@ -40,7 +40,7 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
         )}
 
         <Suspense>
-          <div className="p-[22px]">
+          <div className="p-5">
             <TeamsTable
               title="Teams list"
               description={`Showing ${data?.limit} of ${data?.total} teams`}

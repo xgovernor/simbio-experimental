@@ -10,10 +10,12 @@ import { memo } from "react";
 import { ISettingsMenuTab } from "@/types";
 import SettingsMenu from "./SettingsMenu";
 import SettingsCanvas from "./SettingsCanvas";
+import { cn } from "@/lib/utils";
 
 const useStyle = makeStyles({
   layout: {
-    ...shorthands.margin("22px"),
+    minHeight: "calc(100vh - 220px)",
+    ...shorthands.margin("20px"),
     ...shorthands.padding("0"),
     display: "grid",
     gridTemplateColumns: "200px 1fr",
@@ -48,7 +50,7 @@ const ContactLayout: React.FC<IContactLayoutProps> = ({
       <Card className={classes.layout} {...rest}>
         {/* Settings Menu */}
         <SettingsMenu
-          className={classes.menu}
+          className={cn(classes.menu)}
           tabs={tabs}
           selectedValue={selectedValue}
           onTabSelect={onTabSelect}

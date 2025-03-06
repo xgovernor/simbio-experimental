@@ -99,7 +99,7 @@ const AppUpdates: FC = () => {
         />
       </MenuTrigger>
 
-      <MenuPopover className="border-gray-[100px] max-h-[500px] max-w-[400px] rounded p-0 shadow-lg">
+      <MenuPopover className="border-gray-[100px] max-h-[500px] max-w-[400px] rounded-sm p-0 shadow-lg">
         <div className="sticky top-0 z-[2] flex items-center justify-between bg-[#f5f5f5] px-[14px] pt-2 pb-1">
           <p className="subtitle2">Updates</p>
 
@@ -110,7 +110,7 @@ const AppUpdates: FC = () => {
           </Toolbar>
         </div>
 
-        <div className="relative top-2 block h-full overflow-y-auto rounded bg-[#f5f5f5] px-3 pt-1 pb-3">
+        <div className="relative top-2 block h-full overflow-y-auto rounded-sm bg-[#f5f5f5] px-3 pt-1 pb-3">
           {UPDATES?.map((item) => {
             if (item.type === "member-request") {
               return (

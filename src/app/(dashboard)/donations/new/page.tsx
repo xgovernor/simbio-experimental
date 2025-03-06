@@ -39,9 +39,9 @@ const PageNewMember: React.FC = () => {
       title="New donation"
       icon={<HandshakeIcon className="h-6 w-6" />}
     >
-      <section className="flex h-full w-full flex-row flex-nowrap items-start justify-start p-[22px] max-md:flex-wrap">
+      <section className="flex h-full w-full flex-row flex-nowrap items-start justify-start p-5 max-md:flex-wrap">
         <div className="h-full w-full">
-          <div className="h-full w-full max-w-full md:pe-[22px]">
+          <div className="h-full w-full max-w-full md:pe-5">
             {/* Alerts Area */}
             <div className="h-full w-full">
               {/* <Alert title="New member added" /> */}

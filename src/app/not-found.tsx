@@ -9,17 +9,16 @@ const Error404Page: FC = () => {
     <section className="h-screen w-full">
       {/* Backgorund */}
       <div
-        className="absolute top-0 left-0 -z-1 h-screen w-full overflow-y-auto bg-cover bg-fixed bg-center bg-no-repeat"
+        className="absolute top-0 left-0 z-0 h-screen w-full overflow-y-auto bg-cover bg-fixed bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${BG.src})`,
         }}
       />
 
-      {/* <div className="relative mx-auto block w-full min-w-[440px] max-w-[640px]"> */}
-      <div className="flex-center relative flex h-screen min-h-[252px] w-screen items-center p-[22px]">
+      <div className="flex-center relative flex h-screen min-h-[252px] w-screen items-center p-5">
         {/* Error Card */}
-        {/* <div className="fixed top-[45%] mb-5 w-full min-w-[440px] max-w-[640px] -translate-y-1/2 rounded-md bg-white p-11 shadow shadow-[rgba(0,0,0,0.2)]"> */}
-        <div className="mx-auto w-full max-w-[640px] rounded-md bg-white p-8 shadow md:p-10 lg:p-11">
+        {/* <div className="fixed top-[45%] mb-5 w-full min-w-[440px] max-w-[640px] -translate-y-1/2 rounded-md bg-white p-11 shadow-sm shadow-[rgba(0,0,0,0.2)]"> */}
+        <div className="mx-auto w-full max-w-[640px] rounded-md bg-white p-8 shadow-sm md:p-10 lg:p-11">
           <div>
             <Image
               className="brandLogo"

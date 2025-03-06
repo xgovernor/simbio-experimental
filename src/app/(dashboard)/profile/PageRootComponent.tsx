@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 const PageRootComponent: FC = () => {
   return (
     <DashboardLayout>
-      <div className="grid-rows-auto grid gap-[22px] p-4 max-md:grid-cols-1 max-md:gap-4 md:grid-cols-2 md:p-[22px] lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6">
+      <div className="grid-rows-auto grid gap-5 p-4 max-md:grid-cols-1 max-md:gap-4 md:grid-cols-2 md:p-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6">
         {/* <div className="max-md:col-span-1 max-md:col-end-2 col-span-4 col-start-1 col-end-5"> */}
         {/* <Alert className="shadow"> */}
         {/* <Terminal className="h-4 w-4" /> */}
@@ -29,7 +29,7 @@ const PageRootComponent: FC = () => {
         {/* </div> */}
 
         {/* Profile Stats */}
-        <div className="col-span-4 col-start-1 col-end-5 rounded bg-white shadow max-md:col-span-1 max-md:col-end-2 lg:p-5">
+        <div className="col-span-4 col-start-1 col-end-5 rounded-sm bg-white shadow-sm max-md:col-span-1 max-md:col-end-2 lg:p-5">
           <div className="grid grid-cols-2 max-md:grid-cols-2 lg:grid-cols-5 lg:gap-5">
             <dl className="space-y-2 max-lg:col-start-1 max-lg:col-end-3 max-md:border-b max-md:p-4 max-md:text-center lg:border-e">
               <dt className="text-sm font-medium text-gray-600">Donations</dt>
@@ -198,7 +198,7 @@ const PageRootComponent: FC = () => {
         </div>
 
         {/* Blood Group */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="w-full">
             <h3 className="font-bold">Blood groups</h3>
             <div className="mt-3 flex flex-wrap gap-2">
@@ -231,7 +231,7 @@ const PageRootComponent: FC = () => {
         </div>
 
         {/* Personal Information */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="w-full">
             <h3 className="font-bold">
               Personal Information
@@ -246,7 +246,7 @@ const PageRootComponent: FC = () => {
         </div>
 
         {/* Campaign */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="w-full">
             <h3 className="font-bold">Campaigns</h3>
             <div className="mt-3">
@@ -257,7 +257,7 @@ const PageRootComponent: FC = () => {
         </div>
 
         {/* Accomplishment */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="w-full">
             <h3 className="font-bold">Accomplishment</h3>
             <div className="mt-3">
@@ -268,7 +268,7 @@ const PageRootComponent: FC = () => {
         </div>
 
         {/* Member */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="flex w-full flex-col items-start justify-between">
             <h3 className="font-bold">Member</h3>
             <div className="mt-3">
@@ -285,7 +285,7 @@ const PageRootComponent: FC = () => {
         </div>
 
         {/* Donation Request */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="w-full">
             <h3 className="font-bold">Donation Requests</h3>
             <div className="mt-3">
@@ -295,7 +295,7 @@ const PageRootComponent: FC = () => {
         </div>
 
         {/* Last Donation */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="w-full">
             <h3 className="font-bold">Last Donations</h3>
             <div className="mt-3">
@@ -305,7 +305,7 @@ const PageRootComponent: FC = () => {
         </div>
 
         {/* Volunteer List */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="w-full">
             <h3 className="font-bold">Volunteer List</h3>
             <div className="mt-3">The list of current volunteers</div>
@@ -313,7 +313,7 @@ const PageRootComponent: FC = () => {
         </div>
 
         {/* Social Network */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="w-full">
             <h3 className="font-bold">Social Network</h3>
             <div className="mt-3">List of all the social networks</div>
@@ -321,7 +321,7 @@ const PageRootComponent: FC = () => {
         </div>
 
         {/* Events */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="w-full">
             <h3 className="font-bold">Events</h3>
             <div className="mt-3">

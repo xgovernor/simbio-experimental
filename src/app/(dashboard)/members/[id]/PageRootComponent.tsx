@@ -9,7 +9,7 @@ import Link from "next/link";
 const PageRootComponent = () => {
   return (
     <DashboardLayout>
-      <div className="grid-rows-auto grid gap-[22px] p-[22px] max-md:grid-cols-1 max-md:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6">
+      <div className="grid-rows-auto grid gap-5 p-5 max-md:grid-cols-1 max-md:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6">
         {/* <div className="max-md:col-span-1 max-md:col-end-2 col-span-4 col-start-1 col-end-5"> */}
         {/* <Alert className="shadow"> */}
         {/* <Terminal className="h-4 w-4" /> */}
@@ -32,7 +32,7 @@ const PageRootComponent = () => {
         {/* </div> */}
 
         {/* Profile Stats */}
-        <div className="col-span-3 col-start-1 col-end-4 rounded bg-white p-5 shadow max-md:col-span-1 max-md:col-end-2">
+        <div className="col-span-3 col-start-1 col-end-4 rounded-sm bg-white p-5 shadow-sm max-md:col-span-1 max-md:col-end-2">
           <div className="flex gap-5">
             {/* Profile Information */}
             {/* Personal */}
@@ -110,7 +110,7 @@ const PageRootComponent = () => {
         </div>
 
         {/* Blood Group */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="relative block h-full w-full">
             <h3 className="text-sm font-medium">Blood groups</h3>
             <div className="mt-3 flex h-full items-center justify-center">
@@ -122,7 +122,7 @@ const PageRootComponent = () => {
         </div>
 
         {/* Accomplishment */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="w-full">
             <h3 className="font-bold">Accomplishment</h3>
             <div className="mt-3">
@@ -133,7 +133,7 @@ const PageRootComponent = () => {
         </div>
 
         {/* Login Activity */}
-        <div className="col-span-2 rounded bg-white py-5 shadow max-md:col-span-1 max-md:col-end-2">
+        <div className="col-span-2 rounded-sm bg-white py-5 shadow-sm max-md:col-span-1 max-md:col-end-2">
           <div className="w-full">
             <div className="px-5">
               <h3 className="font-bold">Login Activity</h3>
@@ -147,7 +147,7 @@ const PageRootComponent = () => {
         </div>
 
         {/* Member */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="flex w-full flex-col items-start justify-between">
             <h3 className="font-bold">Referrals</h3>
             <div className="mt-3">
@@ -164,7 +164,7 @@ const PageRootComponent = () => {
         </div>
 
         {/* Donation Request */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="w-full">
             <h3 className="font-bold">Donation Requests</h3>
             <div className="mt-3">
@@ -174,7 +174,7 @@ const PageRootComponent = () => {
         </div>
 
         {/* Last Donation */}
-        <div className="rounded bg-white p-5 shadow">
+        <div className="rounded-sm bg-white p-5 shadow">
           <div className="w-full">
             <h3 className="font-bold">Last Donations</h3>
             <div className="mt-3">

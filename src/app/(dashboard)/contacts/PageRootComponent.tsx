@@ -31,7 +31,7 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
     <DashboardLayout>
       <div className="grid grid-cols-1">
         <Suspense>
-          <div className="p-[22px]">
+          <div className="p-5">
             <ContactsTable
               title="Phone Book"
               description={`Showing ${data?.limit} of ${data?.total} Contacts`}

@@ -17,9 +17,9 @@ export type RequestResponseType = {
 const PageRootComponent = ({ data }: { data: RequestResponseType }) => {
   return (
     <Layout>
-      <div className="mt-[22px] grid grid-cols-1">
+      <div className="mt-5 grid grid-cols-1">
         <Suspense>
-          <div className="px-[22px] pb-[22px]">
+          <div className="px-5 pb-5">
             <RequestTable
               title="Special Blood Request list"
               description={`Showing ${data?.limit} of ${data?.total} donations`}

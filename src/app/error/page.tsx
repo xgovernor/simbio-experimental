@@ -15,7 +15,7 @@ const PageAuthError: FC = async (
     <section className="relative block min-h-screen w-full">
       {/* Background image */}
       <div
-        className="absolute top-0 left-0 -z-1 min-h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat"
+        className="absolute top-0 left-0 z-0 min-h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${BG.src})`,
         }}

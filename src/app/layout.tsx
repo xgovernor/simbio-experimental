@@ -120,6 +120,7 @@ export default async function RootLayout({
             <meta name="theme-color" content="#143B52" />
           </Head>
 
+
           <Script strategy="lazyOnload" id="clarity-script">
             {`
                 (function(c,l,a,r,i,t,y){
