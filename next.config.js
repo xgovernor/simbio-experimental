@@ -12,6 +12,20 @@ const nextConfig = {
   reactStrictMode: false,
   poweredByHeader: false,
   transpilePackages: ["echarts"],
+  compiler: {
+    removeConsole: true,
+  },
+  experimental: {
+    swcPlugins: [
+      [
+        "fluentui-next-appdir-directive",
+        {
+          paths: ["@griffel", "@fluentui"],
+        },
+      ],
+    ],
+  },
+
   images: {
     remotePatterns: [
       {
