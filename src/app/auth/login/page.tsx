@@ -1,6 +1,7 @@
 import SignIn from "@/components/sign-in";
 import AuthLayout from "@/components/AuthLayout";
 import AuthCard from "@/components/AuthCard";
+import Link from "next/link";
 
 const AuthMedium: { name: "google"; label: string; icon: string }[] = [
   {
@@ -16,8 +17,9 @@ const PageAuthLogin = () => {
       <AuthCard
         title="Signin with"
         footer={
-          <p className="caption1 font-medium">
-            Don&apos;t have an account? <a href="/register">Sign up</a>
+            <p className="caption1 font-medium">
+              By continuing, you agree to SIMBIO&apos;s <Link className="font-medium text-blue-600 hover:underline" href="/tos">Terms of Use</Link> and <Link className="font-medium text-blue-600 hover:underline" href="/privacy">Privacy
+              Policy</Link>.
           </p>
         }
       >
