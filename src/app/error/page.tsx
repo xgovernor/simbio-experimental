@@ -1,4 +1,3 @@
-import "server-only";
 import Image from "next/image";
 import BG from "@/assets/images/bg.svg";
 import { FC } from "react";

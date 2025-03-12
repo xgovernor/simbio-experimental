@@ -1,9 +1,10 @@
 "use client";
-import * as Yup from "yup";
+
 import { Input, mergeClasses } from "@fluentui/react-components";
 import { Search16Regular } from "@fluentui/react-icons";
 import { Form, Formik, FormikHelpers } from "formik";
 import { memo, useRef } from "react";
+import { z } from "zod";
 
 interface ISearchFormProps {
   className?: string;
@@ -41,9 +42,6 @@ const SearchForm: React.FC<ISearchFormProps> = ({
     search: "",
   };
 
-  const validationSchema = Yup.object().shape({
-    seach: Yup.string().required(),
-  });
 
   const onSubmitHandler = (
     values: ISearchForm,
@@ -64,18 +62,14 @@ const SearchForm: React.FC<ISearchFormProps> = ({
     >
       <Formik
         initialValues={initialState}
-        validationSchema={validationSchema}
+        // validationSchema={ validationSchema}
         onSubmit={onSubmitHandler}
       >
         {({
           values,
-          errors,
-          touched,
           handleChange,
           handleBlur,
-          handleSubmit,
           isSubmitting,
-          /* and other goodies */
         }) => (
           <Form className={mergeClasses("w-full", className)} {...rest}>
             <div className="">
