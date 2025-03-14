@@ -1,9 +1,27 @@
-import { OrganizationsItemType } from "@/components/support/SupportOrganizations";
-import PageRootComponent, {
-  OrganizationsResponseType,
-  TPageConfig,
-} from "./PageRootComponent";
-import { memo } from "react";
+"use client";
+
+import MessagesTable from "@/components/support/MessagesTable";
+import SupportOrgList, { OrganizationsItemType } from "@/components/support/SupportOrgList";
+import CanvasHeader from "@/components/ui/Canvas/CanvasHeader";
+import { selectSupport, updateOrganizations } from "@/store/actions/support.action";
+import {MessageCircleCodeIcon } from "lucide-react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+
+export type TPageConfig = {
+  analytics?: boolean;
+  settings?: boolean;
+  organizations: true;
+  messages?: boolean;
+};
+
+export type OrganizationsResponseType = {
+  data: OrganizationsItemType[];
+  offset: number;
+  total: number;
+  limit: number;
+};
 
 const ORGANIZATIONS: OrganizationsItemType[] = [
   {
@@ -67,6 +85,7 @@ const ORGANIZATIONS: OrganizationsItemType[] = [
     location: "Elm Street, Dallas, USA",
   },
 ];
+
 const ORGANIZATIONS_DATA: OrganizationsResponseType = {
   data: ORGANIZATIONS,
   offset: 0,
@@ -86,18 +105,47 @@ const ORGANIZATIONS_DATA: OrganizationsResponseType = {
 //     return data;
 // }
 
-const PageSupports = async () => {
+const PageSupports = () => {
+  const dispatch = useDispatch();
+  const supportState = useSelector(selectSupport);
+
+  useEffect(() => {
+    dispatch(updateOrganizations(ORGANIZATIONS_DATA));
+  }, []);
+
   // const data = await getData();
-  const config: TPageConfig = {
-    analytics: true,
-    settings: true,
-    organizations: true,
-    messages: true,
-  };
+  // const config: TPageConfig = {
+  //   analytics: true,
+  //   settings: true,
+  //   organizations: true,
+  //   messages: true,
+  // };
 
   return (
-    <PageRootComponent organizations={ORGANIZATIONS_DATA} config={config} />
+    <>
+      <CanvasHeader
+        title="Support messages"
+        icon={<MessageCircleCodeIcon className="h-6 w-6" />}
+      />
+
+      <div
+        className="relative grid h-[calc(100vh-144px)] gap-3 overflow-hidden p-5"
+        style={{
+          // maxHeight: "calc(100vh - 136px)",
+          gridTemplateColumns: "22rem 1fr",
+          // height: "calc(100vh - 184px)",
+        }}
+      >
+        <SupportOrgList organizations={ORGANIZATIONS_DATA.data} />
+
+        <MessagesTable
+          title={supportState.data.organization.name}
+          address={supportState.data.organization.address}
+          logo={supportState.data.organization.avatar}
+        />
+      </div>
+    </>
   );
 };
 
-export default memo(PageSupports);
+export default PageSupports;

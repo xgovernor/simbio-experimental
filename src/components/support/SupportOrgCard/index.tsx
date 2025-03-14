@@ -2,19 +2,19 @@ import { Card, CardHeader, mergeClasses } from "@fluentui/react-components";
 import Image from "next/image";
 import { memo } from "react";
 
-type TSupportOrganizationProps = {
+type TSupportOrgCardProps = {
   key: string;
   avatar: string;
   title: string;
   location: string;
 };
 
-const SupportOrganizationCard: React.FC<TSupportOrganizationProps> = ({
+const SupportOrgCard: React.FC<TSupportOrgCardProps> = ({
   key,
   avatar,
   title,
   location,
-}: TSupportOrganizationProps) => {
+}: TSupportOrgCardProps) => {
   return (
     <Card
       className="max-h-fit w-full max-w-full rounded-md border border-transparent p-4 hover:border-gray-500"
@@ -61,4 +61,4 @@ const SupportOrganizationCard: React.FC<TSupportOrganizationProps> = ({
   );
 };
 
-export default memo(SupportOrganizationCard);
+export default memo(SupportOrgCard);

@@ -1,6 +1,7 @@
 "use client";
+
 import { memo } from "react";
-import SupportOrganizationCard from "../SupportOrganizationCard";
+import SupportOrgCard from "../SupportOrgCard";
 
 export type OrganizationsItemType = {
   id: string;
@@ -9,17 +10,17 @@ export type OrganizationsItemType = {
   location: string;
 };
 
-type TSupportOrganizationsProps = {
+type TSupportOrgListProps = {
   organizations: OrganizationsItemType[];
 };
 
-const SupportOrganizations: React.FC<TSupportOrganizationsProps> = ({
+const SupportOrgList: React.FC<TSupportOrgListProps> = ({
   organizations,
-}: TSupportOrganizationsProps) => {
+}: TSupportOrgListProps) => {
   return (
-    <section className="flex flex-col gap-3">
+    <section className="h-full space-y-3 overflow-y-auto">
       {organizations.map((organization, i) => (
-        <SupportOrganizationCard
+        <SupportOrgCard
           key={organization.id}
           avatar={organization.avatar}
           title={organization.title}
@@ -30,4 +31,4 @@ const SupportOrganizations: React.FC<TSupportOrganizationsProps> = ({
   );
 };
 
-export default memo(SupportOrganizations);
+export default memo(SupportOrgList);

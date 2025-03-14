@@ -3,9 +3,10 @@
 import FormBuilder from "@/components/ui/FormBuilder";
 import { memo } from "react";
 import { formSchema } from "./fund-form.schema";
-import MoneyHandIcon from "@/assets/icons/MoneyHandIcon";
+// import MoneyHandIcon from "@/assets/icons/MoneyHandIcon";
 import CanvasHeader from "@/components/ui/Canvas/CanvasHeader";
 import CanvasBreadcrumb from "@/components/ui/Canvas/CanvasBreadcrumb";
+import { HelpingHandIcon } from "lucide-react";
 
 const BREADCRUMB_MENU = [
   {
@@ -35,7 +36,7 @@ const PageNewMember = () => {
     <>
       <CanvasHeader
         title="New fund"
-        icon={<MoneyHandIcon className="h-6 w-6" />}
+        icon={<HelpingHandIcon className="h-6 w-6" />}
       />
       <CanvasBreadcrumb links={BREADCRUMB_MENU} />
       <section className="flex h-full w-full flex-row flex-nowrap items-start justify-start p-5 max-md:flex-wrap">
