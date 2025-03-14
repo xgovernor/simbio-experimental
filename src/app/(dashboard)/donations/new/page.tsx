@@ -1,6 +1,6 @@
 "use client";
 import FormBuilder from "@/components/ui/FormBuilder";
-import Layout from "@/components/ui/Layout";
+import Layout from "@/components/ui/AppLayout";
 // import Alert from "@/components/ui/Alert";
 import { memo } from "react";
 import { formSchema } from "./donation-form.schema";

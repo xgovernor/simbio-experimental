@@ -1,4 +1,4 @@
-import Layout from "@/components/ui/Layout";
+import Layout from "@/components/ui/AppLayout";
 import { memo } from "react";
 
 const PageRootComponent = () => {

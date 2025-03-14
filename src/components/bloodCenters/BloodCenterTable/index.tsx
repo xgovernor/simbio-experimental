@@ -1,3 +1,5 @@
+"use client";
+
 import { FC, memo } from "react";
 import BloodCenterTableMenu from "./BloodCenterTableMenu";
 import { DataGrid } from "@/components/ui/DataGrid";

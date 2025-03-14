@@ -1,7 +1,7 @@
-import PageRootComponent from "./PageRootComponent";
-import { memo } from "react";
 import data from "@/assets/data/requests.json";
-import { TRequestItem } from "@/components/blood-request/BloodRequestTable";
+import BloodRequestTable, {
+  TRequestItem,
+} from "@/components/blood-request/BloodRequestTable";
 
 export type RequestResponseType = {
   data: TRequestItem[];
@@ -25,7 +25,17 @@ export type RequestResponseType = {
 const PageBloodRequest = async () => {
   // const data = await getData();
 
-  return <PageRootComponent data={data} />;
+  return (
+    <div className="mt-5 grid grid-cols-1">
+      <div className="px-5 pb-5">
+        <BloodRequestTable
+          title="Special Blood Request list"
+          description={`Showing ${data?.limit} of ${data?.total} donations`}
+          data={data?.data}
+        />
+      </div>
+    </div>
+  );
 };
 
-export default memo(PageBloodRequest);
+export default PageBloodRequest;

@@ -1,4 +1,5 @@
 "use client";
+
 import FormSection from "@/components/ui/form/FormSection";
 import { memo } from "react";
 import { Input } from "../input";
@@ -108,13 +109,12 @@ const FormBuilder = ({ formSchema, onSubmit }: TFormBuilderProps) => {
   });
 
   const submitHandler: SubmitHandler<TFormData> = (values) => {
-    // onSubmit();
-    console.log(values);
+    onSubmit(values);
   };
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form onSubmit={form.handleSubmit(submitHandler)}>
         {formSchema.sections.map((section: any, index: number) => (
           <FormSection title={section?.title} key={section?.id || index}>
             <div className={section?.className || formSchema.sectionClassName}>

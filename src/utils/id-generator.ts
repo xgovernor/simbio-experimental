@@ -1,7 +1,6 @@
 import { v4 as uuidv4 } from "uuid"; // Import a reliable ID generation library
 import { nanoid } from "nanoid";
 
-
 /**
  * Generate a unique identifier, either a UUID or a nanoid.
  *
@@ -13,7 +12,12 @@ import { nanoid } from "nanoid";
  *
  * @returns A unique identifier as a string.
  */
-export function generateId({ length = 12, prefix = "", suffix = "", method = "uuid" }: {
+export function generateId({
+  length = 12,
+  prefix = "",
+  suffix = "",
+  method = "uuid",
+}: {
   length?: number;
   prefix?: string;
   suffix?: string;
@@ -31,5 +35,4 @@ export function generateId({ length = 12, prefix = "", suffix = "", method = "uu
   }
 
   return `${prefix}${id}${suffix}`;
-
 }

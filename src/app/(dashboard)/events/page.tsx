@@ -1,6 +1,3 @@
-import PageRootComponent from "./PageRootComponent";
-import { memo } from "react";
-
 /**
  * Retrieves data from the specified URL.
  *
@@ -17,10 +14,11 @@ const PageEvents = async () => {
   // const data = await getData();
 
   return (
-    <>
-      <PageRootComponent />
-    </>
+    <div className="w-full p-5">
+      <h1 className="text-2xl font-bold">Events</h1>
+      <p className="mt-1">List of upcoming events</p>
+    </div>
   );
 };
 
-export default memo(PageEvents);
+export default PageEvents;

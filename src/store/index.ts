@@ -10,6 +10,7 @@ import eventReducer from "./actions/event.action";
 import memberReducer from "./actions/member.action";
 import supportReducer from "./actions/support.action";
 import teamReducer from "./actions/team.action";
+import layoutReducer from "./actions/layout.action";
 
 const reducers = combineReducers({
   bloodRequest: bloodRequestReducer,
@@ -23,6 +24,7 @@ const reducers = combineReducers({
   team: teamReducer,
   user: userReducer,
   settings: settingsReducer,
+  layout: layoutReducer,
 });
 
 export const store = configureStore({

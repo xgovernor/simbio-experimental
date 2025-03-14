@@ -21,7 +21,7 @@ const SettingsTemplate: FC<ISettingsTemplateProps> = ({
   onSubmit,
 }: ISettingsTemplateProps) => {
   return (
-    <div className={mergeClasses(className, "w-full h-full flex flex-col")}>
+    <div className={mergeClasses(className, "flex h-full w-full flex-col")}>
       {/* Header */}
       <Toolbar
         className="border-b px-5 py-4"

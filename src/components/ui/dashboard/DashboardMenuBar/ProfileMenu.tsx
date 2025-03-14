@@ -8,24 +8,24 @@ interface ProfileMenuProps {
 }
 
 const ProfileMenu: FC<ProfileMenuProps> = ({ menu }) => {
-  const pathName = usePathname();
+  const pathname = usePathname();
   const router = useRouter();
 
   return (
     <div className="flex w-max flex-row flex-nowrap items-center justify-start overflow-x-auto">
       {menu.map((e, i) => {
-        const isSamePath = e.url === pathName;
-
         return (
           <Button
             key={i}
             className={
-              isSamePath ? "event-none text-primary pointer-events-none" : ""
+              e.url === pathname
+                ? "event-none text-primary pointer-events-none !bg-white shadow"
+                : "bg-transparent"
             }
             // disabled={isSamePath}
             icon={e.icon}
             onClick={() => router.push(e.url)}
-            appearance="transparent"
+            appearance="subtle"
           >
             {e.title}
           </Button>

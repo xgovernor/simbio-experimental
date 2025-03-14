@@ -1,3 +1,5 @@
+"use client";
+
 import { FC, memo } from "react";
 import MembersTableMenu from "./MembersTableMenu";
 import { columns, filters } from "./data";

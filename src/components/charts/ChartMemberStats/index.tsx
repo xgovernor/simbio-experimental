@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * This component shows member's stats in Pie chart.
  * Labels: Active, Offline, Inactive, Cancelled.

@@ -1,7 +1,6 @@
 // import localFont from "next/font/local";
 import "@/styles/globals.css";
-import type { Metadata } from "next";
-import Script from "next/script";
+import type { Metadata, Viewport } from "next";
 import { auth } from "@/lib/auth";
 import { Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
@@ -67,6 +66,15 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#143B52",
+  colorScheme: "light",
+};
+
 // const segoe_ui = localFont({
 //   src: [
 //     {
@@ -121,16 +129,6 @@ export default async function RootLayout({
             <meta name="msapplication-tap-highlight" content="no" />
             <meta name="theme-color" content="#143B52" />
           </Head>
-
-          <Script strategy="lazyOnload" id="clarity-script">
-            {`
-                (function(c,l,a,r,i,t,y){
-                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-                })(window, document, "clarity", "script", "ku1hcvfs7d");
-              `}
-          </Script>
 
           <ReactScan />
 

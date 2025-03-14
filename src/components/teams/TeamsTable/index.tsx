@@ -1,3 +1,5 @@
+"use client";
+
 import { FC, memo } from "react";
 import TeamsTableMenu from "./TeamsTableMenu";
 import { DataGrid } from "@/components/ui/DataGrid";

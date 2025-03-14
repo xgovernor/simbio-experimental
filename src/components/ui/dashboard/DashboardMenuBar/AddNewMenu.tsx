@@ -1,3 +1,5 @@
+"use client";
+
 import { IMenuItem } from "@/types";
 import {
   Button,

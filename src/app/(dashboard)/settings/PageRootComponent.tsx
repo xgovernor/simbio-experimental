@@ -17,9 +17,9 @@ import {
 } from "@fluentui/react-icons";
 import { ISettingsMenuTab } from "@/types";
 import { FC, memo, useState } from "react";
-import { Settings24Regular } from "@fluentui/react-icons";
+// import { Settings24Regular } from "@fluentui/react-icons";
 import SettingsLayout from "@/components/settings/SettingsLayout";
-import Layout from "@/components/ui/Layout";
+// import Layout from "@/components/ui/Layout";
 import SettingsAccount from "@/components/settings/SettingsAccount";
 import SettingsLanguageAndDate from "@/components/settings/SettingsLanguageAndDate";
 import SettingsAppearance from "@/components/settings/SettingsAppearance";
@@ -128,19 +128,19 @@ const PageRootComponent: FC<PageRootComponentPropsType> = ({
   };
 
   return (
-    <Layout
-      breadcrumb={BREADCRUMB_MENU}
-      title="Settings"
-      icon={<Settings24Regular />}
+    // <Layout
+    //   breadcrumb={BREADCRUMB_MENU}
+    //   title="Settings"
+    //   icon={<Settings24Regular />}
+    // >
+    <SettingsLayout
+      tabs={TABS}
+      selectedValue={selectedValue}
+      onTabSelect={onTabSelect}
     >
-      <SettingsLayout
-        tabs={TABS}
-        selectedValue={selectedValue}
-        onTabSelect={onTabSelect}
-      >
-        {TABS.filter((tab) => tab.id === selectedValue)[0].component}
-      </SettingsLayout>
-    </Layout>
+      {TABS.filter((tab) => tab.id === selectedValue)[0].component}
+    </SettingsLayout>
+    // </Layout>
   );
 };
 

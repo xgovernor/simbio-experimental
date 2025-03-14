@@ -17,9 +17,22 @@ const PageAuthLogin = () => {
       <AuthCard
         title="Signin with"
         footer={
-            <p className="caption1 font-medium">
-              By continuing, you agree to SIMBIO&apos;s <Link className="font-medium text-blue-600 hover:underline" href="/tos">Terms of Use</Link> and <Link className="font-medium text-blue-600 hover:underline" href="/privacy">Privacy
-              Policy</Link>.
+          <p className="caption1 font-medium">
+            By continuing, you agree to SIMBIO&apos;s{" "}
+            <Link
+              className="font-medium text-blue-600 hover:underline"
+              href="/tos"
+            >
+              Terms of Use
+            </Link>{" "}
+            and{" "}
+            <Link
+              className="font-medium text-blue-600 hover:underline"
+              href="/privacy"
+            >
+              Privacy Policy
+            </Link>
+            .
           </p>
         }
       >

@@ -32,13 +32,13 @@ export function Providers({ children }: { children: ReactNode }) {
     <RendererProvider renderer={renderer}>
       <SSRProvider>
         <IdPrefixProvider value="d9-">
-        <FluentProvider
-          theme={data.theme === "light" ? lightTheme : teamsDarkTheme}
-          className="bg-[transparent]"
-        >
-          {children}
+          <FluentProvider
+            theme={data.theme === "light" ? lightTheme : teamsDarkTheme}
+            className="bg-[transparent]"
+          >
+            {children}
           </FluentProvider>
-          </IdPrefixProvider>
+        </IdPrefixProvider>
       </SSRProvider>
     </RendererProvider>
   );

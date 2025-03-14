@@ -1,3 +1,5 @@
+"use client";
+
 import { FC, memo } from "react";
 import DonationTableMenu from "./Menu";
 import { DataGrid } from "@/components/ui/DataGrid";

@@ -1,8 +1,9 @@
-import PageRootComponent from "./PageRootComponent";
-import { memo } from "react";
-
 const PageSingleBloodRequest = async () => {
-  return <PageRootComponent />;
+  return (
+    <>
+      <h1>Blood Request Details</h1>
+    </>
+  );
 };
 
-export default memo(PageSingleBloodRequest);
+export default PageSingleBloodRequest;

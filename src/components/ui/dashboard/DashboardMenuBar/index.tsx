@@ -1,3 +1,5 @@
+"use client";
+
 import { Avatar } from "@fluentui/react-components";
 import { FC, RefObject, memo, useEffect, useRef, useState } from "react";
 import ProfileMenu from "./ProfileMenu";

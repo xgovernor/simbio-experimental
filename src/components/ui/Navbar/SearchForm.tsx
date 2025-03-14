@@ -41,7 +41,6 @@ const SearchForm: React.FC<ISearchFormProps> = ({
     search: "",
   };
 
-
   const onSubmitHandler = (
     values: ISearchForm,
     { setSubmitting }: FormikHelpers<ISearchForm>,
@@ -64,12 +63,7 @@ const SearchForm: React.FC<ISearchFormProps> = ({
         // validationSchema={ validationSchema}
         onSubmit={onSubmitHandler}
       >
-        {({
-          values,
-          handleChange,
-          handleBlur,
-          isSubmitting,
-        }) => (
+        {({ values, handleChange, handleBlur, isSubmitting }) => (
           <Form className={mergeClasses("w-full", className)} {...rest}>
             <div className="">
               <Input

@@ -18,7 +18,7 @@ export default auth((req) => {
   const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
 
-  console.log("====================================")
+  console.log("====================================");
 
   if (isApiAuthRoute) {
     return NextResponse.next();
@@ -49,7 +49,6 @@ export default auth((req) => {
 
   return NextResponse.next();
 });
-
 
 // Read more: https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
 export const config = {
