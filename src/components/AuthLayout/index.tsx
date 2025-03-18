@@ -21,7 +21,7 @@ const AuthLayout = ({
       {/* Main content */}
       <div
         className={clsx(
-          "relative min-h-[inherit] h-[inherit] max-h-[inherit] min-w-[inherit] w-[inherit] max-w-[inherit] flex justify-center items-center max-md:px-5 py-10 md:py-14 lg:py-20 !overflow-y-auto",
+          "relative min-w-[inherit] w-[inherit] max-w-[inherit] flex justify-center items-center  !overflow-y-auto",
           className,
         )}
       >
