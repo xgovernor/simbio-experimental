@@ -10,7 +10,7 @@ const AuthLayout = ({
   className?: string;
 }) => {
   return (
-    <section className="relative block h-screen w-full">
+    <section className="relative min-h-screen h-full w-full flex justify-center items-center">
       {/* Background image */}
       <div
         className="absolute top-0 left-0 z-0 h-screen w-full bg-cover bg-fixed bg-center bg-no-repeat"
@@ -21,7 +21,7 @@ const AuthLayout = ({
       {/* Main content */}
       <div
         className={clsx(
-          "relative mx-auto block h-full w-full max-w-[440px] overflow-y-auto max-md:px-5 max-md:py-10 md:py-14 lg:py-20",
+          "relative min-h-[inherit] h-[inherit] max-h-[inherit] min-w-[inherit] w-[inherit] max-w-[inherit] flex justify-center items-center max-md:px-5 py-10 md:py-14 lg:py-20 !overflow-y-auto",
           className,
         )}
       >

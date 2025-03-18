@@ -2,6 +2,7 @@ import SignIn from "@/components/sign-in";
 import AuthLayout from "@/components/AuthLayout";
 import AuthCard from "@/components/AuthCard";
 import Link from "next/link";
+import GoogleIcon from "@/assets/icons/GoogleIcon";
 
 const AuthMedium: { name: "google"; label: string; icon: string }[] = [
   {
@@ -39,9 +40,10 @@ const PageAuthLogin = () => {
         {AuthMedium.map((medium) => (
           <SignIn
             key={medium.name}
-            className="w-full bg-black"
+            className="w-full"
             medium={medium.name}
             title={medium.label}
+            icon={<GoogleIcon className="fill-white w-4 h-4"/>}
           />
         ))}
       </AuthCard>
