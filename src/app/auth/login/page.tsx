@@ -1,5 +1,4 @@
 import SignIn from "@/components/sign-in";
-import AuthLayout from "@/components/AuthLayout";
 import AuthCard from "@/components/AuthCard";
 import Link from "next/link";
 import GoogleIcon from "@/assets/icons/GoogleIcon";
@@ -14,7 +13,6 @@ const AuthMedium: { name: "google"; label: string; icon: string }[] = [
 
 const PageAuthLogin = () => {
   return (
-    <AuthLayout>
       <AuthCard
         title="Signin with"
         footer={
@@ -47,7 +45,6 @@ const PageAuthLogin = () => {
           />
         ))}
       </AuthCard>
-    </AuthLayout>
   );
 };
 

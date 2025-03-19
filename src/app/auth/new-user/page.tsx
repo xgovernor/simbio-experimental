@@ -3,12 +3,9 @@ import Image from "next/image";
 import { FC } from "react";
 import LOGO from "@/assets/images/simbio-color.svg";
 import MembershipForm from "./MembershipForm";
-import AuthLayout from "@/components/AuthLayout";
 
 const PageAuthVerification: FC = () => {
   return (
-    <AuthLayout className="max-w-[850px]">
-      {/* Login Card Start */}
       <div className="flex w-full max-w-[850px] flex-col gap-8 rounded-md bg-white px-11 pt-11 pb-8 shadow">
         <div>
           {/* Logo */}
@@ -43,7 +40,6 @@ const PageAuthVerification: FC = () => {
           </div>
         </div>
       </div>
-    </AuthLayout>
   );
 };
 

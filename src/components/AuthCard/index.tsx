@@ -1,18 +1,21 @@
 import Image from "next/image";
 import { ReactNode } from "react";
 import LOGO from "@/assets/images/simbio-color.svg";
+import clsx from "clsx";
 
 const AuthCard = ({
+  className,
   children,
   title,
   footer,
 }: {
+    className?: string;
   children: ReactNode;
   title: string;
   footer?: ReactNode;
 }) => {
   return (
-    <div className="w-full max-w-[440px] h-fit flex-col space-y-8 pt-11 pb-8 px-8 md:px-10 bg-white rounded-md shadow-sm">
+    <div className={clsx("w-full max-w-[440px] h-fit flex-col space-y-8 pt-11 pb-8 px-8 md:px-11 bg-white rounded-md shadow-sm", className)}>
       <div>
         {/* Logo */}
         <Image className="brandLogo" src={LOGO} alt="Simbio logo" priority />
