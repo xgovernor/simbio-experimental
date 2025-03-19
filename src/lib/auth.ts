@@ -10,7 +10,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     signIn: "/auth/login",
     // signOut: "/auth/login",
     error: "/error",
-    newUser: "/auth/new-user",
+    newUser: "/auth/setup-user",
   },
   providers: [
     // Apple,
@@ -51,7 +51,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
       // When new user
       if (isNewUser) {
-        return `${baseUrl}/auth/new-user`;
+        return `${baseUrl}/auth/setup-user`;
       }
 
       return url

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ReactNode } from "react";
 import LOGO from "@/assets/images/simbio-color.svg";
 import clsx from "clsx";
+import Link from "next/link";
 
 const AuthCard = ({
   className,
@@ -17,8 +18,10 @@ const AuthCard = ({
   return (
     <div className={clsx("w-full max-w-[440px] h-fit flex-col space-y-8 pt-11 pb-8 px-8 md:px-11 bg-white rounded-md shadow-sm", className)}>
       <div>
+        <Link href="/">
         {/* Logo */}
-        <Image className="brandLogo" src={LOGO} alt="Simbio logo" priority />
+          <Image className="brandLogo" src={LOGO} alt="Simbio logo" priority />
+          </Link>
       </div>
 
       <div className="">
