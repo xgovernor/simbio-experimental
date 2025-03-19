@@ -105,14 +105,14 @@ export default async function RootLayout({
   children,
 }: {
   children: ReactNode;
-}) {
+  }) {
   const session = (await auth()) as Session;
 
   return (
     <SessionProvider session={session}>
       <StoreProvider>
         {/* <html lang="en" className={`${segoe_ui.className} overflow-hidden`}> */}
-        <html lang="en" className="overflow-hidden">
+        <html lang="en">
           <Head>
             <meta
               name="viewport"
