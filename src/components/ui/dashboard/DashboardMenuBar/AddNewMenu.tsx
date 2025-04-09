@@ -9,7 +9,7 @@ import {
   MenuPopover,
   MenuTrigger,
 } from "@fluentui/react-components";
-import { ChevronDown20Regular } from "@fluentui/react-icons";
+import { Add20Regular, ChevronDown20Regular } from "@fluentui/react-icons";
 import { useRouter } from "next/navigation";
 import { FC, memo } from "react";
 
@@ -22,15 +22,8 @@ const AddNewMenu: FC<IAddNewMenuProps> = ({ menu }: IAddNewMenuProps) => {
 
   return (
     <Menu positioning="below-end">
-      <MenuTrigger disableButtonEnhancement>
-        <Button
-          className="max-md:hidden"
-          style={{ width: "max-content" }}
-          icon={<ChevronDown20Regular />}
-          iconPosition="after"
-        >
-          Add new
-        </Button>
+      <MenuTrigger>
+        <Button  appearance="transparent" iconOnly icon={<Add20Regular className="text-white hover:text-white/70" />} iconPosition="after" />
       </MenuTrigger>
 
       <MenuPopover>

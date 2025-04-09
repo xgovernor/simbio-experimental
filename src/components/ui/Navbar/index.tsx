@@ -1,14 +1,70 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import LOGO from "@/assets/images/simbio-full-white.svg";
-import { memo } from "react";
 import RouteNav from "./RouteNav";
 import UserMenu from "./UserMenu";
 import SearchForm from "./SearchForm";
 import AppUpdates from "./AppUpdates";
 import Toolbar from "../components/Toolbar";
+import MoneyHandIcon from "@/assets/icons/MoneyHandIcon";
+import BookContactsIcon from "@/assets/icons/BookContactsIcon";
+import BuildingBankIcon from "@/assets/icons/BuildingBankIcon";
+import BuildingTownHouseIcon from "@/assets/icons/BuildingTownHouseIcon";
+import PeopleTeamAddIcon from "@/assets/icons/PeopleTeamAddIcon";
+import PeopleAddIcon from "@/assets/icons/PeopleAddIcon";
+import HandshakeIcon from "@/assets/icons/HandshakeIcon";
+import StethoscopeIcon from "@/assets/icons/ StethoscopeIcon";
+import CommunicationIcon from "@/assets/icons/CommunicationIcon";
+import { IMenuItem } from "@/types";
+import AddNewMenu from "../dashboard/DashboardMenuBar/AddNewMenu";
+
+const profileActionMenu: IMenuItem[] = [
+  {
+    title: "New member",
+    url: "/members/new",
+    icon: <PeopleAddIcon className="h-6 w-6" />,
+  },
+  {
+    title: "New club",
+    url: "/clubs/new",
+    icon: <BuildingBankIcon className="h-6 w-6" />,
+  },
+  {
+    title: "New team member",
+    url: "/teams/new",
+    icon: <PeopleTeamAddIcon className="h-6 w-6" />,
+  },
+  {
+    title: "New fund",
+    url: "funds/new ",
+    icon: <MoneyHandIcon />,
+  },
+  {
+    title: "New contact",
+    url: "/contacts/new",
+    icon: <BookContactsIcon />,
+  },
+  {
+    title: "New collection center",
+    url: "/collection-centers/new",
+    icon: <BuildingTownHouseIcon />,
+  },
+  {
+    title: "New donation",
+    url: "/donations/new",
+    icon: <HandshakeIcon />,
+  },
+  {
+    title: "New Event",
+    url: "/events/new",
+    icon: <StethoscopeIcon />,
+  },
+  {
+    title: "New blood request",
+    url: "/blood-requests/new",
+    icon: <CommunicationIcon />,
+  },
+];
 
 const NavbarBrand = () => {
   return (
@@ -33,6 +89,7 @@ const Navbar = ({ className }: { className?: string }) => {
             {/* Routing Actions */}
             <RouteNav />
             <SearchForm />
+            <AddNewMenu menu={profileActionMenu} />
           </div>
 
           <div className="flex w-1/4 items-center justify-end gap-4">
@@ -50,4 +107,4 @@ const Navbar = ({ className }: { className?: string }) => {
   );
 };
 
-export default memo(Navbar);
+export default Navbar;
