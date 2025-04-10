@@ -1,11 +1,10 @@
-import PageRootComponent from "./PageRootComponent";
 import { memo } from "react";
 
 const PageUpdates = async () => {
   return (
-    <>
-      <PageRootComponent />
-    </>
+    <div>
+      <h1>Updates</h1>
+    </div>
   );
 };
 

@@ -30,13 +30,9 @@ const DashboadHeader: FC = () => {
               <h1 className="title3 mt-0 mb-2 max-md:text-xl">
                 Blood Soldier Society (BSS)
               </h1>
-              <p className="body1 m-0 max-md:text-sm md:w-[448px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit.
-              </p>
+              <div className="body1 m-0 max-md:text-sm md:w-[448px]">
+                <p>Shahjalal Uposhahar, Sylhet.</p>
+              </div>
             </div>
           </div>
         </div>
