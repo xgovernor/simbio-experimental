@@ -9,9 +9,9 @@ export type ButtonProps = {
 };
 
 const Button: React.FC<ButtonProps> = ({
-  className,
+  // className,
   children,
-  size = "medium",
+  // size = "medium",
   before,
   after,
   style,

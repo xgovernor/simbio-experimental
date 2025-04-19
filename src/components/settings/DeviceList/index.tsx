@@ -61,7 +61,7 @@ const COLUMNS = [
   },
 ];
 
-const DeviceList: FC<TDeviceListProps> = ({ className }: TDeviceListProps) => {
+const DeviceList: FC<TDeviceListProps> = ({ }: TDeviceListProps) => {
   return (
     <Table className="mt-5 w-full">
       <TableHeader>

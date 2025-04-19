@@ -79,7 +79,7 @@ const SIDEBAR_MENU_ITEMS: ISidebarMenuItem[] = [
 const AppLayout = ({
   className,
   children,
-  aside,
+  // aside,
   layout = true,
   // title,
   // icon,

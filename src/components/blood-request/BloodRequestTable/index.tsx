@@ -31,11 +31,11 @@ interface BloodRequestTablePropsType {
 }
 
 const BloodRequestTable: FC<BloodRequestTablePropsType> = ({
-  className,
+  // className,
   title,
   description,
   data,
-  ...rest
+  // ...rest
 }: BloodRequestTablePropsType) => {
   const router = useRouter();
 

@@ -16,9 +16,9 @@ const useStyles = makeStyles({
 });
 
 const SettingsCanvas: React.FC<ISettingsCanvasProps> = ({
-  className,
+  // className,
   children,
-  ...rest
+  // ...rest
 }: ISettingsCanvasProps) => {
   const classes = useStyles();
 

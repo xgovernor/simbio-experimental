@@ -22,7 +22,7 @@ const SettingsLanguageAndDate: FC<TSettingsLanguageAndDateProps> = ({
   language,
   timeZones,
   timeFormats,
-  dateFormats,
+  // dateFormats,
 }: TSettingsLanguageAndDateProps) => {
   const onDiscardHandler = () => {
     alert("Discard");

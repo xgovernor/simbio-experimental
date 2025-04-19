@@ -29,11 +29,11 @@ export type TPageConfig = {
 
 const PageTeam = async () => {
   // const data = await getData();
-  const config: TPageConfig = {
-    analytics: false,
-    settings: false,
-    table: true,
-  };
+  // const config: TPageConfig = {
+  //   analytics: false,
+  //   settings: false,
+  //   table: true,
+  // };
 
   return (
     <div className="grid grid-cols-1 gap-5 p-5">

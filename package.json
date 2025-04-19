@@ -3,24 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "commit": "commit",
     "dev": "next dev --turbopack",
-    "build": "next build && rm -rf ./.next/cache",
+    "build": "next build --turbopack",
     "start": "next start",
-    "lint": "next lint --no-cache",
-    "lint:fix": "eslint --fix .",
-    "format:check": "prettier --check .",
-    "format:fix": "prettier --write .",
-    "commitlint": "commitlint --edit",
-    "test": "vitest --config ./vitest.config.ts",
-    "version": "lerna version --force-publish -y --no-push --no-changelog --no-git-tag-version $npm_package_version",
-    "version:auto": "yarn version --no-git-tag-version --new-version $1",
-    "changelog": "node scripts/create-changelog"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "test": "vitest --config ./vitest.config.ts"
   },
   "dependencies": {
     "@fluentui/react-components": "^9.61.6",
-    "@fluentui/react-icons": "^2.0.294",
+    "@fluentui/react-icons": "^2.0.295",
     "@hookform/resolvers": "^3.10.0",
+    "@next/eslint-plugin-next": "^15.3.0",
     "@radix-ui/react-avatar": "^1.1.4",
     "@radix-ui/react-checkbox": "^1.1.5",
     "@radix-ui/react-context-menu": "^2.2.7",
@@ -46,12 +40,12 @@
     "framer-motion": "^11.18.2",
     "lucide": "^0.482.0",
     "lucide-react": "^0.298.0",
-    "motion": "^12.6.3",
+    "motion": "^12.6.5",
     "nanoid": "^5.1.5",
-    "next": "15.2.2",
+    "next": "^15.3.0",
     "next-auth": "5.0.0-beta.25",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-hook-form": "^7.55.0",
     "react-icons": "^5.5.0",
     "react-redux": "^9.2.0",
@@ -65,11 +59,12 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^18.6.3",
     "@commitlint/prompt-cli": "^18.6.1",
+    "@eslint/eslintrc": "^3.3.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@next/bundle-analyzer": "15.2.2",
     "@tailwindcss/postcss": "^4.1.3",
     "@testing-library/react": "^14.3.1",
-    "@types/node": "^20.17.30",
+    "@types/node": "^22.14.0",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
     "@types/redux-logger": "3.0.9",
@@ -79,15 +74,12 @@
     "@vitejs/plugin-react": "^4.3.4",
     "commitlint": "^18.6.1",
     "eslint": "^9.24.0",
-    "eslint-config-next": "15.2.2",
+    "eslint-config-next": "^15.3.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-unused-imports": "^3.2.0",
     "husky": "^8.0.3",
     "jsdom": "^23.2.0",
-    "lerna": "^8.2.1",
-    "lint-staged": "^15.5.0",
-    "postcss": "^8.5.3",
-    "postcss-prefixer": "^3.0.0",
+    "lerna": "^8.2.2",
+    "lint-staged": "^15.5.1",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "react-scan": "^0.2.14",
@@ -99,23 +91,8 @@
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.6.1"
   },
-  "lint-staged": {
-    "*.{js,ts,jsx,tsx}": [
-      "prettier --write",
-      "eslint --fix",
-      "eslint"
-    ],
-    "*.{json,md}": [
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "browser": {
     "crypto": false

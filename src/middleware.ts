@@ -7,8 +7,6 @@ import {
   publicRoutes,
 } from "./app/routes";
 
-export const runtime = "experimental-edge";
-
 // Read more: https://nextjs.org/docs/app/building-your-application/routing/middleware
 export default auth((req) => {
   const { nextUrl } = req;

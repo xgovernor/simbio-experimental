@@ -12,7 +12,10 @@ interface IRouteNavProps {
   rest?: object;
 }
 
-const RouteNav = ({ className, ...rest }: IRouteNavProps) => {
+const RouteNav = ({
+  // className,
+  ...rest
+}: IRouteNavProps) => {
   const router = useRouter();
 
   // Backward Button

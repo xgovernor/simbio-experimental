@@ -27,11 +27,11 @@ interface TMembersTableProps {
 }
 
 const MembersTable: FC<TMembersTableProps> = ({
-  className,
+  // className,
   title,
   description,
   data,
-  ...rest
+  // ...rest
 }: TMembersTableProps) => {
   return (
     <>

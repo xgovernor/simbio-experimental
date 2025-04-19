@@ -27,11 +27,11 @@ interface TFundTableProps {
 }
 
 const FundTable: FC<TFundTableProps> = ({
-  className,
+  // className,
   title,
   description,
   data,
-  ...rest
+  // ...rest
 }: TFundTableProps) => {
   return (
     <section

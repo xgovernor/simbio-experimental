@@ -64,7 +64,7 @@ const COLUMNS = [
 ];
 
 const SettingsDevice: FC<TSettingsDeviceProps> = ({
-  className,
+  // className,
 }: TSettingsDeviceProps) => {
   return (
     <SettingsTemplate title="Device">

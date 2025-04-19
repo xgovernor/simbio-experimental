@@ -36,7 +36,7 @@ interface IContactLayoutProps {
 }
 
 const ContactLayout: React.FC<IContactLayoutProps> = ({
-  className,
+  // className,
   children,
   tabs,
   selectedValue,

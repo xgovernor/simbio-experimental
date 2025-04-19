@@ -1,6 +1,6 @@
-import { auth } from "@/lib/auth";
+// import { auth } from "@/lib/auth";
 import { memo } from "react";
-import { Session } from "next-auth";
+// import { Session } from "next-auth";
 import { Badge } from "@/components/ui/badge";
 
 /**
@@ -17,7 +17,7 @@ import { Badge } from "@/components/ui/badge";
 
 const PageProfile = async () => {
   // const data = await getData();
-  const session = (await auth()) as Session;
+  // const session = (await auth()) as Session;
 
   return (
     <div className="grid-rows-auto grid gap-5 p-4 max-md:grid-cols-1 max-md:gap-4 md:grid-cols-2 md:p-5 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6">

@@ -9,7 +9,7 @@ import {
   MenuPopover,
   MenuTrigger,
 } from "@fluentui/react-components";
-import { Add20Regular, ChevronDown20Regular } from "@fluentui/react-icons";
+import { Add20Regular } from "@fluentui/react-icons";
 import { useRouter } from "next/navigation";
 import { FC, memo } from "react";
 

@@ -5,7 +5,18 @@ node_modules/
 .cache/
 .next/
 .yarn/
+.vscode/
+.husky/
 out/
+.commitlintrc*
+.editorconfig
+.gitattributes
+.gitignore
+*.md
+.dockerignore
+.prettierignore
+
+
 
 # Ignore testing files
 coverage/
@@ -34,3 +45,9 @@ package.json
 # Miscellaneous files
 .DS_Store
 *.pem
+
+# Test
+__tests__/
+
+# Configs
+.directory

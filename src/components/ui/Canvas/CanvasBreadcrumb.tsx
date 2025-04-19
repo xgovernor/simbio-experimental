@@ -51,9 +51,9 @@ const GenerateLink = ({
 };
 
 const CanvasBreadcrumb: React.FC<ICanvasBreadcrumbProps> = ({
-  className,
+  // className,
   links,
-  ...rest
+  // ...rest
 }: ICanvasBreadcrumbProps) => {
   const linksLength = links?.length || 0;
 

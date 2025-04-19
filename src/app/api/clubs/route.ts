@@ -1,9 +1,9 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 /**
  * Create a new club
  */
-export async function POST(request: NextRequest) {
+export async function POST() {
   const res = await fetch(`${process.env.API_SERVER_URL}/clubs?context=web`, {
     method: "POST",
     headers: {

@@ -6,33 +6,33 @@ import { CircleEllipsisIcon } from "lucide-react";
 import Image from "next/image";
 import { memo } from "react";
 
-const COLUMNS = [
-  // {
-  //     id: "SMB0",
-  //     className: "",
-  //     title: "ID",
-  // },
-  {
-    id: "SMB1",
-    className: "w-full min-w-xs",
-    title: "Title",
-  },
-  {
-    id: "SMB2",
-    className: "w-[160px]",
-    title: "Priority",
-  },
-  {
-    id: "SMB3",
-    className: "w-[160px]",
-    title: "From",
-  },
-  {
-    id: "SMB4",
-    className: "",
-    title: "Date",
-  },
-];
+// const COLUMNS = [
+//   // {
+//   //     id: "SMB0",
+//   //     className: "",
+//   //     title: "ID",
+//   // },
+//   {
+//     id: "SMB1",
+//     className: "w-full min-w-xs",
+//     title: "Title",
+//   },
+//   {
+//     id: "SMB2",
+//     className: "w-[160px]",
+//     title: "Priority",
+//   },
+//   {
+//     id: "SMB3",
+//     className: "w-[160px]",
+//     title: "From",
+//   },
+//   {
+//     id: "SMB4",
+//     className: "",
+//     title: "Date",
+//   },
+// ];
 
 export type TSupportMessageItem = {
   id: string;

@@ -31,11 +31,11 @@ export type TPageConfig = {
 
 const PageCenters = async () => {
   // const data = await getData();
-  const config: TPageConfig = {
-    analytics: true,
-    settings: true,
-    table: true,
-  };
+  // const config: TPageConfig = {
+  //   analytics: true,
+  //   settings: true,
+  //   table: true,
+  // };
 
   return (
     <div className="grid grid-cols-1">

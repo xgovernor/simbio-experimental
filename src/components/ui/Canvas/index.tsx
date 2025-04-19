@@ -7,7 +7,7 @@ export interface ICanvasProps {
 }
 
 const Canvas: React.FC<ICanvasProps> = ({
-  className,
+  // className,
   children,
   ...rest
 }: ICanvasProps) => {

@@ -39,7 +39,7 @@ export function DataTableToolbar<TData>({
         />
 
         {/* Define your faceted filters here */}
-        {filters.map((filter, index) =>
+        {filters.map((filter, _index) =>
           filter.options.length > 0 ? (
             <DataTableFacetedFilter
               key={filter.key}

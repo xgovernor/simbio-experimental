@@ -19,7 +19,7 @@ const SupportOrgList: React.FC<TSupportOrgListProps> = ({
 }: TSupportOrgListProps) => {
   return (
     <section className="h-full space-y-3 overflow-y-auto">
-      {organizations.map((organization, i) => (
+      {organizations.map((organization, _i) => (
         <SupportOrgCard
           key={organization.id}
           avatar={organization.avatar}

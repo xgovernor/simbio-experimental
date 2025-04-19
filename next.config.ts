@@ -1,0 +1,133 @@
+import type { NextConfig } from 'next';
+
+// const ContentSecurityPolicy = `
+//   default-src 'self';
+//   script-src 'self' 'random-nonce-value';
+//   child-src simbio.dot9.dev;
+//   style-src 'self' simbio.dot9.dev;
+//   font-src 'self';
+// `;
+
+export default {
+    reactStrictMode: false,
+    poweredByHeader: false,
+    transpilePackages: ['echarts'],
+    compiler: {
+        removeConsole: true
+    },
+    experimental: {
+        swcPlugins: [
+    //         [
+    //             'fluentui-next-appdir-directive',
+    //             {
+    //                 paths: ['@griffel', '@fluentui']
+    //             }
+    //         ]
+        ]
+    },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'simbio.dot9.dev'
+            },
+            {
+                protocol: 'https',
+                hostname: 'i.pravatar.cc'
+                // port: '',
+                // pathname: '/my-bucket/**',
+            },
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                port: '3000'
+                // pathname: '/my-bucket/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'avatars.githubusercontent.com'
+                // port: '',
+                // pathname: '/my-bucket/**',
+            },
+            {
+                protocol: 'https',
+                hostname: '*.googleusercontent.com'
+                // port: '',
+                // pathname: '/my-bucket/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'avatars.githubusercontent.com'
+                // port: '',
+                // pathname: '/my-bucket/**',
+            },
+            {
+                protocol: 'https',
+                hostname: '*.googleusercontent.com'
+                // port: '',
+                // pathname: '/my-bucket/**',
+            }
+        ]
+    },
+    eslint: {
+        dirs: ['src']
+    },
+    async redirects() {
+        return [
+            {
+                source: '/',
+                destination: '/profile',
+                permanent: true
+            }
+        ];
+    },
+    headers: async () => {
+        return [
+            {
+                source: '/',
+                headers: [
+                    {
+                        key: 'X-Developed-By',
+                        value: 'Dot9'
+                    },
+                    {
+                        key: 'X-Developed-By-Url',
+                        value: 'https://dot9.dev'
+                    },
+                    {
+                        key: 'X-DNS-Prefetch-Control',
+                        value: 'on'
+                    },
+                    {
+                        key: 'Strict-Transport-Security',
+                        value: 'max-age=63072000; includeSubDomains; preload'
+                    },
+                    {
+                        key: 'X-XSS-Protection',
+                        value: '1; mode=block'
+                    },
+                    {
+                        key: 'X-Frame-Options',
+                        value: 'SAMEORIGIN'
+                    },
+                    {
+                        key: 'Permissions-Policy',
+                        value: ' geolocation=(), browsing-topics=()'
+                    },
+                    {
+                        key: 'X-Content-Type-Options',
+                        value: 'nosniff'
+                    },
+                    {
+                        key: 'Referrer-Policy',
+                        value: 'origin-when-cross-origin'
+                    }
+                    // {
+                    //     key: "Content-Security-Policy",
+                    //     value: ContentSecurityPolicy.replace(/\s{2,}/g, " ").trim(),
+                    // },
+                ]
+            }
+        ];
+    }
+} as NextConfig;

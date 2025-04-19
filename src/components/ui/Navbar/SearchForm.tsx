@@ -17,8 +17,8 @@ interface ISearchForm {
 
 const SearchForm: React.FC<ISearchFormProps> = ({
   className,
-  children,
-  layout = true,
+  // children,
+  // layout = true,
   ...rest
 }: ISearchFormProps) => {
   const searchBox = useRef<HTMLInputElement>(null);

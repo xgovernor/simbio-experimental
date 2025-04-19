@@ -7,8 +7,8 @@ export type ToolbarProps = {
 
 const Toolbar: React.FC<ToolbarProps> = ({
   children,
-  className,
-  size = "medium",
+  // className,
+  // size = "medium",
   layout = "horizontal",
   ...rest
 }) => {
@@ -32,7 +32,7 @@ export type ToolbarButtonProps = {
   rest?: object;
 };
 export const ToolbarButton = ({
-  className,
+  // className,
   children,
   ...rest
 }: ToolbarProps) => {

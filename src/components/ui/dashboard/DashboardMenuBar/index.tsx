@@ -149,7 +149,7 @@ const DashboardMenuBar: FC<IMenuBarProps> = ({
 
   const handleScroll = () => {
     if (menuBarRef.current) {
-      let top: any = menuBarRef.current.getBoundingClientRect().y;
+      const top: any = menuBarRef.current.getBoundingClientRect().y;
 
       if (top <= 48) {
         setShowAvatar(true);

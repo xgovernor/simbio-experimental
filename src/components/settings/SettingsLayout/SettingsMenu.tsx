@@ -46,7 +46,7 @@ const SettingsMenu: React.FC<ISettingsMenuProps> = ({
   tabs,
   selectedValue,
   onTabSelect,
-  ...rest
+  // ...rest
 }: ISettingsMenuProps) => {
   const classes = useStyles();
 

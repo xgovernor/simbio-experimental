@@ -10,8 +10,8 @@ interface TMembershipFormProps {
 }
 
 const MembershipForm: React.FC<TMembershipFormProps> = ({
-  className,
-  children,
+  // className,
+  // children,
 }: TMembershipFormProps) => {
   /**
    * Form handler

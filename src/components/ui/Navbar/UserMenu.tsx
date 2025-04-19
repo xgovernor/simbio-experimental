@@ -19,14 +19,11 @@ import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FC, memo } from "react";
+import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-interface IUserMenuProps {
-  className?: string;
-}
 
-const UserMenu: FC<IUserMenuProps> = ({ className }: IUserMenuProps) => {
+const UserMenu= () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const settings = useSelector((state: any) => state.settings);
